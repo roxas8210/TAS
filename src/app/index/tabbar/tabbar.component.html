@@ -1,0 +1,15 @@
+<div class="tabbar">
+  <div *ngFor="let list of tabStack">
+    <div [ngStyle]="{'justify-content': tabStack.length === 1? 'center': 'space-between'}" *ngIf="list.activeStatus;else elseblock" class="tab-active">
+      <p><a [routerLink]="list.url">{{list.title}}</a></p>
+      <i [ngStyle]="{'display': tabStack.length === 1? 'none': 'inline-block'}" class="anticon anticon-close" (click)="closeTab(list.id)"></i>
+    </div>
+    <ng-template #elseblock>
+      <div class="tab-short">
+        <p><a [routerLink]="list.url">{{list.title}}</a></p>
+        <i class="anticon anticon-close" (click)="closeTab(list.id)"></i>
+      </div>
+    </ng-template>
+  </div>
+  <div class="tab-clearfix"></div>
+</div>

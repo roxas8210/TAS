@@ -1,0 +1,27 @@
+.system-setting {
+  width: 730px;
+  height: auto;
+  overflow: hidden;
+  float: left;
+  box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.15);
+  background-color: white;
+  margin-left: 40px;
+}
+.system-setting .setting-head {
+  width: 100%;
+  text-align: left;
+  background-color: #2399ed;
+  padding: 0 30px;
+  box-sizing: border-box;
+}
+.system-setting .setting-head span {
+  font-size: 18px;
+  color: white;
+  line-height: 52px;
+  cursor: pointer;
+  height: 52px;
+}
+.system-setting .setting-body section {
+  border-bottom: 1px solid #ededed;
+  margin-top: 10px;
+}

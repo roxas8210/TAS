@@ -1,0 +1,167 @@
+<div class="system-setting">
+  <div class="setting-head">
+    <span>香港系統設置</span>
+  </div>
+  <div class="setting-body">
+    <form nz-form [nzType]="'horizontal'" [formGroup]="settingForm">
+      <section>
+        <div nz-form-item nz-row>
+          <div nz-form-label nz-col [nzSpan]="10">
+            <label nz-form-item-required>Email Server Address</label>
+          </div>
+          <div nz-col [nzSpan]="12" nz-form-control nzHasFeedback>
+            <nz-input formControlName="emailAddress" [nzType]="'text'" [nzPlaceHolder]="''" [nzSize]="'large'">
+            </nz-input>
+          </div>
+        </div>
+        <div nz-form-item nz-row>
+          <div nz-form-label nz-col [nzSpan]="10">
+            <label nz-form-item-required>Email Server Port</label>
+          </div>
+          <div nz-col [nzSpan]="12" nz-form-control nzHasFeedback>
+            <nz-input formControlName="emailPort" [nzType]="'text'" [nzPlaceHolder]="''" [nzSize]="'large'">
+            </nz-input>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div nz-form-item nz-row>
+          <div nz-form-label nz-col [nzSpan]="10">
+            <label nz-form-item-required>Outbound Dial System</label>
+          </div>
+          <div nz-col [nzSpan]="12" nz-form-control nzHasFeedback>
+            <nz-input formControlName="outboundDialSytem" [nzType]="'text'" [nzPlaceHolder]="''" [nzSize]="'large'">
+            </nz-input>
+          </div>
+        </div>
+        <div nz-form-item nz-row>
+          <div nz-form-label nz-col [nzSpan]="10">
+            <label nz-form-item-required>SMS API Password</label>
+          </div>
+          <div nz-col [nzSpan]="12" nz-form-control nzHasFeedback>
+            <nz-input formControlName="smsApiPassword" [nzType]="'text'" [nzPlaceHolder]="''" [nzSize]="'large'">
+            </nz-input>
+          </div>
+        </div>
+        <div nz-form-item nz-row>
+          <div nz-form-label nz-col [nzSpan]="10">
+            <label nz-form-item-required>Job Search Emails Limit（Nos.of tutors）</label>
+          </div>
+          <div nz-col [nzSpan]="12" nz-form-control nzHasFeedback>
+            <nz-input formControlName="jobSearchEmailsLimit" [nzType]="'text'" [nzPlaceHolder]="''" [nzSize]="'large'">
+            </nz-input>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div nz-form-item nz-row>
+          <div nz-form-label nz-col [nzSpan]="10">
+            <label nz-form-item-required>Email server user name</label>
+          </div>
+          <div nz-col [nzSpan]="12" nz-form-control nzHasFeedback>
+            <nz-input formControlName="emailUserName" [nzType]="'text'" [nzPlaceHolder]="''" [nzSize]="'large'">
+            </nz-input>
+          </div>
+        </div>
+        <div nz-form-item nz-row>
+          <div nz-form-label nz-col [nzSpan]="10">
+            <label nz-form-item-required>Email Server password</label>
+          </div>
+          <div nz-col [nzSpan]="12" nz-form-control nzHasFeedback>
+            <nz-input formControlName="emailPassword" [nzType]="'text'" [nzPlaceHolder]="''" [nzSize]="'large'">
+            </nz-input>
+          </div>
+        </div>
+        <div nz-form-item nz-row>
+          <div nz-form-label nz-col [nzSpan]="10">
+            <label>Email server TLS enabled?(Y/N)</label>
+          </div>
+          <div nz-form-control nz-col [nzSpan]="12">
+            <nz-switch formControlName="enableEmailTLS"></nz-switch>
+          </div>
+        </div>
+        <div nz-form-item nz-row>
+          <div nz-form-label nz-col [nzSpan]="10">
+            <label>Email server Authentication?(Y/N)</label>
+          </div>
+          <div nz-form-control nz-col [nzSpan]="12">
+            <nz-switch formControlName="authEmail"></nz-switch>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div nz-form-item nz-row>
+          <div nz-form-label nz-col [nzSpan]="10">
+            <label nz-form-item-required>Massive email server address</label>
+          </div>
+          <div nz-col [nzSpan]="12" nz-form-control nzHasFeedback>
+            <nz-input formControlName="massiveEmailAddress" [nzType]="'text'" [nzPlaceHolder]="''" [nzSize]="'large'">
+            </nz-input>
+          </div>
+        </div>
+        <div nz-form-item nz-row>
+          <div nz-form-label nz-col [nzSpan]="10">
+            <label nz-form-item-required>Massive email server port</label>
+          </div>
+          <div nz-col [nzSpan]="12" nz-form-control nzHasFeedback>
+            <nz-input formControlName="massiveEmailPort" [nzType]="'text'" [nzPlaceHolder]="''" [nzSize]="'large'">
+            </nz-input>
+          </div>
+        </div>
+        <div nz-form-item nz-row>
+          <div nz-form-label nz-col [nzSpan]="10">
+            <label nz-form-item-required>Massive email server user name</label>
+          </div>
+          <div nz-col [nzSpan]="12" nz-form-control nzHasFeedback>
+            <nz-input formControlName="massiveEmailUserName" [nzType]="'text'" [nzPlaceHolder]="''" [nzSize]="'large'">
+            </nz-input>
+          </div>
+        </div>
+        <div nz-form-item nz-row>
+          <div nz-form-label nz-col [nzSpan]="10">
+            <label nz-form-item-required>Massive email server password</label>
+          </div>
+          <div nz-col [nzSpan]="12" nz-form-control nzHasFeedback>
+            <nz-input formControlName="massiveEmailPassword" [nzType]="'text'" [nzPlaceHolder]="''" [nzSize]="'large'">
+            </nz-input>
+          </div>
+        </div>
+        <div nz-form-item nz-row>
+          <div nz-form-label nz-col [nzSpan]="10">
+            <label>Massive email TLS enabled?(Y/N)</label>
+          </div>
+          <div nz-form-control nz-col [nzSpan]="12">
+            <nz-switch formControlName="massiveEmailTLS"></nz-switch>
+          </div>
+        </div>
+        <div nz-form-item nz-row>
+          <div nz-form-label nz-col [nzSpan]="10">
+            <label>Massive email server Authentication?(Y/N)</label>
+          </div>
+          <div nz-form-control nz-col [nzSpan]="12">
+            <nz-switch formControlName="massiveEmailAuth"></nz-switch>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div nz-form-item nz-row>
+          <div nz-form-label nz-col [nzSpan]="10">
+            <label>Paypal</label>
+          </div>
+          <div nz-form-control nz-col [nzSpan]="12">
+            <nz-switch formControlName="paypal"></nz-switch>
+          </div>
+        </div>
+        <div nz-form-item nz-row>
+          <div nz-form-label nz-col [nzSpan]="10">
+            <label>Stripe</label>
+          </div>
+          <div nz-form-control nz-col [nzSpan]="12">
+            <nz-switch formControlName="Stripe"></nz-switch>
+          </div>
+        </div>
+      </section>
+      <button type="submit" nz-button nzGhost [nzType]="'primary'" style="border-radius: 17px;height: 34px;width: 96px;margin: 0 auto;display: block;margin-top: 20px;margin-bottom: 20px;">確認</button>
+    </form>
+  </div>
+</div>

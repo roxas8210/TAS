@@ -1,0 +1,131 @@
+<div class="layout">
+  <header>
+    <div class="header-container">
+      <div class="logo">TAS
+        <span>3.0</span>
+      </div>
+      <div class="topbar-collapse">
+        <nz-dropdown class="user-setting">
+          <a class="ant-dropdown-link" nz-dropdown>
+            管理員
+            <i class="anticon anticon-caret-down"></i>
+          </a>
+          <ul nz-menu>
+            <li nz-menu-item style="width: 90px;">
+              <a target="_blank" rel="noopener noreferrer" href="http://www.alipay.com/">
+                <i class="anticon anticon-solution"></i>  資料
+              </a>
+            </li>
+            <li nz-menu-item style="width: 90px;">
+              <a target="_blank" rel="noopener noreferrer" href="http://www.alipay.com/">
+                <i class="anticon anticon-setting"></i>  設置
+              </a>
+            </li>
+            <li nz-menu-item style="width: 90px;">
+              <a target="_blank" rel="noopener noreferrer" href="http://www.alipay.com/">
+                <i class="anticon anticon-logout"></i>  退出
+              </a>
+            </li>
+          </ul>
+        </nz-dropdown>
+        <div class="clearfix"></div>
+        <div class="private">
+          <nz-dropdown>
+            <a class="head-example" nz-dropdown>
+              <!-- <i class="anticon anticon-mail"></i> -->
+              <img src="/assets/mail.png" alt="">
+            </a>
+            <nz-badge [nzCount]="5"></nz-badge>
+            <ul nz-menu style="width: 200px;">
+              <p style="font-size: 14px;line-height: 32px;margin-left: 5px;">你有3個信件</p>
+              <li nz-menu-item style="width: 190px;margin: 0 5px;padding: 0 10px;background-color: #f2f2f2;border-radius: 5px;margin-bottom: 10px;">
+                <div class="msg-name" style="display: flex;justify-content: space-between;align-items: center;height: 30px;">
+                  <span>A</span>
+                  <span>一分鐘前</span>
+                </div>
+                <div class="msg-content">
+                  <p style="font-size: 14px; line-height: 30px;color: #323232;">1234567</p>
+                </div>
+              </li>
+              <li nz-menu-item style="width: 190px;margin: 0 5px;padding: 0 10px;background-color: #f2f2f2;border-radius: 5px;margin-bottom: 10px;">
+                <div class="msg-name" style="display: flex;justify-content: space-between;align-items: center;height: 30px;">
+                  <span>B</span>
+                  <span>一分鐘前</span>
+                </div>
+                <div class="msg-content">
+                  <p style="font-size: 14px; line-height: 30px;color: #323232;">1234567</p>
+                </div>
+              </li>
+              <li nz-menu-item style="width: 190px;margin: 0 5px;padding: 0 10px;background-color: #f2f2f2;border-radius: 5px;margin-bottom: 10px;">
+                <div class="msg-name" style="display: flex;justify-content: space-between;align-items: center;height: 30px;">
+                  <span>C</span>
+                  <span>一分鐘前</span>
+                </div>
+                <div class="msg-content">
+                  <p style="font-size: 14px; line-height: 30px;color: #323232;">1234567</p>
+                </div>
+              </li>
+              <div class="getAllMsg" style="width: 100%;background-color: #2399ed;text-align: center;border-radius: 4px;">
+                <span style="font-size: 14px;line-height: 42px;color: #fafafa;">顯示所有信息</span>
+              </div>
+            </ul>
+          </nz-dropdown>
+        </div>
+      </div>
+      <div class="date">
+        <div class="date-left">
+          <p>4月24日</p>
+        </div>
+        <div class="date-right">
+          <p>PM</p>
+          <span>03:27</span>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="main">
+      <div class="sidebar">
+        <div class="sideMenu">
+          <ul>
+            <li *ngFor="let list of menu" appHoverMenu>
+              <a [routerLink]="list.url">
+                <span>{{list.title}}</span>
+                <i class="anticon anticon-right" *ngIf="list.subMenu"></i>
+              </a>
+              <ul *ngIf="list.subMenu">
+                <li *ngFor="let sublist of list.subMenu" appHoverMenu>
+                  <a [routerLink]="sublist.url">{{sublist.title}}</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <div class="memo-notice">
+          <app-memo></app-memo>
+          <app-notice></app-notice>
+        </div>
+      </div>
+      <div class="main-container">
+        <!-- <div class="tabbar">
+          <div class="tab-active">
+            <p>{{title}}</p>
+          </div>
+          <div class="tab-short">
+            <p>家長列表</p>
+            <i class="anticon anticon-close"></i>
+          </div>
+          <div class="tab-short">
+            <p>導師列表</p>
+            <i class="anticon anticon-close"></i>
+          </div>
+          <div class="tab-clearfix"></div>
+        </div> -->
+        <app-tabbar></app-tabbar>
+        <div class="tab-container">
+          <router-outlet></router-outlet>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>

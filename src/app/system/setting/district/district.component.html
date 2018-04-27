@@ -1,0 +1,38 @@
+<div class="district">
+  <div class="district-head">
+    <nz-dropdown [nzTrigger]="'click'">
+      <span nz-dropdown>香港
+        <i class="anticon anticon-caret-down"></i>
+      </span>
+      <ul nz-menu>
+        <li nz-menu-item style="width: 80px;text-align: center;">
+          <span>香港</span>
+        </li>
+        <li nz-menu-item style="width: 80px;text-align: center;">
+          <span>江門</span>
+        </li>
+      </ul>
+    </nz-dropdown>
+  </div>
+  <div class="district-body">
+    <form nz-form [nzLayout]="'horizontal'" [formGroup]="districtForm">
+      <div nz-form-item nz-row class="district-switcher">
+        <div nz-form-label nz-col [nzSpan]="12">
+          <label>開關</label>
+        </div>
+        <div nz-form-control nz-col [nzSpan]="12">
+          <nz-switch formControlName="districtSwitch"></nz-switch>
+        </div>
+      </div>
+      <div class="website">
+        <span>網站地址</span>
+        <nz-input formControlName="webAddress" [nzType]="'textarea'" [nzRows]="'4'" [nzPlaceHolder]="''"></nz-input>
+      </div>
+      <div class="operator">
+        <span>運營者</span>
+        <nz-input formControlName="operator" [nzType]="'textarea'" [nzRows]="'4'" [nzPlaceHolder]="''"></nz-input>
+      </div>
+      <button type="submit" nz-button nzGhost [nzType]="'primary'" style="border-radius: 17px;height: 34px;width: 96px;margin: 0 auto;display: block;margin-top: 20px;">確認</button>
+    </form>
+  </div>
+</div>

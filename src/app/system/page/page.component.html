@@ -1,0 +1,89 @@
+<div class="page-setting">
+  <div class="page-head">
+    <span>用戶管理</span>
+    <span>/</span>
+    <span class="sub">家長列表</span>
+  </div>
+  <div class="page-body">
+    <div class="page-sidebar">
+      <ul>
+        <li *ngFor="let list of menu">
+          <i *ngIf="list.subMenu && !list.switchStatus" style="margin-left: 30px;" class="anticon anticon-caret-right" (click)="showSubList(list.id)"></i>
+          <i *ngIf="list.subMenu && list.switchStatus" style="margin-left: 30px;" class="anticon anticon-caret-down" (click)="showSubList(list.id)"></i>
+          <!-- <i  class="anticon anticon-caret-right"></i> -->
+          <div style="width: 20px;height: 20px;float: left;margin-left: 30px;" *ngIf="!list.subMenu" class="clearfix"></div>
+          <span>{{list.title}}</span>
+          <ul *ngIf="list.subMenu && list.switchStatus">
+            <li *ngFor="let subList of list.subMenu">
+              <span (click)="goSetting(subList.id)">  {{subList.title}}</span>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <div class="page-main">
+      <form nz-form [formGroup]="pageForm">
+        <div nz-form-item nz-row>
+          <div nz-form-label nz-col [nzSm]="6" [nzXs]="24">
+            <label for="name" nz-form-item-required>
+              <span>
+                Name
+                <!-- <nz-tooltip [nzTitle]="'What do you want other to call you'">
+                  <i nz-tooltip class="anticon anticon-question-circle-o"></i>
+                </nz-tooltip> -->
+              </span>
+            </label>
+          </div>
+          <div nz-form-control nz-col [nzSm]="14" [nzXs]="24">
+            <nz-input [nzSize]="'large'" formControlName="name" [nzId]="'name'"></nz-input>
+            <!-- <div nz-form-explain *ngIf="getFormControl('nickname').dirty&&getFormControl('nickname').hasError('required')">Please input your nickname!</div> -->
+          </div>
+        </div>
+        <div nz-form-item nz-row>
+          <div nz-form-label nz-col [nzSm]="6" [nzXs]="24">
+            <label for="Type" nz-form-item-required>
+              <span>
+                Type
+              </span>
+            </label>
+          </div>
+          <div nz-form-control nz-col [nzSm]="14" [nzXs]="24">
+            <nz-select formControlName="type" [nzSize]="'large'">
+              <nz-option *ngFor="let option of options" [nzLabel]="option.label" [nzValue]="option.value">
+              </nz-option>
+            </nz-select>
+          </div>
+        </div>
+        <div nz-form-item nz-row>
+          <div nz-form-label nz-col [nzSm]="6" [nzXs]="24">
+            <label for="url" nz-form-item-required>
+              <span>
+                Url
+              </span>
+            </label>
+          </div>
+          <div nz-form-control nz-col [nzSm]="14" [nzXs]="24">
+            <nz-input [nzSize]="'large'" formControlName="url"></nz-input>
+          </div>
+        </div>
+        <div nz-form-item nz-row>
+          <div nz-form-label nz-col [nzSm]="6" [nzXs]="24">
+            <label for="orderBy" nz-form-item-required>
+              <span>
+                Orderby
+              </span>
+            </label>
+          </div>
+          <div nz-form-control nz-col [nzSm]="14" [nzXs]="24">
+            <nz-input [nzSize]="'large'" formControlName="orderBy"></nz-input>
+          </div>
+        </div>
+        <div style="width: 100%;">
+          <button type="submit" [nzType]="'primary'" nz-button nzGhost style="border-radius: 17px;height: 34px;width: 96px;margin: 0 auto;display: block;">
+            <span>確認</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

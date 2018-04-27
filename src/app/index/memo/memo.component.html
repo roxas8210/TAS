@@ -1,0 +1,39 @@
+<!-- <nz-card style="width:240px;margin: 0 auto;margin-top: 10px;">
+  <ng-template #title>
+    <i class="anticon anticon-bell"></i>
+    備忘錄
+  </ng-template>
+  <ng-template #extra>
+  </ng-template>
+  <ng-template #body>
+    <p *ngFor="let memo of memoList">{{memo.memo}}</p>
+    <nz-pagination (click)="slide()" [(nzPageIndex)]="pageIndex" [nzSize]="'small'" [nzTotal]="50" nzSimple></nz-pagination>
+  </ng-template>
+</nz-card> -->
+
+<div class="memo">
+  <div class="memo-title">
+    <p>備忘錄</p>
+  </div>
+  <div class="memo-body">
+    <ul>
+      <li *ngFor="let memo of memoList">
+        <p>{{memo.memo}}</p>
+      </li>
+    </ul>
+  </div>
+  <div class="memo-foot">
+    <button>
+      <i class="anticon anticon-left"></i>
+    </button>
+    <div class="page">
+      <p>
+        <span>1</span>/
+        <span>3</span>
+      </p>
+    </div>
+    <button>
+      <i class="anticon anticon-right"></i>
+    </button>
+  </div>
+</div>

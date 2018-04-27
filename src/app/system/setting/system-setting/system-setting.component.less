@@ -1,0 +1,31 @@
+@shadow: 4px 4px 6px rgba(0,0,0,0.15);
+
+.system-setting {
+    width: 730px;
+    height: auto;
+    overflow: hidden;
+    float: left;
+    box-shadow: @shadow;
+    background-color: white;
+    margin-left: 40px;
+    .setting-head {
+        width: 100%;
+        text-align: left;
+        background-color: #2399ed;
+        padding: 0 30px;
+        box-sizing: border-box;
+        span {
+            font-size: 18px;
+            color: white;
+            line-height: 52px;
+            cursor: pointer;
+            height: 52px;
+        }
+    }
+    .setting-body {
+        section {
+            border-bottom: 1px solid #ededed;
+            margin-top: 10px;
+        }
+    }
+}

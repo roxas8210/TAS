@@ -1,0 +1,51 @@
+.memo {
+  width: 100%;
+  height: 150px;
+  border: 1px solid #2399ed;
+  margin-top: 26px;
+  padding: 0 52px;
+  box-sizing: border-box;
+  box-shadow: 4px 0px 6px rgba(0, 0, 0, 0.15);
+  background-color: #fafafa;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.memo .memo-title {
+  width: 100%;
+  text-align: left;
+}
+.memo .memo-title p {
+  font-size: 18px;
+}
+.memo .memo-body {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  max-height: 65px;
+}
+.memo .memo-body ul {
+  padding: 0;
+  margin: 0;
+  width: 468px;
+  height: auto;
+  max-height: 62px;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+.memo .memo-body ul li {
+  float: left;
+  width: 156px;
+  font-size: 14px;
+}
+.memo .memo-foot {
+  width: 130px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+  background-color: #fafafa;
+}
+.memo .memo-foot button {
+  border: none;
+  background-color: #fafafa;
+}

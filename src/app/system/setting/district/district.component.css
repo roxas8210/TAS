@@ -1,0 +1,62 @@
+.district {
+  width: 486px;
+  height: 568px;
+  float: left;
+  box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.15);
+  background-color: white;
+  margin-left: 40px;
+  margin-bottom: 40px;
+  margin-right: 20px;
+}
+.district .district-head {
+  width: 100%;
+  text-align: left;
+  background-color: #2399ed;
+  padding: 0 30px;
+  box-sizing: border-box;
+}
+.district .district-head span {
+  font-size: 18px;
+  color: white;
+  line-height: 52px;
+  cursor: pointer;
+  height: 52px;
+}
+.district .district-head span i {
+  font-size: 14px;
+  margin-left: 10px;
+  line-height: 52px;
+}
+.district .district-body {
+  width: 410px;
+  height: auto;
+  overflow: hidden;
+  margin: 0 auto;
+}
+.district .district-body .district-switcher {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  padding: 42px 0;
+}
+.district .district-body .district-switcher label {
+  font-size: 26px;
+  color: #646464;
+}
+.district .district-body .website {
+  width: 408px;
+  margin: 0 auto;
+}
+.district .district-body .website span {
+  font-size: 20px;
+  line-height: 30px;
+}
+.district .district-body .operator {
+  width: 408px;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+.district .district-body .operator span {
+  font-size: 20px;
+  line-height: 30px;
+}

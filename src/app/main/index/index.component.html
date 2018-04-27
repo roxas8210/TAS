@@ -1,0 +1,98 @@
+<div class="home">
+  <div class="aims">
+    <ul>
+      <li>
+        <div class="aims-content">
+          <p>新增用戶</p>
+          <span>387</span>
+        </div>
+        <div class="aims-icon" style="background-color: #2399ed;">
+          <i class="anticon anticon-user-add"></i>
+        </div>
+      </li>
+      <li>
+        <div class="aims-content">
+          <p>成交訂單</p>
+          <span>308</span>
+        </div>
+        <div class="aims-icon" style="background-color: #edaa24;">
+          <i class="anticon anticon-file-text"></i>
+        </div>
+      </li>
+      <li>
+        <div class="aims-content">
+          <p>距離目標</p>
+          <span>22000</span>
+        </div>
+        <div class="aims-icon" style="background-color: #ed2488;">
+          <i class="anticon anticon-check-circle-o"></i>
+        </div>
+      </li>
+      <li>
+        <div class="aims-content">
+          <p>本月目標</p>
+          <span>80000</span>
+        </div>
+        <div class="aims-icon" style="background-color: #24edcc;">
+          <i class="anticon anticon-area-chart"></i>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="rank-message">
+    <div class="rank">
+      <nz-table #nzTable nzSize="'small'" [nzDataSource]="rank" nzIsPagination="false">
+        <thead nz-thead style="border-bottom: 1px solid #444444;">
+          <tr>
+            <th nz-th style="text-align: center;background-color: white;border-bottom: 1px solid #e9e9e9;font-size: 16px;padding: 10px 0;">
+              <span>本月排名</span>
+            </th>
+            <th nz-th style="text-align: center;background-color: white;border-bottom: 1px solid #e9e9e9;font-size: 16px;padding: 10px 0;">
+              <span>用戶名</span>
+            </th>
+            <th nz-th style="text-align: center;background-color: white;border-bottom: 1px solid #e9e9e9;font-size: 16px;padding: 10px 0;">
+              <span>上月排名</span>
+            </th>
+            <th nz-th style="text-align: center;background-color: white;border-bottom: 1px solid #e9e9e9;font-size: 16px;padding: 10px 0;">
+              <span>成交訂單</span>
+            </th>
+          </tr>
+        </thead>
+        <tbody nz-tbody style="border-top: 1px solid #444444;">
+          <tr nz-tbody-tr *ngFor="let data of nzTable.data">
+            <td nz-td style="text-align: center;font-size: 16px;padding: 10px 0;">
+              <span>{{data.order}}</span>
+            </td>
+            <td nz-td style="text-align: center;font-size: 16px;padding: 10px 0;">{{data.name}}</td>
+            <td nz-td style="text-align: center;font-size: 16px;padding: 10px 0;">{{data.rank}}</td>
+            <td nz-td style="color: #2399ed;text-align: center;font-size: 16px;padding: 10px 0;">{{data.deal}}</td>
+          </tr>
+        </tbody>
+      </nz-table>
+    </div>
+    <div class="message">
+      <div class="message-title">
+        <p>最近留言</p>
+      </div>
+      <div class="message-body">
+        <div class="message-container">
+          <div class="message-list" *ngFor="let message of messages">
+            <p class="name">{{message.name}}</p>
+            <p class="details">{{message.details}}</p>
+            <p class="date">{{message.date}}</p>
+          </div>
+        </div>
+      </div>
+      <div class="message-foot">
+        <form>
+          <div class="message-input">
+            <textarea name="" id="" placeholder="   請輸入你的信息"></textarea>
+          </div>
+          <div class="message-enter">
+            <button type="submit">發送信息</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
