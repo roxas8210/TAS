@@ -1,80 +1,166 @@
-.page-setting {
-    width: 1300px;
-    height: 705px;
-    box-shadow: 4px 4px 6px rgba(0,0,0,0.15);
-    background-color: white;
-    margin-left: 40px;
-    margin-top: 20px;
-    .page-head {
-        width: 100%;
-        text-align: left;
-        padding: 0 34px;
-        box-sizing: border-box;
-        background-color: #2399ed;
-        span {
-            color: white;
-            font-size: 22px;
-            line-height: 50px;
-        }
-        .sub {
-            font-size: 18px;
-        }
-    }
-    .page-body {
-        width: 100%;
-        height: 655px;
-        .page-sidebar {
-            width: 300px;
-            float: left;
-            height: 100%;
-            border-right: 1px solid #e1e1e1;
-            padding-top: 36px;
+
+@media screen and (min-width: 1440px) {
+    .page-setting {
+        width: 1300px;
+        height: 705px;
+        box-shadow: 4px 4px 6px rgba(0,0,0,0.15);
+        background-color: white;
+        margin-left: 40px;
+        margin-top: 20px;
+        .page-head {
+            width: 100%;
+            text-align: left;
+            padding: 0 34px;
             box-sizing: border-box;
-            ul {
-                li {
-                    font-size: 16px;
-                    span {
-                        line-height: 40px;
-                    }
-                    ul {
-                        li {
-                            padding-left: 68px;
-                            box-sizing: border-box;
-                            span {
-                                line-height: 40px;
+            background-color: #2399ed;
+            span {
+                color: white;
+                font-size: 22px;
+                line-height: 50px;
+            }
+            .sub {
+                font-size: 18px;
+            }
+        }
+        .page-body {
+            width: 100%;
+            height: 655px;
+            .page-sidebar {
+                width: 300px;
+                float: left;
+                height: 100%;
+                border-right: 1px solid #e1e1e1;
+                padding-top: 36px;
+                box-sizing: border-box;
+                ul {
+                    li {
+                        font-size: 16px;
+                        span {
+                            line-height: 40px;
+                        }
+                        ul {
+                            li {
+                                padding-left: 68px;
+                                box-sizing: border-box;
+                                span {
+                                    line-height: 40px;
+                                }
                             }
                         }
                     }
-                }
-                li:hover {
-                    background-color: #2399ed;
-                    span {
-                        color: white;
-                    }
-                    i {
-                        color: white;
-                    }
-                    ul {
-                        background-color: white;
-                        li {
-                            span {
-                                color: rgba(0, 0, 0, 0.70);
-                            }
+                    li:hover {
+                        background-color: #2399ed;
+                        span {
+                            color: white;
                         }
-                        li:hover {
-                            span {
-                                color: white;
+                        i {
+                            color: white;
+                        }
+                        ul {
+                            background-color: white;
+                            li {
+                                span {
+                                    color: rgba(0, 0, 0, 0.70);
+                                }
+                            }
+                            li:hover {
+                                span {
+                                    color: white;
+                                }
                             }
                         }
                     }
                 }
             }
+            .page-main {
+                width: 1000px;
+                float: right;
+                padding-top: 40px;
+                box-sizing: border-box;
+            }
         }
-        .page-main {
-            width: 1000px;
-            float: right;
-            padding-top: 40px;
+    }
+}
+
+@media screen and (max-width: 1440px) {
+    .page-setting {
+        width: 900px;
+        height: 705px;
+        box-shadow: 4px 4px 6px rgba(0,0,0,0.15);
+        background-color: white;
+        margin-left: 40px;
+        margin-top: 20px;
+        .page-head {
+            width: 100%;
+            text-align: left;
+            padding: 0 34px;
             box-sizing: border-box;
+            background-color: #2399ed;
+            span {
+                color: white;
+                font-size: 22px;
+                line-height: 50px;
+            }
+            .sub {
+                font-size: 18px;
+            }
+        }
+        .page-body {
+            width: 100%;
+            height: 655px;
+            .page-sidebar {
+                width: 300px;
+                float: left;
+                height: 100%;
+                border-right: 1px solid #e1e1e1;
+                padding-top: 36px;
+                box-sizing: border-box;
+                ul {
+                    li {
+                        font-size: 16px;
+                        span {
+                            line-height: 40px;
+                        }
+                        ul {
+                            li {
+                                padding-left: 68px;
+                                box-sizing: border-box;
+                                span {
+                                    line-height: 40px;
+                                }
+                            }
+                        }
+                    }
+                    li:hover {
+                        background-color: #2399ed;
+                        span {
+                            color: white;
+                        }
+                        i {
+                            color: white;
+                        }
+                        ul {
+                            background-color: white;
+                            li {
+                                span {
+                                    color: rgba(0, 0, 0, 0.70);
+                                }
+                            }
+                            li:hover {
+                                span {
+                                    color: white;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .page-main {
+                width: 600px;
+                float: right;
+                padding-top: 40px;
+                box-sizing: border-box;
+            }
         }
     }
 }

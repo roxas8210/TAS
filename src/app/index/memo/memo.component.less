@@ -9,61 +9,117 @@
 
 @shadow: 4px 0px 6px rgba(0,0,0,0.15);
 
-.memo {
-    width: 100%;
-    height: 150px;
-    border: 1px solid #2399ed;
-    margin-top: 26px;
-    padding: 0 52px;
-    box-sizing: border-box;
-    box-shadow: @shadow;
-    background-color: #fafafa;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    .memo-title {
+@media screen and (min-width: 1440px) {
+    .memo {
         width: 100%;
-        text-align: left;
-        p {
-            font-size: 18px;
-            // line-height: 50px;
-        }
-    }
-    .memo-body {
-        width: 100%;
-        height: auto;
-        overflow: hidden;
-        max-height: 65px;
-        ul {
-            padding: 0;
-            margin: 0;
-            width: 468px;
-            height: auto;
-            max-height: 62px;
-            overflow: hidden;
-            overflow-y: scroll;
-            li {
-                float: left;
-                width: 156px;
-                font-size: 14px;
+        height: 150px;
+        border: 1px solid #2399ed;
+        margin-top: 26px;
+        padding: 0 52px;
+        box-sizing: border-box;
+        box-shadow: @shadow;
+        background-color: #fafafa;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        .memo-title {
+            width: 100%;
+            text-align: left;
+            p {
+                font-size: 18px;
+                // line-height: 50px;
             }
         }
-    }
-    .memo-foot {
-        width: 130px;
-        margin: 0 auto;
-        display: flex;
-        justify-content: space-around;
-        background-color: #fafafa;
-        button {
-            border: none;
-            background-color: #fafafa;
+        .memo-body {
+            width: 100%;
+            height: auto;
+            overflow: hidden;
+            max-height: 65px;
+            ul {
+                padding: 0;
+                margin: 0;
+                width: 468px;
+                height: auto;
+                max-height: 62px;
+                overflow: hidden;
+                overflow-y: scroll;
+                li {
+                    float: left;
+                    width: 156px;
+                    font-size: 14px;
+                }
+            }
         }
-        // button:last-child {
-        //     float: left;
-        // }
-        // .page {
-        //     float: left;
-        // }
+        .memo-foot {
+            width: 130px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-around;
+            background-color: #fafafa;
+            button {
+                border: none;
+                background-color: #fafafa;
+            }
+            // button:last-child {
+            //     float: left;
+            // }
+            // .page {
+            //     float: left;
+            // }
+        }
+    }
+}
+
+@media screen and (max-width: 1440px) {
+    .memo {
+        width: 100%;
+        height: 150px;
+        border: 1px solid #2399ed;
+        margin-top: 26px;
+        padding: 0 22px;
+        box-sizing: border-box;
+        box-shadow: @shadow;
+        background-color: #fafafa;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        .memo-title {
+            width: 100%;
+            text-align: left;
+            p {
+                font-size: 16px;
+            }
+        }
+        .memo-body {
+            width: 100%;
+            height: auto;
+            overflow: hidden;
+            max-height: 65px;
+            ul {
+                padding: 0;
+                margin: 0;
+                width: 100%;
+                height: auto;
+                max-height: 62px;
+                overflow: hidden;
+                overflow-y: scroll;
+                li {
+                    float: left;
+                    width: 100%;
+                    font-size: 14px;
+                }
+            }
+        }
+        .memo-foot {
+            width: 130px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-around;
+            background-color: #fafafa;
+            button {
+                border: none;
+                background-color: #fafafa;
+            }
+        }
     }
 }

@@ -1,63 +1,135 @@
 @shadow: 4px 4px 6px rgba(0,0,0,0.15);
 
-.district {
-    width: 486px;
-    height: 568px;
-    float: left;
-    box-shadow: @shadow;
-    background-color: white;
-    margin-left: 40px;
-    margin-bottom: 40px;
-    margin-right: 20px;
-    .district-head {
-        width: 100%;
-        text-align: left;
-        background-color: #2399ed;
-        padding: 0 30px;
-        box-sizing: border-box;
-        span {
-            font-size: 18px;
-            color: white;
-            line-height: 52px;
-            cursor: pointer;
-            height: 52px;
-            i {
-                font-size: 14px;
-                margin-left: 10px;
+@media screen and (min-width: 1440px) {
+    .district {
+        width: 486px;
+        height: 568px;
+        float: left;
+        box-shadow: @shadow;
+        background-color: white;
+        margin-left: 40px;
+        margin-bottom: 40px;
+        margin-right: 20px;
+        .district-head {
+            width: 100%;
+            text-align: left;
+            background-color: #2399ed;
+            padding: 0 30px;
+            box-sizing: border-box;
+            span {
+                font-size: 18px;
+                color: white;
                 line-height: 52px;
+                cursor: pointer;
+                height: 52px;
+                i {
+                    font-size: 14px;
+                    margin-left: 10px;
+                    line-height: 52px;
+                }
+            }
+        }
+        .district-body {
+            width: 410px;
+            height: auto;
+            overflow: hidden;
+            margin: 0 auto;
+            .district-switcher {
+                width: 100%;
+                height: auto;
+                overflow: hidden;
+                padding: 42px 0;
+                label {
+                    font-size: 26px;
+                    color: #646464;
+                }
+            }
+            .website {
+                width: 408px;
+                margin: 0 auto;
+                span {
+                    font-size: 20px;
+                    line-height: 30px;
+                }
+            }
+            .operator {
+                width: 408px;
+                margin: 0 auto;
+                margin-top: 20px;
+                span {
+                    font-size: 20px;
+                    line-height: 30px;
+                }
             }
         }
     }
-    .district-body {
-        width: 410px;
-        height: auto;
-        overflow: hidden;
-        margin: 0 auto;
-        .district-switcher {
+}
+
+@media screen and (max-width: 1440px) {
+    .district {
+        // width: 486px;
+        // width: 286px;
+        width: 730px;
+        height: 568px;
+        float: left;
+        box-shadow: @shadow;
+        background-color: white;
+        margin-left: 40px;
+        margin-bottom: 40px;
+        margin-right: 10px;
+        .district-head {
             width: 100%;
+            text-align: left;
+            background-color: #2399ed;
+            padding: 0 30px;
+            box-sizing: border-box;
+            span {
+                font-size: 18px;
+                color: white;
+                line-height: 52px;
+                cursor: pointer;
+                height: 52px;
+                i {
+                    font-size: 14px;
+                    margin-left: 10px;
+                    line-height: 52px;
+                }
+            }
+        }
+        .district-body {
+            // width: 410px;
+            // width: 210px;
+            width: 730px;
             height: auto;
             overflow: hidden;
-            padding: 42px 0;
-            label {
-                font-size: 26px;
-                color: #646464;
-            }
-        }
-        .website {
-            width: 408px;
             margin: 0 auto;
-            span {
-                font-size: 20px;
-                line-height: 30px;
+            .district-switcher {
+                width: 100%;
+                height: auto;
+                overflow: hidden;
+                padding: 42px 0;
+                label {
+                    font-size: 26px;
+                    color: #646464;
+                }
             }
-        }
-        .operator {
-            width: 408px;
-            margin: 0 auto;
-            margin-top: 20px;
-            span {
-                font-size: 20px;
-                line-height: 30px;
+            .website {
+                // width: 208px;
+                width: 408px;
+                margin: 0 auto;
+                span {
+                    font-size: 20px;
+                    line-height: 30px;
+                }
+            }
+            .operator {
+                width: 408px;
+                margin: 0 auto;
+                margin-top: 20px;
+                span {
+                    font-size: 20px;
+                    line-height: 30px;
+                }
             }
         }
     }
