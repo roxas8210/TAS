@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 })
 export class TabbarComponent implements OnInit {
 
+  // 頁面標籤數據模型
   menu = [{
     'title': '首頁',
     'url': '/',
@@ -79,6 +80,7 @@ export class TabbarComponent implements OnInit {
     }]
   }];
 
+  // 頁面數據棧原始數據
   tabStack: Tabbar[] = [{
     'id': 1,
     'title': '首頁',
@@ -88,6 +90,7 @@ export class TabbarComponent implements OnInit {
 
   constructor(private tabbarService: TabbarService, private router: Router) { }
 
+  // 關閉標籤頁
   closeTab(id) {
     this.tabStack.map((element, index) => {
       if (element.id === id) {

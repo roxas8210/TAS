@@ -1,0 +1,49 @@
+.client-list {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    .list-func {
+        width: 100%;
+        height: auto;
+        overflow: hidden;
+        .func-left {
+            width: 415px;
+            height: auto;
+            overflow: hidden;
+            float: left;
+            display: flex;
+            justify-content: space-between;
+        }
+        .func-right {
+            float: right;
+        }
+        .select {
+            width: 180px;
+            height: auto;
+            overflow: hidden;
+            display: flex;
+            justify-content: space-between;
+            span {
+                font-size: 14px;
+                color: #232323;
+                line-height: 32px;
+            }
+            nz-select {
+                flex-grow: 1;
+                margin-top: 3px;
+            }
+        }
+    }
+    .list-container {
+        flex-grow: 1;
+        overflow: hidden;
+        margin-top: 20px;
+        box-shadow: 4px 4px 6px rgba(0,0,0,0.15);
+        box-sizing: border-box;
+        margin-right: 10px;
+        margin-bottom: 10px;
+        background-color: white;
+    }
+}

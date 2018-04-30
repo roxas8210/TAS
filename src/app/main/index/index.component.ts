@@ -8,6 +8,7 @@ import { TabbarService } from '../../service/tabbar.service';
 })
 export class IndexComponent implements OnInit {
 
+  // 首頁銷售排名數據
   rank = [{
       order: 1,
       name: 'Eric',
@@ -60,6 +61,7 @@ export class IndexComponent implements OnInit {
       deal: 880
     }];
 
+    // 首頁未讀消息數據
     messages = [{
       name: '某位同事',
       details: '住大埔 兩年經驗 一年日本留學及工作 現在有教授學生日文JLPT N2 level',
@@ -83,6 +85,7 @@ export class IndexComponent implements OnInit {
       'url': '/index',
       'activeStatus': true
     };
+    // 設置標籤頁，將此頁推入tabbar service的內存數組中
     this.tabbarService.setTabbar(page);
   }
 

@@ -11,12 +11,9 @@ export class SettingComponent implements OnInit {
 
   settingForm: FormGroup;
 
-  constructor(private fb: FormBuilder, private tabbarService: TabbarService) { }
+  constructor(private tabbarService: TabbarService) { }
 
   ngOnInit() {
-    this.settingForm = this.fb.group({
-      emailAddress: ''
-    });
     const page = {
       'id': 71,
       'title': '系統設置',

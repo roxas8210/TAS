@@ -1,0 +1,15 @@
+<div class="rela-container">
+  <nz-tabset [nzType]="'card'">
+    <nz-tab *ngFor="let tab of tabs" style="border-color: #2399ed;">
+      <ng-template #nzTabHeading>
+        {{tab.name}}
+      </ng-template>
+      <div class="rela-case">
+        <p>地址：{{tab.content.address}}</p>
+        <p>想補科目：{{tab.content.wantCourse}}</p>
+        <p>性別：{{tab.content.sex}}</p>
+        <p>學校教授語言：{{tab.content.wantLang}}</p>
+      </div>
+    </nz-tab>
+  </nz-tabset>
+</div>

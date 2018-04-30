@@ -5,7 +5,17 @@ import { IndexComponent } from './index/index.component';
 import { IndexComponent as MainIndexComponent } from '../main/index/index.component';
 import { SettingComponent } from '../system/setting/setting.component';
 import { PageComponent } from '../system/page/page.component';
+import { ClientListComponent } from '../user-management/client-list/client-list.component';
+import { ClientDetailsComponent } from '../user-management/client-details/client-details.component';
+import { ClientDetailsBasicComponent } from '../user-management/client-details-basic/client-details-basic.component';
+import { ClientDetailsBillComponent } from '../user-management/client-details-bill/client-details-bill.component';
 
+/* index模塊路由
+*  /index/system/setting為“系統設置”路由
+*  /index/system/page為“頁面設置”路由
+*  /index/user/client為“客戶列表”路由
+*  /index/user/client/details為“客戶列表”中單獨一條數據跳轉的路由
+*/
 const routes: Routes = [{
     path: 'index',
     component: IndexComponent,
@@ -18,6 +28,12 @@ const routes: Routes = [{
     }, {
         path: 'system/page',
         component: PageComponent
+    }, {
+        path: 'user/client',
+        component: ClientListComponent
+    }, {
+        path: 'user/client/details',
+        component: ClientDetailsComponent
     }]
 }];
 

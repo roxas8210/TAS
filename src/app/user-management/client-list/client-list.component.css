@@ -1,0 +1,49 @@
+.client-list {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.client-list .list-func {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+.client-list .list-func .func-left {
+  width: 415px;
+  height: auto;
+  overflow: hidden;
+  float: left;
+  display: flex;
+  justify-content: space-between;
+}
+.client-list .list-func .func-right {
+  float: right;
+}
+.client-list .list-func .select {
+  width: 180px;
+  height: auto;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+}
+.client-list .list-func .select span {
+  font-size: 14px;
+  color: #232323;
+  line-height: 32px;
+}
+.client-list .list-func .select nz-select {
+  flex-grow: 1;
+  margin-top: 3px;
+}
+.client-list .list-container {
+  flex-grow: 1;
+  overflow: hidden;
+  margin-top: 20px;
+  box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.15);
+  box-sizing: border-box;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  background-color: white;
+}

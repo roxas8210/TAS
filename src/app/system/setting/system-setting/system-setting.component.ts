@@ -12,6 +12,7 @@ export class SystemSettingComponent implements OnInit {
 
   constructor(private fb: FormBuilder) { }
 
+  // 構建響應式表單
   ngOnInit() {
     this.settingForm = this.fb.group({
       emailAddress: ['', Validators.required],

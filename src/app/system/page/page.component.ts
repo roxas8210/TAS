@@ -11,11 +11,13 @@ export class PageComponent implements OnInit {
 
   pageForm: FormGroup;
 
+  // 頁面設置類型數據
   options = [{
     label: '家長列表',
     value: 1
   }];
 
+  // 頁面設置左側菜單數據
   menu = [{
     'id': 2,
     'title': '用戶管理',
@@ -83,10 +85,12 @@ export class PageComponent implements OnInit {
     });
    }
 
+   // 點擊左側菜單觸發設置函數
    goSetting(id) {
      console.log(id);
    }
 
+   // 展示子菜單函數
    showSubList(id) {
     //  console.log(`show submenu:${id}`);
     this.menu.map((element, index) => {

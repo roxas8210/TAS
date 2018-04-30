@@ -1,0 +1,228 @@
+<div class="client-basic">
+  <form nz-form [formGroup]="basicInfoForm">
+    <div class="left">
+      <div nz-form-item nz-row>
+        <div nz-form-label nz-col [nzSm]="6" [nzXs]="24">
+          <label for="clientNo" nz-form-item-required>
+            <span>客戶編號</span>
+          </label>
+        </div>
+        <div nz-form-control nz-col [nzSm]="14" [nzXs]="24">
+          <nz-input *ngIf="editStatus;else elseblock1" [nzSize]="'large'" formControlName="clientNo"></nz-input>
+          <ng-template #elseblock1>
+            <span>{{basicInfoForm.get('clientNo').value}}</span>
+          </ng-template>
+        </div>
+      </div>
+      <div nz-form-item nz-row>
+        <div nz-form-label nz-col [nzSm]="6" [nzXs]="24">
+          <label for="name" nz-form-item-required>
+            <span>姓名</span>
+          </label>
+        </div>
+        <div nz-form-control nz-col [nzSm]="14" [nzXs]="24">
+          <nz-input *ngIf="editStatus;else elseblock2" [nzSize]="'large'" formControlName="name"></nz-input>
+          <ng-template #elseblock2>
+            <span>{{basicInfoForm.get('name').value}}</span>
+          </ng-template>
+        </div>
+      </div>
+      <div nz-form-item nz-row>
+        <div nz-form-label nz-col [nzSm]="6" [nzXs]="24">
+          <label for="familyPhone" nz-form-item-required>
+            <span>
+              家庭電話
+            </span>
+          </label>
+        </div>
+        <div nz-form-control nz-col [nzSm]="14" [nzXs]="24">
+          <nz-input *ngIf="editStatus;else elseblock3" [nzSize]="'large'" formControlName="familyPhone"></nz-input>
+          <ng-template #elseblock3>
+            <span>{{basicInfoForm.get('familyPhone').value}}</span>
+          </ng-template>
+        </div>
+      </div>
+      <div nz-form-item nz-row>
+        <div nz-form-label nz-col [nzSm]="6" [nzXs]="24">
+          <label for="fax" nz-form-item-required>
+            <span>
+              傳真電話
+            </span>
+          </label>
+        </div>
+        <div nz-form-control nz-col [nzSm]="14" [nzXs]="24">
+          <nz-input *ngIf="editStatus;else elseblock4" [nzSize]="'large'" formControlName="fax"></nz-input>
+          <ng-template #elseblock4>
+            <span>{{basicInfoForm.get('fax').value}}</span>
+          </ng-template>
+        </div>
+      </div>
+      <div nz-form-item nz-row>
+        <div nz-form-label nz-col [nzSm]="6" [nzXs]="24">
+          <label for="livingArea" nz-form-item-required>
+            <span>
+              居住地區
+            </span>
+          </label>
+        </div>
+        <div nz-form-control nz-col [nzSm]="14" [nzXs]="24">
+          <nz-input *ngIf="editStatus;else elseblock5" [nzSize]="'large'" formControlName="livingArea"></nz-input>
+          <ng-template #elseblock5>
+            <span>{{basicInfoForm.get('livingArea').value}}</span>
+          </ng-template>
+        </div>
+      </div>
+      <div nz-form-item nz-row>
+        <div nz-form-label nz-col [nzSm]="6" [nzXs]="24">
+          <label for="address" nz-form-item-required>
+            <span>
+              詳細地址
+            </span>
+          </label>
+        </div>
+        <div nz-form-control nz-col [nzSm]="14" [nzXs]="24">
+          <nz-input *ngIf="editStatus;else elseblock6" [nzSize]="'large'" formControlName="address"></nz-input>
+          <ng-template #elseblock6>
+            <span>{{basicInfoForm.get('address').value}}</span>
+          </ng-template>
+        </div>
+      </div>
+      <div nz-form-item nz-row>
+        <div nz-form-label nz-col [nzSm]="6" [nzXs]="24">
+          <label for="bank" nz-form-item-required>
+            <span>
+              銀行名稱
+            </span>
+          </label>
+        </div>
+        <div nz-form-control nz-col [nzSm]="14" [nzXs]="24">
+          <nz-input *ngIf="editStatus;else elseblock7" [nzSize]="'large'" formControlName="bank"></nz-input>
+          <ng-template #elseblock7>
+            <span>{{basicInfoForm.get('bank').value}}</span>
+          </ng-template>
+        </div>
+      </div>
+      <div nz-form-item nz-row>
+        <div nz-form-label nz-col [nzSm]="6" [nzXs]="24">
+          <label for="bankAccount" nz-form-item-required>
+            <span>
+              銀行帳號
+            </span>
+          </label>
+        </div>
+        <div nz-form-control nz-col [nzSm]="14" [nzXs]="24">
+          <nz-input *ngIf="editStatus;else elseblock8" [nzSize]="'large'" formControlName="bankAccount"></nz-input>
+          <ng-template #elseblock8>
+            <span>{{basicInfoForm.get('bankAccount').value}}</span>
+          </ng-template>
+        </div>
+      </div>
+    </div>
+    <div class="right">
+      <div nz-form-item nz-row>
+        <div nz-form-label nz-col [nzSm]="6" [nzXs]="24">
+          <label for="email" nz-form-item-required>
+            <span>Email地址</span>
+          </label>
+        </div>
+        <div nz-form-control nz-col [nzSm]="14" [nzXs]="24">
+          <nz-input *ngIf="editStatus;else elseblock9" [nzSize]="'large'" formControlName="email"></nz-input>
+          <ng-template #elseblock9>
+            <span>{{basicInfoForm.get('email').value}}</span>
+          </ng-template>
+        </div>
+      </div>
+      <div nz-form-item nz-row>
+        <div nz-form-label nz-col [nzSm]="6" [nzXs]="24">
+          <label for="mobilePhone" nz-form-item-required>
+            <span>手提電話</span>
+          </label>
+        </div>
+        <div nz-form-control nz-col [nzSm]="14" [nzXs]="24">
+          <nz-input *ngIf="editStatus;else elseblock10" [nzSize]="'large'" formControlName="mobilePhone"></nz-input>
+          <ng-template #elseblock10>
+            <span>{{basicInfoForm.get('mobilePhone').value}}</span>
+          </ng-template>
+        </div>
+      </div>
+      <div nz-form-item nz-row>
+        <div nz-form-label nz-col [nzSm]="6" [nzXs]="24">
+          <label for="otherPhone" nz-form-item-required>
+            <span>其他電話</span>
+          </label>
+        </div>
+        <div nz-form-control nz-col [nzSm]="14" [nzXs]="24">
+          <nz-input *ngIf="editStatus;else elseblock11" [nzSize]="'large'" formControlName="otherPhone"></nz-input>
+          <ng-template #elseblock11>
+            <span>{{basicInfoForm.get('otherPhone').value}}</span>
+          </ng-template>
+        </div>
+      </div>
+      <div nz-form-item nz-row>
+        <div nz-form-label nz-col [nzSm]="6" [nzXs]="24">
+          <label for="contactTime" nz-form-item-required>
+            <span>可聯絡時間</span>
+          </label>
+        </div>
+        <div nz-form-control nz-col [nzSm]="14" [nzXs]="24">
+          <nz-input *ngIf="editStatus;else elseblock12" [nzSize]="'large'" formControlName="contactTime"></nz-input>
+          <ng-template #elseblock12>
+            <span>{{basicInfoForm.get('contactTime').value}}</span>
+          </ng-template>
+        </div>
+      </div>
+      <div nz-form-item nz-row>
+        <div nz-form-label nz-col [nzSm]="6" [nzXs]="24">
+          <label for="livingPoing" nz-form-item-required>
+            <span>居住地點</span>
+          </label>
+        </div>
+        <div nz-form-control nz-col [nzSm]="14" [nzXs]="24">
+          <nz-input *ngIf="editStatus;else elseblock13" [nzSize]="'large'" formControlName="livingPoing"></nz-input>
+          <ng-template #elseblock13>
+            <span>{{basicInfoForm.get('livingPoing').value}}</span>
+          </ng-template>
+        </div>
+      </div>
+      <div nz-form-item nz-row>
+        <div nz-form-label nz-col [nzSm]="6" [nzXs]="24">
+          <label for="mailAddress" nz-form-item-required>
+            <span>郵寄地址</span>
+          </label>
+        </div>
+        <div nz-form-control nz-col [nzSm]="14" [nzXs]="24">
+          <nz-input *ngIf="editStatus;else elseblock14" [nzSize]="'large'" formControlName="mailAddress"></nz-input>
+          <ng-template #elseblock14>
+            <span>{{basicInfoForm.get('mailAddress').value}}</span>
+          </ng-template>
+        </div>
+      </div>
+      <div nz-form-item nz-row>
+        <div nz-form-label nz-col [nzSm]="6" [nzXs]="24">
+          <label for="owner" nz-form-item-required>
+            <span>戶口持有人名稱</span>
+          </label>
+        </div>
+        <div nz-form-control nz-col [nzSm]="14" [nzXs]="24">
+          <nz-input *ngIf="editStatus;else elseblock15" [nzSize]="'large'" formControlName="owner"></nz-input>
+          <ng-template #elseblock15>
+            <span>{{basicInfoForm.get('owner').value}}</span>
+          </ng-template>
+        </div>
+      </div>
+    </div>
+    <div class="fns">
+      <button (click)="changeEditToFalse()" *ngIf="editStatus;else elseButton" type="button" [nzType]="'primary'" nz-button nzGhost style="border-radius: 17px;height: 34px;width: 96px;margin: 0 auto;display: block;">
+        <span>完成</span>
+      </button>
+      <ng-template #elseButton>
+        <button (click)="changeEditToTrue()" type="button" [nzType]="'primary'" nz-button nzGhost style="border-radius: 17px;height: 34px;width: 96px;display: block;">
+          <span>編輯客戶信息</span>
+        </button>
+      </ng-template>
+      <button type="button" [nzType]="'primary'" nz-button nzGhost style="border-radius: 17px;height: 34px;width: 96px;display: block;">
+        <span>加入黑名單</span>
+      </button>
+    </div>
+  </form>
+</div>

@@ -8,6 +8,7 @@ import { TitleService } from '../../service/title.service';
 })
 export class IndexComponent implements OnInit {
 
+  // 左側菜單欄數據
   menu = [{
     'title': '首頁',
     'icon': 'home',
@@ -17,9 +18,9 @@ export class IndexComponent implements OnInit {
     'icon': 'appstore',
     'url': '/',
     'subMenu': [{
-      'title': '家長列表',
+      'title': '客戶列表',
       'icon': 'calendar',
-      'url': '/'
+      'url': '/index/user/client'
     }, {
       'title': '導師列表',
       'icon': 'user',
@@ -66,14 +67,10 @@ export class IndexComponent implements OnInit {
 
   title = '首頁';
 
-  constructor(private titleService: TitleService) {
-    // this.titleService.setTitle('首頁1');
+  constructor() {
   }
 
   ngOnInit() {
-    this.titleService.getTitle().subscribe((val: string) => {
-      this.title = val;
-    });
   }
 
 }

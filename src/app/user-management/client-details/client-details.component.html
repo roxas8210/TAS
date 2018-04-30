@@ -1,0 +1,30 @@
+<div class="list-func">
+  <div class="func-right">
+    <div class="select">
+      <span>地區類別：</span>
+      <nz-select style="height: 32px;" [(ngModel)]="districtSelectedOption" [nzPlaceHolder]="'選擇地區'" nzAllowClear>
+        <nz-option *ngFor="let option of districtOptions" [nzLabel]="option.label" [nzValue]="option">
+        </nz-option>
+      </nz-select>
+    </div>
+  </div>
+</div>
+<div class="client-details">
+  <nz-tabset [(nzSelectedIndex)]="selectedIndex" (nzSelectChange)="changeTab([$event])">
+    <nz-tab *ngFor="let tab of tabs;index as i;">
+      <ng-template #nzTabHeading>
+        {{tab.name}}
+      </ng-template>
+      <div class="switch-container" [ngSwitch]="selectedIndex">
+        <app-client-details-basic *ngSwitchCase="0"></app-client-details-basic>
+        <app-client-details-bill *ngSwitchCase="1"></app-client-details-bill>
+        <app-client-details-rela *ngSwitchCase="2"></app-client-details-rela>
+      </div>
+    </nz-tab>
+  </nz-tabset>
+  <div class="client-tab-container">
+    <div class="info">
+
+    </div>
+  </div>
+</div>
