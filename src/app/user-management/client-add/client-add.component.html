@@ -1,0 +1,171 @@
+<div class="client-add">
+  <form nz-form [formGroup]="clientForm">
+    <div class="left">
+      <div nz-form-item nz-row>
+        <div nz-form-label nz-col [nzSm]="6" [nzXs]="24">
+          <label for="name" nz-form-item-required>
+            <span>姓名</span>
+          </label>
+        </div>
+        <div nz-form-control nz-col [nzSm]="14" [nzXs]="24">
+          <nz-input [nzSize]="'large'" formControlName="name"></nz-input>
+        </div>
+      </div>
+      <div nz-form-item nz-row>
+        <div nz-form-label nz-col [nzSm]="6" [nzXs]="24">
+          <label for="idCardNo" nz-form-item-required>
+            <span>身份證ID</span>
+          </label>
+        </div>
+        <div nz-form-control nz-col [nzSm]="14" [nzXs]="24">
+          <nz-input [nzSize]="'large'" formControlName="idCardNo"></nz-input>
+        </div>
+      </div>
+      <div nz-form-item nz-row>
+        <div nz-form-label nz-col [nzSm]="6" [nzXs]="24">
+          <label for="idCardName" nz-form-item-required>
+            <span>身份證中文姓名</span>
+          </label>
+        </div>
+        <div nz-form-control nz-col [nzSm]="14" [nzXs]="24">
+          <nz-input [nzSize]="'large'" formControlName="idCardName"></nz-input>
+        </div>
+      </div>
+      <div nz-form-item nz-row>
+        <div nz-form-label nz-col [nzSm]="6" [nzXs]="24">
+          <label for="familyPhone" nz-form-item-required>
+            <span>家庭電話</span>
+          </label>
+        </div>
+        <div nz-form-control nz-col [nzSm]="14" [nzXs]="24">
+          <nz-input [nzSize]="'large'" formControlName="familyPhone"></nz-input>
+        </div>
+      </div>
+      <div nz-form-item nz-row>
+        <div nz-form-label nz-col [nzSm]="6" [nzXs]="24">
+          <label for="fax" nz-form-item-required>
+            <span>傳真電話</span>
+          </label>
+        </div>
+        <div nz-form-control nz-col [nzSm]="14" [nzXs]="24">
+          <nz-input [nzSize]="'large'" formControlName="fax"></nz-input>
+        </div>
+      </div>
+      <div nz-form-item nz-row>
+        <div nz-form-label nz-col [nzSm]="6" [nzXs]="24">
+          <label for="livingArea" nz-form-item-required>
+            <span>居住地區</span>
+          </label>
+        </div>
+        <div nz-form-control nz-col [nzSm]="14" [nzXs]="24">
+          <nz-input [nzSize]="'large'" formControlName="livingArea"></nz-input>
+        </div>
+      </div>
+      <div nz-form-item nz-row>
+        <div nz-form-label nz-col [nzSm]="6" [nzXs]="24">
+          <label for="language" nz-form-item-required>
+            <span>主要語言</span>
+          </label>
+        </div>
+        <div nz-form-control nz-col [nzSm]="14" [nzXs]="24">
+          <nz-input [nzSize]="'large'" formControlName="language"></nz-input>
+        </div>
+      </div>
+      <div nz-form-item nz-row>
+        <div nz-form-label nz-col [nzSm]="6" [nzXs]="24">
+          <label for="belief" nz-form-item-required>
+            <span>宗教信仰</span>
+          </label>
+        </div>
+        <div nz-form-control nz-col [nzSm]="14" [nzXs]="24">
+          <nz-input [nzSize]="'large'" formControlName="belief"></nz-input>
+        </div>
+      </div>
+    </div>
+    <div class="right">
+      <div nz-form-item nz-row>
+        <div nz-form-label nz-col [nzSm]="6" [nzXs]="24">
+          <label for="email" nz-form-item-required>
+            <span>Email地址</span>
+          </label>
+        </div>
+        <div nz-form-control nz-col [nzSm]="14" [nzXs]="24">
+          <nz-input [nzSize]="'large'" formControlName="email"></nz-input>
+        </div>
+      </div>
+      <div nz-form-item nz-row>
+        <div nz-form-label nz-col [nzSm]="6" [nzXs]="24">
+          <label for="sex" nz-form-item-required>
+            <span>性別</span>
+          </label>
+        </div>
+        <div nz-form-control nz-col [nzSm]="14" [nzXs]="24">
+          <nz-select style="width: 120px;" formControlName="sex" [nzPlaceHolder]="'選擇性別'" nzAllowClear>
+            <nz-option *ngFor="let option of sexOptions" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
+            </nz-option>
+          </nz-select>
+        </div>
+      </div>
+      <div nz-form-item nz-row>
+        <div nz-form-label nz-col [nzSm]="6" [nzXs]="24">
+          <label for="idCardEnName" nz-form-item-required>
+            <span>身份證英文姓名</span>
+          </label>
+        </div>
+        <div nz-form-control nz-col [nzSm]="14" [nzXs]="24">
+          <nz-input [nzSize]="'large'" formControlName="idCardEnName"></nz-input>
+        </div>
+      </div>
+      <div nz-form-item nz-row>
+        <div nz-form-label nz-col [nzSm]="6" [nzXs]="24">
+          <label for="mobilePhone" nz-form-item-required>
+            <span>手提電話</span>
+          </label>
+        </div>
+        <div nz-form-control nz-col [nzSm]="14" [nzXs]="24">
+          <nz-input [nzSize]="'large'" formControlName="mobilePhone"></nz-input>
+        </div>
+      </div>
+      <div nz-form-item nz-row>
+        <div nz-form-label nz-col [nzSm]="6" [nzXs]="24">
+          <label for="otherPhone" nz-form-item-required>
+            <span>其他電話</span>
+          </label>
+        </div>
+        <div nz-form-control nz-col [nzSm]="14" [nzXs]="24">
+          <nz-input [nzSize]="'large'" formControlName="otherPhone"></nz-input>
+        </div>
+      </div>
+      <div nz-form-item nz-row>
+        <div nz-form-label nz-col [nzSm]="6" [nzXs]="24">
+          <label for="birth" nz-form-item-required>
+            <span>出生年月</span>
+          </label>
+        </div>
+        <div nz-form-control nz-col [nzSm]="14" [nzXs]="24">
+          <nz-datepicker [nzMode]="'month'" formControlName="birth" [nzPlaceHolder]="'選擇出生年月'"></nz-datepicker>
+        </div>
+      </div>
+      <div nz-form-item nz-row>
+        <div nz-form-label nz-col [nzSm]="6" [nzXs]="24">
+          <label for="mailAddress" nz-form-item-required>
+            <span>郵寄地址</span>
+          </label>
+        </div>
+        <div nz-form-control nz-col [nzSm]="14" [nzXs]="24">
+          <nz-input [nzSize]="'large'" formControlName="mailAddress"></nz-input>
+        </div>
+      </div>
+      <div nz-form-item nz-row>
+        <div nz-form-label nz-col [nzSm]="6" [nzXs]="24">
+          <label for="nationality" nz-form-item-required>
+            <span>國籍</span>
+          </label>
+        </div>
+        <div nz-form-control nz-col [nzSm]="14" [nzXs]="24">
+          <nz-input [nzSize]="'large'" formControlName="nationality"></nz-input>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

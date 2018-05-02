@@ -13,10 +13,6 @@ export class MemoComponent implements OnInit {
     memo: '祝大家開工大吉，日日爆單，團結一致，努力搵錢。',
     id: '1',
     userId: '2'
-  }, {
-      memo: '祝大家開工大吉，日日爆單，團結一致，努力搵錢。',
-      id: '1',
-      userId: '2'
   }];
 
   pageIndex = '1';

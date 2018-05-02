@@ -14,6 +14,7 @@ import { HoverMenuDirective } from './directive/hover-menu.directive';
 import { TabbarComponent } from './tabbar/tabbar.component';
 import { TabbarService } from '../service/tabbar.service';
 import { UserManagementModule } from '../user-management/user-management.module';
+import { TeacherModule } from '../teacher/teacher.module';
 
 @NgModule({
   imports: [
@@ -22,7 +23,8 @@ import { UserManagementModule } from '../user-management/user-management.module'
     MainModule,
     NgZorroAntdModule,
     SystemModule,
-    UserManagementModule
+    UserManagementModule,
+    TeacherModule
   ],
   declarations: [IndexComponent, MemoComponent, NoticeComponent, HoverMenuDirective, TabbarComponent],
   providers: [TabbarService]

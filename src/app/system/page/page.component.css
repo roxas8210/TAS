@@ -72,7 +72,7 @@
     box-sizing: border-box;
   }
 }
-@media screen and (max-width: 1440px) {
+@media screen and (max-width: 1440px) and (min-width: 1025px) {
   .page-setting {
     width: 900px;
     height: 705px;
@@ -143,6 +143,80 @@
     width: 600px;
     float: right;
     padding-top: 40px;
+    box-sizing: border-box;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .page-setting {
+    width: 770px;
+    height: 705px;
+    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.15);
+    background-color: white;
+    margin-left: 20px;
+    margin-top: 20px;
+  }
+  .page-setting .page-head {
+    width: 100%;
+    text-align: left;
+    padding: 0 34px;
+    box-sizing: border-box;
+    background-color: #2399ed;
+  }
+  .page-setting .page-head span {
+    color: white;
+    font-size: 16px;
+    line-height: 50px;
+  }
+  .page-setting .page-head .sub {
+    font-size: 14px;
+  }
+  .page-setting .page-body {
+    width: 100%;
+    height: 655px;
+  }
+  .page-setting .page-body .page-sidebar {
+    width: 200px;
+    float: left;
+    height: 100%;
+    border-right: 1px solid #e1e1e1;
+    padding-top: 20px;
+    box-sizing: border-box;
+  }
+  .page-setting .page-body .page-sidebar ul li {
+    font-size: 14px;
+  }
+  .page-setting .page-body .page-sidebar ul li span {
+    line-height: 30px;
+  }
+  .page-setting .page-body .page-sidebar ul li ul li {
+    padding-left: 68px;
+    box-sizing: border-box;
+  }
+  .page-setting .page-body .page-sidebar ul li ul li span {
+    line-height: 30px;
+  }
+  .page-setting .page-body .page-sidebar ul li:hover {
+    background-color: #2399ed;
+  }
+  .page-setting .page-body .page-sidebar ul li:hover span {
+    color: white;
+  }
+  .page-setting .page-body .page-sidebar ul li:hover i {
+    color: white;
+  }
+  .page-setting .page-body .page-sidebar ul li:hover ul {
+    background-color: white;
+  }
+  .page-setting .page-body .page-sidebar ul li:hover ul li span {
+    color: rgba(0, 0, 0, 0.7);
+  }
+  .page-setting .page-body .page-sidebar ul li:hover ul li:hover span {
+    color: white;
+  }
+  .page-setting .page-body .page-main {
+    width: 570px;
+    float: right;
+    padding-top: 20px;
     box-sizing: border-box;
   }
 }

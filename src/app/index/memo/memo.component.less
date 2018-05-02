@@ -1,12 +1,3 @@
-// p {
-//     height: 80px;
-//     overflow-y: scroll;
-//     margin-bottom: 10px;
-// }
-// p::-webkit-scrollbar {
-//     display: none;
-// }
-
 @shadow: 4px 0px 6px rgba(0,0,0,0.15);
 
 @media screen and (min-width: 1440px) {
@@ -70,7 +61,7 @@
     }
 }
 
-@media screen and (max-width: 1440px) {
+@media screen and (max-width: 1440px) and (min-width: 1025px) {
     .memo {
         width: 100%;
         height: 150px;
@@ -112,6 +103,60 @@
         }
         .memo-foot {
             width: 130px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-around;
+            background-color: #fafafa;
+            button {
+                border: none;
+                background-color: #fafafa;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .memo {
+        width: 100%;
+        height: 140px;
+        border: 1px solid #2399ed;
+        margin-top: 16px;
+        padding: 0 16px;
+        box-sizing: border-box;
+        box-shadow: @shadow;
+        background-color: #fafafa;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        .memo-title {
+            width: 100%;
+            text-align: left;
+            p {
+                font-size: 14px;
+            }
+        }
+        .memo-body {
+            width: 100%;
+            height: auto;
+            overflow: hidden;
+            max-height: 65px;
+            ul {
+                padding: 0;
+                margin: 0;
+                width: 100%;
+                height: auto;
+                max-height: 62px;
+                overflow: hidden;
+                overflow-y: scroll;
+                li {
+                    float: left;
+                    width: 100%;
+                    font-size: 12px;
+                }
+            }
+        }
+        .memo-foot {
+            width: 110px;
             margin: 0 auto;
             display: flex;
             justify-content: space-around;

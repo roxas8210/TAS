@@ -1,36 +1,21 @@
 import { Component, OnInit } from '@angular/core';
-import { TabbarService } from '../../service/tabbar.service';
-import { Router } from '@angular/router';
-import { NzModalService } from 'ng-zorro-antd';
-import { ClientAddComponent } from '../client-add/client-add.component';
-import { ClientSearchComponent } from '../client-search/client-search.component';
 import { district } from '../../option-data/district.data';
+import { TabbarService } from '../../service/tabbar.service';
 
 @Component({
-  selector: 'app-client-list',
-  templateUrl: './client-list.component.html',
-  styleUrls: ['./client-list.component.css']
+  selector: 'app-teacher-list',
+  templateUrl: './teacher-list.component.html',
+  styleUrls: ['./teacher-list.component.css']
 })
-export class ClientListComponent implements OnInit {
-
-  selectedOption;
-
-  options = [{
-    label: '所有案例',
-    value: '1'
-  }, {
-    label: '成功案例',
-    value: '2'
-  }, {
-    label: '失敗案例',
-    value: '3'
-  }];
+export class TeacherListComponent implements OnInit {
 
   districtSelectedOption;
 
   districtOptions = district;
 
-  clientList = [{
+  quickSearchValue;
+
+  teacherList = [{
     id: 1,
     no: '15432',
     name: '李先生',
@@ -208,59 +193,20 @@ export class ClientListComponent implements OnInit {
     caseStatus: '成功個案'
   }];
 
-  getDetails(id) {
-    console.log(id);
-    this.router.navigate(['/index/user/client/details', {id: id}]);
+  constructor(private tabbarService: TabbarService) { }
+
+  searchTeacher() {
   }
 
-  // 觸發新增客戶彈出層
-  addClient() {
-    const subscribe = this.modelService.open({
-      title: '新增客戶信息',
-      content: ClientAddComponent,
-      width: 1200,
-      onOk() {
-        console.log('提交新增用戶');
-      },
-      onCancel() {
-        console.log('取消新增用戶');
-      }
-    });
-    subscribe.subscribe(result => {
-      console.log(result);
-    });
+  quickSearch(e) {
+    console.log('開始快速搜索', e);
   }
-
-  // 觸發搜索客戶彈出層
-  searchClient() {
-    const subscribe = this.modelService.open({
-      title: '搜索客戶信息',
-      content: ClientSearchComponent,
-      width: 1200,
-      okText: '搜索',
-      onOk() {
-        console.log('提交搜索用戶');
-      },
-      onCancel() {
-        console.log('取消搜索用戶');
-      }
-    });
-    subscribe.subscribe(result => {
-      console.log(result);
-    });
-  }
-
-  constructor(
-    private router: Router,
-    private tabbarService: TabbarService,
-    private modelService: NzModalService
-  ) { }
 
   ngOnInit() {
     const page = {
-      'id': 21,
-      'title': '客戶列表',
-      'url': '/index/user/client',
+      'id': 22,
+      'title': '導師列表',
+      'url': '/index/user/teacher',
       'activeStatus': true
     };
     this.tabbarService.setTabbar(page);

@@ -24,7 +24,7 @@ export class IndexComponent implements OnInit {
     }, {
       'title': '導師列表',
       'icon': 'user',
-      'url': '/'
+      'url': '/index/user/teacher'
     }, {
       'title': '導師審核',
       'icon': 'safety',

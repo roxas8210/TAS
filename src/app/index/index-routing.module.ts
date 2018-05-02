@@ -9,12 +9,15 @@ import { ClientListComponent } from '../user-management/client-list/client-list.
 import { ClientDetailsComponent } from '../user-management/client-details/client-details.component';
 import { ClientDetailsBasicComponent } from '../user-management/client-details-basic/client-details-basic.component';
 import { ClientDetailsBillComponent } from '../user-management/client-details-bill/client-details-bill.component';
+import { TeacherListComponent } from '../teacher/teacher-list/teacher-list.component';
 
 /* index模塊路由
 *  /index/system/setting為“系統設置”路由
 *  /index/system/page為“頁面設置”路由
 *  /index/user/client為“客戶列表”路由
 *  /index/user/client/details為“客戶列表”中單獨一條數據跳轉的路由
+*
+*  /index/user/teacher為“導師列表”路由
 */
 const routes: Routes = [{
     path: 'index',
@@ -34,6 +37,9 @@ const routes: Routes = [{
     }, {
         path: 'user/client/details',
         component: ClientDetailsComponent
+    }, {
+        path: 'user/teacher',
+        component: TeacherListComponent
     }]
 }];
 

@@ -47,9 +47,12 @@ export class ClientDetailsBillComponent implements OnInit {
     remark: ''
   }];
 
+  balance;
+
   constructor() { }
 
   ngOnInit() {
+    this.balance = this.billList[0].balance;
   }
 
 }

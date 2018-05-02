@@ -1,22 +1,12 @@
-<div class="client-list">
+<div class="teacher-list">
   <div class="list-func">
     <div class="func-left">
-      <button type="button" (click)="addClient()" [nzType]="'primary'" nz-button nzGhost
-      style="width: 98px;height: 32px;border-radius: 16px;font-size: 14px;margin-right: 20px;">
-        新增
-        <i class="anticon anticon-user-add" style="font-size: 14px;"></i>
-      </button>
-      <button (click)="searchClient()" [nzType]="'primary'" nz-button nzGhost 
-      style="width: 98px;height: 32px;border-radius: 16px;font-size: 14px;margin-right: 20px;">
+      <button (click)="searchTeacher()" [nzType]="'primary'" nz-button nzGhost style="width: 98px;height: 32px;border-radius: 16px;font-size: 14px;margin-right: 20px;">
         搜索
         <i class="anticon anticon-search" style="font-size: 14px;"></i>
       </button>
-      <div class="select">
-        <span>個案類別：</span>
-        <nz-select style="height: 32px;" [(ngModel)]="selectedOption" [nzPlaceHolder]="'選擇類別'" nzAllowClear>
-          <nz-option *ngFor="let option of options" [nzLabel]="option.label" [nzValue]="option">
-          </nz-option>
-        </nz-select>
+      <div class="quick-search">
+        <nz-input [nzType]="'search'" [nzPlaceHolder]="'input search text'" [(ngModel)]="quickSearchValue" style="width: 200px;" (nzOnSearch)="quickSearch($event)"></nz-input>
       </div>
     </div>
     <div class="func-right">
@@ -30,11 +20,11 @@
     </div>
   </div>
   <div class="list-container">
-    <nz-table #nzTable [nzDataSource]="clientList" [nzPageSize]="15" style="max-width: 900px;max-height: 600px;">
+    <nz-table #nzTable [nzDataSource]="teacherList" [nzPageSize]="15" style="max-width: 900px;max-height: 600px;">
       <thead nz-thead>
         <tr>
           <th nz-th style="text-align: center;background-color: white;border-bottom: 1px solid rgba(0, 0, 0, 0.15);" [nzWidth]="'60px'">
-            <span>家長編號</span>
+            <span>導師編號</span>
           </th>
           <th nz-th style="text-align: center;background-color: white;border-bottom: 1px solid rgba(0, 0, 0, 0.15);" [nzWidth]="'40px'">
             <span>姓名</span>
@@ -55,10 +45,10 @@
             <span>居住地區</span>
           </th>
           <th nz-th style="text-align: center;background-color: white;border-bottom: 1px solid rgba(0, 0, 0, 0.15);" [nzWidth]="'60px'">
-            <span>最後個案</span>
+            <span>現有個案</span>
           </th>
           <th nz-th style="text-align: center;background-color: white;border-bottom: 1px solid rgba(0, 0, 0, 0.15);" [nzWidth]="'60px'">
-            <span>個案狀態</span>
+            <span>導師狀態</span>
           </th>
         </tr>
       </thead>

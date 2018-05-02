@@ -169,7 +169,7 @@
     font-size: 14px;
   }
 }
-@media screen and (max-width: 1440px) {
+@media screen and (max-width: 1440px) and (min-width: 1025px) {
   .home {
     width: 100%;
     height: 100%;
@@ -243,6 +243,183 @@
     margin-left: 20px;
   }
   .home .rank-message .message {
+    width: 446px;
+    height: auto;
+    overflow: hidden;
+    float: right;
+    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.15);
+  }
+  .home .rank-message .message .message-title {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    padding: 0 22px;
+    box-sizing: border-box;
+    background-color: #2399ed;
+  }
+  .home .rank-message .message .message-title p {
+    font-size: 18px;
+    color: white;
+    line-height: 52px;
+  }
+  .home .rank-message .message .message-body {
+    width: 100%;
+    height: 280px;
+    padding: 16px 16px;
+    box-sizing: border-box;
+    background-color: white;
+  }
+  .home .rank-message .message .message-body .message-container {
+    width: 100%;
+    height: 100%;
+    border: 1px solid #2399ed;
+    border-radius: 6px;
+    overflow: auto;
+    padding-bottom: 18px;
+  }
+  .home .rank-message .message .message-body .message-container .message-list {
+    width: 386px;
+    height: auto;
+    border: 1px solid #cccccc;
+    box-shadow: 2px 0px 2px rgba(0, 0, 0, 0.15);
+    margin: 0 auto;
+    margin-top: 18px;
+    padding: 0 18px;
+    box-sizing: border-box;
+  }
+  .home .rank-message .message .message-body .message-container .message-list .name {
+    font-size: 12px;
+    color: #646464;
+    line-height: 30px;
+  }
+  .home .rank-message .message .message-body .message-container .message-list .details {
+    color: #323232;
+    font-size: 14px;
+  }
+  .home .rank-message .message .message-body .message-container .message-list .date {
+    text-align: right;
+    line-height: 30px;
+  }
+  .home .rank-message .message .message-body .message-container::-webkit-scrollbar {
+    display: none;
+  }
+  .home .rank-message .message .message-foot {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    padding: 0 16px;
+    box-sizing: border-box;
+    background-color: white;
+    padding-bottom: 18px;
+  }
+  .home .rank-message .message .message-foot .message-input {
+    width: 100%;
+    height: 82px;
+    border: 1px solid #2399ed;
+    border-radius: 6px;
+  }
+  .home .rank-message .message .message-foot .message-input textarea {
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+  .home .rank-message .message .message-foot .message-enter {
+    width: 174px;
+    height: auto;
+    overflow: hidden;
+    float: left;
+    margin-top: 20px;
+  }
+  .home .rank-message .message .message-foot .message-enter button {
+    width: 100%;
+    border: none;
+    background-color: #2399ed;
+    text-align: center;
+    color: white;
+    line-height: 42px;
+    border-radius: 6px;
+    font-size: 14px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .home {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+  }
+  .home .aims {
+    width: 780px;
+    height: auto;
+    margin: 20px 0;
+    float: left;
+    margin-left: 10px;
+  }
+  .home .aims ul {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-around;
+  }
+  .home .aims ul li {
+    width: 190px;
+    height: auto;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
+    background-color: white;
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+  }
+  .home .aims ul li .aims-content {
+    width: 100px;
+    height: auto;
+  }
+  .home .aims ul li .aims-content p {
+    font-size: 14px;
+    color: #646464;
+  }
+  .home .aims ul li .aims-content span {
+    font-size: 22px;
+    color: #2399ed;
+  }
+  .home .aims ul li .aims-icon {
+    width: 55px;
+    height: 55px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .home .aims ul li .aims-icon i {
+    font-size: 28px;
+    color: white;
+    line-height: 55px;
+  }
+  .home .rank-message {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    margin: 0 auto;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    box-sizing: border-box;
+  }
+  .home .rank-message .rank {
+    width: 600px;
+    height: auto;
+    overflow: hidden;
+    background-color: white;
+    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.15);
+    margin: 0 auto;
+  }
+  .home .rank-message .rank span {
+    font-size: 12px !important;
+  }
+  .home .rank-message .rank td {
+    font-size: 12px !important;
+  }
+  .home .rank-message .message {
+    display: none;
     width: 446px;
     height: auto;
     overflow: hidden;

@@ -1,16 +1,16 @@
 @media screen and (min-width: 1025px) {
-  .client-list {
+  .teacher-list {
     width: 100%;
     height: auto;
     display: flex;
     flex-direction: column;
   }
-  .client-list .list-func {
+  .teacher-list .list-func {
     width: 100%;
     height: auto;
     overflow: hidden;
   }
-  .client-list .list-func .func-left {
+  .teacher-list .list-func .func-left {
     width: 415px;
     height: auto;
     overflow: hidden;
@@ -18,26 +18,26 @@
     display: flex;
     justify-content: space-between;
   }
-  .client-list .list-func .func-right {
+  .teacher-list .list-func .func-right {
     float: right;
   }
-  .client-list .list-func .select {
+  .teacher-list .list-func .select {
     width: 180px;
     height: auto;
     overflow: hidden;
     display: flex;
     justify-content: space-between;
   }
-  .client-list .list-func .select span {
+  .teacher-list .list-func .select span {
     font-size: 14px;
     color: #232323;
     line-height: 32px;
   }
-  .client-list .list-func .select nz-select {
+  .teacher-list .list-func .select nz-select {
     flex-grow: 1;
     margin-top: 3px;
   }
-  .client-list .list-container {
+  .teacher-list .list-container {
     flex-grow: 1;
     overflow: hidden;
     margin-top: 20px;
@@ -48,19 +48,19 @@
   }
 }
 @media screen and (max-width: 1024px) {
-  .client-list {
+  .teacher-list {
     width: 100%;
     height: auto;
     display: flex;
     flex-direction: column;
   }
-  .client-list .list-func {
+  .teacher-list .list-func {
     width: 100%;
     height: auto;
     overflow: hidden;
     margin-top: 5px;
   }
-  .client-list .list-func .func-left {
+  .teacher-list .list-func .func-left {
     width: 415px;
     height: auto;
     overflow: hidden;
@@ -68,29 +68,29 @@
     display: flex;
     justify-content: space-between;
   }
-  .client-list .list-func .func-left button {
+  .teacher-list .list-func .func-left button {
     font-size: 14px !important;
     line-height: 28px !important;
   }
-  .client-list .list-func .func-right {
+  .teacher-list .list-func .func-right {
     float: right;
   }
-  .client-list .list-func .select {
+  .teacher-list .list-func .select {
     width: 180px;
     height: auto;
     overflow: hidden;
     display: flex;
     justify-content: space-between;
   }
-  .client-list .list-func .select span {
+  .teacher-list .list-func .select span {
     font-size: 14px;
     color: #232323;
     line-height: 28px;
   }
-  .client-list .list-func .select nz-select {
+  .teacher-list .list-func .select nz-select {
     flex-grow: 1;
   }
-  .client-list .list-container {
+  .teacher-list .list-container {
     flex-grow: 1;
     overflow: hidden;
     margin-top: 20px;
