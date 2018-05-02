@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { ClientIdService } from '../../service/client-id.service';
+import { TabbarService } from '../../service/tabbar.service';
 
 @Component({
   selector: 'app-client-details',
@@ -42,20 +43,42 @@ export class ClientDetailsComponent implements OnInit {
     value: '2'
   }];
 
+  editStatus = false;
+
   // 改變標籤頁
   changeTab($event) {
     console.log('當前選擇tab', this.selectedIndex);
   }
 
+  changeEditStatus() {
+    if (this.selectedIndex !== 0) {
+      this.selectedIndex = 0;
+    }
+    if (this.editStatus) {
+      this.editStatus = false;
+    } else {
+      this.editStatus = true;
+    }
+  }
+
   constructor(
     private routerInfo: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private tabbarService: TabbarService
   ) { }
 
   ngOnInit() {
     const id = this.routerInfo.params.subscribe((parmas: Params) => {
       this.id = parmas.id;
       console.log('獲取的id', parmas.id);
+      // const page = {
+      //   'id': 211,
+      //   'title': '客户详情',
+      //   'url': `/index/user/client/details/${this.id}`,
+      //   'activeStatus': true
+      // };
+      // this.tabbarService.setTabbar(page);
+      this.districtSelectedOption = this.districtOptions[0];
     });
   }
 

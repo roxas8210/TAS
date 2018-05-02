@@ -13,18 +13,22 @@
   <nz-tabset [(nzSelectedIndex)]="selectedIndex" (nzSelectChange)="changeTab([$event])">
     <nz-tab *ngFor="let tab of tabs;index as i;">
       <ng-template #nzTabHeading>
-        {{tab.name}}
+        <span style="line-height: 50px;">{{tab.name}}</span>
       </ng-template>
       <div class="switch-container" [ngSwitch]="selectedIndex">
-        <app-client-details-basic *ngSwitchCase="0"></app-client-details-basic>
+        <app-client-details-basic *ngSwitchCase="0" [editStatus]="editStatus"></app-client-details-basic>
         <app-client-details-bill *ngSwitchCase="1"></app-client-details-bill>
         <app-client-details-rela *ngSwitchCase="2"></app-client-details-rela>
       </div>
     </nz-tab>
   </nz-tabset>
-  <div class="client-tab-container">
-    <div class="info">
-
-    </div>
+  <div class="fns">
+    <button (click)="changeEditStatus()" type="button" [nzType]="'primary'" nz-button nzGhost
+           style="border-radius: 17px;height: 34px;width: 110px;display: block;">
+      <span>{{editStatus?'完成':'編輯客戶信息'}}</span>
+    </button>
+    <button type="button" [nzType]="'primary'" nz-button nzGhost style="border-radius: 17px;height: 34px;width: 110px;display: block;">
+      <span>加入黑名單</span>
+    </button>
   </div>
 </div>

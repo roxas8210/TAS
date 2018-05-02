@@ -1,31 +1,22 @@
-import { Component, OnInit, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  Input
+} from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-client-details-basic',
   templateUrl: './client-details-basic.component.html',
-  styleUrls: ['./client-details-basic.component.css'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  styleUrls: ['./client-details-basic.component.css']
 })
 export class ClientDetailsBasicComponent implements OnInit {
 
   basicInfoForm: FormGroup;
 
-  editStatus = false;
+  @Input() editStatus = false;
 
-  changeEditToTrue() {
-    this.editStatus = true;
-    console.log('change status', this.editStatus);
-    this.change.markForCheck();
-  }
-
-  changeEditToFalse() {
-    this.editStatus = false;
-    console.log('change status', this.editStatus);
-    this.change.markForCheck();
-  }
-
-  constructor(private fb: FormBuilder, private change: ChangeDetectorRef) { }
+  constructor(private fb: FormBuilder) { }
 
   ngOnInit() {
     this.basicInfoForm = this.fb.group({

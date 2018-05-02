@@ -25,8 +25,30 @@
 }
 .client-details {
     width: 100%;
-    height: auto;
+    // height: auto;
+    height: 630px;
     overflow: hidden;
     box-shadow: 4px 4px 6px rgba(0,0,0,0.15);
     background-color: white;
+    // min-height: 630px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+     .fns {
+        // width: 848px;
+        // height: auto;
+        // overflow: hidden;
+        clear: both;
+        padding-bottom: 40px;
+        display: flex;
+        width: 100%;
+        justify-content: flex-start;
+        button {
+            // float: left;
+            margin-left: 40px;
+        }
+        button:last-child {
+            // margin-left: 40px !important;
+        }
+    }
 }

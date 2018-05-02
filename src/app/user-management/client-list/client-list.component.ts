@@ -225,6 +225,7 @@ export class ClientListComponent implements OnInit {
       'activeStatus': true
     };
     this.tabbarService.setTabbar(page);
+    this.districtSelectedOption = this.districtOptions[0];
   }
 
 }
