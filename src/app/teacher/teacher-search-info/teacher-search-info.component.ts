@@ -10,6 +10,11 @@ export class TeacherSearchInfoComponent implements OnInit {
 
   fg: FormGroup;
 
+  levelOptions = [{
+    label: '1',
+    value: '1'
+  }];
+
   constructor(private fb: FormBuilder) { }
 
   ngOnInit() {

@@ -9,6 +9,10 @@ export class TeacherSearchMusicComponent implements OnInit {
 
   levelSelect;
 
+  piano;
+
+  pipa;
+
   levelOptions = [{
     label: '1',
     value: '1'

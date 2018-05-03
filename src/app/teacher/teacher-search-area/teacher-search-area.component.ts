@@ -14,6 +14,10 @@ export class TeacherSearchAreaComponent implements OnInit {
 
   constructor() { }
 
+  postArea(areas) {
+    console.log(areas);
+  }
+
   ngOnInit() {
   }
 
