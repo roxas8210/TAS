@@ -1,0 +1,16 @@
+<div class="education">
+  <nz-tabset [(nzSelectedIndex)]="selectedIndex" [nzTabPosition]="'top'" [nzType]="'card'">
+    <nz-tab *ngFor="let tab of tabs">
+      <ng-template #nzTabHeading>
+        <span>{{tab.name}}</span>
+      </ng-template>
+      <div class="switch-container" [ngSwitch]="selectedIndex">
+        <!-- <app-teacher-search-basic *ngSwitchCase="0"></app-teacher-search-basic>
+        <app-teacher-search-subject *ngSwitchCase="1"></app-teacher-search-subject>
+        <app-teacher-search-area *ngSwitchCase="2"></app-teacher-search-area>
+        <app-teacher-search-education *ngSwitchCase="3"></app-teacher-search-education> -->
+        <app-education-middle *ngSwitchCase="0"></app-education-middle>
+      </div>
+    </nz-tab>
+  </nz-tabset>
+</div>

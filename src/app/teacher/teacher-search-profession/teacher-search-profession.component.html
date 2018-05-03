@@ -1,0 +1,63 @@
+<form nz-form [formGroup]="fg">
+  <nz-table #nzTable nzBordered [nzCustomNoResult]="true">
+    <tbody nz-tbody>
+      <tr nz-tbody-tr>
+        <td nz-td class="item">
+          <span>現時職業</span>
+          <nz-select style="width: 220px;" formControlName="sex" [nzPlaceHolder]="'choose option'" nzAllowClear>
+            <nz-option *ngFor="let option of levelOptions" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
+            </nz-option>
+          </nz-select>
+        </td>
+        <td nz-td class="item">
+          <span>工作經驗</span>
+          <nz-select style="width: 220px;" formControlName="highestEdu" [nzPlaceHolder]="'choose option'" nzAllowClear>
+            <nz-option *ngFor="let option of levelOptions" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
+            </nz-option>
+          </nz-select>
+        </td>
+      </tr>
+      <tr nz-tbody-tr>
+        <td nz-td class="item">
+          <span>過去工作資料（1）</span>
+          <nz-select style="width: 220px;" formControlName="highestGrade" [nzPlaceHolder]="'choose option'" nzAllowClear>
+            <nz-option *ngFor="let option of levelOptions" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
+            </nz-option>
+          </nz-select>
+        </td>
+        <td nz-td class="item">
+          <span>過去工作資料（2）</span>
+          <nz-select style="width: 220px;" formControlName="livingArea" [nzPlaceHolder]="'choose option'" nzAllowClear>
+            <nz-option *ngFor="let option of levelOptions" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
+            </nz-option>
+          </nz-select>
+        </td>
+      </tr>
+      <tr nz-tbody-tr>
+        <td nz-td class="item">
+          <span>補習經驗及年資</span>
+          <nz-select style="width: 220px;" formControlName="status" [nzPlaceHolder]="'choose option'" nzAllowClear>
+            <nz-option *ngFor="let option of levelOptions" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
+            </nz-option>
+          </nz-select>
+        </td>
+        <td nz-td class="item">
+          <span>最高可補年級</span>
+          <nz-select style="width: 220px;" formControlName="passed" [nzPlaceHolder]="'choose option'" nzAllowClear>
+            <nz-option *ngFor="let option of levelOptions" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
+            </nz-option>
+          </nz-select>
+        </td>
+      </tr>
+      <tr nz-tbody-tr>
+        <td nz-td class="item">
+          <span>教育機構經驗</span>
+          <nz-select style="width: 220px;" formControlName="status" [nzPlaceHolder]="'choose option'" nzAllowClear>
+            <nz-option *ngFor="let option of levelOptions" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
+            </nz-option>
+          </nz-select>
+        </td>
+      </tr>
+    </tbody>
+  </nz-table>
+</form>

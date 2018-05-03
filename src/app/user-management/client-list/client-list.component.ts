@@ -218,7 +218,7 @@ export class ClientListComponent implements OnInit {
     const subscribe = this.modelService.open({
       title: '新增客戶信息',
       content: ClientAddComponent,
-      width: 1200,
+      width: 1000,
       onOk() {
         console.log('提交新增用戶');
       },
@@ -236,7 +236,7 @@ export class ClientListComponent implements OnInit {
     const subscribe = this.modelService.open({
       title: '搜索客戶信息',
       content: ClientSearchComponent,
-      width: 1200,
+      width: 1000,
       okText: '搜索',
       onOk() {
         console.log('提交搜索用戶');

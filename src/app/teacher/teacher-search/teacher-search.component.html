@@ -1,0 +1,25 @@
+<div class="teacher-search">
+  <div class="teacher-search-submit">
+    <app-teacher-search-presearch></app-teacher-search-presearch>
+  </div>
+  <div class="teacher-search-select">
+    <nz-tabset [nzSize]="'small'" [(nzSelectedIndex)]="selectedIndex">
+      <nz-tab *ngFor="let tab of tabs">
+        <ng-template #nzTabHeading>
+          <span style="line-height: 50px;">{{tab.name}}</span>
+        </ng-template>
+        <div class="switch-container" [ngSwitch]="selectedIndex">
+          <app-teacher-search-basic *ngSwitchCase="0" ></app-teacher-search-basic>
+          <app-teacher-search-subject *ngSwitchCase="1"></app-teacher-search-subject>
+          <app-teacher-search-area *ngSwitchCase="2"></app-teacher-search-area>
+          <app-teacher-search-education *ngSwitchCase="3"></app-teacher-search-education>
+          <app-teacher-search-music *ngSwitchCase="4"></app-teacher-search-music>
+          <app-teacher-search-info *ngSwitchCase="5"></app-teacher-search-info>
+          <app-teacher-search-profession *ngSwitchCase="6"></app-teacher-search-profession>
+          <app-teacher-search-other *ngSwitchCase="7"></app-teacher-search-other>
+          <app-teacher-search-time *ngSwitchCase="8"></app-teacher-search-time>
+        </div>
+      </nz-tab>
+    </nz-tabset>
+  </div>
+</div>

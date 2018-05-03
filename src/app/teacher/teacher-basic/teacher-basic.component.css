@@ -1,0 +1,21 @@
+.client-basic {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  padding-bottom: 100px;
+}
+.client-basic form {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  display: flex;
+}
+.client-basic form .left {
+  flex-grow: 1;
+}
+.client-basic form .right {
+  flex-grow: 1;
+}
+.client-basic form span {
+  font-size: 14px;
+}

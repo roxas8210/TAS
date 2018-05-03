@@ -14,6 +14,22 @@ export class ClientDetailsBasicComponent implements OnInit {
 
   basicInfoForm: FormGroup;
 
+  // 发送短信数量和更换手机记录
+  msgPhone = {
+    sms: 12,
+    smslocal: 6,
+    phone: [{
+      date: '2018-1-3',
+      history: '13345856498'
+    }, {
+      date: '2018-1-6',
+      history: '13345856488'
+    }, {
+      date: '2018-1-7',
+      history: '13345856499'
+    }]
+  };
+
   @Input() editStatus = false;
 
   constructor(private fb: FormBuilder) { }

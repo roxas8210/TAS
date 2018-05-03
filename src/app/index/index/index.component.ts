@@ -28,7 +28,7 @@ export class IndexComponent implements OnInit {
     }, {
       'title': '導師審核',
       'icon': 'safety',
-      'url': '/'
+      'url': '/index/user/teacher/review'
     }, {
       'title': '黑名單',
       'icon': 'dislike',

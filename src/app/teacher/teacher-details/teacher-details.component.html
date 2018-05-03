@@ -1,0 +1,39 @@
+<!-- <div class="list-func">
+  <div class="func-right">
+    <div class="select">
+      <span>地區類別：</span>
+      <nz-select style="height: 32px;" [(ngModel)]="districtSelectedOption" [nzPlaceHolder]="'選擇地區'" nzAllowClear>
+        <nz-option *ngFor="let option of districtOptions" [nzLabel]="option.label" [nzValue]="option">
+        </nz-option>
+      </nz-select>
+    </div>
+  </div>
+</div> -->
+<div class="client-details">
+  <nz-tabset [(nzSelectedIndex)]="selectedIndex" (nzSelectChange)="changeTab([$event])">
+    <nz-tab *ngFor="let tab of tabs;index as i;">
+      <ng-template #nzTabHeading>
+        <span style="line-height: 50px;">{{tab.name}}</span>
+      </ng-template>
+      <div class="switch-container" [ngSwitch]="selectedIndex">
+        <app-teacher-basic *ngSwitchCase="0" [editStatus]="editStatus"></app-teacher-basic>
+        <app-teacher-bill *ngSwitchCase="1"></app-teacher-bill>
+        <app-teacher-rela *ngSwitchCase="2"></app-teacher-rela>
+      </div>
+    </nz-tab>
+  </nz-tabset>
+  <div class="fns">
+    <button (click)="changeEditStatus()" type="button" [nzType]="'primary'" nz-button nzGhost style="border-radius: 17px;height: 34px;width: 110px;display: block;">
+      <span>{{editStatus?'完成':'編輯導師信息'}}</span>
+    </button>
+    <button type="button" [nzType]="'primary'" nz-button nzGhost style="border-radius: 17px;height: 34px;width: 110px;display: block;">
+      <span>審核該導師</span>
+    </button>
+    <button type="button" [nzType]="'primary'" nz-button nzGhost style="border-radius: 17px;height: 34px;width: 110px;display: block;">
+      <span>加入凍結名單</span>
+    </button>
+    <button type="button" [nzType]="'primary'" nz-button nzGhost style="border-radius: 17px;height: 34px;width: 110px;display: block;">
+      <span>加入黑名單</span>
+    </button>
+  </div>
+</div>

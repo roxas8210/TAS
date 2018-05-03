@@ -14,3 +14,9 @@ html, body {
     background-color: white !important;
     box-sizing: border-box !important;
 }
+
+.ant-checkbox-wrapper {
+    width: 25%;
+    height: 36px;
+    margin-left: 0 !important;
+}

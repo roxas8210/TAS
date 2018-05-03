@@ -10,6 +10,8 @@ import { ClientDetailsComponent } from '../user-management/client-details/client
 import { ClientDetailsBasicComponent } from '../user-management/client-details-basic/client-details-basic.component';
 import { ClientDetailsBillComponent } from '../user-management/client-details-bill/client-details-bill.component';
 import { TeacherListComponent } from '../teacher/teacher-list/teacher-list.component';
+import { TeacherReviewComponent } from '../teacher/teacher-review/teacher-review.component';
+import { TeacherDetailsComponent } from '../teacher/teacher-details/teacher-details.component';
 
 /* index模塊路由
 *  /index/system/setting為“系統設置”路由
@@ -18,6 +20,8 @@ import { TeacherListComponent } from '../teacher/teacher-list/teacher-list.compo
 *  /index/user/client/details為“客戶列表”中單獨一條數據跳轉的路由
 *
 *  /index/user/teacher為“導師列表”路由
+*  /index/user/teacher/review為“導師審核”路由
+*  /index/user/teacher/details為“導師列表”中單獨一條數據跳轉的路由
 */
 const routes: Routes = [{
     path: 'index',
@@ -40,6 +44,12 @@ const routes: Routes = [{
     }, {
         path: 'user/teacher',
         component: TeacherListComponent
+    }, {
+        path: 'user/teacher/review',
+        component: TeacherReviewComponent
+    }, {
+        path: 'user/teacher/details',
+        component: TeacherDetailsComponent
     }]
 }];
 

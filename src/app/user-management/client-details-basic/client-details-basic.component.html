@@ -141,7 +141,31 @@
         <div nz-form-control nz-col [nzSm]="14" [nzXs]="24">
           <nz-input *ngIf="editStatus;else elseblock10" [nzSize]="'large'" formControlName="mobilePhone"></nz-input>
           <ng-template #elseblock10>
-            <span>{{basicInfoForm.get('mobilePhone').value}}</span>
+            <nz-tooltip [nzPlacement]="'right'">
+              <span nz-tooltip>{{basicInfoForm.get('mobilePhone').value}}</span>
+              <ng-template #nzTemplate>
+                <div class="messages-amount">
+                  <p>
+                    <i class="anticon anticon-message"></i>
+                    <span>本月發送SMS數量：{{msgPhone.smslocal}}</span>
+                  </p>
+                  <p>
+                    <i class="anticon anticon-message"></i>
+                    <span>發送SMS總數量：{{msgPhone.sms}}</span>
+                  </p>
+                </div>
+                <div class="phone-change-history">
+                  <p>
+                    <i class="anticon anticon-phone"></i>
+                    <span>更換手機記錄：</span>
+                  </p>
+                  <p *ngFor="let history of msgPhone.phone">
+                    {{history.date}}更換號碼為<a>{{history.history}}</a>
+                  </p>
+                </div>
+              </ng-template>
+            </nz-tooltip>
+            
           </ng-template>
         </div>
       </div>

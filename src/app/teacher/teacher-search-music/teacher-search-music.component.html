@@ -1,0 +1,29 @@
+<div style="width: 260px;">
+  <label nz-checkbox [(ngModel)]="piano">
+    <span>钢琴</span>
+  </label>
+  <nz-select style="width: 120px;" [(ngModel)]="levelSelect" [nzPlaceHolder]="'choose option'" nzAllowClear>
+    <nz-option *ngFor="let option of levelOptions" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
+    </nz-option>
+  </nz-select>
+</div>
+
+<div style="width: 260px;">
+  <label nz-checkbox [(ngModel)]="pipa">
+    <span>琵琶</span>
+  </label>
+  <nz-select style="width: 120px;" [(ngModel)]="levelSelect" [nzPlaceHolder]="'choose option'" nzAllowClear>
+    <nz-option *ngFor="let option of levelOptions" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
+    </nz-option>
+  </nz-select>
+</div>
+
+<div style="width: 260px;">
+  <label nz-checkbox [(ngModel)]="piano">
+    <span>钢琴</span>
+  </label>
+  <nz-select style="width: 120px;" [(ngModel)]="levelSelect" [nzPlaceHolder]="'choose option'" nzAllowClear>
+    <nz-option *ngFor="let option of levelOptions" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
+    </nz-option>
+  </nz-select>
+</div>

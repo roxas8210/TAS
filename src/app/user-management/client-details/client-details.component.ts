@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { ClientIdService } from '../../service/client-id.service';
 import { TabbarService } from '../../service/tabbar.service';
+import { district } from '../../option-data/district.data';
 
 @Component({
   selector: 'app-client-details',
@@ -13,20 +14,11 @@ export class ClientDetailsComponent implements OnInit {
   selectedIndex = 0;
 
   tabs = [{
-    name: '基本信息',
-    content: [{
-      title: 'hello world',
-      name: '!!'
-    }]
+    name: '基本信息'
   }, {
-    name: '賬單詳情',
-    content: [{
-      title: 'hello world',
-      name: '!!'
-    }]
+    name: '賬單詳情'
   }, {
-      name: '相關個案',
-      content: '相關個案'
+      name: '相關個案'
   }];
 
   id;
@@ -35,13 +27,7 @@ export class ClientDetailsComponent implements OnInit {
   districtSelectedOption;
 
   // 區域選擇數據
-  districtOptions = [{
-    label: '香港',
-    value: '1'
-  }, {
-    label: '江門',
-    value: '2'
-  }];
+  districtOptions = district;
 
   editStatus = false;
 
