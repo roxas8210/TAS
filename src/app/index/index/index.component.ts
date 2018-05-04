@@ -32,7 +32,7 @@ export class IndexComponent implements OnInit {
     }, {
       'title': '黑名單',
       'icon': 'dislike',
-      'url': '/'
+      'url': '/index/user/blacklist'
     }]
   }, {
     'title': '個案管理',
@@ -62,6 +62,16 @@ export class IndexComponent implements OnInit {
       'title': '頁面設置',
       'icon': 'page',
       'url': '/index/system/page'
+    }]
+  }, {
+    'title': '員工管理',
+    'url': '/',
+    'subMenu': [{
+      'title': '部門列表',
+      'url': '/index/employee/department'
+    }, {
+      'title': '員工列表',
+      'url': '/index/employee/list'
     }]
   }];
 

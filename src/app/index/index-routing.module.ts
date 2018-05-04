@@ -12,6 +12,10 @@ import { ClientDetailsBillComponent } from '../user-management/client-details-bi
 import { TeacherListComponent } from '../teacher/teacher-list/teacher-list.component';
 import { TeacherReviewComponent } from '../teacher/teacher-review/teacher-review.component';
 import { TeacherDetailsComponent } from '../teacher/teacher-details/teacher-details.component';
+import { TeacherSearchComponent } from '../teacher/teacher-search/teacher-search.component';
+import { BlackListComponent } from '../user-management/black-list/black-list.component';
+import { EmployeeListComponent } from '../employee/employee-list/employee-list.component';
+import { DepartmentComponent } from '../employee/department/department.component';
 
 /* index模塊路由
 *  /index/system/setting為“系統設置”路由
@@ -50,6 +54,18 @@ const routes: Routes = [{
     }, {
         path: 'user/teacher/details',
         component: TeacherDetailsComponent
+    }, {
+        path: 'user/teacher/search',
+        component: TeacherSearchComponent
+    }, {
+        path: 'user/blacklist',
+        component: BlackListComponent
+    }, {
+        path: 'employee/department',
+        component: DepartmentComponent
+    }, {
+        path: 'employee/list',
+        component: EmployeeListComponent
     }]
 }];
 

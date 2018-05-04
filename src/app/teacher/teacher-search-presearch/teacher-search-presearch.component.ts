@@ -22,10 +22,15 @@ export class TeacherSearchPresearchComponent implements OnInit {
       data: []
     },
     {
+      // education-middle
       color: '#de21de',
       data: []
-    },
-    {
+    }, {
+      // education-history
+      color: '#de21de',
+      data: []
+    }, {
+      // music
       color: '#1fd397',
       data: []
     },
@@ -44,6 +49,10 @@ export class TeacherSearchPresearchComponent implements OnInit {
     {
       color: '#6623ed',
       data: []
+    }, {
+      // zodiac
+      color: '#646464',
+      data: []
     }
   ];
 
@@ -52,6 +61,14 @@ export class TeacherSearchPresearchComponent implements OnInit {
   ngOnInit() {
     this.tagsService.getTags().subscribe((val: {type: string, payload: any}) => {
       switch (val.type) {
+        case 'basic':
+          const basic = {
+            type: 'basic',
+            data: val.payload
+          };
+          this.tags[0].data = val.payload;
+          console.log('basic', this.tags);
+          break;
         case 'subject':
           const subject = {
             type: 'subject',
@@ -59,6 +76,42 @@ export class TeacherSearchPresearchComponent implements OnInit {
           };
           this.tags[1].data = val.payload;
           console.log('subject', this.tags);
+          break;
+        case 'area':
+          const area = {
+            type: 'area',
+            data: val.payload
+          };
+          this.tags[2].data = val.payload;
+          console.log('area', this.tags);
+          break;
+        case 'education-middle':
+          const middle = {
+            type: 'education-middle',
+            data: val.payload
+          };
+          this.tags[3].data = val.payload;
+          console.log('education-middle', this.tags);
+          break;
+        case 'education-history':
+          this.tags[4].data = val.payload;
+          console.log('education-history', this.tags);
+          break;
+        case 'music':
+          this.tags[5].data = val.payload;
+          console.log('music', this.tags);
+          break;
+        case 'info':
+          this.tags[6].data = val.payload;
+          break;
+        case 'profession':
+          this.tags[7].data = val.payload;
+          break;
+        case 'other':
+          this.tags[8].data = val.payload;
+          break;
+        case 'zodiac':
+          this.tags[10].data = val.payload;
           break;
         default:
           break;

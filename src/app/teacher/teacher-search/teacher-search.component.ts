@@ -29,6 +29,14 @@ export class TeacherSearchComponent implements OnInit {
 
   constructor() { }
 
+  changePage() {
+    this.selectedIndex += 1;
+  }
+
+  changePageDown() {
+    this.selectedIndex -= 1;
+  }
+
   ngOnInit() {
   }
 

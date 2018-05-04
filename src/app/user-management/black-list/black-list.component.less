@@ -1,0 +1,106 @@
+@media screen and (min-width: 1025px) {
+    .teacher-list {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        .list-func {
+            width: 100%;
+            height: auto;
+            overflow: hidden;
+            .func-left {
+                width: 315px;
+                height: auto;
+                overflow: hidden;
+                float: left;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+            .func-right {
+                float: right;
+            }
+            .select {
+                width: 180px;
+                height: auto;
+                overflow: hidden;
+                display: flex;
+                justify-content: space-between;
+                span {
+                    font-size: 14px;
+                    color: #232323;
+                    line-height: 32px;
+                }
+                nz-select {
+                    flex-grow: 1;
+                    margin-top: 3px;
+                }
+            }
+        }
+        .list-container {
+            flex-grow: 1;
+            overflow: hidden;
+            margin-top: 20px;
+            box-shadow: 4px 4px 6px rgba(0,0,0,0.15);
+            box-sizing: border-box;
+            margin-bottom: 10px;
+            background-color: white;
+        }
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .teacher-list {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        .list-func {
+            width: 100%;
+            height: auto;
+            overflow: hidden;
+            margin-top: 5px;
+            .func-left {
+                width: 315px;
+                height: auto;
+                overflow: hidden;
+                float: left;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                button {
+                    font-size: 14px !important;
+                    line-height: 24px !important;
+                }
+            }
+            .func-right {
+                float: right;
+            }
+            .select {
+                width: 180px;
+                height: auto;
+                overflow: hidden;
+                display: flex;
+                justify-content: space-between;
+                span {
+                    font-size: 14px;
+                    color: #232323;
+                    line-height: 28px;
+                }
+                nz-select {
+                    flex-grow: 1;
+                    // margin-top: 3px;
+                }
+            }
+        }
+        .list-container {
+            flex-grow: 1;
+            overflow: hidden;
+            margin-top: 20px;
+            box-shadow: 4px 4px 6px rgba(0,0,0,0.15);
+            box-sizing: border-box;
+            margin-bottom: 10px;
+            background-color: white;
+        }
+    }
+}

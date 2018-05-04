@@ -1,29 +1,19 @@
 <div style="width: 260px;">
-  <label nz-checkbox [(ngModel)]="piano">
+  <label nz-checkbox [(ngModel)]="musicList[0].status" (ngModelChange)="modelChange(musicList[0].id)">
     <span>钢琴</span>
   </label>
-  <nz-select style="width: 120px;" [(ngModel)]="levelSelect" [nzPlaceHolder]="'choose option'" nzAllowClear>
-    <nz-option *ngFor="let option of levelOptions" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
+  <nz-select style="width: 120px;" [(ngModel)]="musicList[0].selectValue" (ngModelChange)="modelChange(musicList[0].id)" [nzPlaceHolder]="'选择级别'">
+    <nz-option *ngFor="let option of levelOptions" [nzLabel]="option.label" [nzValue]="option.value" [nzDisabled]="option.disabled">
     </nz-option>
   </nz-select>
 </div>
 
 <div style="width: 260px;">
-  <label nz-checkbox [(ngModel)]="pipa">
+  <label nz-checkbox [(ngModel)]="musicList[1].status" (ngModelChange)="modelChange(musicList[1].id)">
     <span>琵琶</span>
   </label>
-  <nz-select style="width: 120px;" [(ngModel)]="levelSelect" [nzPlaceHolder]="'choose option'" nzAllowClear>
-    <nz-option *ngFor="let option of levelOptions" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
-    </nz-option>
-  </nz-select>
-</div>
-
-<div style="width: 260px;">
-  <label nz-checkbox [(ngModel)]="piano">
-    <span>钢琴</span>
-  </label>
-  <nz-select style="width: 120px;" [(ngModel)]="levelSelect" [nzPlaceHolder]="'choose option'" nzAllowClear>
-    <nz-option *ngFor="let option of levelOptions" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
+  <nz-select style="width: 120px;" [(ngModel)]="musicList[1].selectValue" (ngModelChange)="modelChange(musicList[1].id)" [nzPlaceHolder]="'选择级别'">
+    <nz-option *ngFor="let option of levelOptions" [nzLabel]="option.label" [nzValue]="option.value" [nzDisabled]="option.disabled">
     </nz-option>
   </nz-select>
 </div>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PostToTagsService } from '../../service/post-to-tags.service';
 
 @Component({
   selector: 'app-teacher-search-music',
@@ -9,19 +10,44 @@ export class TeacherSearchMusicComponent implements OnInit {
 
   levelSelect;
 
-  piano;
-
-  pipa;
-
   levelOptions = [{
-    label: '1',
-    value: '1'
+    label: '一级',
+    value: '一级'
   }, {
-    label: '2',
-    value: '2'
+    label: '二级',
+    value: '二级'
   }];
 
-  constructor() { }
+  musicList = [{
+    id: 0,
+    checkValue: '',
+    selectValue: '',
+    text: '钢琴',
+    bak: '钢琴',
+    status: false
+  }, {
+    id: 1,
+    checkValue: '',
+    selectValue: '',
+    text: '琵琶',
+    bak: '琵琶',
+    status: false
+  }];
+
+  constructor(private tagsService: PostToTagsService) { }
+
+  modelChange(val) {
+    if (this.musicList[val].status) {
+      if (this.musicList[val].selectValue) {
+        this.musicList[val].text = this.musicList[val].bak + this.musicList[val].selectValue;
+        const obj = this.musicList.filter(v => v.status === true);
+        console.log(obj);
+        this.tagsService.setTags({ type: 'music', payload: obj });
+      }
+    } else {
+      this.musicList[val].status = false;
+    }
+  }
 
   ngOnInit() {
   }

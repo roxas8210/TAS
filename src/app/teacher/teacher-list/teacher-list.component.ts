@@ -140,6 +140,7 @@ export class TeacherListComponent implements OnInit {
       content: TeacherSearchComponent,
       width: that.viewPortWidth,
       okText: '搜索',
+      footer: false,
       onOk() {
         console.log('提交搜索導師');
       },
@@ -150,6 +151,7 @@ export class TeacherListComponent implements OnInit {
     subscribe.subscribe(result => {
       console.log(result);
     });
+    // this.router.navigate(['/index/user/teacher/search']);
   }
 
   quickSearch(e) {

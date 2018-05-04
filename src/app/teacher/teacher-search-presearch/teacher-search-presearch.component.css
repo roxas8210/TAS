@@ -21,6 +21,8 @@
 }
 .submit-presearch form .submit-container {
   flex-grow: 1;
+  padding: 10px;
+  box-sizing: border-box;
 }
 .submit-presearch form .submit-button {
   margin-bottom: 20px;

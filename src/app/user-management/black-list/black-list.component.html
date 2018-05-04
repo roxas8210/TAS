@@ -1,0 +1,58 @@
+<div class="teacher-list">
+  <div class="list-func">
+    <div class="func-left">
+      <div class="quick-search">
+        <nz-input [nzType]="'search'" [nzPlaceHolder]="'快速搜索'" [(ngModel)]="quickSearchValue" style="width: 200px;" (nzOnSearch)="quickSearch($event)"></nz-input>
+      </div>
+    </div>
+    <div class="func-right">
+      <div class="select">
+        <span>地區類別：</span>
+        <nz-select style="height: 32px;" [(ngModel)]="districtSelectedOption" [nzPlaceHolder]="'選擇地區'" nzAllowClear>
+          <nz-option *ngFor="let option of districtOptions" [nzLabel]="option.label" [nzValue]="option">
+          </nz-option>
+        </nz-select>
+      </div>
+    </div>
+  </div>
+  <div class="list-container">
+    <nz-table #nzTable [nzDataSource]="teacherList" [nzPageSize]="15" style="max-width: 900px;max-height: 600px;">
+      <thead nz-thead>
+        <tr>
+          <th nz-th style="text-align: center;background-color: white;border-bottom: 1px solid rgba(0, 0, 0, 0.15);" [nzWidth]="'60px'">
+            <span>客戶編號</span>
+          </th>
+          <th nz-th style="text-align: center;background-color: white;border-bottom: 1px solid rgba(0, 0, 0, 0.15);" [nzWidth]="'40px'">
+            <span>姓名</span>
+          </th>
+          <th nz-th style="text-align: center;background-color: white;border-bottom: 1px solid rgba(0, 0, 0, 0.15);" [nzWidth]="'60px'">
+            <span>手提電話</span>
+          </th>
+          <th nz-th style="text-align: center;background-color: white;border-bottom: 1px solid rgba(0, 0, 0, 0.15);" [nzWidth]="'60px'">
+            <span>相關資料</span>
+          </th>
+          <th nz-th style="text-align: center;background-color: white;border-bottom: 1px solid rgba(0, 0, 0, 0.15);" [nzWidth]="'60px'">
+            <span>黑名單原因</span>
+          </th>
+          <th nz-th style="text-align: center;background-color: white;border-bottom: 1px solid rgba(0, 0, 0, 0.15);" [nzWidth]="'100px'">
+            <span>黑名單日期</span>
+          </th>
+          <th nz-th style="text-align: center;background-color: white;border-bottom: 1px solid rgba(0, 0, 0, 0.15);" [nzWidth]="'60px'">
+            <span>經手人</span>
+          </th>
+        </tr>
+      </thead>
+      <tbody nz-tbody>
+        <tr nz-tbody-tr *ngFor="let data of nzTable.data" (click)="getDetails(data.id)" style="cursor: pointer;">
+          <td nz-td style="padding: 8px 0;text-align: center;">{{data.no}}</td>
+          <td nz-td style="padding: 8px 0;text-align: center;">{{data.name}}</td>
+          <td nz-td style="padding: 8px 0;text-align: center;">{{data.phone}}</td>
+          <td nz-td style="padding: 8px 0;text-align: center;">{{data.latestCase}}</td>
+          <td nz-td style="padding: 8px 0;text-align: center;">{{data.reason}}</td>
+          <td nz-td style="padding: 8px 0;text-align: center;">{{data.date}}</td>
+          <td nz-td style="padding: 8px 0;text-align: center;">{{data.sales}}</td>
+        </tr>
+      </tbody>
+    </nz-table>
+  </div>
+</div>

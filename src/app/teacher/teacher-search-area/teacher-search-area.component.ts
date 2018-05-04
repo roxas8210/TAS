@@ -12,10 +12,14 @@ export class TeacherSearchAreaComponent implements OnInit {
 
   areaArray = area;
 
-  constructor() { }
+  splitArray = [];
+
+  constructor(private tagsService: PostToTagsService) { }
 
   postArea(areas) {
-    console.log(areas);
+    const filterAreas = areas.filter(val => val.checked === true);
+    console.log(filterAreas);
+    this.tagsService.setTags({ type: 'area', payload: filterAreas });
   }
 
   ngOnInit() {

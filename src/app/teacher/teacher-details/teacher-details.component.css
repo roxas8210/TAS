@@ -43,3 +43,7 @@
 .client-details .fns button {
   margin-left: 40px;
 }
+.client-details .switch-container {
+  width: 100%;
+  padding: 0;
+}

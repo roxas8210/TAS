@@ -1,150 +1,264 @@
-<form nz-form [formGroup]="fg">
+<!-- <form nz-form [formGroup]="fg"> -->
   <nz-table #nzTable nzBordered [nzCustomNoResult]="true">
     <tbody nz-tbody>
       <tr nz-tbody-tr>
         <td nz-td class="item">
-          <span>導師身份證英文名</span>
+          <!-- <span>導師身份證英文名</span>
           <nz-select style="width: 220px;" formControlName="sex" [nzPlaceHolder]="'choose option'" nzAllowClear>
             <nz-option *ngFor="let option of levelOptions" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
             </nz-option>
-          </nz-select>
+          </nz-select> -->
+
+          <div nz-form-item nz-row style="margin: 0;">
+            <div nz-form-label nz-col >
+              <label>導師身份證英文名</label>
+            </div>
+            <div nz-form-control nz-col >
+              <nz-input [(ngModel)]="infoList[0].value" (ngModelChange)="modelChange(infoList[0].id)" [nzPlaceHolder]="''"></nz-input>
+            </div>
+          </div>
         </td>
         <td nz-td class="item">
-          <span>導師身份證中文名</span>
+          <!-- <span>導師身份證中文名</span>
           <nz-select style="width: 220px;" formControlName="highestEdu" [nzPlaceHolder]="'choose option'" nzAllowClear>
             <nz-option *ngFor="let option of levelOptions" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
             </nz-option>
-          </nz-select>
+          </nz-select> -->
+          <div nz-form-item nz-row style="margin: 0;">
+            <div nz-form-label nz-col >
+              <label>導師身份證中文名</label>
+            </div>
+            <div nz-form-control nz-col >
+              <nz-input [(ngModel)]="infoList[1].value" (ngModelChange)="modelChange(infoList[1].id)" [nzPlaceHolder]="''"></nz-input>
+            </div>
+          </div>
         </td>
       </tr>
       <tr nz-tbody-tr>
         <td nz-td class="item">
-          <span>導師身份證號碼</span>
+          <!-- <span>導師身份證號碼</span>
           <nz-select style="width: 220px;" formControlName="highestGrade" [nzPlaceHolder]="'choose option'" nzAllowClear>
             <nz-option *ngFor="let option of levelOptions" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
             </nz-option>
-          </nz-select>
+          </nz-select> -->
+          <div nz-form-item nz-row style="margin: 0;">
+            <div nz-form-label nz-col >
+              <label>導師身份證號碼</label>
+            </div>
+            <div nz-form-control nz-col >
+              <nz-input [(ngModel)]="infoList[2].value" (ngModelChange)="modelChange(infoList[2].id)" [nzPlaceHolder]="''"></nz-input>
+            </div>
+          </div>
         </td>
         <td nz-td class="item">
-          <span>性別</span>
-          <nz-select style="width: 220px;" formControlName="livingArea" [nzPlaceHolder]="'choose option'" nzAllowClear>
+          <!-- <span>導師出生年份</span>
+          <nz-select style="width: 220px;" formControlName="status" [nzPlaceHolder]="'choose option'" nzAllowClear>
             <nz-option *ngFor="let option of levelOptions" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
             </nz-option>
-          </nz-select>
+          </nz-select> -->
+          <div nz-form-item nz-row style="margin: 0;">
+            <div nz-form-label nz-col >
+              <label>導師出生年份</label>
+            </div>
+            <div nz-form-control nz-col >
+              <nz-input [(ngModel)]="infoList[3].value" (ngModelChange)="modelChange(infoList[3].id)" [nzPlaceHolder]="''"></nz-input>
+            </div>
+          </div>
         </td>
       </tr>
       <tr nz-tbody-tr>
         <td nz-td class="item">
-          <span>導師出生年份</span>
-          <nz-select style="width: 220px;" formControlName="status" [nzPlaceHolder]="'choose option'" nzAllowClear>
-            <nz-option *ngFor="let option of levelOptions" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
-            </nz-option>
-          </nz-select>
-        </td>
-        <td nz-td class="item">
-          <span>導師家居地址地區</span>
+          <!-- <span>導師家居地址地區</span>
           <nz-select style="width: 220px;" formControlName="passed" [nzPlaceHolder]="'choose option'" nzAllowClear>
             <nz-option *ngFor="let option of levelOptions" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
             </nz-option>
-          </nz-select>
+          </nz-select> -->
+          <div nz-form-item nz-row style="margin: 0;">
+            <div nz-form-label nz-col >
+              <label>導師家居地址地區</label>
+            </div>
+            <div nz-form-control nz-col >
+              <nz-input [(ngModel)]="infoList[4].value" (ngModelChange)="modelChange(infoList[4].id)" [nzPlaceHolder]="''"></nz-input>
+            </div>
+          </div>
+        </td>
+        <td nz-td class="item">
+          <!-- <span>導師家居地址</span>
+          <nz-select style="width: 220px;" formControlName="status" [nzPlaceHolder]="'choose option'" nzAllowClear>
+            <nz-option *ngFor="let option of levelOptions" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
+            </nz-option>
+          </nz-select> -->
+          <div nz-form-item nz-row style="margin: 0;">
+            <div nz-form-label nz-col >
+              <label>導師家居地址</label>
+            </div>
+            <div nz-form-control nz-col >
+              <nz-input [(ngModel)]="infoList[5].value" (ngModelChange)="modelChange(infoList[5].id)" [nzPlaceHolder]="''"></nz-input>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr nz-tbody-tr> 
+        <td nz-td class="item">
+          <!-- <span>導師國籍</span>
+          <nz-select style="width: 220px;" formControlName="passed" [nzPlaceHolder]="'choose option'" nzAllowClear>
+            <nz-option *ngFor="let option of levelOptions" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
+            </nz-option>
+          </nz-select> -->
+
+          <div nz-form-item nz-row style="margin: 0;">
+            <div nz-form-label nz-col >
+              <label>導師國籍</label>
+            </div>
+            <div nz-form-control nz-col >
+              <nz-input [(ngModel)]="infoList[6].value" (ngModelChange)="modelChange(infoList[6].id)" [nzPlaceHolder]="''"></nz-input>
+            </div>
+          </div>
+        </td>
+        <td nz-td class="item">
+          <!-- <span>主要語言</span>
+          <nz-select style="width: 220px;" formControlName="status" [nzPlaceHolder]="'choose option'" nzAllowClear>
+            <nz-option *ngFor="let option of levelOptions" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
+            </nz-option>
+          </nz-select> -->
+          <div nz-form-item nz-row style="margin: 0;">
+            <div nz-form-label nz-col >
+              <label>主要語言</label>
+            </div>
+            <div nz-form-control nz-col >
+              <nz-input [(ngModel)]="infoList[7].value" (ngModelChange)="modelChange(infoList[7].id)" [nzPlaceHolder]="''"></nz-input>
+            </div>
+          </div>
         </td>
       </tr>
       <tr nz-tbody-tr>
         <td nz-td class="item">
-          <span>導師家居地址</span>
+          <!-- <span>導師宗教信仰</span>
           <nz-select style="width: 220px;" formControlName="status" [nzPlaceHolder]="'choose option'" nzAllowClear>
             <nz-option *ngFor="let option of levelOptions" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
             </nz-option>
-          </nz-select>
+          </nz-select> -->
+          <div nz-form-item nz-row style="margin: 0;">
+            <div nz-form-label nz-col >
+              <label>導師宗教信仰</label>
+            </div>
+            <div nz-form-control nz-col >
+              <nz-input [(ngModel)]="infoList[8].value" (ngModelChange)="modelChange(infoList[8].id)" [nzPlaceHolder]="''"></nz-input>
+            </div>
+          </div>
         </td>
         <td nz-td class="item">
-          <span>導師國籍</span>
+          <!-- <span>補習收費（最低）</span>
           <nz-select style="width: 220px;" formControlName="passed" [nzPlaceHolder]="'choose option'" nzAllowClear>
             <nz-option *ngFor="let option of levelOptions" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
             </nz-option>
-          </nz-select>
+          </nz-select> -->
+          <div nz-form-item nz-row style="margin: 0;">
+            <div nz-form-label nz-col >
+              <label>補習收費（最低）</label>
+            </div>
+            <div nz-form-control nz-col >
+              <nz-input [(ngModel)]="infoList[9].value" (ngModelChange)="modelChange(infoList[9].id)" [nzPlaceHolder]="''"></nz-input>
+            </div>
+          </div>
         </td>
       </tr>
       <tr nz-tbody-tr>
         <td nz-td class="item">
-          <span>主要語言</span>
+          <!-- <span>補習收費（最高）</span>
           <nz-select style="width: 220px;" formControlName="status" [nzPlaceHolder]="'choose option'" nzAllowClear>
             <nz-option *ngFor="let option of levelOptions" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
             </nz-option>
-          </nz-select>
+          </nz-select> -->
+          <div nz-form-item nz-row style="margin: 0;">
+            <div nz-form-label nz-col >
+              <label>補習收費（最高）</label>
+            </div>
+            <div nz-form-control nz-col >
+              <nz-input [(ngModel)]="infoList[10].value" (ngModelChange)="modelChange(infoList[10].id)" [nzPlaceHolder]="''"></nz-input>
+            </div>
+          </div>
         </td>
         <td nz-td class="item">
-          <span>導師生肖</span>
+          <!-- <span>導師電郵地址</span>
           <nz-select style="width: 220px;" formControlName="passed" [nzPlaceHolder]="'choose option'" nzAllowClear>
             <nz-option *ngFor="let option of levelOptions" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
             </nz-option>
-          </nz-select>
+          </nz-select> -->
+          <div nz-form-item nz-row style="margin: 0;">
+            <div nz-form-label nz-col >
+              <label>導師電郵地址</label>
+            </div>
+            <div nz-form-control nz-col >
+              <nz-input [(ngModel)]="infoList[11].value" (ngModelChange)="modelChange(infoList[11].id)" [nzPlaceHolder]="''"></nz-input>
+            </div>
+          </div>
         </td>
       </tr>
       <tr nz-tbody-tr>
         <td nz-td class="item">
-          <span>導師宗教信仰</span>
+          <!-- <span>導師家庭電話</span>
           <nz-select style="width: 220px;" formControlName="status" [nzPlaceHolder]="'choose option'" nzAllowClear>
             <nz-option *ngFor="let option of levelOptions" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
             </nz-option>
-          </nz-select>
+          </nz-select> -->
+          <div nz-form-item nz-row style="margin: 0;">
+            <div nz-form-label nz-col >
+              <label>導師家庭電話</label>
+            </div>
+            <div nz-form-control nz-col >
+              <nz-input [(ngModel)]="infoList[12].value" (ngModelChange)="modelChange(infoList[12].id)" [nzPlaceHolder]="''"></nz-input>
+            </div>
+          </div>
         </td>
         <td nz-td class="item">
-          <span>補習收費（最低）</span>
+          <!-- <span>導師手提電話</span>
           <nz-select style="width: 220px;" formControlName="passed" [nzPlaceHolder]="'choose option'" nzAllowClear>
             <nz-option *ngFor="let option of levelOptions" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
             </nz-option>
-          </nz-select>
+          </nz-select> -->
+          <div nz-form-item nz-row style="margin: 0;">
+            <div nz-form-label nz-col >
+              <label>導師手提電話</label>
+            </div>
+            <div nz-form-control nz-col >
+              <nz-input [(ngModel)]="infoList[13].value" (ngModelChange)="modelChange(infoList[13].id)" [nzPlaceHolder]="''"></nz-input>
+            </div>
+          </div>
         </td>
       </tr>
       <tr nz-tbody-tr>
         <td nz-td class="item">
-          <span>補習收費（最高）</span>
+          <!-- <span>導師其他電話</span>
           <nz-select style="width: 220px;" formControlName="status" [nzPlaceHolder]="'choose option'" nzAllowClear>
             <nz-option *ngFor="let option of levelOptions" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
             </nz-option>
-          </nz-select>
+          </nz-select> -->
+          <div nz-form-item nz-row style="margin: 0;">
+            <div nz-form-label nz-col >
+              <label>導師其他電話</label>
+            </div>
+            <div nz-form-control nz-col >
+              <nz-input [(ngModel)]="infoList[14].value" (ngModelChange)="modelChange(infoList[14].id)" [nzPlaceHolder]="''"></nz-input>
+            </div>
+          </div>
         </td>
         <td nz-td class="item">
-          <span>導師電郵地址</span>
+          <!-- <span>導師傳真電話</span>
           <nz-select style="width: 220px;" formControlName="passed" [nzPlaceHolder]="'choose option'" nzAllowClear>
             <nz-option *ngFor="let option of levelOptions" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
             </nz-option>
-          </nz-select>
-        </td>
-      </tr>
-      <tr nz-tbody-tr>
-        <td nz-td class="item">
-          <span>導師家庭電話</span>
-          <nz-select style="width: 220px;" formControlName="status" [nzPlaceHolder]="'choose option'" nzAllowClear>
-            <nz-option *ngFor="let option of levelOptions" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
-            </nz-option>
-          </nz-select>
-        </td>
-        <td nz-td class="item">
-          <span>導師手提電話</span>
-          <nz-select style="width: 220px;" formControlName="passed" [nzPlaceHolder]="'choose option'" nzAllowClear>
-            <nz-option *ngFor="let option of levelOptions" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
-            </nz-option>
-          </nz-select>
-        </td>
-      </tr>
-      <tr nz-tbody-tr>
-        <td nz-td class="item">
-          <span>導師其他電話</span>
-          <nz-select style="width: 220px;" formControlName="status" [nzPlaceHolder]="'choose option'" nzAllowClear>
-            <nz-option *ngFor="let option of levelOptions" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
-            </nz-option>
-          </nz-select>
-        </td>
-        <td nz-td class="item">
-          <span>導師傳真電話</span>
-          <nz-select style="width: 220px;" formControlName="passed" [nzPlaceHolder]="'choose option'" nzAllowClear>
-            <nz-option *ngFor="let option of levelOptions" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
-            </nz-option>
-          </nz-select>
+          </nz-select> -->
+          <div nz-form-item nz-row style="margin: 0;">
+            <div nz-form-label nz-col >
+              <label>導師傳真電話</label>
+            </div>
+            <div nz-form-control nz-col >
+              <nz-input [(ngModel)]="infoList[15].value" (ngModelChange)="modelChange(infoList[15].id)" [nzPlaceHolder]="''"></nz-input>
+            </div>
+          </div>
         </td>
       </tr>
     </tbody>
   </nz-table>
-</form>
+<!-- </form> -->

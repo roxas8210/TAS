@@ -1,3 +1,54 @@
-<p>
-  teacher-bill works!
-</p>
+<div class="client-bills">
+  <nz-table #nzTable [nzShowFooter]="true" [nzDataSource]="billList" [nzPageSize]="15" style="max-width: 900px;max-height: 600px;">
+    <thead nz-thead>
+      <tr>
+        <th nz-th style="text-align: center;background-color: white;border-bottom: 1px solid rgba(0, 0, 0, 0.15);" [nzWidth]="'160px'">
+          <span>時間</span>
+        </th>
+        <th nz-th style="text-align: center;background-color: white;border-bottom: 1px solid rgba(0, 0, 0, 0.15);" [nzWidth]="'40px'">
+          <span>類型</span>
+        </th>
+        <th nz-th style="text-align: center;background-color: white;border-bottom: 1px solid rgba(0, 0, 0, 0.15);" [nzWidth]="'40px'">
+          <span>收入</span>
+        </th>
+        <th nz-th style="text-align: center;background-color: white;border-bottom: 1px solid rgba(0, 0, 0, 0.15);" [nzWidth]="'40px'">
+          <span>支出</span>
+        </th>
+        <th nz-th style="text-align: center;background-color: white;border-bottom: 1px solid rgba(0, 0, 0, 0.15);" [nzWidth]="'40px'">
+          <span>餘額</span>
+        </th>
+        <th nz-th style="text-align: center;background-color: white;border-bottom: 1px solid rgba(0, 0, 0, 0.15);" [nzWidth]="'40px'">
+          <span>相關個案</span>
+        </th>
+        <th nz-th style="text-align: center;background-color: white;border-bottom: 1px solid rgba(0, 0, 0, 0.15);" [nzWidth]="'60px'">
+          <span>狀態</span>
+        </th>
+        <th nz-th style="text-align: center;background-color: white;border-bottom: 1px solid rgba(0, 0, 0, 0.15);" [nzWidth]="'160px'">
+          <span>備註</span>
+        </th>
+      </tr>
+    </thead>
+    <tbody nz-tbody>
+      <tr nz-tbody-tr *ngFor="let data of nzTable.data" style="cursor: pointer;">
+        <td nz-td style="padding: 8px 0;text-align: center;">{{data.time}}</td>
+        <td nz-td style="padding: 8px 0;text-align: center;">{{data.type}}</td>
+        <td nz-td style="padding: 8px 0;text-align: center;">{{data.income}}</td>
+        <td nz-td style="padding: 8px 0;text-align: center;">{{data.expend}}</td>
+        <td nz-td style="padding: 8px 0;text-align: center;">{{data.balance}}</td>
+        <td nz-td style="padding: 8px 0;text-align: center;">
+          <a>{{data.rela.name}}</a>
+        </td>
+        <td nz-td style="padding: 8px 0;text-align: center;">{{data.status}}</td>
+        <td nz-td style="padding: 8px 0;text-align: center;">{{data.remark}}</td>
+      </tr>
+    </tbody>
+    <div class="table-foot" nz-table-footer>
+      <p style="font-size: 18px;">賬戶餘額：
+        <span style="font-size: 22px;">{{balance}}</span>
+      </p>
+      <!-- <p style="font-size: 18px;">纍計課款支出：
+        <span style="font-size: 22px;">{{balance}}</span>
+      </p> -->
+    </div>
+  </nz-table>
+</div>

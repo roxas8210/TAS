@@ -88,7 +88,11 @@
           </label>
         </div>
         <div nz-form-control nz-col [nzSm]="14" [nzXs]="24">
-          <nz-input [nzSize]="'large'" formControlName="language"></nz-input>
+          <!-- <nz-input [nzSize]="'large'" formControlName="language"></nz-input> -->
+          <nz-select style="width: 120px;" formControlName="language" [nzPlaceHolder]="'选择主要語言'">
+            <nz-option *ngFor="let option of sexOptions" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
+            </nz-option>
+          </nz-select>
         </div>
       </div>
       <div nz-form-item nz-row>
@@ -98,7 +102,11 @@
           </label>
         </div>
         <div nz-form-control nz-col [nzSm]="14" [nzXs]="24">
-          <nz-input [nzSize]="'large'" formControlName="belief"></nz-input>
+          <!-- <nz-input [nzSize]="'large'" formControlName="belief"></nz-input> -->
+          <nz-select style="width: 120px;" formControlName="belief" [nzPlaceHolder]="'选择信仰'">
+            <nz-option *ngFor="let option of sexOptions" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
+            </nz-option>
+          </nz-select>
         </div>
       </div>
     </div>
@@ -120,7 +128,7 @@
           </label>
         </div>
         <div nz-form-control nz-col [nzSm]="14" [nzXs]="24">
-          <nz-select style="width: 120px;" formControlName="sex" [nzPlaceHolder]="'選擇性別'" nzAllowClear>
+          <nz-select style="width: 120px;" formControlName="sex" [nzPlaceHolder]="'選擇性別'">
             <nz-option *ngFor="let option of sexOptions" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
             </nz-option>
           </nz-select>
@@ -183,7 +191,8 @@
           </label>
         </div>
         <div nz-form-control nz-col [nzSm]="14" [nzXs]="24">
-          <nz-input [nzSize]="'large'" formControlName="registerTime"></nz-input>
+          <!-- <nz-input [nzSize]="'large'" formControlName="registerTime"></nz-input> -->
+          <nz-datepicker [nzFormat]="'YYYY-MM'" [nzMode]="'month'" formControlName="registerTime" [nzPlaceHolder]="'選擇註冊時間'"></nz-datepicker>
         </div>
       </div>
       <div nz-form-item nz-row>
@@ -193,7 +202,11 @@
           </label>
         </div>
         <div nz-form-control nz-col [nzSm]="14" [nzXs]="24">
-          <nz-input [nzSize]="'large'" formControlName="clientStatus"></nz-input>
+          <!-- <nz-input [nzSize]="'large'" formControlName="clientStatus"></nz-input> -->
+          <nz-select style="width: 120px;" formControlName="clientStatus" [nzPlaceHolder]="'选择賬戶狀態'">
+            <nz-option *ngFor="let option of sexOptions" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
+            </nz-option>
+          </nz-select>
         </div>
       </div>
       <div nz-form-item nz-row>
@@ -203,7 +216,11 @@
           </label>
         </div>
         <div nz-form-control nz-col [nzSm]="14" [nzXs]="24">
-          <nz-input [nzSize]="'large'" formControlName="nationality"></nz-input>
+          <!-- <nz-input [nzSize]="'large'" formControlName="nationality"></nz-input> -->
+          <nz-select style="width: 120px;" formControlName="nationality" [nzPlaceHolder]="'选择國籍'">
+            <nz-option *ngFor="let option of sexOptions" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
+            </nz-option>
+          </nz-select>
         </div>
       </div>
     </div>

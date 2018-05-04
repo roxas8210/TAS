@@ -17,6 +17,8 @@ export class TeacherSearchEducationComponent implements OnInit {
     name: '香港中學文憑'
   }, {
     name: '其他語文科目'
+  }, {
+    name: '学习经历'
   }];
 
   constructor() { }

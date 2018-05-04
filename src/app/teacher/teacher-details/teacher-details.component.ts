@@ -18,6 +18,16 @@ export class TeacherDetailsComponent implements OnInit {
     name: '相關個案'
   }, {
     name: '導師詳細信息'
+  }, {
+    name: '導師學歷'
+  }, {
+    name: '職業履歷資料'
+  }, {
+    name: '其他技能'
+  }, {
+    name: '教授區域'
+  }, {
+    name: '導師自我簡介'
   }];
 
   id;

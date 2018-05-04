@@ -11,6 +11,7 @@ import { ClientIdService } from '../service/client-id.service';
 import { ClientDetailsRelaComponent } from './client-details-rela/client-details-rela.component';
 import { ClientAddComponent } from './client-add/client-add.component';
 import { ClientSearchComponent } from './client-search/client-search.component';
+import { BlackListComponent } from './black-list/black-list.component';
 
 @NgModule({
   imports: [
@@ -27,7 +28,8 @@ import { ClientSearchComponent } from './client-search/client-search.component';
     ClientDetailsBillComponent,
     ClientDetailsRelaComponent,
     ClientAddComponent,
-    ClientSearchComponent
+    ClientSearchComponent,
+    BlackListComponent
   ],
   providers: [
     ClientIdService,

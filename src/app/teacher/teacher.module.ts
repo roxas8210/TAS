@@ -22,6 +22,14 @@ import { TeacherSearchTimeComponent } from './teacher-search-time/teacher-search
 import { TeacherSearchPresearchComponent } from './teacher-search-presearch/teacher-search-presearch.component';
 import { PostToTagsService } from '../service/post-to-tags.service';
 import { EducationMiddleComponent } from './education-middle/education-middle.component';
+import { EducationHistoryComponent } from './education-history/education-history.component';
+import { TeacherEducationComponent } from './teacher-education/teacher-education.component';
+import { TeacherHistoryComponent } from './teacher-history/teacher-history.component';
+import { TeacherOtherComponent } from './teacher-other/teacher-other.component';
+import { TeacherAreaComponent } from './teacher-area/teacher-area.component';
+import { TeacherSelfComponent } from './teacher-self/teacher-self.component';
+import { TeacherEducationMiddleComponent } from './teacher-education-middle/teacher-education-middle.component';
+import { TeacherEducationHistoryComponent } from './teacher-education-history/teacher-education-history.component';
 
 @NgModule({
   imports: [
@@ -49,7 +57,15 @@ import { EducationMiddleComponent } from './education-middle/education-middle.co
     TeacherSearchOtherComponent,
     TeacherSearchTimeComponent,
     TeacherSearchPresearchComponent,
-    EducationMiddleComponent
+    EducationMiddleComponent,
+    EducationHistoryComponent,
+    TeacherEducationComponent,
+    TeacherHistoryComponent,
+    TeacherOtherComponent,
+    TeacherAreaComponent,
+    TeacherSelfComponent,
+    TeacherEducationMiddleComponent,
+    TeacherEducationHistoryComponent
   ],
   entryComponents: [TeacherSearchComponent],
   providers: [PostToTagsService]

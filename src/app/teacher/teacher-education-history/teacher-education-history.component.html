@@ -1,0 +1,226 @@
+<!-- <form nz-form [formGroup]="historyForm"> -->
+<!-- <form nz-form> -->
+<nz-table #nzTable nzBordered [nzCustomNoResult]="true">
+  <tbody nz-tbody>
+    <tr nz-tbody-tr>
+      <td nz-td class="itemz" colspan="3">
+        <div nz-form-item nz-row style="margin: 0;">
+          <div nz-form-label nz-col [nzSpan]="8">
+            <label>其他會考科目成績</label>
+          </div>
+          <div nz-form-control nz-col [nzSpan]="14">
+            <!-- <nz-input formControlName="otherScore" [nzPlaceHolder]="'其他會考科目成績'"></nz-input> -->
+            <nz-input [(ngModel)]="historyList[0].value" (ngModelChange)="modelChange(historyList[0].id)" [nzPlaceHolder]="'其他會考科目成績'"></nz-input>
+          </div>
+        </div>
+      </td>
+    </tr>
+    <tr nz-tbody-tr>
+      <td nz-td class="itemz" colspan="3">
+        <div nz-form-item nz-row style="margin: 0;">
+          <div nz-form-label nz-col [nzSpan]="8">
+            <label>其他高考/高補程度會考科目成績</label>
+          </div>
+          <div nz-form-control nz-col [nzSpan]="14">
+            <!-- <nz-input formControlName="higerScore" [nzPlaceHolder]="'輸入其他高考/高補程度會考科目成績'"></nz-input> -->
+            <nz-input [(ngModel)]="historyList[1].value" (ngModelChange)="modelChange(historyList[1].id)" [nzPlaceHolder]="'輸入其他高考/高補程度會考科目成績'"></nz-input>
+          </div>
+        </div>
+      </td>
+    </tr>
+    <tr nz-tbody-tr>
+      <td nz-td class="itemz">
+        <div nz-form-item nz-row style="margin: 0;">
+          <div nz-form-label nz-col>
+            <label>最高教育程度</label>
+          </div>
+          <div nz-form-control nz-col>
+            <!-- <nz-select width="120px" [(ngModel)]="historyList[2].value" (ngModelChange)="modelChange(historyList[2].id)" [nzPlaceHolder]="'選擇最高教育程度'">
+                <nz-option *ngFor="let option of levelOptions" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
+                </nz-option>
+              </nz-select> -->
+            <nz-select style="width: 220px;" [(ngModel)]="historyList[2].value" (ngModelChange)="modelChange(historyList[2].id)" [nzPlaceHolder]="'選擇最高教育程度'">
+              <nz-option *ngFor="let option of levelOptions" [nzLabel]="option.label" [nzValue]="option.value" [nzDisabled]="option.disabled">
+              </nz-option>
+            </nz-select>
+          </div>
+        </div>
+      </td>
+      <td nz-td class="itemz">
+        <div nz-form-item nz-row style="margin: 0;">
+          <div nz-form-label nz-col>
+            <label>就讀小學</label>
+          </div>
+          <div nz-form-control nz-col>
+            <!-- <nz-input formControlName="littleSchool" [nzPlaceHolder]="'輸入就讀小學'"></nz-input> -->
+            <nz-input [(ngModel)]="historyList[3].value" (ngModelChange)="modelChange(historyList[3].id)" [nzPlaceHolder]="'輸入就讀小學'"></nz-input>
+          </div>
+        </div>
+      </td>
+    </tr>
+    <tr nz-tbody-tr>
+      <td nz-td class="itemz">
+        <div nz-form-item nz-row style="margin: 0;">
+          <div nz-form-label nz-col>
+            <label>就讀中學</label>
+          </div>
+          <div nz-form-control nz-col>
+            <!-- <nz-input formControlName="middleSchool" [nzPlaceHolder]="'輸入就讀中學'"></nz-input> -->
+            <nz-input [(ngModel)]="historyList[4].value" (ngModelChange)="modelChange(historyList[4].id)" [nzPlaceHolder]="'輸入就讀中學'"></nz-input>
+          </div>
+        </div>
+      </td>
+      <td nz-td class="itemz">
+        <div nz-form-item nz-row style="margin: 0;">
+          <div nz-form-label nz-col>
+            <label>中學主要教學語言</label>
+          </div>
+          <div nz-form-control nz-col>
+            <!-- <nz-select formControlName="middleSchoolLangue" [nzPlaceHolder]="'選擇中學主要教學語言'" nzAllowClear>
+                <nz-option *ngFor="let option of levelOptions" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
+                </nz-option>
+              </nz-select> -->
+            <nz-select style="width: 220px;" [(ngModel)]="historyList[5].value" (ngModelChange)="modelChange(historyList[5].id)" [nzPlaceHolder]="'選擇中學主要教學語言'">
+              <nz-option *ngFor="let option of levelOptions" [nzLabel]="option.label" [nzValue]="option.value" [nzDisabled]="option.disabled">
+              </nz-option>
+            </nz-select>
+          </div>
+        </div>
+      </td>
+    </tr>
+    <tr nz-tbody-tr>
+      <td nz-td class="itemz">
+        <div nz-form-item nz-row style="margin: 0;">
+          <div nz-form-label nz-col>
+            <label>就讀大學</label>
+          </div>
+          <div nz-form-control nz-col>
+            <!-- <nz-select formControlName="highSchool" [nzPlaceHolder]="'選擇就讀大學'" nzAllowClear>
+                <nz-option *ngFor="let option of levelOptions" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
+                </nz-option>
+              </nz-select> -->
+            <nz-select style="width: 220px;" [(ngModel)]="historyList[6].value" (ngModelChange)="modelChange(historyList[6].id)" [nzPlaceHolder]="'選擇就讀大學'">
+              <nz-option *ngFor="let option of levelOptions" [nzLabel]="option.label" [nzValue]="option.value" [nzDisabled]="option.disabled">
+              </nz-option>
+            </nz-select>
+          </div>
+        </div>
+      </td>
+      <td nz-td class="itemz">
+        <div nz-form-item nz-row style="margin: 0;">
+          <div nz-form-label nz-col>
+            <label>其他大學</label>
+          </div>
+          <div nz-form-control nz-col>
+            <!-- <nz-input formControlName="otherHighSchool" [nzPlaceHolder]="'輸入其他大學'"></nz-input> -->
+            <nz-input [(ngModel)]="historyList[7].value" (ngModelChange)="modelChange(historyList[7].id)" [nzPlaceHolder]="'輸入其他大學'"></nz-input>
+          </div>
+        </div>
+      </td>
+    </tr>
+    <tr nz-tbody-tr>
+      <td nz-td class="itemz">
+        <div nz-form-item nz-row style="margin: 0;">
+          <div nz-form-label nz-col>
+            <label>高中修讀科目類別</label>
+          </div>
+          <div nz-form-control nz-col>
+            <!-- <nz-select formControlName="middleSchoolSubject" [nzPlaceHolder]="'選擇高中修讀科目類別'" nzAllowClear>
+                <nz-option *ngFor="let option of levelOptions" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
+                </nz-option>
+              </nz-select> -->
+            <nz-select style="width: 220px;" [(ngModel)]="historyList[8].value" (ngModelChange)="modelChange(historyList[8].id)" [nzPlaceHolder]="'選擇高中修讀科目類別'">
+              <nz-option *ngFor="let option of levelOptions" [nzLabel]="option.label" [nzValue]="option.value" [nzDisabled]="option.disabled">
+              </nz-option>
+            </nz-select>
+          </div>
+        </div>
+      </td>
+      <td nz-td class="itemz">
+        <div nz-form-item nz-row style="margin: 0;">
+          <div nz-form-label nz-col>
+            <label>大學主修科目</label>
+          </div>
+          <div nz-form-control nz-col>
+            <!-- <nz-input formControlName="highSchoolSubject" [nzPlaceHolder]="'輸入大學主修科目'"></nz-input> -->
+            <nz-input [(ngModel)]="historyList[9].value" (ngModelChange)="modelChange(historyList[9].id)" [nzPlaceHolder]="'輸入大學主修科目'"></nz-input>
+          </div>
+        </div>
+      </td>
+    </tr>
+    <tr nz-tbody-tr>
+      <td nz-td class="itemz">
+        <div nz-form-item nz-row style="margin: 0;">
+          <div nz-form-label nz-col>
+            <label>其他修讀課程</label>
+          </div>
+          <div nz-form-control nz-col>
+            <!-- <nz-input formControlName="otherLessons" [nzPlaceHolder]="'輸入其他修讀課程'"></nz-input> -->
+            <nz-input [(ngModel)]="historyList[10].value" (ngModelChange)="modelChange(historyList[10].id)" [nzPlaceHolder]="'輸入其他修讀課程'"></nz-input>
+          </div>
+        </div>
+      </td>
+      <td nz-td class="itemz">
+        <div nz-form-item nz-row style="margin: 0;">
+          <div nz-form-label nz-col>
+            <label>其他專業認可課程</label>
+          </div>
+          <div nz-form-control nz-col>
+            <!-- <nz-input formControlName="otherProfessionalLessons" [nzPlaceHolder]="'輸入其他專業認可課程'"></nz-input> -->
+            <nz-input [(ngModel)]="historyList[11].value" (ngModelChange)="modelChange(historyList[11].id)" [nzPlaceHolder]="'輸入其他專業認可課程'"></nz-input>
+          </div>
+        </div>
+      </td>
+    </tr>
+    <tr nz-tbody-tr>
+      <td nz-td class="itemz">
+        <div nz-form-item nz-row style="margin: 0;">
+          <div nz-form-label nz-col>
+            <label>現時就讀年級</label>
+          </div>
+          <div nz-form-control nz-col>
+            <!-- <nz-select formControlName="studingGrade" [nzPlaceHolder]="'選擇現時就讀年級'" nzAllowClear>
+                <nz-option *ngFor="let option of levelOptions" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
+                </nz-option>
+              </nz-select> -->
+            <nz-select style="width: 220px;" [(ngModel)]="historyList[12].value" (ngModelChange)="modelChange(historyList[12].id)" [nzPlaceHolder]="'選擇現時就讀年級'">
+              <nz-option *ngFor="let option of levelOptions" [nzLabel]="option.label" [nzValue]="option.value" [nzDisabled]="option.disabled">
+              </nz-option>
+            </nz-select>
+          </div>
+        </div>
+      </td>
+      <td nz-td class="itemz">
+        <div nz-form-item nz-row style="margin: 0;">
+          <div nz-form-label nz-col>
+            <label>香港中學會考分數（六科成績總分）</label>
+          </div>
+          <div nz-form-control nz-col>
+            <!-- <nz-input formControlName="middleTotalScore" [nzPlaceHolder]="'輸入香港中學會考分數（六科成績總分）'"></nz-input> -->
+            <nz-input [(ngModel)]="historyList[13].value" (ngModelChange)="modelChange(historyList[13].id)" [nzPlaceHolder]="'輸入香港中學會考分數（六科成績總分）'"></nz-input>
+          </div>
+        </div>
+      </td>
+    </tr>
+    <tr nz-tbody-tr>
+      <td nz-td class="itemz" colspan="3">
+        <div nz-form-item nz-row style="margin: 0;">
+          <div nz-form-label nz-col [nzSpan]="8">
+            <label>香港中學會考主要應考語言</label>
+          </div>
+          <div nz-form-control nz-col [nzSpan]="14">
+            <!-- <nz-select formControlName="middleTestLangue" [nzPlaceHolder]="'選擇香港中學會考主要應考語言'" nzAllowClear>
+                <nz-option *ngFor="let option of levelOptions" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
+                </nz-option>
+              </nz-select> -->
+            <nz-select style="width: 220px;" [(ngModel)]="historyList[14].value" (ngModelChange)="modelChange(historyList[14].id)" [nzPlaceHolder]="'選擇香港中學會考主要應考語言'">
+              <nz-option *ngFor="let option of levelOptions" [nzLabel]="option.label" [nzValue]="option.value" [nzDisabled]="option.disabled">
+              </nz-option>
+            </nz-select>
+          </div>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</nz-table>
+<!-- </form> -->

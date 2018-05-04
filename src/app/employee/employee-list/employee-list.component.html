@@ -1,0 +1,291 @@
+<div class="page-setting">
+  <div class="page-head">
+    <span>員工管理</span>
+    <span>/</span>
+    <span class="sub">部門列表</span>
+  </div>
+  <div class="page-body">
+    <div class="page-sidebar">
+      <ul>
+        <li *ngFor="let list of menu">
+          <i *ngIf="list.subMenu && !list.switchStatus" style="margin-left: 30px;" class="anticon anticon-caret-right" (click)="showSubList(list.id)"></i>
+          <i *ngIf="list.subMenu && list.switchStatus" style="margin-left: 30px;" class="anticon anticon-caret-down" (click)="showSubList(list.id)"></i>
+          <!-- <i  class="anticon anticon-caret-right"></i> -->
+          <div style="width: 20px;height: 20px;float: left;margin-left: 30px;" *ngIf="!list.subMenu" class="clearfix"></div>
+          <span>{{list.title}}</span>
+          <ul *ngIf="list.subMenu && list.switchStatus">
+            <li *ngFor="let subList of list.subMenu">
+              <i *ngIf="list.subMenu && !list.switchStatus" style="margin-left: 30px;" class="anticon anticon-caret-right" (click)="showSubListMenu(list.id)"></i>
+              <i *ngIf="list.subMenu && list.switchStatus" style="margin-left: 30px;" class="anticon anticon-caret-down" (click)="showSubListMenu(list.id)"></i>
+              <span (click)="goSetting(subList.id)"> {{subList.title}}</span>
+              <ul *ngIf="subList.subMenu">
+                <li *ngFor="let sub of subList.subMenu" style="padding-left: 68px;">
+                  <span (click)="goSetting(subList.id)"> {{sub.title}}</span>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <div class="page-team">
+      <div class="page-title">
+        <p>TEAM A</p>
+      </div>
+      <button [nzType]="'primary'" nz-button nzGhost style="border-radius: 17px;height: 34px;width: 96px;margin: 0 auto;display: block;">新增 +</button>
+      <div class="team-list">
+        <ul>
+          <li>Eric</li>
+          <li>Anna</li>
+          <li>Mario</li>
+          <li>James</li>
+        </ul>
+      </div>
+    </div>
+    <div class="page-main">
+      <!-- <form nz-form [formGroup]="fg"> -->
+      <nz-table #nzTable nzBordered [nzCustomNoResult]="true">
+        <tbody nz-tbody>
+          <tr nz-tbody-tr>
+            <td nz-td class="item">
+              <!-- <span>現時職業</span>
+                <nz-select style="width: 220px;" formControlName="sex" [nzPlaceHolder]="'choose option'" nzAllowClear>
+                  <nz-option *ngFor="let option of levelOptions" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
+                  </nz-option>
+                </nz-select> -->
+              <div nz-form-item nz-row style="margin: 0;">
+                <div nz-form-label nz-col>
+                  <label>員工主鍵</label>
+                </div>
+                <div nz-form-control nz-col>
+                  <nz-input [(ngModel)]="professionList[0].value" (ngModelChange)="modelChange(professionList[0].id)" [nzPlaceHolder]="''"></nz-input>
+                </div>
+              </div>
+            </td>
+            <td nz-td class="item">
+              <!-- <span>工作經驗</span>
+                <nz-select style="width: 220px;" formControlName="highestEdu" [nzPlaceHolder]="'choose option'" nzAllowClear>
+                  <nz-option *ngFor="let option of levelOptions" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
+                  </nz-option>
+                </nz-select> -->
+              <div nz-form-item nz-row style="margin: 0;">
+                <div nz-form-label nz-col>
+                  <label>員工登錄名</label>
+                </div>
+                <div nz-form-control nz-col>
+                  <nz-input [(ngModel)]="professionList[1].value" (ngModelChange)="modelChange(professionList[1].id)" [nzPlaceHolder]="''"></nz-input>
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr nz-tbody-tr>
+            <td nz-td class="item">
+              <!-- <span>過去工作資料（1）</span>
+                <nz-select style="width: 220px;" formControlName="highestGrade" [nzPlaceHolder]="'choose option'" nzAllowClear>
+                  <nz-option *ngFor="let option of levelOptions" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
+                  </nz-option>
+                </nz-select> -->
+              <div nz-form-item nz-row style="margin: 0;">
+                <div nz-form-label nz-col>
+                  <label>員工中文姓名</label>
+                </div>
+                <div nz-form-control nz-col>
+                  <nz-input [(ngModel)]="professionList[2].value" (ngModelChange)="modelChange(professionList[2].id)" [nzPlaceHolder]="''"></nz-input>
+                </div>
+              </div>
+            </td>
+            <td nz-td class="item">
+              <!-- <span>過去工作資料（2）</span>
+                <nz-select style="width: 220px;" formControlName="livingArea" [nzPlaceHolder]="'choose option'" nzAllowClear>
+                  <nz-option *ngFor="let option of levelOptions" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
+                  </nz-option>
+                </nz-select> -->
+              <div nz-form-item nz-row style="margin: 0;">
+                <div nz-form-label nz-col>
+                  <label>員工英文姓名</label>
+                </div>
+                <div nz-form-control nz-col>
+                  <nz-input [(ngModel)]="professionList[3].value" (ngModelChange)="modelChange(professionList[3].id)" [nzPlaceHolder]="''"></nz-input>
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr nz-tbody-tr>
+            <td nz-td class="item">
+              <!-- <span>補習經驗及年資</span>
+                <nz-select style="width: 220px;" formControlName="status" [nzPlaceHolder]="'choose option'" nzAllowClear>
+                  <nz-option *ngFor="let option of levelOptions" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
+                  </nz-option>
+                </nz-select> -->
+              <div nz-form-item nz-row style="margin: 0;">
+                <div nz-form-label nz-col>
+                  <label>員工性別</label>
+                </div>
+                <div nz-form-control nz-col>
+                  <nz-input [(ngModel)]="professionList[4].value" (ngModelChange)="modelChange(professionList[4].id)" [nzPlaceHolder]="''"></nz-input>
+                </div>
+              </div>
+            </td>
+            <td nz-td class="item">
+              <!-- <span>最高可補年級</span>
+                <nz-select style="width: 220px;" formControlName="passed" [nzPlaceHolder]="'choose option'" nzAllowClear>
+                  <nz-option *ngFor="let option of levelOptions" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
+                  </nz-option>
+                </nz-select> -->
+              <div nz-form-item nz-row style="margin: 0;">
+                <div nz-form-label nz-col>
+                  <label>員工出生日期</label>
+                </div>
+                <div nz-form-control nz-col>
+                  <nz-input [(ngModel)]="professionList[5].value" (ngModelChange)="modelChange(professionList[5].id)" [nzPlaceHolder]="''"></nz-input>
+                </div>
+              </div>
+            </td>
+          </tr>
+
+          <tr nz-tbody-tr>
+            <td nz-td class="item">
+              <div nz-form-item nz-row style="margin: 0;">
+                <div nz-form-label nz-col>
+                  <label>員工電話</label>
+                </div>
+                <div nz-form-control nz-col>
+                  <nz-input [(ngModel)]="professionList[4].value" (ngModelChange)="modelChange(professionList[4].id)" [nzPlaceHolder]="''"></nz-input>
+                </div>
+              </div>
+            </td>
+            <td nz-td class="item">
+              <div nz-form-item nz-row style="margin: 0;">
+                <div nz-form-label nz-col>
+                  <label>員工電郵</label>
+                </div>
+                <div nz-form-control nz-col>
+                  <nz-input [(ngModel)]="professionList[5].value" (ngModelChange)="modelChange(professionList[5].id)" [nzPlaceHolder]="''"></nz-input>
+                </div>
+              </div>
+            </td>
+          </tr>
+
+          <tr nz-tbody-tr>
+            <td nz-td class="item">
+              <div nz-form-item nz-row style="margin: 0;">
+                <div nz-form-label nz-col>
+                  <label>員工身份證號碼</label>
+                </div>
+                <div nz-form-control nz-col>
+                  <nz-input [(ngModel)]="professionList[4].value" (ngModelChange)="modelChange(professionList[4].id)" [nzPlaceHolder]="''"></nz-input>
+                </div>
+              </div>
+            </td>
+            <td nz-td class="item">
+              <div nz-form-item nz-row style="margin: 0;">
+                <div nz-form-label nz-col>
+                  <label>員工地址</label>
+                </div>
+                <div nz-form-control nz-col>
+                  <nz-input [(ngModel)]="professionList[5].value" (ngModelChange)="modelChange(professionList[5].id)" [nzPlaceHolder]="''"></nz-input>
+                </div>
+              </div>
+            </td>
+          </tr>
+
+          <tr nz-tbody-tr>
+            <td nz-td class="item">
+              <div nz-form-item nz-row style="margin: 0;">
+                <div nz-form-label nz-col>
+                  <label>員工家庭電話</label>
+                </div>
+                <div nz-form-control nz-col>
+                  <nz-input [(ngModel)]="professionList[4].value" (ngModelChange)="modelChange(professionList[4].id)" [nzPlaceHolder]="''"></nz-input>
+                </div>
+              </div>
+            </td>
+            <td nz-td class="item">
+              <div nz-form-item nz-row style="margin: 0;">
+                <div nz-form-label nz-col>
+                  <label>員工上班日期</label>
+                </div>
+                <div nz-form-control nz-col>
+                  <nz-input [(ngModel)]="professionList[5].value" (ngModelChange)="modelChange(professionList[5].id)" [nzPlaceHolder]="''"></nz-input>
+                </div>
+              </div>
+            </td>
+          </tr>
+
+          <tr nz-tbody-tr>
+            <td nz-td class="item">
+              <div nz-form-item nz-row style="margin: 0;">
+                <div nz-form-label nz-col>
+                  <label>員工職位</label>
+                </div>
+                <div nz-form-control nz-col>
+                  <nz-input [(ngModel)]="professionList[4].value" (ngModelChange)="modelChange(professionList[4].id)" [nzPlaceHolder]="''"></nz-input>
+                </div>
+              </div>
+            </td>
+            <td nz-td class="item">
+              <div nz-form-item nz-row style="margin: 0;">
+                <div nz-form-label nz-col>
+                  <label>員工底薪</label>
+                </div>
+                <div nz-form-control nz-col>
+                  <nz-input [(ngModel)]="professionList[5].value" (ngModelChange)="modelChange(professionList[5].id)" [nzPlaceHolder]="''"></nz-input>
+                </div>
+              </div>
+            </td>
+          </tr>
+
+          <tr nz-tbody-tr>
+            <td nz-td class="item">
+              <div nz-form-item nz-row style="margin: 0;">
+                <div nz-form-label nz-col>
+                  <label>員工狀態</label>
+                </div>
+                <div nz-form-control nz-col>
+                  <nz-input [(ngModel)]="professionList[4].value" (ngModelChange)="modelChange(professionList[4].id)" [nzPlaceHolder]="''"></nz-input>
+                </div>
+              </div>
+            </td>
+            <td nz-td class="item">
+              <div nz-form-item nz-row style="margin: 0;">
+                <div nz-form-label nz-col>
+                  <label>員工離職日期</label>
+                </div>
+                <div nz-form-control nz-col>
+                  <nz-input [(ngModel)]="professionList[5].value" (ngModelChange)="modelChange(professionList[5].id)" [nzPlaceHolder]="''"></nz-input>
+                </div>
+              </div>
+            </td>
+          </tr>
+
+          <tr nz-tbody-tr>
+            <td nz-td class="item" colspan="3">
+              <!-- <span>教育機構經驗</span>
+                <nz-select style="width: 220px;" formControlName="status" [nzPlaceHolder]="'choose option'" nzAllowClear>
+                  <nz-option *ngFor="let option of levelOptions" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
+                  </nz-option>
+                </nz-select> -->
+              <div nz-form-item nz-row style="margin: 0;">
+                <div nz-form-label nz-col>
+                  <label>員工上次更改密碼時間</label>
+                </div>
+                <div nz-form-control nz-col>
+                  <nz-input [(ngModel)]="professionList[6].value" (ngModelChange)="modelChange(professionList[6].id)" [nzPlaceHolder]="''"></nz-input>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </nz-table>
+      <div style="width: 200px;height: auto;overflow: hidden;margin: 0 auto;margin-bottom: 20px;">
+        <button type="submit" [nzType]="'primary'" nz-button nzGhost style="border-radius: 17px;height: 34px;width: 96px;margin: 0 auto;display: block;float: left;">
+          <span>編輯</span>
+        </button>
+        <button type="submit" [nzType]="'primary'" nz-button nzGhost style="border-radius: 17px;height: 34px;width: 96px;margin: 0 auto;display: block;float: right;">
+          <span>黑名單</span>
+        </button>
+      </div>
+      <!-- </form> -->
+    </div>
+  </div>
+</div>

@@ -10,15 +10,32 @@
   </div>
 </div> -->
 <div class="client-details">
-  <nz-tabset [(nzSelectedIndex)]="selectedIndex" (nzSelectChange)="changeTab([$event])">
+  <nz-tabset [nzSize]="'small'" [(nzSelectedIndex)]="selectedIndex" (nzSelectChange)="changeTab([$event])" style="overflow: auto;padding: 20px;box-sizing: border-box;">
     <nz-tab *ngFor="let tab of tabs;index as i;">
       <ng-template #nzTabHeading>
         <span style="line-height: 50px;">{{tab.name}}</span>
       </ng-template>
-      <div class="switch-container" [ngSwitch]="selectedIndex">
+      <!-- <div class="switch-container" [ngSwitch]="selectedIndex">
         <app-teacher-basic *ngSwitchCase="0" [editStatus]="editStatus"></app-teacher-basic>
         <app-teacher-bill *ngSwitchCase="1"></app-teacher-bill>
         <app-teacher-rela *ngSwitchCase="2"></app-teacher-rela>
+        <app-teacher-info *ngSwitchCase="3"></app-teacher-info>
+        <app-teacher-education *ngSwitchCase="4"></app-teacher-education>
+        <app-teacher-history *ngSwitchCase="5"></app-teacher-history>
+        <app-teacher-other *ngSwitchCase="6"></app-teacher-other>
+        <app-teacher-area *ngSwitchCase="7"></app-teacher-area>
+        <app-teacher-self *ngSwitchCase="8"></app-teacher-self>
+      </div> -->
+      <div class="switch-container">
+        <app-teacher-basic [ngStyle]="{'display':selectedIndex === 0?'block':'none'}" [editStatus]="editStatus"></app-teacher-basic>
+        <app-teacher-bill [ngStyle]="{'display':selectedIndex === 1?'block':'none'}"></app-teacher-bill>
+        <app-teacher-rela [ngStyle]="{'display':selectedIndex === 2?'block':'none'}"></app-teacher-rela>
+        <app-teacher-info [ngStyle]="{'display':selectedIndex === 3?'block':'none'}"></app-teacher-info>
+        <app-teacher-education [ngStyle]="{'display':selectedIndex === 4?'block':'none'}"></app-teacher-education>
+        <app-teacher-history [ngStyle]="{'display':selectedIndex === 5?'block':'none'}"></app-teacher-history>
+        <app-teacher-other [ngStyle]="{'display':selectedIndex === 6?'block':'none'}"></app-teacher-other>
+        <app-teacher-area [ngStyle]="{'display':selectedIndex === 7?'block':'none'}"></app-teacher-area>
+        <app-teacher-self [ngStyle]="{'display':selectedIndex === 8?'block':'none'}"></app-teacher-self>
       </div>
     </nz-tab>
   </nz-tabset>

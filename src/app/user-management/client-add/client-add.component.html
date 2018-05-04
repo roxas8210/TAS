@@ -68,7 +68,11 @@
           </label>
         </div>
         <div nz-form-control nz-col [nzSm]="14" [nzXs]="24">
-          <nz-input [nzSize]="'large'" formControlName="language"></nz-input>
+          <!-- <nz-input [nzSize]="'large'" formControlName="language"></nz-input> -->
+          <nz-select style="width: 120px;" formControlName="language" [nzPlaceHolder]="''" nzAllowClear>
+            <nz-option *ngFor="let option of sexOptions" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
+            </nz-option>
+          </nz-select>
         </div>
       </div>
       <div nz-form-item nz-row>
@@ -78,7 +82,11 @@
           </label>
         </div>
         <div nz-form-control nz-col [nzSm]="14" [nzXs]="24">
-          <nz-input [nzSize]="'large'" formControlName="belief"></nz-input>
+          <!-- <nz-input [nzSize]="'large'" formControlName="belief"></nz-input> -->
+          <nz-select style="width: 120px;" formControlName="belief" [nzPlaceHolder]="''" nzAllowClear>
+            <nz-option *ngFor="let option of sexOptions" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
+            </nz-option>
+          </nz-select>
         </div>
       </div>
     </div>
@@ -163,7 +171,11 @@
           </label>
         </div>
         <div nz-form-control nz-col [nzSm]="14" [nzXs]="24">
-          <nz-input [nzSize]="'large'" formControlName="nationality"></nz-input>
+          <!-- <nz-input [nzSize]="'large'" formControlName="nationality"></nz-input> -->
+          <nz-select style="width: 120px;" formControlName="nationality" [nzPlaceHolder]="''" nzAllowClear>
+            <nz-option *ngFor="let option of sexOptions" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
+            </nz-option>
+          </nz-select>
         </div>
       </div>
     </div>
