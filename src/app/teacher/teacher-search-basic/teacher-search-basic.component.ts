@@ -1,19 +1,16 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
 import { sex } from '../../option-data/sex.data';
 import { PostToTagsService } from '../../service/post-to-tags.service';
-<<<<<<< HEAD
-=======
+
 import { Store } from '@ngrx/store';
-import { pushBasic } from '../../actions/teacher-search/teacher-search-basic.action';
->>>>>>> future
+import { push_teacher_search_basic, push_teacher_search_zodiac } from '../../actions/teacher-search/teacher-search-tags.action';
 
 @Component({
   selector: 'app-teacher-search-basic',
   templateUrl: './teacher-search-basic.component.html',
   styleUrls: ['./teacher-search-basic.component.less']
 })
-export class TeacherSearchBasicComponent implements OnInit, OnDestroy {
+export class TeacherSearchBasicComponent implements OnInit {
 
   levelOptions = [{
     label: '10',
@@ -107,8 +104,6 @@ export class TeacherSearchBasicComponent implements OnInit, OnDestroy {
     text: '猪',
   }];
 
-  searchBasic: FormGroup;
-
   basicList = [{
     id: 0,
     value: '',
@@ -160,8 +155,7 @@ export class TeacherSearchBasicComponent implements OnInit, OnDestroy {
   }];
 
   constructor(
-    private fb: FormBuilder,
-    private tagsService: PostToTagsService
+    private store$: Store<any>
   ) {}
 
   modelChange(val) {
@@ -169,55 +163,19 @@ export class TeacherSearchBasicComponent implements OnInit, OnDestroy {
       this.basicList[val].text = this.basicList[val].bak + this.basicList[val].value;
       this.basicList[val].status = true;
       const obj = this.basicList.filter(v => v.status === true);
-      // this.tagsService.setTags({ type: 'info', payload: obj });
-      this.store$.dispatch(pushBasic(obj));
-      console.log(obj);
+      this.store$.dispatch(push_teacher_search_basic(obj));
     } else {
       this.basicList[val].status = false;
     }
   }
 
   postSubject(zodiac) {
-    // console.log(zodiac);
     const fliterZodiac = zodiac.filter(val => val.checked === true);
-    this.tagsService.setTags({ type: 'zodiac', payload: fliterZodiac });
+    console.log(fliterZodiac);
+    this.store$.dispatch(push_teacher_search_zodiac(fliterZodiac));
   }
 
   ngOnInit() {
-<<<<<<< HEAD
-=======
-    const test = this.store$.select('teacherSearchBasic');
-    // console.log(test);
-
->>>>>>> future
-    this.searchBasic = this.fb.group({
-      sex: [''],
-      highestEdu: [''],
-      highestGrade: [''],
-      livingArea: [''],
-      status: [''],
-      passed: [''],
-      avg: [''],
-      case: [''],
-      useTime: ['']
-    });
-    // this.searchBasic.setValue(this.store$.select('teacherSearchBasic'));
-    this.searchBasic.valueChanges.subscribe((val: Object) => {
-      const array = [];
-      for (const i in val) {
-        if (i) {
-          array.push(val[i]);
-        }
-      }
-      console.log(array);
-      const filter = array.filter(v => v !== '');
-      console.log(filter);
-      this.tagsService.setTags({type: 'basic', payload: filter});
-    });
-  }
-
-  ngOnDestroy() {
-    console.log('basis destroy');
   }
 
 }

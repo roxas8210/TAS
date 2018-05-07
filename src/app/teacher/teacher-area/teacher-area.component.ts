@@ -86,13 +86,8 @@ export class TeacherAreaComponent implements OnInit {
     text: '西環',
   }]];
 
-  postArea;
 
   constructor() { }
-
-  modelChange(test) {
-    console.log('test');
-  }
 
   ngOnInit() {
   }
