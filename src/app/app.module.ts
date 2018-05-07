@@ -10,6 +10,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { IndexModule } from './index/index.module';
 import { LoginModule } from './login/login.module';
 
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { StoreModule } from '@ngrx/store';
+import { TeacherSearchBasicReducer } from './reducers/teacher-search/teacher-search-basic.reducer';
+
 @NgModule({
   declarations: [
     AppComponent
@@ -20,7 +24,11 @@ import { LoginModule } from './login/login.module';
     AppRoutingModule,
     IndexModule,
     LoginModule,
-    NgZorroAntdModule.forRoot()
+    NgZorroAntdModule.forRoot(),
+    StoreDevtoolsModule,
+    StoreModule.forRoot({
+      TeacherSearchBasicReducer
+    })
   ],
   providers: [{
     provide: LocationStrategy,

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PostToTagsService } from '../../service/post-to-tags.service';
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'app-teacher-search-presearch',
@@ -56,9 +58,19 @@ export class TeacherSearchPresearchComponent implements OnInit {
     }
   ];
 
-  constructor(private tagsService: PostToTagsService) { }
+  tag: Observable<any>;
+
+  constructor(
+    private store$: Store<any>,
+    private tagsService: PostToTagsService) {
+    this.tag = store$.select('TeacherSearchBasicReducer');
+      console.log(this.tag);
+    }
 
   ngOnInit() {
+    this.tag.subscribe(val => {
+      console.log('get stores', val);
+    });
     this.tagsService.getTags().subscribe((val: {type: string, payload: any}) => {
       switch (val.type) {
         case 'basic':
