@@ -2,7 +2,6 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { sex } from '../../option-data/sex.data';
 import { PostToTagsService } from '../../service/post-to-tags.service';
-import { Store } from '@ngrx/store';
 
 @Component({
   selector: 'app-teacher-search-basic',
@@ -107,8 +106,7 @@ export class TeacherSearchBasicComponent implements OnInit, OnDestroy {
 
   constructor(
     private fb: FormBuilder,
-    private tagsService: PostToTagsService,
-    private store$: Store<any>
+    private tagsService: PostToTagsService
   ) {}
 
   postSubject(zodiac) {
@@ -118,8 +116,6 @@ export class TeacherSearchBasicComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    const test = this.store$.select('teacherSearchBasic');
-    console.log(test);
     this.searchBasic = this.fb.group({
       sex: [''],
       highestEdu: [''],

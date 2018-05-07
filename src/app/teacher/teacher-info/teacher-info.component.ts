@@ -112,6 +112,10 @@ export class TeacherInfoComponent implements OnInit {
 
   constructor() { }
 
+  modelChange(test) {
+    console.log('test');
+  }
+
   ngOnInit() {
   }
 

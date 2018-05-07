@@ -152,6 +152,10 @@ export class EmployeeListComponent implements OnInit {
     });
   }
 
+  modelChange(test) {
+    console.log('test');
+  }
+
   ngOnInit() {
     const page = {
       'id': 81,
