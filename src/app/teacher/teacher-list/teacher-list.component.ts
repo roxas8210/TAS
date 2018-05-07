@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { district } from '../../option-data/district.data';
 import { TabbarService } from '../../service/tabbar.service';
 import { Router } from '@angular/router';
@@ -24,7 +24,106 @@ export class TeacherListComponent implements OnInit {
   // 屏幕默認寬度，在組件初始化的時候根據當前屏幕寬度而改變
   viewPortWidth = 1440;
 
+  // 當前頁碼
+  currentPage = 1;
+
   teacherList = [{
+    id: 1,
+    no: '15432',
+    name: '李先生',
+    sex: '男',
+    phone: '41525486',
+    education: '小學',
+    profession: '學生',
+    editTime: '2018-04-27 15:52:13',
+    livingArea: '尖沙咀',
+    latestCase: 'A999999',
+    status: '成功個案'
+  }, {
+    id: 2,
+    no: '15432',
+    name: '李先生',
+    sex: '男',
+    phone: '41525486',
+    education: '小學',
+    profession: '學生',
+    editTime: '2018-04-27 15:52:13',
+    livingArea: '尖沙咀',
+    latestCase: 'A999999',
+    status: '成功個案'
+  }, {
+    id: 3,
+    no: '15432',
+    name: '李先生',
+    sex: '男',
+    phone: '41525486',
+    education: '小學',
+    profession: '學生',
+    editTime: '2018-04-27 15:52:13',
+    livingArea: '尖沙咀',
+    latestCase: 'A999999',
+    status: '成功個案'
+  }, {
+    id: 4,
+    no: '15432',
+    name: '李先生',
+    sex: '男',
+    phone: '41525486',
+    education: '小學',
+    profession: '學生',
+    editTime: '2018-04-27 15:52:13',
+    livingArea: '尖沙咀',
+    latestCase: 'A999999',
+    status: '成功個案'
+  }, {
+    id: 5,
+    no: '15432',
+    name: '李先生',
+    sex: '男',
+    phone: '41525486',
+    education: '小學',
+    profession: '學生',
+    editTime: '2018-04-27 15:52:13',
+    livingArea: '尖沙咀',
+    latestCase: 'A999999',
+    status: '成功個案'
+  }, {
+    id: 6,
+    no: '15432',
+    name: '李先生',
+    sex: '男',
+    phone: '41525486',
+    education: '小學',
+    profession: '學生',
+    editTime: '2018-04-27 15:52:13',
+    livingArea: '尖沙咀',
+    latestCase: 'A999999',
+    status: '成功個案'
+  }, {
+    id: 7,
+    no: '15432',
+    name: '李先生',
+    sex: '男',
+    phone: '41525486',
+    education: '小學',
+    profession: '學生',
+    editTime: '2018-04-27 15:52:13',
+    livingArea: '尖沙咀',
+    latestCase: 'A999999',
+    status: '成功個案'
+  }, {
+    id: 8,
+    no: '15432',
+    name: '李先生',
+    sex: '男',
+    phone: '41525486',
+    education: '小學',
+    profession: '學生',
+    editTime: '2018-04-27 15:52:13',
+    livingArea: '尖沙咀',
+    latestCase: 'A999999',
+    status: '成功個案'
+  }, {
     id: 1,
     no: '15432',
     name: '李先生',
@@ -127,6 +226,23 @@ export class TeacherListComponent implements OnInit {
     private tabbarService: TabbarService,
     private modalService: NzModalService
   ) { }
+
+  // 實現左右按鍵翻頁
+  @HostListener('document:keydown', ['$event'])
+  handleKeyboardEvent(kbdEvent: KeyboardEvent) {
+    if (kbdEvent.keyCode === 39) {
+      if (((this.teacherList.length / 15) > this.currentPage)
+      && ((this.teacherList.length % 15) > 0)
+    ) {
+        this.currentPage += 1;
+      }
+    }
+    if (kbdEvent.keyCode === 37) {
+      if (this.currentPage > 1) {
+        this.currentPage -= 1;
+      }
+    }
+  }
 
   getDetails(id) {
     console.log(id);

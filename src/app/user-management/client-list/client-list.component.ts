@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { TabbarService } from '../../service/tabbar.service';
 import { Router } from '@angular/router';
 import { NzModalService } from 'ng-zorro-antd';
@@ -29,6 +29,9 @@ export class ClientListComponent implements OnInit {
   districtSelectedOption;
 
   districtOptions = district;
+
+  // 當前頁碼
+  currentPage = 1;
 
   clientList = [{
     id: 1,
@@ -255,6 +258,23 @@ export class ClientListComponent implements OnInit {
     private tabbarService: TabbarService,
     private modelService: NzModalService
   ) { }
+
+  // 實現左右按鍵翻頁
+  @HostListener('document:keydown', ['$event'])
+  handleKeyboardEvent(kbdEvent: KeyboardEvent) {
+    if (kbdEvent.keyCode === 39) {
+      if (((this.clientList.length / 15) > this.currentPage)
+        && ((this.clientList.length % 15) > 0)
+      ) {
+        this.currentPage += 1;
+      }
+    }
+    if (kbdEvent.keyCode === 37) {
+      if (this.currentPage > 1) {
+        this.currentPage -= 1;
+      }
+    }
+  }
 
   ngOnInit() {
     const page = {

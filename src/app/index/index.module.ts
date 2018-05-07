@@ -18,7 +18,6 @@ import { TeacherModule } from '../teacher/teacher.module';
 import { EmployeeModule } from '../employee/employee.module';
 
 import { StoreModule } from '@ngrx/store';
-import { TeacherSearchBasicReducer } from '../reducers/teacher-search-basic.reducer';
 
 @NgModule({
   imports: [
@@ -29,10 +28,7 @@ import { TeacherSearchBasicReducer } from '../reducers/teacher-search-basic.redu
     SystemModule,
     UserManagementModule,
     TeacherModule,
-    EmployeeModule,
-    StoreModule.forRoot({
-      teacherSearchBasic: TeacherSearchBasicReducer
-    })
+    EmployeeModule
   ],
   declarations: [IndexComponent, MemoComponent, NoticeComponent, HoverMenuDirective, TabbarComponent],
   providers: [TabbarService]

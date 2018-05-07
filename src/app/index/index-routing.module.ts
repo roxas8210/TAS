@@ -43,6 +43,9 @@ const routes: Routes = [{
         path: 'user/client',
         component: ClientListComponent
     }, {
+        path: 'user/client/details/:id',
+        component: ClientDetailsComponent
+    }, {
         path: 'user/client/details',
         component: ClientDetailsComponent
     }, {
@@ -53,6 +56,9 @@ const routes: Routes = [{
         component: TeacherReviewComponent
     }, {
         path: 'user/teacher/details',
+        component: TeacherDetailsComponent
+    }, {
+        path: 'user/teacher/details/:id',
         component: TeacherDetailsComponent
     }, {
         path: 'user/teacher/search',

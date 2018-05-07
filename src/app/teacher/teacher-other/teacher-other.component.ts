@@ -62,6 +62,8 @@ export class TeacherOtherComponent implements OnInit {
     status: false
   }];
 
+  modelChange;
+
   constructor() { }
 
   ngOnInit() {

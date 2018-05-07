@@ -110,6 +110,9 @@ export class TeacherInfoComponent implements OnInit {
     status: false
   }];
 
+  modelChange(val) {
+  }
+
   constructor() { }
 
   ngOnInit() {

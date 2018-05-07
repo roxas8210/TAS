@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { subject } from '../../checkbox-data/subject.data';
-import { PostToTagsService } from '../../service/post-to-tags.service';
+import { Store } from '@ngrx/store';
+import { push_teacher_search_subject } from '../../actions/teacher-search/teacher-search-tags.action';
 
 @Component({
   selector: 'app-teacher-search-subject',
@@ -11,13 +12,15 @@ export class TeacherSearchSubjectComponent implements OnInit {
 
   subjectArray = subject;
 
-  constructor(private tagsService: PostToTagsService) { }
+  constructor(
+    private store$: Store<any>
+  ) { }
 
   // 選中時過濾已選到的數據
   postSubject(value) {
     const filterSubject = value.filter(val => val.checked === true);
     console.log(filterSubject);
-    this.tagsService.setTags({type: 'subject', payload: filterSubject});
+    this.store$.dispatch(push_teacher_search_subject(filterSubject));
   }
 
   ngOnInit() {

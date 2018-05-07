@@ -12,7 +12,7 @@ import { LoginModule } from './login/login.module';
 
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { StoreModule } from '@ngrx/store';
-import { TeacherSearchBasicReducer } from './reducers/teacher-search/teacher-search-basic.reducer';
+import { TeacherSearchTagsReducer } from './reducers/teacher-search/teacher-search-tags.reducer';
 
 @NgModule({
   declarations: [
@@ -27,7 +27,7 @@ import { TeacherSearchBasicReducer } from './reducers/teacher-search/teacher-sea
     NgZorroAntdModule.forRoot(),
     StoreDevtoolsModule,
     StoreModule.forRoot({
-      TeacherSearchBasicReducer
+      TeacherSearchTagsReducer
     })
   ],
   providers: [{

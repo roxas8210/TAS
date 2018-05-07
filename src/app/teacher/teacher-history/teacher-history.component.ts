@@ -58,6 +58,9 @@ export class TeacherHistoryComponent implements OnInit {
 
   constructor() { }
 
+  modelChange(val) {
+  }
+
   ngOnInit() {
   }
 

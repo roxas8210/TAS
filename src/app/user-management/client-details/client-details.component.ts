@@ -3,6 +3,7 @@ import { ActivatedRoute, Params, Router } from '@angular/router';
 import { ClientIdService } from '../../service/client-id.service';
 import { TabbarService } from '../../service/tabbar.service';
 import { district } from '../../option-data/district.data';
+import 'rxjs/add/operator/switchMap';
 
 @Component({
   selector: 'app-client-details',
@@ -54,16 +55,17 @@ export class ClientDetailsComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    const id = this.routerInfo.params.subscribe((parmas: Params) => {
-      this.id = parmas.id;
-      console.log('獲取的id', parmas.id);
-      // const page = {
-      //   'id': 211,
-      //   'title': '客户详情',
-      //   'url': `/index/user/client/details/${this.id}`,
-      //   'activeStatus': true
-      // };
-      // this.tabbarService.setTabbar(page);
+
+    const id = this.routerInfo.params.switchMap((parmas: Params) => {
+      this.tabbarService.setTabbar({
+        'id': 211 + parmas.id,
+        'title': '客戶詳情',
+        'url': `/index/user/client/details/${parmas.id}`,
+        'activeStatus': true
+      });
+      return this.tabbarService.subject;
+    }).subscribe(() => {
+      console.log('獲取的id');
       this.districtSelectedOption = this.districtOptions[0];
     });
   }

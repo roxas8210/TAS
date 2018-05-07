@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { district } from '../../option-data/district.data';
+import { ActivatedRoute, Params } from '@angular/router';
+import { TabbarService } from '../../service/tabbar.service';
+import 'rxjs/add/operator/switchMap';
 
 @Component({
   selector: 'app-teacher-details',
@@ -56,9 +59,23 @@ export class TeacherDetailsComponent implements OnInit {
     }
   }
 
-  constructor() { }
+  constructor(
+    private routerInfo: ActivatedRoute,
+    private tabbarService: TabbarService
+  ) { }
 
   ngOnInit() {
+    this.routerInfo.params.switchMap((params: Params) => {
+      this.tabbarService.setTabbar({
+        'id': 221 + params.id,
+        'title': '導師詳情',
+        'url': `/index/user/teacher/details/${params.id}`,
+        'activeStatus': true
+      });
+      return this.tabbarService.subject;
+    }).subscribe(() => {
+      console.log('導師詳情');
+    });
   }
 
 }

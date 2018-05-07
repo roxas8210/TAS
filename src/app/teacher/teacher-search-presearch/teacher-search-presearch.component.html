@@ -4,8 +4,35 @@
   </div>
   <form>
     <div class="submit-container">
-      <div *ngFor="let tag of tags">
-        <nz-tag *ngFor="let t of tag.data" [nzClosable]="false" [nzColor]="tag.color" style="margin-top: 10px;">{{t.text}}</nz-tag>
+      <div *ngIf="(tags | async)?.basicData.length">
+        <nz-tag *ngFor="let tag of (tags | async)?.basicData" [nzClosable]="false" [nzColor]="'#646464'" style="margin-top: 10px;">{{tag.text}}</nz-tag>
+      </div>
+      <div *ngIf="(tags | async)?.zodiacData.length">
+        <nz-tag *ngFor="let tag of (tags | async)?.zodiacData" [nzClosable]="false" [nzColor]="'#646464'" style="margin-top: 10px;">{{tag.text}}</nz-tag>
+      </div>
+      <div *ngIf="(tags | async)?.subjectData.length">
+        <nz-tag *ngFor="let tag of (tags | async)?.subjectData" [nzClosable]="false" [nzColor]="'#ed2445'" style="margin-top: 10px;">{{tag.text}}</nz-tag>
+      </div>
+      <div *ngIf="(tags | async)?.areaData.length">
+        <nz-tag *ngFor="let tag of (tags | async)?.areaData" [nzClosable]="false" [nzColor]="'#ed8824'" style="margin-top: 10px;">{{tag.text}}</nz-tag>
+      </div>
+      <div *ngIf="(tags | async)?.educationMiddleData.length">
+        <nz-tag *ngFor="let tag of (tags | async)?.educationMiddleData" [nzClosable]="false" [nzColor]="'#de21de'" style="margin-top: 10px;">{{tag.text}}</nz-tag>
+      </div>
+      <div *ngIf="(tags | async)?.educationHistoryData.length">
+        <nz-tag *ngFor="let tag of (tags | async)?.educationHistoryData" [nzClosable]="false" [nzColor]="'#de21de'" style="margin-top: 10px;">{{tag.text}}</nz-tag>
+      </div>
+      <div *ngIf="(tags | async)?.musicData.length">
+        <nz-tag *ngFor="let tag of (tags | async)?.musicData" [nzClosable]="false" [nzColor]="'#1fd397'" style="margin-top: 10px;">{{tag.text}}</nz-tag>
+      </div>
+      <div *ngIf="(tags | async)?.infoData.length">
+        <nz-tag *ngFor="let tag of (tags | async)?.infoData" [nzClosable]="false" [nzColor]="'#1ab31a'" style="margin-top: 10px;">{{tag.text}}</nz-tag>
+      </div>
+      <div *ngIf="(tags | async)?.professionData.length">
+        <nz-tag *ngFor="let tag of (tags | async)?.professionData" [nzClosable]="false" [nzColor]="'#2399ed'" style="margin-top: 10px;">{{tag.text}}</nz-tag>
+      </div>
+      <div *ngIf="(tags | async)?.otherData.length">
+        <nz-tag *ngFor="let tag of (tags | async)?.otherData" [nzClosable]="false" [nzColor]="'#1fd0d0'" style="margin-top: 10px;">{{tag.text}}</nz-tag>
       </div>
     </div>
     <div class="submit-button">

@@ -86,6 +86,7 @@ export class TeacherAreaComponent implements OnInit {
     text: '西環',
   }]];
 
+  postArea;
 
   constructor() { }
 

@@ -106,6 +106,8 @@ export class TeacherEducationHistoryComponent implements OnInit {
 
   otherScore;
 
+  modelChange;
+
   constructor() { }
 
   ngOnInit() {
