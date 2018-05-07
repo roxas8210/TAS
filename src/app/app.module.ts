@@ -25,7 +25,7 @@ import { TeacherSearchTagsReducer } from './reducers/teacher-search/teacher-sear
     IndexModule,
     LoginModule,
     NgZorroAntdModule.forRoot(),
-    StoreDevtoolsModule,
+    StoreDevtoolsModule.instrument({maxAge: 50}),
     StoreModule.forRoot({
       TeacherSearchTagsReducer
     })

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
-import { PostToTagsService } from '../../service/post-to-tags.service';
+import { Store } from '@ngrx/store';
+import { push_teacher_search_educationHistoryData } from '../../actions/teacher-search/teacher-search-tags.action';
 
 @Component({
   selector: 'app-education-history',
@@ -13,8 +13,6 @@ export class EducationHistoryComponent implements OnInit {
     label: '一级',
     value: '一级',
   }];
-
-  historyForm: FormGroup;
 
   historyList = [{
     id: 0,
@@ -110,57 +108,18 @@ export class EducationHistoryComponent implements OnInit {
 
   otherScore;
 
-  constructor(
-    private fb: FormBuilder,
-    private tagsService: PostToTagsService
-  ) { }
+  constructor(private store$: Store<any>) { }
 
   modelChange(val) {
     if (this.historyList[val].text) {
       this.historyList[val].text = this.historyList[val].bak + this.historyList[val].value;
       this.historyList[val].status = true;
       const obj = this.historyList.filter(v => v.status === true);
-      this.tagsService.setTags({ type: 'education-history', payload: obj });
+      this.store$.dispatch(push_teacher_search_educationHistoryData(obj));
     } else {
       this.historyList[val].status = false;
     }
   }
 
-  ngOnInit() {
-    this.historyForm = this.fb.group({
-      // otherScore: [''],
-      higerScore: [''],
-      highestEdu: [''],
-      littleSchool: [''],
-      middleSchool: [''],
-      middleSchoolLangue: [''],
-      highSchool: [''],
-      otherHighSchool: [''],
-      middleSchoolSubject: [''],
-      highSchoolSubject: [''],
-      otherLessons: [''],
-      otherProfessionalLessons: [''],
-      studingGrade: [''],
-      middleTotalScore: [''],
-      middleTestLangue: ['']
-    });
-
-    this.historyForm.valueChanges.subscribe(val => {
-      console.log(val);
-
-      // 对象转数组
-      const array = [];
-      for (const i in val) {
-        if (i) {
-          array.push(val[i]);
-        }
-      }
-
-      // 修改数组中的text内容
-      array.map((element, index) => {
-      });
-      console.log(this.historyList);
-    });
-  }
-
+  ngOnInit() {}
 }

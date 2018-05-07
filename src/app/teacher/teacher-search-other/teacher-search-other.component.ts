@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { PostToTagsService } from '../../service/post-to-tags.service';
+import { Store } from '@ngrx/store';
+import { push_teacher_search_other } from '../../actions/teacher-search/teacher-search-tags.action';
 
 @Component({
   selector: 'app-teacher-search-other',
@@ -63,15 +64,14 @@ export class TeacherSearchOtherComponent implements OnInit {
     status: false
   }];
 
-  constructor(private tagsService: PostToTagsService) { }
+  constructor(private store$: Store<any>) { }
 
   modelChange(val) {
-    if (this.otherList[val].text) {
+    if (this.otherList[val].value.length) {
       this.otherList[val].text = this.otherList[val].bak + this.otherList[val].value;
       this.otherList[val].status = true;
       const obj = this.otherList.filter(v => v.status === true);
-      this.tagsService.setTags({ type: 'other', payload: obj });
-      console.log(obj);
+      this.store$.dispatch(push_teacher_search_other(obj));
     } else {
       this.otherList[val].status = false;
     }

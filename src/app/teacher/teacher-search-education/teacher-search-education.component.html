@@ -4,10 +4,6 @@
       <ng-template #nzTabHeading>
         <span>{{tab.name}}</span>
       </ng-template>
-      <!-- <div class="switch-container" [ngSwitch]="selectedIndex">
-        <app-education-middle *ngSwitchCase="0"></app-education-middle>
-      </div> -->
-
       <div class="switch-container" [ngSwitch]="selectedIndex">
         <app-education-middle [ngStyle]="{'display': selectedIndex === 0? 'block': 'none'}"></app-education-middle>
         <app-education-history [ngStyle]="{'display': selectedIndex === 4? 'block': 'none'}"></app-education-history>

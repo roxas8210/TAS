@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
-import { PostToTagsService } from '../../service/post-to-tags.service';
+import { Store } from '@ngrx/store';
+import { push_teacher_search_info } from '../../actions/teacher-search/teacher-search-tags.action';
 
 @Component({
   selector: 'app-teacher-search-info',
@@ -8,8 +8,6 @@ import { PostToTagsService } from '../../service/post-to-tags.service';
   styleUrls: ['./teacher-search-info.component.less']
 })
 export class TeacherSearchInfoComponent implements OnInit {
-
-  fg: FormGroup;
 
   levelOptions = [{
     label: '一级',
@@ -114,15 +112,14 @@ export class TeacherSearchInfoComponent implements OnInit {
     status: false
   }];
 
-  constructor(private tagsService: PostToTagsService) { }
+  constructor(private store$: Store<any>) { }
 
   modelChange(val) {
-    if (this.infoList[val].text) {
+    if (this.infoList[val].value.length) {
       this.infoList[val].text = this.infoList[val].bak + this.infoList[val].value;
       this.infoList[val].status = true;
       const obj = this.infoList.filter(v => v.status === true);
-      this.tagsService.setTags({ type: 'info', payload: obj });
-      console.log(obj);
+      this.store$.dispatch(push_teacher_search_info(obj));
     } else {
       this.infoList[val].status = false;
     }

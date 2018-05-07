@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { sex } from '../../option-data/sex.data';
-import { PostToTagsService } from '../../service/post-to-tags.service';
 
 import { Store } from '@ngrx/store';
 import { push_teacher_search_basic, push_teacher_search_zodiac } from '../../actions/teacher-search/teacher-search-tags.action';

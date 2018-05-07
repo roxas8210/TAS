@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { PostToTagsService } from '../../service/post-to-tags.service';
+import { Store } from '@ngrx/store';
+import { push_teacher_search_music } from '../../actions/teacher-search/teacher-search-tags.action';
 
 @Component({
   selector: 'app-teacher-search-music',
@@ -34,7 +35,7 @@ export class TeacherSearchMusicComponent implements OnInit {
     status: false
   }];
 
-  constructor(private tagsService: PostToTagsService) { }
+  constructor(private store$: Store<any>) { }
 
   modelChange(val) {
     if (this.musicList[val].status) {
@@ -42,7 +43,7 @@ export class TeacherSearchMusicComponent implements OnInit {
         this.musicList[val].text = this.musicList[val].bak + this.musicList[val].selectValue;
         const obj = this.musicList.filter(v => v.status === true);
         console.log(obj);
-        this.tagsService.setTags({ type: 'music', payload: obj });
+        this.store$.dispatch(push_teacher_search_music(obj));
       }
     } else {
       this.musicList[val].status = false;

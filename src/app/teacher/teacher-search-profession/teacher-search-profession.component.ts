@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { PostToTagsService } from '../../service/post-to-tags.service';
+import { Store } from '@ngrx/store';
+import { push_teacher_search_profession } from '../../actions/teacher-search/teacher-search-tags.action';
 
 @Component({
   selector: 'app-teacher-search-profession',
@@ -57,15 +58,14 @@ export class TeacherSearchProfessionComponent implements OnInit {
     status: false
   }];
 
-  constructor(private tagsService: PostToTagsService) { }
+  constructor(private store$: Store<any>) { }
 
   modelChange(val) {
     if (this.professionList[val].text) {
       this.professionList[val].text = this.professionList[val].bak + this.professionList[val].value;
       this.professionList[val].status = true;
       const obj = this.professionList.filter(v => v.status === true);
-      this.tagsService.setTags({ type: 'profession', payload: obj });
-      console.log(obj);
+      this.store$.dispatch(push_teacher_search_profession(obj));
     } else {
       this.professionList[val].status = false;
     }

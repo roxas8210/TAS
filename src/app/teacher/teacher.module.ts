@@ -68,6 +68,6 @@ import { TeacherEducationHistoryComponent } from './teacher-education-history/te
     TeacherEducationHistoryComponent
   ],
   entryComponents: [TeacherSearchComponent],
-  providers: [PostToTagsService]
+  providers: []
 })
 export class TeacherModule { }

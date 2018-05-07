@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { PostToTagsService } from '../../service/post-to-tags.service';
 import { Store } from '@ngrx/store';
 import { push_teacher_search_educationMiddleData } from '../../actions/teacher-search/teacher-search-tags.action';
 
@@ -10,8 +9,6 @@ import { push_teacher_search_educationMiddleData } from '../../actions/teacher-s
   styleUrls: ['./education-middle.component.less']
 })
 export class EducationMiddleComponent implements OnInit {
-
-  middleForm: FormGroup;
 
   levelOptions = [{
     label: '1',
@@ -158,8 +155,6 @@ export class EducationMiddleComponent implements OnInit {
   }];
 
   constructor(
-    private fb: FormBuilder,
-    private tagsService: PostToTagsService,
     private store$: Store<any>
   ) { }
 
@@ -175,52 +170,6 @@ export class EducationMiddleComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.middleForm = this.fb.group({
-      chinese: [''],
-      english: [''],
-      math: [''],
-      chineseLiterature: [''],
-      englishLiterature: [''],
-      worldHistory: [''],
-      chineseHistory: [''],
-      geography: [''],
-      music: [''],
-      chemistry: [''],
-      biology: [''],
-      physics: [''],
-      mathPlus: [''],
-      bussniss: [''],
-      account: [''],
-      economic: [''],
-      computer: [''],
-      press: [''],
-    });
-    this.middleForm.valueChanges.subscribe((val: Object) => {
-
-      // 对象转数组
-      const array = [];
-      for (const i in val) {
-        if (i) {
-          array.push(val[i]);
-        }
-      }
-
-      // 修改数组中的text内容
-      array.map((element, index) => {
-        if (element) {
-          if (element.status === false) {
-            const preText = this.subjectList[index];
-            element.text = preText + element.text;
-            element.status = true;
-          }
-        }
-      });
-
-      console.log(array);
-      const filter = array.filter(v => v instanceof Object);
-      console.log(filter);
-      this.tagsService.setTags({ type: 'education-middle', payload: filter });
-    });
   }
 
 }
