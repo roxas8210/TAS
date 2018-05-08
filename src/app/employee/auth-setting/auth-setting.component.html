@@ -1,0 +1,89 @@
+<div class="page-setting">
+  <div class="page-head">
+    <span>員工管理</span>
+    <span>/</span>
+    <span class="sub">權限設置</span>
+  </div>
+  <div class="page-body">
+    <div class="page-sidebar">
+      <div class="page-sidebar-title">
+        <p>員工職位</p>
+      </div>
+      <nz-collapseset [nzBordered]="false" [nzAccordion]="true">
+        <nz-collapse style="border: none;" *ngFor="let list of menu" [nzTitle]="list.name" [nzActive]="list.active">
+            <nz-collapseset [nzBordered]="false" [nzAccordion]="true">
+              <nz-collapse *ngFor="let listChildren of list.children" [nzTitle]="listChildren.name" [nzActive]="listChildren.active">
+                <nz-collapseset [nzBordered]="false" [nzAccordion]="true">
+                  <nz-collapse *ngFor="let listChildren3 of listChildren.children" [nzTitle]="listChildren3.name" [nzActive]="listChildren3.active">
+                    <div *ngIf="listChildren3.children.length > 0">
+                      <nz-collapseset [nzBordered]="false" [nzAccordion]="true">
+                        <!-- <nz-collapse *ngFor="let listChildren4 of listChildren3.children" [nzTitle]="listChildren4.name" [nzActive]="listChildren4.active"> -->
+                            <!-- <nz-collapseset [nzBordered]="false" [nzAccordion]="true">
+                              <nz-collapse *ngFor="let listChildren5 of listChildren4.children" [nzTitle]="listChildren5.name" [nzActive]="listChildren5.active">
+                              </nz-collapse>
+                            </nz-collapseset> -->
+                        <!-- </nz-collapse> -->
+                        <ul *ngFor="let listChildren4 of listChildren3.children">
+                          <li (click)="selectPeople(listChildren4)" class="noChild">{{listChildren4.name}}</li>
+                        </ul>
+                      </nz-collapseset>
+                    </div>
+                  </nz-collapse>
+                </nz-collapseset>
+              </nz-collapse>
+            </nz-collapseset>
+        </nz-collapse>
+      </nz-collapseset>
+    </div>
+    <div class="page-menu">
+      <div class="page-menu-title">
+        <p>各級頁面</p>
+      </div>
+      <div class="page-menu-container">
+        <nz-collapseset [nzBordered]="false" [nzAccordion]="true">
+          <nz-collapse *ngFor="let list of pageMenu" [nzTitle]="list.name" [nzActive]="list.active">
+            <ul *ngFor="let listChildren of list.children">
+              <li class="noChild">{{listChildren.name}}</li>
+            </ul>
+          </nz-collapse>
+        </nz-collapseset>
+      </div>
+    </div>
+    <div class="page-main">
+      <div class="page-main-title">
+        <p>權限管理</p>
+      </div>
+      <div class="page-main-container">
+        <form [formGroup]="authForm">
+          <div class="query_auth">
+            <p>權限查詢</p>
+            <label style="width: 100%;" nz-checkbox formControllName="company">
+              <span>全司</span>
+            </label>
+            <label style="width: 100%;" nz-checkbox formControllName="group">
+              <span>小組</span>
+            </label>
+            <label style="width: 100%;" nz-checkbox formControllName="person">
+              <span>個人</span>
+            </label>
+          </div>
+          <div class="operate_auth">
+            <p>操作權限</p>
+            <label style="width: 100%;" nz-checkbox formControllName="add">
+              <span>新增</span>
+            </label>
+            <label style="width: 100%;" nz-checkbox formControllName="delete">
+              <span>刪除</span>
+            </label>
+            <label style="width: 100%;" nz-checkbox formControllName="edit">
+              <span>編輯</span>
+            </label>
+          </div>
+        </form>
+        <button [nzType]="'primary'" nz-button nzGhost style="border-radius: 17px;height: 34px;width: 96px;margin: 0 auto;display: block;">
+          <span>確認</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

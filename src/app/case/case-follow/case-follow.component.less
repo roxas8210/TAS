@@ -1,0 +1,63 @@
+.case-list {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    .list-func {
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        flex-shrink: 0;
+    }
+    .list-container {
+        width: 100%;
+        flex-grow: 1;
+        box-shadow: 4px 4px 6px rgba(0,0,0,0.15);
+        background-color: white;
+        overflow: auto;
+        .search-container {
+            width: 100%;
+            height: auto;
+            overflow: hidden;
+            padding: 0 20px;
+            box-sizing: border-box;
+            .search-row1 {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                .search-case-status {
+                    display: flex;
+                    font-size: 14px;
+                    line-height: 24px;
+                    color: #2399ed;
+                    align-items: center;
+                    div {
+                        border: 1px solid #2399ed;
+                        box-sizing: border-box;
+                        margin-right: 6px;
+                        padding: 0 10px;
+                        height: 24px;
+                        span {
+                            font-size: 14px;
+                            line-height: 24px;
+                        }
+                    }
+                }
+            }
+            .search-row2 {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                margin-top: 10px;
+                align-items: center;
+                form {
+                    display: flex;
+                    align-items: center;
+                    .search-case-status {
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+    }
+}

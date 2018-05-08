@@ -1,0 +1,121 @@
+.page-setting {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.15);
+}
+.page-setting .page-head {
+  width: 100%;
+  text-align: left;
+  padding: 0 34px;
+  box-sizing: border-box;
+  background-color: #2399ed;
+}
+.page-setting .page-head span {
+  color: white;
+  font-size: 22px;
+  line-height: 50px;
+}
+.page-setting .page-head .sub {
+  font-size: 18px;
+}
+.page-setting .page-body {
+  flex-grow: 1;
+  display: flex;
+  background-color: white;
+}
+.page-setting .page-body .page-sidebar {
+  width: 240px;
+  padding: 20px;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  border-right: 1px solid #e1e1e1;
+}
+.page-setting .page-body .page-sidebar .noChild {
+  width: 100%;
+  padding-left: 20px;
+  box-sizing: border-box;
+  font-size: 12px;
+  line-height: 36px;
+}
+.page-setting .page-body .page-sidebar .page-sidebar-title {
+  width: 100%;
+  background-color: #2399ed;
+  text-align: center;
+}
+.page-setting .page-body .page-sidebar .page-sidebar-title p {
+  font-size: 16px;
+  color: white;
+  line-height: 32px;
+}
+.page-setting .page-body .page-menu {
+  width: 240px;
+  padding: 20px;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  border-right: 1px solid #e1e1e1;
+}
+.page-setting .page-body .page-menu .page-menu-title {
+  width: 200px;
+  margin: 0 auto;
+  height: auto;
+  overflow: hidden;
+  text-align: center;
+  background-color: #2399ed;
+}
+.page-setting .page-body .page-menu .page-menu-title p {
+  font-size: 16px;
+  line-height: 32px;
+  color: white;
+}
+.page-setting .page-body .page-menu .noChild {
+  width: 100%;
+  padding-left: 20px;
+  box-sizing: border-box;
+  font-size: 12px;
+  line-height: 36px;
+}
+.page-setting .page-body .page-main {
+  display: flex;
+  width: 240px;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+.page-setting .page-body .page-main .page-main-title {
+  width: 200px;
+  background-color: #2399ed;
+  text-align: center;
+}
+.page-setting .page-body .page-main .page-main-title p {
+  font-size: 16px;
+  color: white;
+  line-height: 32px;
+}
+.page-setting .page-body .page-main .page-main-container {
+  width: 200px;
+}
+.page-setting .page-body .page-main .page-main-container .query_auth {
+  width: 100px;
+  height: auto;
+  overflow: hidden;
+  margin: 0 auto;
+  text-align: center;
+}
+.page-setting .page-body .page-main .page-main-container .query_auth p {
+  font-size: 14px;
+  line-height: 42px;
+}
+.page-setting .page-body .page-main .page-main-container .operate_auth {
+  width: 100px;
+  height: auto;
+  overflow: hidden;
+  margin: 0 auto;
+  text-align: center;
+}
+.page-setting .page-body .page-main .page-main-container .operate_auth p {
+  font-size: 14px;
+  line-height: 42px;
+}

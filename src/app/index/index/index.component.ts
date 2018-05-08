@@ -26,10 +26,6 @@ export class IndexComponent implements OnInit {
       'icon': 'user',
       'url': '/index/user/teacher'
     }, {
-      'title': '導師審核',
-      'icon': 'safety',
-      'url': '/index/user/teacher/review'
-    }, {
       'title': '黑名單',
       'icon': 'dislike',
       'url': '/index/user/blacklist'
@@ -37,7 +33,12 @@ export class IndexComponent implements OnInit {
   }, {
     'title': '個案管理',
     'icon': 'calendar',
-    'url': '/'
+    'url': '/',
+    'subMenu': [{
+      'title': '個案跟進',
+      'icon': 'calendar',
+      'url': '/index/case/follow'
+    }]
   }, {
     'title': '行政管理',
     'icon': 'edit',
@@ -72,6 +73,9 @@ export class IndexComponent implements OnInit {
     }, {
       'title': '員工列表',
       'url': '/index/employee/list'
+    }, {
+      'title': '權限設置',
+      'url': '/index/employee/auth'
     }]
   }];
 

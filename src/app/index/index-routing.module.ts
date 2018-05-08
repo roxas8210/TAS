@@ -16,6 +16,8 @@ import { TeacherSearchComponent } from '../teacher/teacher-search/teacher-search
 import { BlackListComponent } from '../user-management/black-list/black-list.component';
 import { EmployeeListComponent } from '../employee/employee-list/employee-list.component';
 import { DepartmentComponent } from '../employee/department/department.component';
+import { CaseFollowComponent } from '../case/case-follow/case-follow.component';
+import { AuthSettingComponent } from '../employee/auth-setting/auth-setting.component';
 
 /* index模塊路由
 *  /index/system/setting為“系統設置”路由
@@ -72,6 +74,12 @@ const routes: Routes = [{
     }, {
         path: 'employee/list',
         component: EmployeeListComponent
+    }, {
+        path: 'employee/auth',
+        component: AuthSettingComponent
+    }, {
+        path: 'case/follow',
+        component: CaseFollowComponent
     }]
 }];
 

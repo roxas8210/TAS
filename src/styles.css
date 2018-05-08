@@ -20,3 +20,7 @@ html, body {
     height: 36px;
     margin-left: 0 !important;
 }
+
+.ant-collapse-content-box {
+    padding: 0 !important;
+}

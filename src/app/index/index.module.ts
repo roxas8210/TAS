@@ -16,6 +16,7 @@ import { TabbarService } from '../service/tabbar.service';
 import { UserManagementModule } from '../user-management/user-management.module';
 import { TeacherModule } from '../teacher/teacher.module';
 import { EmployeeModule } from '../employee/employee.module';
+import { CaseModule } from '../case/case.module';
 
 import { StoreModule } from '@ngrx/store';
 
@@ -28,7 +29,8 @@ import { StoreModule } from '@ngrx/store';
     SystemModule,
     UserManagementModule,
     TeacherModule,
-    EmployeeModule
+    EmployeeModule,
+    CaseModule
   ],
   declarations: [IndexComponent, MemoComponent, NoticeComponent, HoverMenuDirective, TabbarComponent],
   providers: [TabbarService]
