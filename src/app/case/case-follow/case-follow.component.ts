@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { TabbarService } from '../../service/tabbar.service';
 import { district } from '../../option-data/district.data';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-case-follow',
@@ -150,7 +151,8 @@ export class CaseFollowComponent implements OnInit {
 
   constructor(
     private tabbarService: TabbarService,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private router: Router
   ) {
     this.searchForm = this.fb.group({
       type: [''],
@@ -163,6 +165,10 @@ export class CaseFollowComponent implements OnInit {
 
   onSearch(event) {
     console.log(event);
+  }
+
+  getDetails(id) {
+    this.router.navigate([`/index/case/follow/details/${id}`]);
   }
 
   ngOnInit() {

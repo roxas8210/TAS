@@ -13,7 +13,7 @@
       </button>
       <div class="select">
         <span>個案類別：</span>
-        <nz-select style="height: 32px;" [(ngModel)]="selectedOption" [nzPlaceHolder]="'選擇類別'" nzAllowClear>
+        <nz-select style="height: 32px;" [(ngModel)]="selectedOption" [nzPlaceHolder]="'選擇類別'">
           <nz-option *ngFor="let option of options" [nzLabel]="option.label" [nzValue]="option">
           </nz-option>
         </nz-select>
@@ -22,7 +22,7 @@
     <div class="func-right">
       <div class="select">
         <span>地區類別：</span>
-        <nz-select style="height: 32px;" [(ngModel)]="districtSelectedOption" [nzPlaceHolder]="'選擇地區'" nzAllowClear>
+        <nz-select style="height: 32px;" [(ngModel)]="districtSelectedOption" [nzPlaceHolder]="'選擇地區'">
           <nz-option *ngFor="let option of districtOptions" [nzLabel]="option.label" [nzValue]="option">
           </nz-option>
         </nz-select>
@@ -30,7 +30,7 @@
     </div>
   </div>
   <div class="list-container">
-    <nz-table #nzTable [(nzPageIndex)]="currentPage" [nzDataSource]="clientList" [nzPageSize]="15" style="max-width: 900px;max-height: 600px;">
+    <nz-table #nzTable [(nzPageIndex)]="currentPage" [nzDataSource]="clientList" [nzTotal]="clientList.length" [nzPageSize]="15" style="max-width: 900px;max-height: 600px;">
       <thead nz-thead>
         <tr>
           <th nz-th style="text-align: center;background-color: white;border-bottom: 1px solid rgba(0, 0, 0, 0.15);" [nzWidth]="'60px'">

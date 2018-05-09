@@ -1,0 +1,14 @@
+.case-details {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.15);
+  background-color: white;
+}
+.case-details .case-details-container {
+  width: 100%;
+  height: auto;
+  overflow: auto;
+  padding: 0 10px;
+  box-sizing: border-box;
+}

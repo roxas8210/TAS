@@ -1,0 +1,469 @@
+<div class="case-info-container">
+  <div class="case-info-main">
+    <nz-table nzBordered [nzCustomNoResult]="true" >
+      <tbody nz-tbody>
+        <tr nz-tbody-tr>
+          <td nz-td colspan="3">
+            <p>個案編號：A163123</p>
+          </td>
+        </tr>
+        <tr nz-tbody-tr>
+          <td nz-td style="padding: 0;">
+            <div nz-row style="display: flex;align-items: center;">
+              <div nz-col [nzSpan]="8" class="field">
+                <span>地址：</span>
+              </div>
+              <div nz-col [nzSpan]="16" class="field-content">
+                <span *ngIf="!editStatus">{{caseInfo.address}}</span>
+                <nz-select *ngIf="editStatus" style="width: 100%;padding-right: 10px;" [(ngModel)]="caseInfo.address" [nzPlaceHolder]="'選擇地址'">
+                  <nz-option *ngFor="let option of addressOptions" [nzLabel]="option.label" [nzValue]="option.value" [nzDisabled]="option.disabled">
+                  </nz-option>
+                </nz-select>
+              </div>
+            </div>
+          </td>
+          <td nz-td style="padding: 0;">
+            <div nz-row style="display: flex;align-items: center;">
+              <div nz-col [nzSpan]="10" class="field">
+                <span>居住地點：</span>
+              </div>
+              <div nz-col [nzSpan]="14" class="field-content">
+                <span *ngIf="!editStatus">{{caseInfo.livingAddress}}</span>
+                <nz-input *ngIf="editStatus" style="width: 100%;padding-right: 10px;" [(ngModel)]="caseInfo.livingAddress" [nzPlaceHolder]="'輸入居住地點'"></nz-input>
+              </div>
+            </div>
+          </td>
+          <td nz-td style="padding: 0;">
+            <div nz-row style="display: flex;align-items: center;">
+              <div nz-col [nzSpan]="12" class="field">
+                <span>要求上課週次：</span>
+              </div>
+              <div nz-col [nzSpan]="12" class="field-content">
+                <span *ngIf="!editStatus">{{caseInfo.week}}</span>
+                <nz-select *ngIf="editStatus" style="width: 100%;padding-right: 10px;" [(ngModel)]="caseInfo.week" [nzPlaceHolder]="'選擇要求上課週次'">
+                  <nz-option *ngFor="let option of addressOptions" [nzLabel]="option.label" [nzValue]="option.value" [nzDisabled]="option.disabled">
+                  </nz-option>
+                </nz-select>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr nz-tbody-tr>
+          <td nz-td style="padding: 0;">
+            <div nz-row style="display: flex;align-items: center;">
+              <div nz-col [nzSpan]="10" class="field">
+                <span>補習地址：</span>
+              </div>
+              <div nz-col [nzSpan]="14" class="field-content">
+                <span *ngIf="!editStatus">{{caseInfo.studingAddress}}</span>
+                <nz-select *ngIf="editStatus" style="width: 100%;padding-right: 10px;" [(ngModel)]="caseInfo.studingAddress" [nzPlaceHolder]="'選擇補習地址'">
+                  <nz-option *ngFor="let option of addressOptions" [nzLabel]="option.label" [nzValue]="option.value" [nzDisabled]="option.disabled">
+                  </nz-option>
+                </nz-select>
+              </div>
+            </div>
+          </td>
+          <td nz-td style="padding: 0;">
+            <div nz-row style="display: flex;align-items: center;">
+              <div nz-col [nzSpan]="10" class="field">
+                <span>郵寄地址：</span>
+              </div>
+              <div nz-col [nzSpan]="14" class="field-content">
+                <span *ngIf="!editStatus">{{caseInfo.mailAddress}}</span>
+                <nz-select *ngIf="editStatus" style="width: 100%;padding-right: 10px;" [(ngModel)]="caseInfo.mailAddress" [nzPlaceHolder]="'選擇郵寄地址'">
+                  <nz-option *ngFor="let option of addressOptions" [nzLabel]="option.label" [nzValue]="option.value" [nzDisabled]="option.disabled">
+                  </nz-option>
+                </nz-select>
+              </div>
+            </div>
+          </td>
+          <td nz-td style="padding: 0;">
+            <div nz-row style="display: flex;align-items: center;">
+              <div nz-col [nzSpan]="10" class="field">
+                <span>每次時間：</span>
+              </div>
+              <div nz-col [nzSpan]="14" class="field-content">
+                <span *ngIf="!editStatus">{{caseInfo.time}}</span>
+                <nz-select *ngIf="editStatus" style="width: 100%;padding-right: 10px;" [(ngModel)]="caseInfo.time" [nzPlaceHolder]="'選擇每次時間'">
+                  <nz-option *ngFor="let option of addressOptions" [nzLabel]="option.label" [nzValue]="option.value" [nzDisabled]="option.disabled">
+                  </nz-option>
+                </nz-select>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr nz-tbody-tr>
+          <td nz-td style="padding: 0;">
+            <div nz-row style="display: flex;align-items: center;">
+              <div nz-col [nzSpan]="10" class="field">
+                <span>補習級別：</span>
+              </div>
+              <div nz-col [nzSpan]="14" class="field-content">
+                <span *ngIf="!editStatus">{{caseInfo.level}}</span>
+                <nz-select *ngIf="editStatus" style="width: 100%;padding-right: 10px;" [(ngModel)]="caseInfo.level" [nzPlaceHolder]="'選擇補習級別'">
+                  <nz-option *ngFor="let option of addressOptions" [nzLabel]="option.label" [nzValue]="option.value" [nzDisabled]="option.disabled">
+                  </nz-option>
+                </nz-select>
+              </div>
+            </div>
+          </td>
+          <td nz-td style="padding: 0;">
+            <div nz-row style="display: flex;align-items: center;">
+              <div nz-col [nzSpan]="10" class="field">
+                <span>想補科目：</span>
+              </div>
+              <div nz-col [nzSpan]="14" class="field-content">
+                <span *ngIf="!editStatus">{{caseInfo.subject}}</span>
+                <nz-select *ngIf="editStatus" style="width: 100%;padding-right: 10px;" [(ngModel)]="caseInfo.subject" [nzPlaceHolder]="'選擇想補科目'">
+                  <nz-option *ngFor="let option of addressOptions" [nzLabel]="option.label" [nzValue]="option.value" [nzDisabled]="option.disabled">
+                  </nz-option>
+                </nz-select>
+              </div>
+            </div>
+          </td>
+          <td nz-td style="padding: 0;">
+            <div nz-row style="display: flex;align-items: center;">
+              <div nz-col [nzSpan]="10" class="field">
+                <span>上課時間：</span>
+              </div>
+              <div nz-col [nzSpan]="14" class="field-content">
+                <span *ngIf="!editStatus">{{caseInfo.studyTime}}</span>
+                <nz-select *ngIf="editStatus" style="width: 100%;padding-right: 10px;" [(ngModel)]="caseInfo.studyTime" [nzPlaceHolder]="'選擇上課時間'">
+                  <nz-option *ngFor="let option of addressOptions" [nzLabel]="option.label" [nzValue]="option.value" [nzDisabled]="option.disabled">
+                  </nz-option>
+                </nz-select>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr nz-tbody-tr>
+          <td nz-td style="padding: 0;">
+            <div nz-row style="display: flex;align-items: center;">
+              <div nz-col [nzSpan]="14" class="field">
+                <span>補習教學語言：</span>
+              </div>
+              <div nz-col [nzSpan]="10" class="field-content">
+                <span *ngIf="!editStatus">{{caseInfo.language}}</span>
+                <nz-select *ngIf="editStatus" style="width: 100%;padding-right: 10px;" [(ngModel)]="caseInfo.language" [nzPlaceHolder]="'選擇地址'">
+                  <nz-option *ngFor="let option of addressOptions" [nzLabel]="option.label" [nzValue]="option.value" [nzDisabled]="option.disabled">
+                  </nz-option>
+                </nz-select>
+              </div>
+            </div>
+          </td>
+          <td nz-td style="padding: 0;">
+            <div nz-row style="display: flex;align-items: center;">
+              <div nz-col [nzSpan]="10" class="field">
+                <span>學生姓名：</span>
+              </div>
+              <div nz-col [nzSpan]="14" class="field-content">
+                <span *ngIf="!editStatus">{{caseInfo.studentName}}</span>
+                <nz-input *ngIf="editStatus" style="width: 100%;padding-right: 10px;" [(ngModel)]="caseInfo.studentName" [nzPlaceHolder]="'輸入學生姓名'"></nz-input>
+              </div>
+            </div>
+          </td>
+          <td nz-td style="padding: 0;">
+            <div nz-row style="display: flex;align-items: center;">
+              <div nz-col [nzSpan]="10" class="field">
+                <span>學生學費：</span>
+              </div>
+              <div nz-col [nzSpan]="14" class="field-content">
+                <span *ngIf="!editStatus">{{caseInfo.tuition}}</span>
+                <nz-input *ngIf="editStatus" style="width: 100%;padding-right: 10px;" [(ngModel)]="caseInfo.studentName" [nzPlaceHolder]="'輸入學生學費'"></nz-input>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr nz-tbody-tr>
+          <td nz-td style="padding: 0;">
+            <div nz-row style="display: flex;align-items: center;">
+              <div nz-col [nzSpan]="10" class="field">
+                <span>學生性別：</span>
+              </div>
+              <div nz-col [nzSpan]="14" class="field-content">
+                <span *ngIf="!editStatus">{{caseInfo.studentSex}}</span>
+                <nz-select *ngIf="editStatus" style="width: 100%;padding-right: 10px;" [(ngModel)]="caseInfo.studentSex" [nzPlaceHolder]="'選擇學生性別'">
+                  <nz-option *ngFor="let option of addressOptions" [nzLabel]="option.label" [nzValue]="option.value" [nzDisabled]="option.disabled">
+                  </nz-option>
+                </nz-select>
+              </div>
+            </div>
+          </td>
+          <td nz-td style="padding: 0;">
+            <div nz-row style="display: flex;align-items: center;">
+              <div nz-col [nzSpan]="12" class="field">
+                <span>學校教授語言：</span>
+              </div>
+              <div nz-col [nzSpan]="12" class="field-content">
+                <span *ngIf="!editStatus">{{caseInfo.languageInSchool}}</span>
+                <nz-select *ngIf="editStatus" style="width: 100%;padding-right: 10px;" [(ngModel)]="caseInfo.languageInSchool" [nzPlaceHolder]="'選擇學校教授語言'">
+                  <nz-option *ngFor="let option of addressOptions" [nzLabel]="option.label" [nzValue]="option.value" [nzDisabled]="option.disabled">
+                  </nz-option>
+                </nz-select>
+              </div>
+            </div>
+          </td>
+          <td nz-td style="padding: 0;">
+            <div nz-row style="display: flex;align-items: center;">
+              <div nz-col [nzSpan]="12" class="field">
+                <span>協議堂數：</span>
+              </div>
+              <div nz-col [nzSpan]="12" class="field-content">
+                <span *ngIf="!editStatus">{{caseInfo.agreementTimes}}</span>
+                <nz-input *ngIf="editStatus" style="width: 100%;padding-right: 10px;" [(ngModel)]="caseInfo.agreementTimes" [nzPlaceHolder]="'輸入協議堂數'"></nz-input>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr nz-tbody-tr>
+          <td nz-td style="padding: 0;">
+            <div nz-row style="display: flex;align-items: center;">
+              <div nz-col [nzSpan]="10" class="field">
+                <span>學生學校：</span>
+              </div>
+              <div nz-col [nzSpan]="14" class="field-content">
+                <span *ngIf="!editStatus">{{caseInfo.studentSchool}}</span>
+                <nz-input *ngIf="editStatus" style="width: 100%;padding-right: 10px;" [(ngModel)]="caseInfo.studentSchool" [nzPlaceHolder]="'輸入學生學校'"></nz-input>
+              </div>
+            </div>
+          </td>
+          <td nz-td style="padding: 0;">
+            <div nz-row style="display: flex;align-items: center;">
+              <div nz-col [nzSpan]="14" class="field">
+                <span>要求導師最低學歷：</span>
+              </div>
+              <div nz-col [nzSpan]="10" class="field-content">
+                <span *ngIf="!editStatus">{{caseInfo.requireTeacherEducation}}</span>
+                <nz-select *ngIf="editStatus" style="width: 100%;padding-right: 10px;" [(ngModel)]="caseInfo.requireTeacherEducation" [nzPlaceHolder]="'選擇要求導師最低學歷'">
+                  <nz-option *ngFor="let option of addressOptions" [nzLabel]="option.label" [nzValue]="option.value" [nzDisabled]="option.disabled">
+                  </nz-option>
+                </nz-select>
+              </div>
+            </div>
+          </td>
+          <td nz-td style="padding: 0;">
+            <div nz-row style="display: flex;align-items: center;">
+              <div nz-col [nzSpan]="12" class="field">
+                <span>導師性別：</span>
+              </div>
+              <div nz-col [nzSpan]="12" class="field-content">
+                <span *ngIf="!editStatus">{{caseInfo.teacherSex}}</span>
+                <nz-select *ngIf="editStatus" style="width: 100%;padding-right: 10px;" [(ngModel)]="caseInfo.teacherSex" [nzPlaceHolder]="'選擇導師性別'">
+                  <nz-option *ngFor="let option of addressOptions" [nzLabel]="option.label" [nzValue]="option.value" [nzDisabled]="option.disabled">
+                  </nz-option>
+                </nz-select>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr nz-tbody-tr>
+          <td nz-td style="padding: 0;">
+            <div nz-row style="display: flex;align-items: center;">
+              <div nz-col [nzSpan]="12" class="field">
+                <span>學生電話：</span>
+              </div>
+              <div nz-col [nzSpan]="12" class="field-content">
+                <span *ngIf="!editStatus"><a>{{caseInfo.studentPhone}}</a></span>
+                <nz-input *ngIf="editStatus" style="width: 100%;padding-right: 10px;" [(ngModel)]="caseInfo.studentPhone" [nzPlaceHolder]="'輸入學生電話'"></nz-input>
+              </div>
+            </div>
+          </td>
+          <td nz-td style="padding: 0;">
+            <div nz-row style="display: flex;align-items: center;">
+              <div nz-col [nzSpan]="14" class="field">
+                <span>聯絡人與學生關係：</span>
+              </div>
+              <div nz-col [nzSpan]="10" class="field-content">
+                <span *ngIf="!editStatus">{{caseInfo.liaisonsStudentRela}}</span>
+                <nz-select *ngIf="editStatus" style="width: 100%;padding-right: 10px;" [(ngModel)]="caseInfo.liaisonsStudentRela" [nzPlaceHolder]="'選擇聯絡人與學生關係'">
+                  <nz-option *ngFor="let option of addressOptions" [nzLabel]="option.label" [nzValue]="option.value" [nzDisabled]="option.disabled">
+                  </nz-option>
+                </nz-select>
+              </div>
+            </div>
+          </td>
+          <td nz-td style="padding: 0;">
+            <div nz-row style="display: flex;align-items: center;">
+              <div nz-col [nzSpan]="14" class="field">
+                <span>聯絡人ID：</span>
+              </div>
+              <div nz-col [nzSpan]="10" class="field-content">
+                <span><a>{{caseInfo.liaisonsId}}</a></span>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr nz-tbody-tr>
+          <td nz-td style="padding: 0;">
+            <div nz-row style="display: flex;align-items: center;">
+              <div nz-col [nzSpan]="14" class="field">
+                <span>聯絡人手提電話：</span>
+              </div>
+              <div nz-col [nzSpan]="10" class="field-content">
+                <span *ngIf="!editStatus"><a>{{caseInfo.liaisonsMobilePhone}}</a></span>
+                <nz-input *ngIf="editStatus" style="width: 100%;padding-right: 10px;" [(ngModel)]="caseInfo.liaisonsId" [nzPlaceHolder]="'輸入聯絡人手提電話'"></nz-input>
+              </div>
+            </div>
+          </td>
+          <td nz-td style="padding: 0;">
+            <div nz-row style="display: flex;align-items: center;">
+              <div nz-col [nzSpan]="14" class="field">
+                <span>聯絡人住宅電話：</span>
+              </div>
+              <div nz-col [nzSpan]="10" class="field-content">
+                <span *ngIf="!editStatus"><a>{{caseInfo.liaisonsPhone}}</a></span>
+                <nz-input *ngIf="editStatus" style="width: 100%;padding-right: 10px;" [(ngModel)]="caseInfo.liaisonsPhone" [nzPlaceHolder]="'輸入聯絡人住宅電話'"></nz-input>
+              </div>
+            </div>
+          </td>
+          <td nz-td style="padding: 0;">
+            <div nz-row style="display: flex;align-items: center;">
+              <div nz-col [nzSpan]="14" class="field">
+                <span>聯絡人姓名：</span>
+              </div>
+              <div nz-col [nzSpan]="10" class="field-content">
+                <span *ngIf="!editStatus">{{caseInfo.liaisonsName}}</span>
+                <nz-input *ngIf="editStatus" style="width: 100%;padding-right: 10px;" [(ngModel)]="caseInfo.liaisonsName" [nzPlaceHolder]="'輸入聯絡人姓名'"></nz-input>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr nz-tbody-tr>
+          <td nz-td style="padding: 0;">
+            <div nz-row style="display: flex;align-items: center;">
+              <div nz-col [nzSpan]="11" class="field">
+                <span>聯絡人電郵：</span>
+              </div>
+              <div nz-col [nzSpan]="13" class="field-content">
+                <span *ngIf="!editStatus">{{caseInfo.liaisonsEmail}}</span>
+                <nz-input *ngIf="editStatus" style="width: 100%;padding-right: 10px;" [(ngModel)]="caseInfo.liaisonsEmail" [nzPlaceHolder]="'輸入聯絡人電郵'"></nz-input>
+              </div>
+            </div>
+          </td>
+          <td nz-td style="padding: 0;">
+            <div nz-row style="display: flex;align-items: center;">
+              <div nz-col [nzSpan]="14" class="field">
+                <span>聯絡人傳真：</span>
+              </div>
+              <div nz-col [nzSpan]="10" class="field-content">
+                <span *ngIf="!editStatus">{{caseInfo.liaisonsFax}}</span>
+                <nz-input *ngIf="editStatus" style="width: 100%;padding-right: 10px;" [(ngModel)]="caseInfo.liaisonsFax" [nzPlaceHolder]="'輸入聯絡人傳真'"></nz-input>
+              </div>
+            </div>
+          </td>
+          <td nz-td style="padding: 0;">
+            <div nz-row style="display: flex;align-items: center;">
+              <div nz-col [nzSpan]="14" class="field">
+                <span>聯絡人其他電話：</span>
+              </div>
+              <div nz-col [nzSpan]="10" class="field-content">
+                <span *ngIf="!editStatus"><a>{{caseInfo.liaisonsOtherPhone}}</a></span>
+                <nz-input *ngIf="editStatus" style="width: 100%;padding-right: 10px;" [(ngModel)]="caseInfo.liaisonsOtherPhone" [nzPlaceHolder]="'輸入聯絡人其他電話'"></nz-input>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr nz-tbody-tr>
+          <td nz-td style="padding: 0;">
+            <div nz-row style="display: flex;align-items: center;">
+              <div nz-col [nzSpan]="14" class="field">
+                <span>其他資料：</span>
+              </div>
+              <div nz-col [nzSpan]="10" class="field-content">
+                <span *ngIf="!editStatus">{{caseInfo.otherInfo}}</span>
+                <nz-input *ngIf="editStatus" style="width: 100%;padding-right: 10px;" [(ngModel)]="caseInfo.otherInfo" [nzPlaceHolder]="'輸入其他資料'"></nz-input>
+              </div>
+            </div>
+          </td>
+          <td nz-td style="padding: 0;">
+            <div nz-row style="display: flex;align-items: center;">
+              <div nz-col [nzSpan]="14" class="field">
+                <span>個案狀態：</span>
+              </div>
+              <div nz-col [nzSpan]="10" class="field-content">
+                <span *ngIf="!editStatus">{{caseInfo.caseStatus}}</span>
+                <nz-select *ngIf="editStatus" style="width: 100%;padding-right: 10px;" [(ngModel)]="caseInfo.caseStatus" [nzPlaceHolder]="'選擇個案狀態'">
+                  <nz-option *ngFor="let option of addressOptions" [nzLabel]="option.label" [nzValue]="option.value" [nzDisabled]="option.disabled">
+                  </nz-option>
+                </nz-select>
+              </div>
+            </div>
+          </td>
+          <td nz-td style="padding: 0;">
+            <span style="color: #ed2724;">#C</span>
+            <span style="color: #ed2724;">T&C</span>
+          </td>
+        </tr>
+      </tbody>
+    </nz-table>
+  </div>
+  <div class="case-info-functions">
+    <div class="case-info-left">
+      <button *ngIf="editStatus" (click)="finishChange()" style="border-radius: 14px;margin-right: 10px;" nz-button nzGhost [nzType]="'primary'">完成</button>
+      <button *ngIf="editStatus" (click)="finishChange()" style="border-radius: 14px;margin-right: 10px;" nz-button nzGhost [nzType]="'danger'">取消</button>
+      <button style="border-radius: 14px;margin-right: 10px;" nz-button nzGhost [nzType]="'primary'" (click)="changeStatus()" >修改補習資料</button>
+      <button style="border-radius: 14px;margin-right: 10px;" nz-button nzGhost [nzType]="'primary'">重新##</button>
+      <button style="border-radius: 14px;margin-right: 10px;" nz-button nzGhost [nzType]="'primary'">##</button>
+      <button style="border-radius: 14px;margin-right: 10px;" nz-button nzGhost [nzType]="'primary'">#C</button>
+      <button style="border-radius: 14px;margin-right: 10px;" nz-button nzGhost [nzType]="'primary'">T&C</button>
+      <button style="border-radius: 14px;margin-right: 10px;" nz-button nzGhost [nzType]="'primary'">雙方交換電話</button>
+    </div>
+    <div class="case-info-right">
+      <button style="border-radius: 14px;" nz-button nzGhost [nzType]="'primary'">加入黑名單</button>
+    </div>
+  </div>
+  <div class="case-failure">
+    <span>失敗原因</span>
+    <nz-select style="margin-left: 10px;width: 100%;flex-grow: 1;" [(ngModel)]="failure" [nzPlaceHolder]="'選擇失敗原因'">
+      <nz-option *ngFor="let option of failureOptions" [nzLabel]="option.label" [nzValue]="option.value" [nzDisabled]="option.disabled">
+      </nz-option>
+    </nz-select>
+    <nz-select style="margin-left: 10px;width: 100%;flex-grow: 1;" [(ngModel)]="followingCase" [nzPlaceHolder]="'選擇跟進中的個案'">
+      <nz-option *ngFor="let option of addressOptions" [nzLabel]="option.label" [nzValue]="option.value" [nzDisabled]="option.disabled">
+      </nz-option>
+    </nz-select>
+    <nz-input style="margin-left: 10px;flex-grow: 1;" [(ngModel)]="caseInfo.livingAddress" [nzPlaceHolder]="''"></nz-input>
+  </div>
+  <div class="delay">
+    <div class="follow-delay">
+      <p>跟進延時</p>
+      <div class="delay-reason">
+        <span>原因：</span>
+        <nz-input style="margin-left: 10px;flex-grow: 1;" [(ngModel)]="delayReason" [nzPlaceHolder]="'輸入原因'"></nz-input>
+        <button nz-button nzGhost [nzType]="'primary'">申請延時</button>
+      </div>
+      <p>到期時間：<span>2018/05/08</span></p>
+    </div>
+    <div class="send-assistant">
+      <div class="send">
+        <p>此工作轉送給</p>
+        <nz-select style="margin-left: 10px;margin-right: 10px;width: 100%;flex-grow: 1;" [(ngModel)]="send" [nzPlaceHolder]="''">
+          <nz-option *ngFor="let option of addressOptions" [nzLabel]="option.label" [nzValue]="option.value" [nzDisabled]="option.disabled">
+          </nz-option>
+        </nz-select>
+        <button nz-button nzGhost [nzType]="'primary'">確認</button>
+      </div>
+      <div class="assistant">
+        <p>協助處理：</p>
+        <nz-select style="margin-right: 10px;width: 100%;flex-grow: 1;" [(ngModel)]="assistant" [nzPlaceHolder]="''">
+          <nz-option *ngFor="let option of addressOptions" [nzLabel]="option.label" [nzValue]="option.value" [nzDisabled]="option.disabled">
+          </nz-option>
+        </nz-select>
+        <button nz-button nzGhost [nzType]="'primary'">確認</button>
+      </div>
+    </div>
+  </div>
+  <div class="submit">
+    <button style="border-radius: 14px;margin-right: 10px;" nz-button nzGhost [nzType]="'primary'">更新個案</button>
+  </div>
+  <div class="description">
+    <p>個案流程：
+      <span>更新個案A163078-lawanana</span>
+      ，最後跟進員工：
+      <span>lawanan</span>
+      ，經手人：
+      <span>lawanan</span>
+    </p>
+    <p>到期日：<span>2018/05/08</span></p>
+  </div>
+</div>

@@ -24,3 +24,8 @@ html, body {
 .ant-collapse-content-box {
     padding: 0 !important;
 }
+
+.ant-table-placeholder {
+    border-bottom: none !important;
+    padding: 0 !important;
+}

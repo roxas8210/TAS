@@ -20,7 +20,7 @@
     </div>
   </div>
   <div class="list-container">
-    <nz-table #nzTable [nzDataSource]="teacherList" [nzPageSize]="15" style="max-width: 900px;max-height: 600px;">
+    <nz-table #nzTable [nzDataSource]="teacherList" [nzTotal]="teacherList.length" [nzPageSize]="15" style="max-width: 900px;max-height: 600px;">
       <thead nz-thead>
         <tr>
           <th nz-th style="text-align: center;background-color: white;border-bottom: 1px solid rgba(0, 0, 0, 0.15);" [nzWidth]="'60px'">

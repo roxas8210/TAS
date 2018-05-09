@@ -1,6 +1,7 @@
 import { Component, OnInit, ElementRef, Renderer2 } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { TabbarService } from '../../service/tabbar.service';
+import { Observable } from 'rxjs/observable';
 
 @Component({
   selector: 'app-auth-setting',
@@ -96,12 +97,15 @@ export class AuthSettingComponent implements OnInit {
     name: '用戶管理',
     active: false,
     children: [{
+      id: '21',
       name: '客戶列表',
       active: false
     }, {
+      id: '22',
       name: '導師列表',
       active: false
     }, {
+      id: '23',
       name: '黑名單',
       active: false
     }]
@@ -109,25 +113,31 @@ export class AuthSettingComponent implements OnInit {
     name: '個案管理',
     active: false,
     children: [{
+      id: '31',
       name: '個案跟進',
       active: false
     }]
     }, {
     name: '行政管理',
-    active: false
+    active: false,
+    children: []
   }, {
     name: '網站管理',
-    active: false
+    active: false,
+    children: []
   }, {
     name: '相關報告',
-    active: false
+    active: false,
+    children: []
   }, {
     name: '系統管理',
     active: false,
     children: [{
+      id: '71',
       name: '系統設置',
       active: false
     }, {
+      id: '72',
       name: '頁面設置',
       active: false
     }]
@@ -135,12 +145,15 @@ export class AuthSettingComponent implements OnInit {
     name: '員工管理',
     active: false,
     children: [{
+      id: '81',
       name: '部門列表',
       active: false
     }, {
+      id: '82',
       name: '員工列表',
       active: false
     }, {
+      id: '83',
       name: '權限設置',
       active: false
     }]
@@ -176,22 +189,66 @@ export class AuthSettingComponent implements OnInit {
 
   authForm: FormGroup;
 
+  selectedEmployee;
+
+  selectedPage;
+
+  selectedEmployeeId = '';
+
+  selectedPageId = '';
+
   constructor(
+    private el: ElementRef,
+    private rd: Renderer2,
     private fb: FormBuilder,
     private tabbarService: TabbarService
   ) { }
 
-  selectPeople(id) {
-    console.log(id);
-    // this.menu[0].children[1].children.filter(val => val.id)
+  selectPeople(id, name) {
+    this.selectedEmployee = `${name}`;
+    this.changePeopleColor(`employeeId${id}`);
+  }
 
+  selectPage(id, name) {
+    this.selectedPage = `${name}`;
+    this.changePageColor(`pageId${id}`);
+  }
+
+  // 選擇員工職位
+  changePeopleColor(id) {
+    if (this.selectedEmployeeId.length > 0) {
+      const preEmployeeDom = this.el.nativeElement.querySelector(`#${this.selectedEmployeeId}`);
+      const employeeDom = this.el.nativeElement.querySelector(`#${id}`);
+      this.rd.setStyle(preEmployeeDom, 'color', 'rgba(0, 0, 0, 0.65)');
+      this.rd.setStyle(employeeDom, 'color', '#2399ed');
+      this.selectedEmployeeId = id;
+    } else {
+      const employeeDom = this.el.nativeElement.querySelector(`#${id}`);
+      // employeeDom.style.color = '#2399ed';
+      this.rd.setStyle(employeeDom, 'color', '#2399ed');
+      this.selectedEmployeeId = id;
+    }
+  }
+
+  // 選擇各級頁面
+  changePageColor(id) {
+    if (this.selectedPageId.length > 0) {
+      const prePageDom = this.el.nativeElement.querySelector(`#${this.selectedPageId}`);
+      const pageDom = this.el.nativeElement.querySelector(`#${id}`);
+      this.rd.setStyle(prePageDom, 'color', 'rgba(0, 0, 0, 0.65)');
+      this.rd.setStyle(pageDom, 'color', '#2399ed');
+      this.selectedPageId = id;
+    } else {
+      const pageDom = this.el.nativeElement.querySelector(`#${id}`);
+      // pageDom.style.color = '#2399ed';
+      this.rd.setStyle(pageDom, 'color', '#2399ed');
+      this.selectedPageId = id;
+    }
   }
 
   ngOnInit() {
     this.authForm = this.fb.group({
-      company: [false],
-      group: [false],
-      person: [false],
+      auth_rang: [false],
       add: [false],
       delete: [false],
       edit: [false],

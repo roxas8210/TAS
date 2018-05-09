@@ -24,7 +24,7 @@
                             </nz-collapseset> -->
                         <!-- </nz-collapse> -->
                         <ul *ngFor="let listChildren4 of listChildren3.children">
-                          <li (click)="selectPeople(listChildren4)" class="noChild">{{listChildren4.name}}</li>
+                          <li [id]="'employeeId' + listChildren4.id" (click)="selectPeople(listChildren4.id, listChildren4.name)" class="noChild">{{listChildren4.name}}</li>
                         </ul>
                       </nz-collapseset>
                     </div>
@@ -43,7 +43,7 @@
         <nz-collapseset [nzBordered]="false" [nzAccordion]="true">
           <nz-collapse *ngFor="let list of pageMenu" [nzTitle]="list.name" [nzActive]="list.active">
             <ul *ngFor="let listChildren of list.children">
-              <li class="noChild">{{listChildren.name}}</li>
+              <li [id]="'pageId' + listChildren.id" (click)="selectPage(listChildren.id, listChildren.name)" class="noChild">{{listChildren.name}}</li>
             </ul>
           </nz-collapse>
         </nz-collapseset>
@@ -54,18 +54,30 @@
         <p>權限管理</p>
       </div>
       <div class="page-main-container">
+        <div class="selected-info">
+          <p *ngIf="selectedEmployee">已選擇員工：{{selectedEmployee}}</p>
+          <p *ngIf="selectedPage">已選擇頁面：{{selectedPage}}</p>
+        </div>
         <form [formGroup]="authForm">
+          <div class="access_auth">
+            <p>訪問權限</p>
+            <label style="width: 100%;" nz-checkbox formControllName="access">
+              <span>訪問</span>
+            </label>
+          </div>
           <div class="query_auth">
             <p>權限查詢</p>
-            <label style="width: 100%;" nz-checkbox formControllName="company">
-              <span>全司</span>
-            </label>
-            <label style="width: 100%;" nz-checkbox formControllName="group">
-              <span>小組</span>
-            </label>
-            <label style="width: 100%;" nz-checkbox formControllName="person">
-              <span>個人</span>
-            </label>
+            <nz-radio-group formControllName="auth_rang">
+              <label nz-radio [nzValue]="'company'">
+                <span style="line-height: 32px;">全司</span>
+              </label>
+              <label nz-radio [nzValue]="'group'">
+                <span style="line-height: 32px;">小組</span>
+              </label>
+              <label nz-radio [nzValue]="'personal'">
+                <span style="line-height: 32px;">個人</span>
+              </label>
+            </nz-radio-group>
           </div>
           <div class="operate_auth">
             <p>操作權限</p>

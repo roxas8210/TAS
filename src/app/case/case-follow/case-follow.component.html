@@ -57,7 +57,7 @@
         <button type="submit" nzGhost nz-button [nzType]="'primary'">篩選</button>
       </div>
     </div>
-    <nz-table #nzTable [(nzPageIndex)]="currentPage" [nzDataSource]="caseList" [nzPageSize]="15" style="max-width: 900px;max-height: 600px;">
+    <nz-table #nzTable [(nzPageIndex)]="currentPage" [nzDataSource]="caseList" [nzTotal]="caseList.length" [nzPageSize]="15" [nzSize]="'small'" style="max-width: 900px;max-height: 600px;">
       <thead nz-thead>
         <tr>
           <th nz-th style="text-align: center;background-color: white;border-bottom: 1px solid rgba(0, 0, 0, 0.15);" [nzWidth]="'70px'">
@@ -72,7 +72,7 @@
           <th nz-th style="text-align: center;background-color: white;border-bottom: 1px solid rgba(0, 0, 0, 0.15);" [nzWidth]="'40px'">
             <span>地區</span>
           </th>
-          <th nz-th style="text-align: center;background-color: white;border-bottom: 1px solid rgba(0, 0, 0, 0.15);" [nzWidth]="'60px'">
+          <th nz-th style="text-align: center;background-color: white;border-bottom: 1px solid rgba(0, 0, 0, 0.15);" [nzWidth]="'70px'">
             <span>居住地點</span>
           </th>
           <th nz-th style="text-align: center;background-color: white;border-bottom: 1px solid rgba(0, 0, 0, 0.15);" [nzWidth]="'100px'">
@@ -84,13 +84,13 @@
           <th nz-th style="text-align: center;background-color: white;border-bottom: 1px solid rgba(0, 0, 0, 0.15);" [nzWidth]="'80px'">
             <span>導師性別</span>
           </th>
-          <th nz-th style="text-align: center;background-color: white;border-bottom: 1px solid rgba(0, 0, 0, 0.15);" [nzWidth]="'80px'">
+          <th nz-th style="text-align: center;background-color: white;border-bottom: 1px solid rgba(0, 0, 0, 0.15);" [nzWidth]="'160px'">
             <span>登記時間</span>
           </th>
-          <th nz-th style="text-align: center;background-color: white;border-bottom: 1px solid rgba(0, 0, 0, 0.15);" [nzWidth]="'40px'">
+          <!-- <th nz-th style="text-align: center;background-color: white;border-bottom: 1px solid rgba(0, 0, 0, 0.15);" [nzWidth]="'40px'">
             <span>留言</span>
-          </th>
-          <th nz-th style="text-align: center;background-color: white;border-bottom: 1px solid rgba(0, 0, 0, 0.15);" [nzWidth]="'60px'">
+          </th> -->
+          <th nz-th style="text-align: center;background-color: white;border-bottom: 1px solid rgba(0, 0, 0, 0.15);" [nzWidth]="'80px'">
             <span>到期日</span>
           </th>
           <th nz-th style="text-align: center;background-color: white;border-bottom: 1px solid rgba(0, 0, 0, 0.15);" [nzWidth]="'80px'">
@@ -232,7 +232,7 @@
               </ng-template>
             </nz-popover>
           </td>
-          <td nz-td style="padding: 8px 0;text-align: center;">
+          <!-- <td nz-td style="padding: 8px 0;text-align: center;">
             <nz-popover [nzTitle]="data.no">
               <div style="padding: 8px 0;" nz-popover>{{data.message}}</div>
               <ng-template #nzTemplate>
@@ -245,7 +245,7 @@
                 </div>
               </ng-template>
             </nz-popover>
-          </td>
+          </td> -->
           <td nz-td style="padding: 8px 0;text-align: center;">
             <nz-popover [nzTitle]="data.no">
               <div style="padding: 8px 0;" nz-popover>{{data.dead_line}}</div>

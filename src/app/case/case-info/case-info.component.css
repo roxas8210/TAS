@@ -1,0 +1,102 @@
+nz-table p {
+  font-size: 14px;
+  text-align: center;
+}
+nz-table span {
+  font-size: 14px;
+  line-height: 42px;
+  padding-left: 20px;
+}
+.case-info-functions {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  box-sizing: border-box;
+}
+.case-info-functions .case-info-left {
+  flex-grow: 1;
+}
+.case-failure {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border: 1px solid #e9e9e9;
+}
+.case-failure span {
+  flex-shrink: 0;
+}
+.delay {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  padding: 10px;
+  box-sizing: border-box;
+  border: 1px solid #e9e9e9;
+  margin-top: 10px;
+}
+.delay .follow-delay {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.delay .follow-delay p {
+  font-size: 14px;
+  flex-shrink: 0;
+}
+.delay .follow-delay .delay-reason {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+}
+.delay .follow-delay .delay-reason span {
+  font-size: 14px;
+  flex-shrink: 0;
+}
+.delay .follow-delay .delay-reason button {
+  margin-left: 10px;
+}
+.delay .send-assistant {
+  width: 100%;
+  display: flex;
+  margin-top: 10px;
+}
+.delay .send-assistant .send {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+}
+.delay .send-assistant .send p {
+  flex-shrink: 0;
+}
+.delay .send-assistant .assistant {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+}
+.delay .send-assistant .assistant p {
+  flex-shrink: 0;
+}
+.submit {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 10px 0;
+}
+.description {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+.description p {
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.65);
+}
+.description p span {
+  color: #ed2724;
+}

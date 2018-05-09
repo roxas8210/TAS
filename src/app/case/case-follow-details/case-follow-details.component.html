@@ -1,0 +1,12 @@
+<div class="case-details">
+  <nz-tabset style="flex-shrink: 0;" [nzSelectedIndex]="selectedIndex" [nzTabPosition]="'top'" [nzType]="'card'">
+    <nz-tab *ngFor="let tab of tabs">
+      <ng-template #nzTabHeading>
+        <span>{{tab.name}}</span>
+      </ng-template>
+    </nz-tab>
+  </nz-tabset>
+  <div class="case-details-container">
+    <app-case-info [ngStyle]="{'display':selectedIndex === 0?'block':'none'}"></app-case-info>
+  </div>
+</div>

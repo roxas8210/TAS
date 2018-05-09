@@ -18,6 +18,7 @@ import { EmployeeListComponent } from '../employee/employee-list/employee-list.c
 import { DepartmentComponent } from '../employee/department/department.component';
 import { CaseFollowComponent } from '../case/case-follow/case-follow.component';
 import { AuthSettingComponent } from '../employee/auth-setting/auth-setting.component';
+import { CaseFollowDetailsComponent } from '../case/case-follow-details/case-follow-details.component';
 
 /* index模塊路由
 *  /index/system/setting為“系統設置”路由
@@ -69,6 +70,12 @@ const routes: Routes = [{
         path: 'user/blacklist',
         component: BlackListComponent
     }, {
+        path: 'case/follow/details/:id',
+        component: CaseFollowDetailsComponent
+    }, {
+        path: 'case/follow',
+        component: CaseFollowComponent
+    }, {
         path: 'employee/department',
         component: DepartmentComponent
     }, {
@@ -77,9 +84,6 @@ const routes: Routes = [{
     }, {
         path: 'employee/auth',
         component: AuthSettingComponent
-    }, {
-        path: 'case/follow',
-        component: CaseFollowComponent
     }]
 }];
 
