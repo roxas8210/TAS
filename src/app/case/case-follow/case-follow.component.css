@@ -23,6 +23,7 @@
   overflow: hidden;
   padding: 0 20px;
   box-sizing: border-box;
+  margin-bottom: 10px;
 }
 .case-list .list-container .search-container .search-row1 {
   width: 100%;

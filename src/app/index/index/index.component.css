@@ -168,11 +168,10 @@
   .layout main .main .sidebar .sideMenu ul li ul {
     width: 260px;
     position: absolute;
-    right: -261px;
+    right: -260px;
     top: -1px;
     display: none;
     border: 1px solid #2399ed;
-    border-left: none;
     box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.15);
     background-color: #fafafa;
     z-index: 10;
@@ -422,11 +421,10 @@
   .layout main .main .sidebar .sideMenu ul li ul {
     width: 260px;
     position: absolute;
-    right: -261px;
+    right: -260px;
     top: -1px;
     display: none;
     border: 1px solid #2399ed;
-    border-left: none;
     box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.15);
     background-color: #fafafa;
     z-index: 10;
@@ -676,11 +674,10 @@
   .layout main .main .sidebar .sideMenu ul li ul {
     width: 160px;
     position: absolute;
-    right: -161px;
+    right: -160px;
     top: -1px;
     display: none;
     border: 1px solid #2399ed;
-    border-left: none;
     box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.15);
     background-color: #fafafa;
     z-index: 10;

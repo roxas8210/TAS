@@ -3,6 +3,8 @@
     width: 100%;
     height: 100%;
     overflow: auto;
+    display: flex;
+    flex-direction: column;
   }
   .home .aims {
     width: 1000px;
@@ -11,6 +13,7 @@
     margin-top: 30px;
     float: left;
     margin-left: 26px;
+    flex-shrink: 0;
   }
   .home .aims ul {
     width: 100%;
@@ -53,29 +56,30 @@
     color: white;
   }
   .home .rank-message {
-    width: 1380px;
-    height: auto;
-    overflow: hidden;
+    flex-grow: 1;
     margin: 0 auto;
     padding-right: 10px;
     padding-bottom: 10px;
     box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
   }
   .home .rank-message .rank {
-    width: 772px;
-    height: auto;
-    overflow: hidden;
-    float: left;
+    width: 100%;
+    flex-grow: 1;
     background-color: white;
     box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.15);
     margin-left: 20px;
   }
   .home .rank-message .message {
+    flex-shrink: 0;
     width: 486px;
     height: auto;
     overflow: hidden;
     float: right;
     box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.15);
+    margin-left: 20px;
   }
   .home .rank-message .message .message-title {
     width: 100%;

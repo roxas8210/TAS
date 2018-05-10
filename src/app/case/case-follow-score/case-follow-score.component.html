@@ -1,0 +1,93 @@
+<div class="case-score-container">
+  <div class="inner-score">
+    <div class="inner-score-title">
+      <p>個案內部評分</p>
+    </div>
+    <div class="inner-score-container">
+      <div class="for-teacher-score">
+        <div class="teacher-score">
+          <p>導師評分：</p>
+          <span>{{teacherScore}}</span>
+        </div>
+        <div class="my-score">
+          <p>分數：</p>
+          <nz-select [nzPlaceHolder]="'請選擇分數'" style="width: 100px;" [nzSize]="'small'">
+            <nz-option *ngFor="let option of scoreOptions" [nzLabel]="option.label" [nzValue]="option.value">
+            </nz-option>
+          </nz-select>
+        </div>
+        <div class="my-score">
+          <p>評語：</p>
+          <nz-input [nzSize]="'small'" [nzPlaceHolder]="'請填寫評語'" style="width: 100%;flex-grow: 1;"></nz-input>
+          <button nz-button nzGhost [nzSize]="'small'" [nzType]="'primary'" >評分</button>
+        </div>
+      </div>
+      <div class="for-parent-score">
+        <div class="teacher-score">
+          <p>家長評分：</p>
+          <span>{{teacherScore}}</span>
+        </div>
+        <div class="my-score">
+          <p>分數：</p>
+          <nz-select [nzPlaceHolder]="'請選擇分數'" style="width: 100px;" [nzSize]="'small'">
+            <nz-option *ngFor="let option of scoreOptions" [nzLabel]="option.label" [nzValue]="option.value">
+            </nz-option>
+          </nz-select>
+        </div>
+        <div class="my-score">
+          <p>評語：</p>
+          <nz-input [nzSize]="'small'" [nzPlaceHolder]="'請填寫評語'" style="width: 100%;flex-grow: 1;"></nz-input>
+          <button nz-button nzGhost [nzSize]="'small'" [nzType]="'primary'">評分</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="inner-score">
+    <div class="inner-score-title">
+      <p>課堂互評</p>
+    </div>
+    <div class="score-each-other">
+      <nz-table #nzTable [nzDataSource]="scoreList" [nzTotal]="scoreList.length"
+        [nzIsPagination]="false" [nzScroll]="{ y: 220 }" style="max-width: 900px;max-height: 600px;">
+        <ng-template #nzFixedHeader>
+          <thead nz-thead>
+            <tr>
+              <th nz-th style="text-align: center;background-color: white;border-bottom: 1px solid rgba(0, 0, 0, 0.15);" [nzWidth]="'40px'">
+                <span>評分人</span>
+              </th>
+              <th nz-th style="text-align: center;background-color: white;border-bottom: 1px solid rgba(0, 0, 0, 0.15);" [nzWidth]="'120px'">
+                <span>評分時間</span>
+              </th>
+              <th nz-th style="text-align: center;background-color: white;border-bottom: 1px solid rgba(0, 0, 0, 0.15);" [nzWidth]="'40px'">
+                <span>被評人</span>
+              </th>
+              <th nz-th style="text-align: center;background-color: white;border-bottom: 1px solid rgba(0, 0, 0, 0.15);" [nzWidth]="'60px'">
+                <span>分數</span>
+              </th>
+              <th nz-th style="text-align: center;background-color: white;border-bottom: 1px solid rgba(0, 0, 0, 0.15);" [nzWidth]="'160px'">
+                <span>評語</span>
+              </th>
+            </tr>
+          </thead>
+        </ng-template>
+        <tbody nz-tbody>
+          <tr nz-tbody-tr *ngFor="let data of nzTable.data" style="cursor: pointer;">
+            <td nz-td style="padding: 4px 0 !important;text-align: center;">{{data.name}}</td>
+            <td nz-td style="padding: 4px 0 !important;text-align: center;">{{data.time}}</td>
+            <td nz-td style="padding: 4px 0 !important;text-align: center;">{{data.forWho}}</td>
+            <td nz-td style="padding: 4px 0 !important;text-align: center;">{{data.score}}</td>
+            <td nz-td style="padding: 4px 0 !important;text-align: center;">{{data.remark}}</td>
+          </tr>
+        </tbody>
+      </nz-table>
+      <div class="score-avg">
+        <p>導師平均分：
+          <span>5</span>
+        </p>
+        <p>家長平均分：
+          <span>5</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

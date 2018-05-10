@@ -66,6 +66,27 @@ export class CaseInfoComponent implements OnInit {
   // 延時原因
   delayReason;
 
+  // 延時記錄
+  delayHistory = [{
+    date: '2016-09-27',
+    name: 'sweety',
+    reason: '延時',
+    result: '通過審核',
+    permission: 'catf'
+  }, {
+    date: '2016-09-27',
+    name: 'mario',
+    reason: '延時',
+    result: '通過審核',
+    permission: 'catf'
+  }, {
+    date: '2016-09-27',
+    name: 'Tom',
+    reason: '延時',
+    result: '通過審核',
+    permission: 'catf'
+  }];
+
   // 此工作轉送給
   send;
 

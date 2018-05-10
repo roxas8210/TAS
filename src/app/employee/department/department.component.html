@@ -10,17 +10,16 @@
         <li *ngFor="let list of menu">
           <i *ngIf="list.subMenu && !list.switchStatus" style="margin-left: 30px;" class="anticon anticon-caret-right" (click)="showSubList(list.id)"></i>
           <i *ngIf="list.subMenu && list.switchStatus" style="margin-left: 30px;" class="anticon anticon-caret-down" (click)="showSubList(list.id)"></i>
-          <!-- <i  class="anticon anticon-caret-right"></i> -->
           <div style="width: 20px;height: 20px;float: left;margin-left: 30px;" *ngIf="!list.subMenu" class="clearfix"></div>
-          <span>{{list.title}}</span>
+          <span [id]="'menu' + list.id" (click)="goSetting(list.id)">{{list.title}}</span>
           <ul *ngIf="list.subMenu && list.switchStatus">
             <li *ngFor="let subList of list.subMenu">
               <i *ngIf="list.subMenu && !list.switchStatus" style="margin-left: 30px;" class="anticon anticon-caret-right" (click)="showSubListMenu(list.id)"></i>
               <i *ngIf="list.subMenu && list.switchStatus" style="margin-left: 30px;" class="anticon anticon-caret-down" (click)="showSubListMenu(list.id)"></i>
-              <span (click)="goSetting(subList.id)"> {{subList.title}}</span>
+              <span [id]="'menu' + subList.id" (click)="goSetting(subList.id)"> {{subList.title}}</span>
               <ul *ngIf="subList.subMenu">
                 <li *ngFor="let sub of subList.subMenu" style="padding-left: 68px;">
-                  <span (click)="goSetting(subList.id)"> {{sub.title}}</span>
+                  <span [id]="'menu' + sub.id" (click)="goSetting(sub.id)"> {{sub.title}}</span>
                 </li>
               </ul>
             </li>
@@ -58,9 +57,15 @@
             <nz-input [nzSize]="'large'" formControlName="orderBy"></nz-input>
           </div>
         </div>
-        <div style="width: 100%;">
+        <div style="margin: 0 auto;width: 400px;display: flex; justify-content: space-around;">
           <button type="submit" [nzType]="'primary'" nz-button nzGhost style="border-radius: 17px;height: 34px;width: 96px;margin: 0 auto;display: block;">
             <span>確認</span>
+          </button>
+          <button type="button" [nzType]="'primary'" nz-button nzGhost style="border-radius: 17px;height: 34px;width: 96px;margin: 0 auto;display: block;">
+            <span>新增</span>
+          </button>
+          <button type="button" [nzType]="'danger'" nz-button nzGhost style="border-radius: 17px;height: 34px;width: 96px;margin: 0 auto;display: block;">
+            <span>刪除</span>
           </button>
         </div>
       </form>

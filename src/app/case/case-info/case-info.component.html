@@ -390,8 +390,8 @@
             </div>
           </td>
           <td nz-td style="padding: 0;">
-            <span style="color: #ed2724;">#C</span>
-            <span style="color: #ed2724;">T&C</span>
+            <!-- <span style="color: #ed2724;">#C</span> -->
+            <span style="color: #ed2724;">未確認條款</span>
           </td>
         </tr>
       </tbody>
@@ -402,10 +402,7 @@
       <button *ngIf="editStatus" (click)="finishChange()" style="border-radius: 14px;margin-right: 10px;" nz-button nzGhost [nzType]="'primary'">完成</button>
       <button *ngIf="editStatus" (click)="finishChange()" style="border-radius: 14px;margin-right: 10px;" nz-button nzGhost [nzType]="'danger'">取消</button>
       <button style="border-radius: 14px;margin-right: 10px;" nz-button nzGhost [nzType]="'primary'" (click)="changeStatus()" >修改補習資料</button>
-      <button style="border-radius: 14px;margin-right: 10px;" nz-button nzGhost [nzType]="'primary'">重新##</button>
-      <button style="border-radius: 14px;margin-right: 10px;" nz-button nzGhost [nzType]="'primary'">##</button>
-      <button style="border-radius: 14px;margin-right: 10px;" nz-button nzGhost [nzType]="'primary'">#C</button>
-      <button style="border-radius: 14px;margin-right: 10px;" nz-button nzGhost [nzType]="'primary'">T&C</button>
+      <button style="border-radius: 14px;margin-right: 10px;" nz-button nzGhost [nzType]="'primary'">確認條款</button>
       <button style="border-radius: 14px;margin-right: 10px;" nz-button nzGhost [nzType]="'primary'">雙方交換電話</button>
     </div>
     <div class="case-info-right">
@@ -432,7 +429,20 @@
         <nz-input style="margin-left: 10px;flex-grow: 1;" [(ngModel)]="delayReason" [nzPlaceHolder]="'輸入原因'"></nz-input>
         <button nz-button nzGhost [nzType]="'primary'">申請延時</button>
       </div>
-      <p>到期時間：<span>2018/05/08</span></p>
+      <nz-popover [nzTitle]="'延時記錄'">
+        <p class="deadLine" nz-popover>到期時間：<span>2018/05/08</span></p>
+        <ng-template #nzTemplate>
+          <div>
+            <p *ngFor="let delay of delayHistory">
+              {{delay.date}}
+              申請人：{{delay.name}}
+              原因：{{delay.reason}}
+              審核結果：{{delay.result}}
+              審核者：{{delay.permission}}
+            </p>
+          </div>
+        </ng-template>
+      </nz-popover>
     </div>
     <div class="send-assistant">
       <div class="send">

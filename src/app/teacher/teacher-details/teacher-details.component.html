@@ -19,8 +19,14 @@
     <app-teacher-self [ngStyle]="{'display':selectedIndex === 8?'block':'none'}"></app-teacher-self>
   </div>
   <div class="fns">
-    <button (click)="changeEditStatus()" type="button" [nzType]="'primary'" nz-button nzGhost style="border-radius: 17px;height: 34px;width: 110px;display: block;">
-      <span>{{editStatus?'完成':'編輯導師信息'}}</span>
+    <button *ngIf="!editStatus" (click)="changeEditStatus()" type="button" [nzType]="'primary'" nz-button nzGhost style="border-radius: 17px;height: 34px;width: 110px;display: block;">
+      <span>編輯導師信息</span>
+    </button>
+    <button *ngIf="editStatus" (click)="finishEdit()" type="button" [nzType]="'primary'" nz-button nzGhost style="border-radius: 17px;height: 34px;width: 110px;display: block;">
+      <span>完成</span>
+    </button>
+    <button *ngIf="editStatus" (click)="cancelEdit()" type="button" [nzType]="'danger'" nz-button nzGhost style="border-radius: 17px;height: 34px;width: 110px;display: block;">
+      <span>取消</span>
     </button>
     <button type="button" [nzType]="'primary'" nz-button nzGhost style="border-radius: 17px;height: 34px;width: 110px;display: block;">
       <span>審核該導師</span>

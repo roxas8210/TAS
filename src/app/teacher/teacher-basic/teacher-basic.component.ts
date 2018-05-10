@@ -1,5 +1,4 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-teacher-basic',
@@ -7,8 +6,6 @@ import { FormBuilder, FormGroup } from '@angular/forms';
   styleUrls: ['./teacher-basic.component.css']
 })
 export class TeacherBasicComponent implements OnInit {
-
-  basicInfoForm: FormGroup;
 
   // 发送短信数量和更换手机记录
   msgPhone = {
@@ -26,28 +23,77 @@ export class TeacherBasicComponent implements OnInit {
     }]
   };
 
+  idOptions = [{
+    label: '79123',
+    value: '79123'
+  }, {
+    label: '79124',
+    value: '79124'
+  }];
+
+  typeOptions = [{
+    label: '音樂',
+    value: '音樂'
+  }];
+
+  subjectOptions = [{
+    label: '鋼琴',
+    value: '鋼琴'
+  }];
+
+  levelRangStartOptions = [{
+    label: '初學',
+    value: '初學'
+  }];
+
+  levelRangEndOptions = [{
+    label: '八級',
+    value: '八級'
+  }];
+
+  basicInfo = {
+    id: '79123',
+    status: '已確認',
+    nickName: '',
+    loginTime: '2018-05-03 12:27:27',
+    enName: '',
+    lastTimeLogin: '2018-05-03 12:27:27',
+    blackListReason: '',
+    caseNum: '1',
+    caseInfo: {
+      doing: 1,
+      finish: 0,
+      sum: 1,
+      lower250: 0,
+      canceled: 0
+    },
+    emailStatus: '接收',
+    cancelAccount: '否',
+    subjects: [{
+      type: '音樂',
+      subject: '鋼琴',
+      levelRangStart: '初學',
+      levelRangEnd: '八級'
+    }, {
+      type: '音樂',
+      subject: '鋼琴',
+      levelRangStart: '初學',
+      levelRangEnd: '八級'
+    }]
+  };
+
+  addSubject = {
+    type: '',
+    subject: '',
+    levelRangEnd: '',
+    levelRangStart: ''
+  };
+
   @Input() editStatus = false;
 
-  constructor(private fb: FormBuilder) { }
+  constructor() { }
 
   ngOnInit() {
-    this.basicInfoForm = this.fb.group({
-      clientNo: ['16512'],
-      name: ['李先生'],
-      familyPhone: ['88888888'],
-      fax: ['88888888'],
-      livingArea: ['銅鑼灣'],
-      address: ['xx街xx號xx樓xxx'],
-      bank: ['匯豐銀行'],
-      bankAccount: ['xxxx xxxx xxxx xxxx'],
-      email: ['mario.lee@hkta.edu.hk'],
-      mobilePhone: ['88888888'],
-      otherPhone: ['88888888'],
-      contactTime: ['9:30 - 18:30'],
-      livingPoing: ['豪園'],
-      mailAddress: ['xx街xx號xx樓xxx'],
-      owner: ['李X']
-    });
   }
 
 }

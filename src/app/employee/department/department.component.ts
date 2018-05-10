@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef, Renderer2 } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { TabbarService } from '../../service/tabbar.service';
 
@@ -19,7 +19,7 @@ export class DepartmentComponent implements OnInit {
 
   // 頁面設置左側菜單數據
   menu = [{
-    'id': 0,
+    'id': 2,
     'title': '香港',
     'url': '/',
     'switchStatus': false,
@@ -28,15 +28,15 @@ export class DepartmentComponent implements OnInit {
       'title': '業務部',
       'url': '/',
       'subMenu': [{
-        'id': 11,
+        'id': 111,
         'title': 'TEAM A',
         'url': '/'
       }, {
-        'id': 11,
+        'id': 112,
         'title': 'TEAM B',
         'url': '/'
       }, {
-        'id': 11,
+        'id': 113,
         'title': 'TEAM C',
         'url': '/'
       }]
@@ -77,7 +77,15 @@ export class DepartmentComponent implements OnInit {
     }]
   }];
 
-  constructor(private fb: FormBuilder, private tabbarService: TabbarService) {
+  // 選中欄目的id，目標為span元素
+  selectedMenuId;
+
+  constructor(
+    private el: ElementRef,
+    private rd: Renderer2,
+    private fb: FormBuilder,
+    private tabbarService: TabbarService
+  ) {
     this.pageForm = this.fb.group({
       name: ['', Validators.required],
       type: [1, Validators.required],
@@ -88,7 +96,17 @@ export class DepartmentComponent implements OnInit {
 
   // 點擊左側菜單觸發設置函數
   goSetting(id) {
-    console.log(id);
+    if (this.selectedMenuId) {
+      const preElement = this.el.nativeElement.querySelector(`#menu${this.selectedMenuId}`);
+      this.rd.setStyle(preElement, 'color', 'rgba(0, 0, 0, 0.65)');
+      const element = this.el.nativeElement.querySelector(`#menu${id}`);
+      this.rd.setStyle(element, 'color', '#2399ed');
+      this.selectedMenuId = id;
+    } else {
+      const element = this.el.nativeElement.querySelector(`#menu${id}`);
+      this.rd.setStyle(element, 'color', '#2399ed');
+      this.selectedMenuId = id;
+    }
   }
 
   // 展示子菜單函數

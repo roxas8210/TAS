@@ -39,11 +39,12 @@ nz-table span {
   margin-top: 10px;
 }
 .delay .follow-delay {
-  width: 100%;
+  width: 80%;
   display: flex;
   align-items: center;
 }
 .delay .follow-delay p {
+  width: 100px;
   font-size: 14px;
   flex-shrink: 0;
 }
@@ -57,6 +58,10 @@ nz-table span {
   flex-shrink: 0;
 }
 .delay .follow-delay .delay-reason button {
+  margin-left: 10px;
+}
+.delay .follow-delay .deadLine {
+  width: 150px;
   margin-left: 10px;
 }
 .delay .send-assistant {

@@ -6,6 +6,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CaseFollowDetailsComponent } from './case-follow-details/case-follow-details.component';
 import { RouterModule } from '@angular/router';
 import { CaseInfoComponent } from './case-info/case-info.component';
+import { SelectTeacherComponent } from './select-teacher/select-teacher.component';
+import { CaseFollowScoreComponent } from './case-follow-score/case-follow-score.component';
 
 @NgModule({
   imports: [
@@ -15,6 +17,6 @@ import { CaseInfoComponent } from './case-info/case-info.component';
     ReactiveFormsModule,
     RouterModule,
   ],
-  declarations: [CaseFollowComponent, CaseFollowDetailsComponent, CaseInfoComponent]
+  declarations: [CaseFollowComponent, CaseFollowDetailsComponent, CaseInfoComponent, SelectTeacherComponent, CaseFollowScoreComponent]
 })
 export class CaseModule { }

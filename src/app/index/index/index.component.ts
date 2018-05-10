@@ -35,7 +35,35 @@ export class IndexComponent implements OnInit {
     'icon': 'calendar',
     'url': '/',
     'subMenu': [{
+      'title': '新增個案',
+      'icon': 'calendar',
+      'url': '/index/case/follow'
+    }, {
+      'title': '快速搜索個案',
+      'icon': 'calendar',
+      'url': '/index/case/follow'
+    }, {
+      'title': '自動分配個案',
+      'icon': 'calendar',
+      'url': '/index/case/follow'
+    }, {
+      'title': '自選補習個案',
+      'icon': 'calendar',
+      'url': '/index/case/follow'
+    }, {
       'title': '個案跟進',
+      'icon': 'calendar',
+      'url': '/index/case/follow'
+    }, {
+      'title': '延時審批',
+      'icon': 'calendar',
+      'url': '/index/case/follow'
+    }, {
+      'title': '最近上課個案',
+      'icon': 'calendar',
+      'url': '/index/case/follow'
+    }, {
+      'title': '成功個案匯總',
       'icon': 'calendar',
       'url': '/index/case/follow'
     }]
@@ -80,6 +108,9 @@ export class IndexComponent implements OnInit {
   }];
 
   title = '首頁';
+
+  // 延時審批
+  delayApproveNum = 10;
 
   constructor() {
   }

@@ -32,7 +32,6 @@
         <div class="private">
           <nz-dropdown>
             <a class="head-example" nz-dropdown>
-              <!-- <i class="anticon anticon-mail"></i> -->
               <img src="/assets/mail.png" alt="">
             </a>
             <nz-badge [nzCount]="5"></nz-badge>
@@ -90,12 +89,34 @@
           <ul>
             <li *ngFor="let list of menu" appHoverMenu>
               <a [routerLink]="list.url">
+                <!-- <nz-badge *ngIf="list.title === '個案管理' && delayApproveNum > 0;else elseBlock" nzDot>
+                  <ng-template #content>
+                    <span>{{list.title}}</span>
+                  </ng-template>
+                </nz-badge>
+                <ng-template #elseBlock>
+                  <span>{{list.title}}</span>
+                </ng-template> -->
                 <span>{{list.title}}</span>
+                <nz-badge [nzCount]="delayApproveNum" *ngIf="list.title === '個案管理' && delayApproveNum > 0"></nz-badge>
+
                 <i class="anticon anticon-right" *ngIf="list.subMenu"></i>
               </a>
               <ul *ngIf="list.subMenu">
                 <li *ngFor="let sublist of list.subMenu" appHoverMenu>
-                  <a [routerLink]="sublist.url">{{sublist.title}}</a>
+                  <a [routerLink]="sublist.url">
+                    <!-- <nz-badge [nzCount]="delayApproveNum" *ngIf="sublist.title === '延時審批';else elseBlock">
+                      <ng-template #content>
+                        <span>{{sublist.title}}</span>
+                      </ng-template>
+                    </nz-badge>
+                    <ng-template #elseBlock>
+                      <span>{{sublist.title}}</span>
+                    </ng-template> -->
+                    <span>{{sublist.title}}</span>
+                    <nz-badge [nzCount]="delayApproveNum" *ngIf="sublist.title === '延時審批'"></nz-badge>
+
+                  </a>
                 </li>
               </ul>
             </li>
@@ -107,20 +128,6 @@
         </div>
       </div>
       <div class="main-container">
-        <!-- <div class="tabbar">
-          <div class="tab-active">
-            <p>{{title}}</p>
-          </div>
-          <div class="tab-short">
-            <p>家長列表</p>
-            <i class="anticon anticon-close"></i>
-          </div>
-          <div class="tab-short">
-            <p>導師列表</p>
-            <i class="anticon anticon-close"></i>
-          </div>
-          <div class="tab-clearfix"></div>
-        </div> -->
         <app-tabbar></app-tabbar>
         <div class="tab-container">
           <router-outlet></router-outlet>

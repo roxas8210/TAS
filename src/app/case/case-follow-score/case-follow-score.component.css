@@ -1,0 +1,97 @@
+.case-score-container {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+.case-score-container .inner-score {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  margin-top: 10px;
+}
+.case-score-container .inner-score .inner-score-title {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  padding-bottom: 10px;
+}
+.case-score-container .inner-score .inner-score-title p {
+  width: 200px;
+  background-color: #2399ed;
+  font-size: 16px;
+  color: white;
+  line-height: 32px;
+  text-align: center;
+  box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.15);
+}
+.case-score-container .inner-score .inner-score-container {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  border: 1px solid #b3b3b3;
+  display: flex;
+}
+.case-score-container .inner-score .inner-score-container .for-teacher-score {
+  width: 50%;
+  height: auto;
+  overflow: hidden;
+  border-right: 1px solid #e1e1e1;
+}
+.case-score-container .inner-score .inner-score-container .for-parent-score {
+  width: 50%;
+  height: auto;
+  overflow: hidden;
+}
+.case-score-container .inner-score .inner-score-container .teacher-score {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  text-align: left;
+  border-bottom: 1px solid #e1e1e1;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+.case-score-container .inner-score .inner-score-container .teacher-score p {
+  font-size: 14px;
+  line-height: 42px;
+}
+.case-score-container .inner-score .inner-score-container .teacher-score span {
+  font-size: 14px;
+  line-height: 42px;
+}
+.case-score-container .inner-score .inner-score-container .my-score {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #e1e1e1;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+.case-score-container .inner-score .inner-score-container .my-score p {
+  font-size: 14px;
+  line-height: 42px;
+  flex-shrink: 0;
+}
+.case-score-container .inner-score .inner-score-container .my-score button {
+  margin-left: 10px;
+}
+.case-score-container .inner-score .score-each-other {
+  border: 1px solid #b3b3b3;
+  margin-bottom: 20px;
+}
+.case-score-container .inner-score .score-each-other .score-avg {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  padding: 10px;
+  box-sizing: border-box;
+}
+.case-score-container .inner-score .score-each-other .score-avg p {
+  font-size: 14px;
+  line-height: 28px;
+}
+.case-score-container .inner-score .score-each-other .score-avg p span {
+  color: red;
+  font-size: 14px;
+  line-height: 28px;
+}

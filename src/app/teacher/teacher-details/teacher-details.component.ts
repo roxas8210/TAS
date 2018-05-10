@@ -49,14 +49,15 @@ export class TeacherDetailsComponent implements OnInit {
   }
 
   changeEditStatus() {
-    if (this.selectedIndex !== 0) {
-      this.selectedIndex = 0;
-    }
-    if (this.editStatus) {
-      this.editStatus = false;
-    } else {
-      this.editStatus = true;
-    }
+    this.editStatus = true;
+  }
+
+  finishEdit() {
+    this.editStatus = false;
+  }
+
+  cancelEdit() {
+    this.editStatus = false;
   }
 
   constructor(

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { PostToTagsService } from '../../service/post-to-tags.service';
+// import { PostToTagsService } from '../../service/post-to-tags.service';
 import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
@@ -45,7 +45,7 @@ export class TeacherEducationMiddleComponent implements OnInit {
     '商業學', '會計學', '經濟', '電腦', '打字'
   ];
 
-  constructor(private fb: FormBuilder, private tagsService: PostToTagsService) { }
+  constructor(private fb: FormBuilder) { }
 
   ngOnInit() {
     this.middleForm = this.fb.group({
@@ -92,7 +92,7 @@ export class TeacherEducationMiddleComponent implements OnInit {
       console.log(array);
       const filter = array.filter(v => v instanceof Object);
       console.log(filter);
-      this.tagsService.setTags({ type: 'education-middle', payload: filter });
+      // this.tagsService.setTags({ type: 'education-middle', payload: filter });
     });
   }
 

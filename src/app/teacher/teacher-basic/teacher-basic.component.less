@@ -1,21 +1,37 @@
-.client-basic {
-    width: 100%;
-    height: auto;
-    overflow: hidden;
-    // padding-bottom: 100px;
-    form {
-        width: 100%;
-        height: auto;
-        overflow: hidden;
-        display: flex;
-        .left {
-            flex-grow: 1;
-        }
-        .right {
-            flex-grow: 1;
+.basic-container {
+    border: 1px solid #d9d9d9;
+    nz-table {
+        p {
+            font-size: 14px;
+            text-align: center;
         }
         span {
             font-size: 14px;
+            line-height: 42px;
+            padding-left: 20px;
+        }
+    }
+    .add-remove {
+        border: 1px solid #d9d9d9;
+        margin: 10px;
+        padding: 10px;
+        box-sizing: border-box;
+        .remove {
+            width: 100%;
+            height: auto;
+            overflow: hidden;
+            .add-remove-item {
+                width: 100%;
+                display: flex;
+                justify-content: space-around;
+                margin-bottom: 10px;
+            }
+        }
+        .add {
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 10px;
         }
     }
 }
