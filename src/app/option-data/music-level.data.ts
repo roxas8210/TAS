@@ -1,0 +1,34 @@
+export const MusicLevel = [{
+    label: '一級',
+    value: '一級'
+}, {
+    label: '二級',
+    value: '二級'
+}, {
+    label: '三級',
+    value: '三級'
+}, {
+    label: '四級',
+    value: '四級'
+}, {
+    label: '五級',
+    value: '五級'
+}, {
+    label: '六級',
+    value: '六級'
+}, {
+    label: '七級',
+    value: '七級'
+}, {
+    label: '八級',
+    value: '八級'
+}, {
+    label: '演奏一級',
+    value: '演奏一級'
+}, {
+    label: '演奏二級',
+    value: '演奏二級'
+}, {
+    label: '演奏三級',
+    value: '演奏三級'
+}];

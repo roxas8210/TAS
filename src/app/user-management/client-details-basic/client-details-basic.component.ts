@@ -3,7 +3,12 @@ import {
   OnInit,
   Input
 } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { HK } from '../../option-data/hongkong.data';
+import { language } from '../../option-data/language.data';
+import { parentStatus } from '../../option-data/parent-status.data';
+import { sex } from '../../option-data/sex.data';
+import { ParentContactTime } from '../../option-data/parent-contact-time.data';
+import { Belief } from '../../option-data/belief.data';
 
 @Component({
   selector: 'app-client-details-basic',
@@ -11,8 +16,6 @@ import { FormBuilder, FormGroup } from '@angular/forms';
   styleUrls: ['./client-details-basic.component.css']
 })
 export class ClientDetailsBasicComponent implements OnInit {
-
-  basicInfoForm: FormGroup;
 
   // 发送短信数量和更换手机记录
   msgPhone = {
@@ -30,28 +33,53 @@ export class ClientDetailsBasicComponent implements OnInit {
     }]
   };
 
+  clientInfo = {
+    clientNo: '16512',
+    name: '李先生',
+    idNo: 'A123456(7)',
+    idName: '李xx',
+    registDate: '2018-05-07 13:13:13',
+    follower: 'mario',
+    phone: '88888888',
+    fax: '88888888',
+    livingArea: '銅鑼灣',
+    mailAddress: 'xx街xx號xx樓xx',
+    belief: '基督教',
+    sex: '男',
+    nationality: '中國',
+    email: 'mario.lee@hkta.edu.hk',
+    idEnName: 'Mario',
+    birth: '1988-08',
+    language: '中文（廣東話）',
+    status: '正常',
+    mobilePhone: '88888888',
+    otherPhone: '8888888',
+    contactTime: '9:30-12:00'
+  };
+
+  // 居住地點級聯選擇器
+  livingArea = HK;
+
+  // 主要語言選項
+  languageOptions = language;
+
+  // 客戶狀態選項
+  statusOptions = parentStatus;
+
+  // 客戶性別選項
+  sexOptions = sex;
+
+  // 可聯絡時間選項
+  contactOptions = ParentContactTime;
+
+  // 宗教信仰
+  beliefOptions = Belief;
+
   @Input() editStatus = false;
 
-  constructor(private fb: FormBuilder) { }
+  constructor() { }
 
   ngOnInit() {
-    this.basicInfoForm = this.fb.group({
-      clientNo: ['16512'],
-      name: ['李先生'],
-      familyPhone: ['88888888'],
-      fax: ['88888888'],
-      livingArea: ['銅鑼灣'],
-      address: ['xx街xx號xx樓xxx'],
-      bank: ['匯豐銀行'],
-      bankAccount: ['xxxx xxxx xxxx xxxx'],
-      email: ['mario.lee@hkta.edu.hk'],
-      mobilePhone: ['88888888'],
-      otherPhone: ['88888888'],
-      contactTime: ['9:30 - 18:30'],
-      livingPoing: ['豪園'],
-      mailAddress: ['xx街xx號xx樓xxx'],
-      owner: ['李X']
-    });
   }
 
 }

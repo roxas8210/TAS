@@ -1,0 +1,31 @@
+export const Belief = [{
+    label: '佛教',
+    value: '佛教'
+}, {
+    label: '道教',
+    value: '道教'
+}, {
+    label: '印度教',
+    value: '印度教'
+}, {
+    label: '基督教',
+    value: '基督教'
+}, {
+    label: '天主教',
+    value: '天主教'
+}, {
+    label: '東正教',
+    value: '東正教'
+}, {
+    label: '摩門教',
+    value: '摩門教'
+}, {
+    label: '基督教馬龍派',
+    value: '基督教馬龍派'
+}, {
+    label: '猶太教',
+    value: '猶太教'
+}, {
+    label: '伊斯蘭教',
+    value: '伊斯蘭教'
+}];

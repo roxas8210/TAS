@@ -1,0 +1,33 @@
+export const HighestEducation = [{
+    label: '中五',
+    value: '中五',
+    text: '最高教育程度：中五',
+}, {
+    label: '中七',
+    value: '中七',
+    text: '最高教育程度：中七',
+}, {
+    label: '高中DSE',
+    value: '高中DSE',
+    text: '最高教育程度：高中DSE',
+}, {
+    label: '大學非學位',
+    value: '大學非學位',
+    text: '最高教育程度：大學非學位',
+}, {
+    label: '大學學位',
+    value: '大學學位',
+    text: '最高教育程度：大學學位',
+}, {
+    label: '大學畢業',
+    value: '大學畢業',
+    text: '最高教育程度：大學畢業',
+}, {
+    label: '碩士',
+    value: '碩士',
+    text: '最高教育程度：碩士',
+}, {
+    label: '博士',
+    value: '博士',
+    text: '最高教育程度：博士',
+}];

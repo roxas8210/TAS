@@ -59,6 +59,10 @@ export class IndexComponent implements OnInit {
       'icon': 'calendar',
       'url': '/index/case/follow'
     }, {
+      'title': '個案異常提醒',
+      'icon': 'calendar',
+      'url': '/index/case/follow'
+    }, {
       'title': '最近上課個案',
       'icon': 'calendar',
       'url': '/index/case/follow'
@@ -111,6 +115,11 @@ export class IndexComponent implements OnInit {
 
   // 延時審批
   delayApproveNum = 10;
+
+  // 個案異常提醒數
+  errCaseNum = 8;
+
+  allAlert = this.delayApproveNum + this.errCaseNum;
 
   constructor() {
   }

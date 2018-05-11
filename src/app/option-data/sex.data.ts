@@ -1,7 +1,9 @@
 export const sex = [{
-    value: '0',
-    label: '男'
+    value: '男',
+    label: '男',
+    text: '男'
 }, {
-    value: '1',
-    label: '女'
+    value: '女',
+    label: '女',
+    text: '女'
 }];

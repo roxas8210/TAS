@@ -1,0 +1,29 @@
+export const HighestGrade = [{
+    label: '幼稚園',
+    value: '幼稚園',
+    text: '幼稚園'
+}, {
+    label: '小學',
+    value: '小學',
+    text: '小學'
+}, {
+    label: '中三以下',
+    value: '中三以下',
+    text: '中三以下'
+}, {
+    label: '中學',
+    value: '中學',
+    text: '中學'
+}, {
+    label: '大學生',
+    value: '大學生',
+    text: '大學生'
+}, {
+    label: '僅成年',
+    value: '僅成年',
+    text: '僅成年'
+}, {
+    label: '全部可補',
+    value: '全部可補',
+    text: '全部可補'
+}];

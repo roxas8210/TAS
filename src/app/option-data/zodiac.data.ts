@@ -1,0 +1,61 @@
+export const Zodiac = [{
+    label: '鼠',
+    value: '鼠',
+    checked: false,
+    text: '鼠',
+}, {
+    label: '牛',
+    value: '牛',
+    checked: false,
+    text: '牛',
+}, {
+    label: '虎',
+    value: '虎',
+    checked: false,
+    text: '虎',
+}, {
+    label: '兔',
+    value: '兔',
+    checked: false,
+    text: '兔',
+}, {
+    label: '龙',
+    value: '龙',
+    checked: false,
+    text: '龙',
+}, {
+    label: '蛇',
+    value: '蛇',
+    checked: false,
+    text: '蛇',
+}, {
+    label: '马',
+    value: '马',
+    checked: false,
+    text: '马',
+}, {
+    label: '羊',
+    value: '羊',
+    checked: false,
+    text: '羊',
+}, {
+    label: '猴',
+    value: '猴',
+    checked: false,
+    text: '猴',
+}, {
+    label: '鸡',
+    value: '鸡',
+    checked: false,
+    text: '鸡',
+}, {
+    label: '鸡',
+    value: '鸡',
+    checked: false,
+    text: '鸡',
+}, {
+    label: '猪',
+    value: '猪',
+    checked: false,
+    text: '猪',
+}];

@@ -8,7 +8,7 @@
           </label>
         </div>
         <div nz-form-control nz-col [nzSm]="14" [nzXs]="24">
-          <nz-input [nzSize]="'large'" formControlName="name"></nz-input>
+          <nz-input [nzSize]="'large'" formControlName="name" [nzPlaceHolder]="'輸入姓名'"></nz-input>
         </div>
       </div>
       <div nz-form-item nz-row>
@@ -18,7 +18,7 @@
           </label>
         </div>
         <div nz-form-control nz-col [nzSm]="14" [nzXs]="24">
-          <nz-input [nzSize]="'large'" formControlName="idCardNo"></nz-input>
+          <nz-input [nzSize]="'large'" formControlName="idCardNo" [nzPlaceHolder]="'輸入身份證ID'"></nz-input>
         </div>
       </div>
       <div nz-form-item nz-row>
@@ -28,7 +28,7 @@
           </label>
         </div>
         <div nz-form-control nz-col [nzSm]="14" [nzXs]="24">
-          <nz-input [nzSize]="'large'" formControlName="idCardName"></nz-input>
+          <nz-input [nzSize]="'large'" formControlName="idCardName" [nzPlaceHolder]="'輸入身份證中文姓名'"></nz-input>
         </div>
       </div>
       <div nz-form-item nz-row>
@@ -38,7 +38,7 @@
           </label>
         </div>
         <div nz-form-control nz-col [nzSm]="14" [nzXs]="24">
-          <nz-input [nzSize]="'large'" formControlName="familyPhone"></nz-input>
+          <nz-input [nzSize]="'large'" formControlName="familyPhone" [nzPlaceHolder]="'輸入家庭電話'"></nz-input>
         </div>
       </div>
       <div nz-form-item nz-row>
@@ -48,7 +48,7 @@
           </label>
         </div>
         <div nz-form-control nz-col [nzSm]="14" [nzXs]="24">
-          <nz-input [nzSize]="'large'" formControlName="fax"></nz-input>
+          <nz-input [nzSize]="'large'" formControlName="fax" [nzPlaceHolder]="'輸入傳真電話'"></nz-input>
         </div>
       </div>
       <div nz-form-item nz-row>
@@ -58,7 +58,13 @@
           </label>
         </div>
         <div nz-form-control nz-col [nzSm]="14" [nzXs]="24">
-          <nz-input [nzSize]="'large'" formControlName="livingArea"></nz-input>
+          <!-- <nz-input [nzSize]="'large'" formControlName="livingArea"></nz-input> -->
+          <nz-cascader 
+          [nzExpandTrigger]="'hover'" 
+          [nzOptions]="livingArea" 
+          [nzAllowClear]="false" 
+          [nzPlaceHolder]="'選擇居住地區'">
+          </nz-cascader>
         </div>
       </div>
       <div nz-form-item nz-row>
@@ -69,8 +75,8 @@
         </div>
         <div nz-form-control nz-col [nzSm]="14" [nzXs]="24">
           <!-- <nz-input [nzSize]="'large'" formControlName="language"></nz-input> -->
-          <nz-select style="width: 120px;" formControlName="language" [nzPlaceHolder]="''" nzAllowClear>
-            <nz-option *ngFor="let option of sexOptions" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
+          <nz-select style="width: 120px;" formControlName="language" [nzPlaceHolder]="'選擇主要語言'" nzAllowClear>
+            <nz-option *ngFor="let option of languageOptions" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
             </nz-option>
           </nz-select>
         </div>
@@ -83,8 +89,8 @@
         </div>
         <div nz-form-control nz-col [nzSm]="14" [nzXs]="24">
           <!-- <nz-input [nzSize]="'large'" formControlName="belief"></nz-input> -->
-          <nz-select style="width: 120px;" formControlName="belief" [nzPlaceHolder]="''" nzAllowClear>
-            <nz-option *ngFor="let option of sexOptions" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
+          <nz-select style="width: 120px;" formControlName="belief" [nzPlaceHolder]="'選擇宗教信仰'" nzAllowClear>
+            <nz-option *ngFor="let option of beliefOptions" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
             </nz-option>
           </nz-select>
         </div>
@@ -98,7 +104,7 @@
           </label>
         </div>
         <div nz-form-control nz-col [nzSm]="14" [nzXs]="24">
-          <nz-input [nzSize]="'large'" formControlName="email"></nz-input>
+          <nz-input [nzSize]="'large'" formControlName="email" [nzPlaceHolder]="'輸入Email地址'"></nz-input>
         </div>
       </div>
       <div nz-form-item nz-row>
@@ -121,7 +127,7 @@
           </label>
         </div>
         <div nz-form-control nz-col [nzSm]="14" [nzXs]="24">
-          <nz-input [nzSize]="'large'" formControlName="idCardEnName"></nz-input>
+          <nz-input [nzSize]="'large'" formControlName="idCardEnName" [nzPlaceHolder]="'輸入身份證英文姓名'"></nz-input>
         </div>
       </div>
       <div nz-form-item nz-row>
@@ -131,7 +137,7 @@
           </label>
         </div>
         <div nz-form-control nz-col [nzSm]="14" [nzXs]="24">
-          <nz-input [nzSize]="'large'" formControlName="mobilePhone"></nz-input>
+          <nz-input [nzSize]="'large'" formControlName="mobilePhone" [nzPlaceHolder]="'輸入手提電話'"></nz-input>
         </div>
       </div>
       <div nz-form-item nz-row>
@@ -141,17 +147,17 @@
           </label>
         </div>
         <div nz-form-control nz-col [nzSm]="14" [nzXs]="24">
-          <nz-input [nzSize]="'large'" formControlName="otherPhone"></nz-input>
+          <nz-input [nzSize]="'large'" formControlName="otherPhone" [nzPlaceHolder]="'輸入其他電話'"></nz-input>
         </div>
       </div>
       <div nz-form-item nz-row>
         <div nz-form-label nz-col [nzSm]="6" [nzXs]="24">
           <label for="birth">
-            <span>出生年月</span>
+            <span>出生日期</span>
           </label>
         </div>
         <div nz-form-control nz-col [nzSm]="14" [nzXs]="24">
-          <nz-datepicker [nzMode]="'month'" formControlName="birth" [nzPlaceHolder]="'選擇出生年月'"></nz-datepicker>
+          <nz-datepicker [nzMode]="'day'" formControlName="birth" [nzPlaceHolder]="'選擇出生日期'"></nz-datepicker>
         </div>
       </div>
       <div nz-form-item nz-row>
@@ -161,7 +167,7 @@
           </label>
         </div>
         <div nz-form-control nz-col [nzSm]="14" [nzXs]="24">
-          <nz-input [nzSize]="'large'" formControlName="mailAddress"></nz-input>
+          <nz-input [nzSize]="'large'" formControlName="mailAddress" [nzPlaceHolder]="'輸入郵寄地址'"></nz-input>
         </div>
       </div>
       <div nz-form-item nz-row>
@@ -171,11 +177,11 @@
           </label>
         </div>
         <div nz-form-control nz-col [nzSm]="14" [nzXs]="24">
-          <!-- <nz-input [nzSize]="'large'" formControlName="nationality"></nz-input> -->
-          <nz-select style="width: 120px;" formControlName="nationality" [nzPlaceHolder]="''" nzAllowClear>
+          <nz-input [nzSize]="'large'" formControlName="nationality" [nzPlaceHolder]="'輸入國籍'"></nz-input>
+          <!-- <nz-select style="width: 120px;" formControlName="nationality" [nzPlaceHolder]="'選擇國籍'" nzAllowClear>
             <nz-option *ngFor="let option of sexOptions" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
             </nz-option>
-          </nz-select>
+          </nz-select> -->
         </div>
       </div>
     </div>

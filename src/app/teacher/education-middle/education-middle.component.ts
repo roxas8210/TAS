@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { push_teacher_search_educationMiddleData } from '../../actions/teacher-search/teacher-search-tags.action';
+import { TeacherEducationLevel } from '../../option-data/teacher-education-level.data';
 
 @Component({
   selector: 'app-education-middle',
@@ -9,6 +10,9 @@ import { push_teacher_search_educationMiddleData } from '../../actions/teacher-s
   styleUrls: ['./education-middle.component.less']
 })
 export class EducationMiddleComponent implements OnInit {
+
+  // 科目等級
+  teacherEducationLevel = TeacherEducationLevel;
 
   levelOptions = [{
     label: '1',

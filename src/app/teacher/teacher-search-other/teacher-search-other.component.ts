@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { push_teacher_search_other } from '../../actions/teacher-search/teacher-search-tags.action';
+import { MusicLevel } from '../../option-data/music-level.data';
 
 @Component({
   selector: 'app-teacher-search-other',
@@ -9,10 +10,15 @@ import { push_teacher_search_other } from '../../actions/teacher-search/teacher-
 })
 export class TeacherSearchOtherComponent implements OnInit {
 
-  levelOptions = [{
-    label: '1',
-    value: '1'
+  canOptions = [{
+    label: '可以',
+    value: '可以'
+  }, {
+    label: '不可以',
+    value: '不可以'
   }];
+
+  musicLevelOptions = MusicLevel;
 
   otherList = [{
     id: 0,

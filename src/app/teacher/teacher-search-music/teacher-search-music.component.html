@@ -1,5 +1,5 @@
 <div style="width: 260px;">
-  <label nz-checkbox [(ngModel)]="musicList[0].status" (ngModelChange)="modelChange(musicList[0].id)">
+  <label style="width: 25%;" nz-checkbox [(ngModel)]="musicList[0].status" (ngModelChange)="modelChange(musicList[0].id)">
     <span>钢琴</span>
   </label>
   <nz-select style="width: 120px;" [(ngModel)]="musicList[0].selectValue" (ngModelChange)="modelChange(musicList[0].id)" [nzPlaceHolder]="'选择级别'">
@@ -9,7 +9,7 @@
 </div>
 
 <div style="width: 260px;">
-  <label nz-checkbox [(ngModel)]="musicList[1].status" (ngModelChange)="modelChange(musicList[1].id)">
+  <label style="width: 25%;" nz-checkbox [(ngModel)]="musicList[1].status" (ngModelChange)="modelChange(musicList[1].id)">
     <span>琵琶</span>
   </label>
   <nz-select style="width: 120px;" [(ngModel)]="musicList[1].selectValue" (ngModelChange)="modelChange(musicList[1].id)" [nzPlaceHolder]="'选择级别'">

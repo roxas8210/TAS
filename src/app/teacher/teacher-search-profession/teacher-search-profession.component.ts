@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { push_teacher_search_profession } from '../../actions/teacher-search/teacher-search-tags.action';
+import { HighestGrade } from '../../option-data/highest-grade.data';
 
 @Component({
   selector: 'app-teacher-search-profession',
@@ -13,6 +14,9 @@ export class TeacherSearchProfessionComponent implements OnInit {
     label: '1',
     value: '1'
   }];
+
+  // 最高可補年級
+  highestGrade = HighestGrade;
 
   professionList = [{
     id: 0,

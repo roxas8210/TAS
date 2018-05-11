@@ -3,6 +3,14 @@ import { sex } from '../../option-data/sex.data';
 
 import { Store } from '@ngrx/store';
 import { push_teacher_search_basic, push_teacher_search_zodiac } from '../../actions/teacher-search/teacher-search-tags.action';
+import { HighestEducation } from '../../option-data/highest-education.data';
+import { Zodiac } from '../../option-data/zodiac.data';
+import { HighestGrade } from '../../option-data/highest-grade.data';
+import { HK } from '../../option-data/hongkong.data';
+import { TeacherStatus } from '../../option-data/teacher-status.data';
+import { UseTime } from '../../option-data/use-time.data';
+import { Average } from '../../option-data/average.data';
+import { CaseAmount } from '../../option-data/case-amount.data';
 
 @Component({
   selector: 'app-teacher-search-basic',
@@ -21,87 +29,32 @@ export class TeacherSearchBasicComponent implements OnInit {
     text: '9'
   }];
 
-  heighestEduOptions = [{
-    label: '大学',
-    text: '最高教育程度：大学',
-    value: '0'
-  }, {
-    label: '小学',
-    text: '最高教育程度：小学',
-    value: '1'
-  }];
+  // 最高可補年級
+  highestGrade = HighestGrade;
 
-  sexOptions = [{
-    label: '男',
-    value: '男',
-    text: '男'
-  }, {
-    label: '女',
-    value: '女',
-    text: '女'
-  }];
+  // 最高教育程度
+  heighestEduOptions = HighestEducation;
 
-  zodiacArray = [{
-    label: '鼠',
-    value: '鼠',
-    checked: false,
-    text: '鼠',
-  }, {
-    label: '牛',
-    value: '牛',
-    checked: false,
-    text: '牛',
-  }, {
-    label: '虎',
-    value: '虎',
-    checked: false,
-    text: '虎',
-  }, {
-    label: '兔',
-    value: '兔',
-    checked: false,
-    text: '兔',
-  }, {
-    label: '龙',
-    value: '龙',
-    checked: false,
-    text: '龙',
-  }, {
-    label: '蛇',
-    value: '蛇',
-    checked: false,
-    text: '蛇',
-  }, {
-    label: '马',
-    value: '马',
-    checked: false,
-    text: '马',
-  }, {
-    label: '羊',
-    value: '羊',
-    checked: false,
-    text: '羊',
-  }, {
-    label: '猴',
-    value: '猴',
-    checked: false,
-    text: '猴',
-  }, {
-    label: '鸡',
-    value: '鸡',
-    checked: false,
-    text: '鸡',
-  }, {
-    label: '鸡',
-    value: '鸡',
-    checked: false,
-    text: '鸡',
-  }, {
-    label: '猪',
-    value: '猪',
-    checked: false,
-    text: '猪',
-  }];
+  // 性別
+  sexOptions = sex;
+
+  // 生肖
+  zodiacArray = Zodiac;
+
+  // 居住地區
+  livingArea = HK;
+
+  // 導師狀態
+  teacherStatus = TeacherStatus;
+
+  // 用本平台時間
+  useTime = UseTime;
+
+  // 平均分
+  averageOptions = Average;
+
+  // 已接個案數
+  caseAmountOptions = CaseAmount;
 
   basicList = [{
     id: 0,
@@ -124,8 +77,8 @@ export class TeacherSearchBasicComponent implements OnInit {
   }, {
     id: 3,
     value: '',
-    text: '導師家具地址地區：',
-    bak: '導師家具地址地區：',
+    text: '導師居住地區：',
+    bak: '導師居住地區：',
     status: false
   }, {
     id: 4,

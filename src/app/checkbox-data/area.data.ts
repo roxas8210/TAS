@@ -23,54 +23,299 @@ export const area = [[{
     value: '西環',
     checked: false,
     text: '西環',
+}, {
+    label: '灣仔',
+    value: '灣仔',
+    checked: false,
+    text: '灣仔'
+}, {
+    label: '銅鑼灣',
+    value: '銅鑼灣',
+    checked: false,
+    text: '銅鑼灣'
+}, {
+    label: '跑馬地',
+    value: '跑馬地',
+    checked: false,
+    text: '跑馬地'
+}, {
+    label: '北角',
+    value: '北角',
+    checked: false,
+    text: '北角'
+}, {
+    label: '則魚涌及太古',
+    value: '則魚涌及太古',
+    checked: false,
+    text: '則魚涌及太古'
+}, {
+    label: '筲箕灣及西灣河',
+    value: '筲箕灣及西灣河',
+    checked: false,
+    text: '筲箕灣及西灣河'
+}, {
+    label: '柴灣及小西灣',
+    value: '柴灣及小西灣',
+    checked: false,
+    text: '柴灣及小西灣'
+}, {
+    label: '香港仔',
+    value: '香港仔',
+    checked: false,
+    text: '香港仔'
+}, {
+    label: '鴨利洲',
+    value: '鴨利洲',
+    checked: false,
+    text: '鴨利洲'
+}, {
+    label: '赤柱',
+    value: '赤柱',
+    checked: false,
+    text: '赤柱'
 }], [{
     label: '九龍全區',
     value: '九龍全區',
     checked: false,
     text: '九龍全區',
 }, {
-    label: '中半山',
-    value: '中半山',
+    label: '藍田及油塘',
+    value: '藍田及油塘',
     checked: false,
-    text: '中半山',
+    text: '藍田及油塘'
 }, {
-    label: '薄扶林',
-    value: '薄扶林',
+    label: '秀茂坪',
+    value: '秀茂坪',
     checked: false,
-    text: '薄扶林',
+    text: '秀茂坪'
 }, {
-    label: '中上環',
-    value: '中上環',
+    label: '觀塘',
+    value: '觀塘',
     checked: false,
-    text: '中上環',
+    text: '觀塘'
 }, {
-    label: '西環',
-    value: '西環',
+    label: '牛頭角及九龍灣',
+    value: '牛頭角及九龍灣',
     checked: false,
-    text: '西環',
+    text: '牛頭角及九龍灣'
+}, {
+    label: '彩虹及牛池灣',
+    value: '彩虹及牛池灣',
+    checked: false,
+    text: '彩虹及牛池灣'
+}, {
+    label: '慈雲山',
+    value: '慈雲山',
+    checked: false,
+    text: '慈雲山'
+}, {
+    label: '鑽石山,新蒲崗及黃大仙',
+    value: '鑽石山,新蒲崗及黃大仙',
+    checked: false,
+    text: '鑽石山'
+}, {
+    label: '樂富',
+    value: '樂富',
+    checked: false,
+    text: '樂富'
+}, {
+    label: '九龍塘',
+    value: '九龍塘',
+    checked: false,
+    text: '九龍塘'
+}, {
+    label: '石硤尾',
+    value: '石硤尾',
+    checked: false,
+    text: '石硤尾'
+}, {
+    label: '何文田',
+    value: '何文田',
+    checked: false,
+    text: '何文田'
+}, {
+    label: '九龍城',
+    value: '九龍城',
+    checked: false,
+    text: '九龍城'
+}, {
+    label: '土瓜灣',
+    value: '土瓜灣',
+    checked: false,
+    text: '土瓜灣'
+}, {
+    label: '紅磡',
+    value: '紅磡',
+    checked: false,
+    text: '紅磡'
+}, {
+    label: '油麻地,佐敦及尖沙咀',
+    value: '油麻地,佐敦及尖沙咀',
+    checked: false,
+    text: '油麻地'
+}, {
+    label: '油麻地',
+    value: '油麻地',
+    checked: false,
+    text: '油麻地'
+}, {
+    label: '佐敦',
+    value: '佐敦',
+    checked: false,
+    text: '佐敦'
+}, {
+    label: '尖沙咀',
+    value: '尖沙咀',
+    checked: false,
+    text: '尖沙咀'
+}, {
+    label: '旺角及旺角西',
+    value: '旺角及旺角西',
+    checked: false,
+    text: '旺角及旺角西'
+}, {
+    label: '大角咀',
+    value: '大角咀',
+    checked: false,
+    text: '大角咀'
+}, {
+    label: '深水步',
+    value: '深水步',
+    checked: false,
+    text: '深水步'
+}, {
+    label: '長沙灣',
+    value: '長沙灣',
+    checked: false,
+    text: '長沙灣'
+}, {
+    label: '荔枝角',
+    value: '荔枝角',
+    checked: false,
+    text: '荔枝角'
+}, {
+    label: '美孚',
+    value: '美孚',
+    checked: false,
+    text: '美孚'
 }], [{
     label: '新界全區',
     value: '新界全區',
     checked: false,
     text: '新界全區',
 }, {
-    label: '中半山',
-    value: '中半山',
+    label: '將軍澳',
+    value: '將軍澳',
     checked: false,
-    text: '中半山',
+    text: '將軍澳'
 }, {
-    label: '薄扶林',
-    value: '薄扶林',
+    label: '西貢',
+    value: '西貢',
     checked: false,
-    text: '薄扶林',
+    text: '西貢'
 }, {
-    label: '中上環',
-    value: '中上環',
+    label: '荃灣',
+    value: '荃灣',
     checked: false,
-    text: '中上環',
+    text: '荃灣'
 }, {
-    label: '西環',
-    value: '西環',
+    label: '葵涌,葵芳及青衣',
+    value: '葵涌,葵芳及青衣',
     checked: false,
-    text: '西環',
+    text: '葵涌'
+}, {
+    label: '葵涌及葵芳',
+    value: '葵涌及葵芳',
+    checked: false,
+    text: '葵涌及葵芳'
+}, {
+    label: '青衣',
+    value: '青衣',
+    checked: false,
+    text: '青衣'
+}, {
+    label: '荔景站',
+    value: '荔景站',
+    checked: false,
+    text: '荔景站'
+}, {
+    label: '沙田大圍',
+    value: '沙田大圍',
+    checked: false,
+    text: '沙田大圍'
+}, {
+    label: '沙田市中心',
+    value: '沙田市中心',
+    checked: false,
+    text: '沙田市中心'
+}, {
+    label: '沙田小瀝源',
+    value: '沙田小瀝源',
+    checked: false,
+    text: '沙田小瀝源'
+}, {
+    label: '沙田火炭',
+    value: '沙田火炭',
+    checked: false,
+    text: '沙田火炭'
+}, {
+    label: '沙田馬鞍山',
+    value: '沙田馬鞍山',
+    checked: false,
+    text: '沙田馬鞍山'
+}, {
+    label: '大埔',
+    value: '大埔',
+    checked: false,
+    text: '大埔'
+}, {
+    label: '粉嶺及上水',
+    value: '粉嶺及上水',
+    checked: false,
+    text: '粉嶺及上水'
+}, {
+    label: '粉嶺',
+    value: '粉嶺',
+    checked: false,
+    text: '粉嶺'
+}, {
+    label: '上水',
+    value: '上水',
+    checked: false,
+    text: '上水'
+}, {
+    label: '元朗及天水圍',
+    value: '元朗及天水圍',
+    checked: false,
+    text: '元朗及天水圍'
+}, {
+    label: '屯門',
+    value: '屯門',
+    checked: false,
+    text: '屯門'
+}, {
+    label: '離島(除東涌)',
+    value: '離島(除東涌)',
+    checked: false,
+    text: '離島'
+}, {
+    label: '青龍頭',
+    value: '青龍頭',
+    checked: false,
+    text: '青龍頭'
+}, {
+    label: '深井',
+    value: '深井',
+    checked: false,
+    text: '深井'
+}, {
+    label: '馬灣',
+    value: '馬灣',
+    checked: false,
+    text: '馬灣'
+}, {
+    label: '東涌',
+    value: '東涌',
+    checked: false,
+    text: '東涌'
 }]];

@@ -108,6 +108,14 @@ export class AuthSettingComponent implements OnInit {
       id: '23',
       name: '黑名單',
       active: false
+    }, {
+      id: '211',
+      name: '客戶詳情',
+      active: false
+    }, {
+      id: '221',
+      name: '導師詳情',
+      active: false
     }]
   }, {
     name: '個案管理',
@@ -187,6 +195,29 @@ export class AuthSettingComponent implements OnInit {
     checked: false
   }];
 
+  clientList = {
+    query: [{
+      name: '區域查詢  ',
+      value: 1
+    }, {
+      name: '全地區查詢',
+      value: 2
+    }],
+    operate: [
+      '新增用戶'
+    ]
+  };
+
+  teacherList = {
+    query: [{
+      name: '區域查詢  ',
+      value: 1
+    }, {
+      name: '全地區查詢',
+      value: 2
+    }]
+  };
+
   authForm: FormGroup;
 
   selectedEmployee;
@@ -196,6 +227,10 @@ export class AuthSettingComponent implements OnInit {
   selectedEmployeeId = '';
 
   selectedPageId = '';
+
+  authQueryList = [];
+
+  authOperateList = [];
 
   constructor(
     private el: ElementRef,
@@ -212,6 +247,31 @@ export class AuthSettingComponent implements OnInit {
   selectPage(id, name) {
     this.selectedPage = `${name}`;
     this.changePageColor(`pageId${id}`);
+    switch (id) {
+      case '21':
+        this.authQueryList = this.clientList.query;
+        this.authOperateList = this.clientList.operate;
+        console.log(this.authQueryList);
+        break;
+      case '22':
+        this.authQueryList = this.teacherList.query;
+        break;
+      default:
+        this.authQueryList = [];
+        this.authOperateList = [];
+        break;
+    }
+    // if (id === '21') {
+    //   this.authQueryList = this.clientList.query;
+    //   this.authOperateList = this.clientList.operate;
+    //   console.log(this.authQueryList);
+    // }
+    // if (id === '22') {
+    //   this.authQueryList = this.teacherList.query;
+    // } else {
+    //   this.authQueryList = [];
+    //   this.authOperateList = [];
+    // }
   }
 
   // 選擇員工職位

@@ -7,7 +7,7 @@
             <label>性别</label>
           </div>
           <div nz-form-control nz-col [nzSpan]="14">
-            <nz-select style="width: 220px;" [(ngModel)]="basicList[0].value" (ngModelChange)="modelChange(basicList[0].id)" [nzPlaceHolder]="'选择性别'" nzAllowClear>
+            <nz-select style="width: 220px;" [(ngModel)]="basicList[0].value" (ngModelChange)="modelChange(basicList[0].id)" [nzPlaceHolder]="'選擇性別'" nzAllowClear>
               <nz-option *ngFor="let option of sexOptions" [nzLabel]="option.label" [nzValue]="option.value" [nzDisabled]="option.disabled">
               </nz-option>
             </nz-select>
@@ -20,7 +20,7 @@
             <label>最高教育程度</label>
           </div>
           <div nz-form-control nz-col [nzSpan]="14">
-            <nz-select style="width: 220px;" [(ngModel)]="basicList[1].value" (ngModelChange)="modelChange(basicList[1].id)" [nzPlaceHolder]="'choose option'" nzAllowClear>
+            <nz-select style="width: 220px;" [(ngModel)]="basicList[1].value" (ngModelChange)="modelChange(basicList[1].id)" [nzPlaceHolder]="'選擇最高教育程度'" nzAllowClear>
               <nz-option *ngFor="let option of heighestEduOptions" [nzLabel]="option.label" [nzValue]="option.value" [nzDisabled]="option.disabled">
               </nz-option>
             </nz-select>
@@ -35,8 +35,8 @@
             <label>最高可補年級</label>
           </div>
           <div nz-form-control nz-col [nzSpan]="14">
-            <nz-select style="width: 220px;" [(ngModel)]="basicList[2].value" (ngModelChange)="modelChange(basicList[2].id)" [nzPlaceHolder]="'choose option'" nzAllowClear>
-              <nz-option *ngFor="let option of levelOptions" [nzLabel]="option.label" [nzValue]="option.value" [nzDisabled]="option.disabled">
+            <nz-select style="width: 220px;" [(ngModel)]="basicList[2].value" (ngModelChange)="modelChange(basicList[2].id)" [nzPlaceHolder]="'最高可補年級'" nzAllowClear>
+              <nz-option *ngFor="let option of highestGrade" [nzLabel]="option.label" [nzValue]="option.value" [nzDisabled]="option.disabled">
               </nz-option>
             </nz-select>
           </div>
@@ -48,10 +48,18 @@
             <label>導師家居地址地區</label>
           </div>
           <div nz-form-control nz-col [nzSpan]="14">
-            <nz-select style="width: 220px;" [(ngModel)]="basicList[3].value" (ngModelChange)="modelChange(basicList[3].id)" [nzPlaceHolder]="'choose option'" nzAllowClear>
+            <!-- <nz-select style="width: 220px;" [(ngModel)]="basicList[3].value" (ngModelChange)="modelChange(basicList[3].id)" [nzPlaceHolder]="'choose option'" nzAllowClear>
               <nz-option *ngFor="let option of levelOptions" [nzLabel]="option.label" [nzValue]="option.value" [nzDisabled]="option.disabled">
               </nz-option>
-            </nz-select>
+            </nz-select> -->
+            <nz-cascader 
+            [nzExpandTrigger]="'hover'" 
+            [nzOptions]="livingArea" 
+            [nzPlaceHolder]="'選擇居住地區'" 
+            [(ngModel)]="basicList[3].value" 
+            (ngModelChange)="modelChange(basicList[3].id)"
+            >
+            </nz-cascader>
           </div>
         </div>
       </td>
@@ -63,8 +71,8 @@
             <label>狀態</label>
           </div>
           <div nz-form-control nz-col [nzSpan]="14">
-            <nz-select style="width: 220px;" [(ngModel)]="basicList[4].value" (ngModelChange)="modelChange(basicList[4].id)" [nzPlaceHolder]="'choose option'" nzAllowClear>
-              <nz-option *ngFor="let option of levelOptions" [nzLabel]="option.label" [nzValue]="option.value" [nzDisabled]="option.disabled">
+            <nz-select style="width: 220px;" [(ngModel)]="basicList[4].value" (ngModelChange)="modelChange(basicList[4].id)" [nzPlaceHolder]="'選擇導師狀態'" nzAllowClear>
+              <nz-option *ngFor="let option of teacherStatus" [nzLabel]="option.label" [nzValue]="option.value" [nzDisabled]="option.disabled">
               </nz-option>
             </nz-select>
           </div>
@@ -76,8 +84,8 @@
             <label>用本平臺時間</label>
           </div>
           <div nz-form-control nz-col [nzSpan]="14">
-            <nz-select style="width: 220px;" [(ngModel)]="basicList[5].value" (ngModelChange)="modelChange(basicList[5].id)" [nzPlaceHolder]="'choose option'" nzAllowClear>
-              <nz-option *ngFor="let option of levelOptions" [nzLabel]="option.label" [nzValue]="option.value" [nzDisabled]="option.disabled">
+            <nz-select style="width: 220px;" [(ngModel)]="basicList[5].value" (ngModelChange)="modelChange(basicList[5].id)" [nzPlaceHolder]="'選擇用本平台時間'" nzAllowClear>
+              <nz-option *ngFor="let option of useTime" [nzLabel]="option.label" [nzValue]="option.value" [nzDisabled]="option.disabled">
               </nz-option>
             </nz-select>
           </div>
@@ -91,8 +99,14 @@
             <label>平均評分</label>
           </div>
           <div nz-form-control nz-col [nzSpan]="14">
-            <nz-select style="width: 220px;" [(ngModel)]="basicList[6].value" (ngModelChange)="modelChange(basicList[6].id)" [nzPlaceHolder]="'choose option'" nzAllowClear>
+            <!-- <nz-select style="width: 220px;" [(ngModel)]="basicList[6].value" (ngModelChange)="modelChange(basicList[6].id)" [nzPlaceHolder]="'choose option'" nzAllowClear>
               <nz-option *ngFor="let option of levelOptions" [nzLabel]="option.label" [nzValue]="option.value" [nzDisabled]="option.disabled">
+              </nz-option>
+            </nz-select> -->
+            <!-- <nz-input-number style="width: 150px;" [(ngModel)]="basicList[6].value" (ngModelChange)="modelChange(basicList[6].id)" [nzPlaceHolder]="'輸入平均評分'"></nz-input-number> -->
+            <nz-select style="width: 220px;" [(ngModel)]="basicList[6].value" (ngModelChange)="modelChange(basicList[6].id)" [nzPlaceHolder]="'選擇平均評分'"
+              nzAllowClear>
+              <nz-option *ngFor="let option of averageOptions" [nzLabel]="option.label" [nzValue]="option.value" [nzDisabled]="option.disabled">
               </nz-option>
             </nz-select>
           </div>
@@ -104,8 +118,14 @@
             <label>已接個案數</label>
           </div>
           <div nz-form-control nz-col [nzSpan]="14">
-            <nz-select style="width: 220px;" [(ngModel)]="basicList[7].value" (ngModelChange)="modelChange(basicList[7].id)" [nzPlaceHolder]="'choose option'" nzAllowClear>
+            <!-- <nz-select style="width: 220px;" [(ngModel)]="basicList[7].value" (ngModelChange)="modelChange(basicList[7].id)" [nzPlaceHolder]="'choose option'" nzAllowClear>
               <nz-option *ngFor="let option of levelOptions" [nzLabel]="option.label" [nzValue]="option.value" [nzDisabled]="option.disabled">
+              </nz-option>
+            </nz-select> -->
+            <!-- <nz-input-number style="width: 150px;" [(ngModel)]="basicList[7].value" (ngModelChange)="modelChange(basicList[7].id)" [nzPlaceHolder]="'輸入已接個案數'"></nz-input-number> -->
+            <nz-select style="width: 220px;" [(ngModel)]="basicList[7].value" (ngModelChange)="modelChange(basicList[7].id)" [nzPlaceHolder]="'選擇已接個案數'"
+              nzAllowClear>
+              <nz-option *ngFor="let option of caseAmountOptions" [nzLabel]="option.label" [nzValue]="option.value" [nzDisabled]="option.disabled">
               </nz-option>
             </nz-select>
           </div>

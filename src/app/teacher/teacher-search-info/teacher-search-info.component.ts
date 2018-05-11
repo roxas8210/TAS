@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { push_teacher_search_info } from '../../actions/teacher-search/teacher-search-tags.action';
+import { HK } from '../../option-data/hongkong.data';
+import { language } from '../../option-data/language.data';
+import { Belief } from '../../option-data/belief.data';
 
 @Component({
   selector: 'app-teacher-search-info',
@@ -13,6 +16,15 @@ export class TeacherSearchInfoComponent implements OnInit {
     label: '一级',
     value: '一级'
   }];
+
+  // 導師居住地區
+  livingAreaOptions = HK;
+
+  // 主要語言
+  languageOptions = language;
+
+  // 宗教信仰
+  beliefOptions = Belief;
 
   infoList = [{
     id: 0,

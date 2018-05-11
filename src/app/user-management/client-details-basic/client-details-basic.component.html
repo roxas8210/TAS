@@ -1,22 +1,19 @@
-<div class="client-basic">
+<!-- <div class="client-basic">
   <form nz-form [formGroup]="basicInfoForm">
     <div class="left">
-      <div nz-form-item nz-row>
+      <div nz-form-item nz-row [nzType]="'flex'" [nzAlign]="'middle'" >
         <div nz-form-label nz-col [nzSm]="6" [nzXs]="24">
-          <label for="clientNo" nz-form-item-required>
+          <label for="clientNo">
             <span>客戶編號</span>
           </label>
         </div>
         <div nz-form-control nz-col [nzSm]="14" [nzXs]="24">
-          <nz-input *ngIf="editStatus;else elseblock1" [nzSize]="'large'" formControlName="clientNo"></nz-input>
-          <ng-template #elseblock1>
             <span>{{basicInfoForm.get('clientNo').value}}</span>
-          </ng-template>
         </div>
       </div>
-      <div nz-form-item nz-row>
+      <div nz-form-item nz-row [nzType]="'flex'" [nzAlign]="'middle'" >
         <div nz-form-label nz-col [nzSm]="6" [nzXs]="24">
-          <label for="name" nz-form-item-required>
+          <label for="name">
             <span>姓名</span>
           </label>
         </div>
@@ -27,9 +24,9 @@
           </ng-template>
         </div>
       </div>
-      <div nz-form-item nz-row>
+      <div nz-form-item nz-row [nzType]="'flex'" [nzAlign]="'middle'" >
         <div nz-form-label nz-col [nzSm]="6" [nzXs]="24">
-          <label for="familyPhone" nz-form-item-required>
+          <label for="familyPhone">
             <span>
               家庭電話
             </span>
@@ -42,9 +39,9 @@
           </ng-template>
         </div>
       </div>
-      <div nz-form-item nz-row>
+      <div nz-form-item nz-row [nzType]="'flex'" [nzAlign]="'middle'" >
         <div nz-form-label nz-col [nzSm]="6" [nzXs]="24">
-          <label for="fax" nz-form-item-required>
+          <label for="fax">
             <span>
               傳真電話
             </span>
@@ -57,9 +54,9 @@
           </ng-template>
         </div>
       </div>
-      <div nz-form-item nz-row>
+      <div nz-form-item nz-row [nzType]="'flex'" [nzAlign]="'middle'" >
         <div nz-form-label nz-col [nzSm]="6" [nzXs]="24">
-          <label for="livingArea" nz-form-item-required>
+          <label for="livingArea">
             <span>
               居住地區
             </span>
@@ -72,9 +69,9 @@
           </ng-template>
         </div>
       </div>
-      <div nz-form-item nz-row>
+      <div nz-form-item nz-row [nzType]="'flex'" [nzAlign]="'middle'" >
         <div nz-form-label nz-col [nzSm]="6" [nzXs]="24">
-          <label for="address" nz-form-item-required>
+          <label for="address">
             <span>
               詳細地址
             </span>
@@ -87,9 +84,9 @@
           </ng-template>
         </div>
       </div>
-      <div nz-form-item nz-row>
+      <div nz-form-item nz-row [nzType]="'flex'" [nzAlign]="'middle'" >
         <div nz-form-label nz-col [nzSm]="6" [nzXs]="24">
-          <label for="bank" nz-form-item-required>
+          <label for="bank">
             <span>
               銀行名稱
             </span>
@@ -102,9 +99,9 @@
           </ng-template>
         </div>
       </div>
-      <div nz-form-item nz-row>
+      <div nz-form-item nz-row [nzType]="'flex'" [nzAlign]="'middle'" >
         <div nz-form-label nz-col [nzSm]="6" [nzXs]="24">
-          <label for="bankAccount" nz-form-item-required>
+          <label for="bankAccount">
             <span>
               銀行帳號
             </span>
@@ -119,9 +116,9 @@
       </div>
     </div>
     <div class="right">
-      <div nz-form-item nz-row>
+      <div nz-form-item nz-row [nzType]="'flex'" [nzAlign]="'middle'" >
         <div nz-form-label nz-col [nzSm]="6" [nzXs]="24">
-          <label for="email" nz-form-item-required>
+          <label for="email">
             <span>Email地址</span>
           </label>
         </div>
@@ -132,9 +129,9 @@
           </ng-template>
         </div>
       </div>
-      <div nz-form-item nz-row>
+      <div nz-form-item nz-row [nzType]="'flex'" [nzAlign]="'middle'" >
         <div nz-form-label nz-col [nzSm]="6" [nzXs]="24">
-          <label for="mobilePhone" nz-form-item-required>
+          <label for="mobilePhone">
             <span>手提電話</span>
           </label>
         </div>
@@ -169,9 +166,9 @@
           </ng-template>
         </div>
       </div>
-      <div nz-form-item nz-row>
+      <div nz-form-item nz-row [nzType]="'flex'" [nzAlign]="'middle'" >
         <div nz-form-label nz-col [nzSm]="6" [nzXs]="24">
-          <label for="otherPhone" nz-form-item-required>
+          <label for="otherPhone">
             <span>其他電話</span>
           </label>
         </div>
@@ -182,22 +179,30 @@
           </ng-template>
         </div>
       </div>
-      <div nz-form-item nz-row>
+      <div nz-form-item nz-row [nzType]="'flex'" [nzAlign]="'middle'" >
         <div nz-form-label nz-col [nzSm]="6" [nzXs]="24">
-          <label for="contactTime" nz-form-item-required>
+          <label for="contactTime">
             <span>可聯絡時間</span>
           </label>
         </div>
         <div nz-form-control nz-col [nzSm]="14" [nzXs]="24">
           <nz-input *ngIf="editStatus;else elseblock12" [nzSize]="'large'" formControlName="contactTime"></nz-input>
+          <nz-datepicker *ngIf="editStatus;else elseblock12" formControlName="contactTime" [nzPlaceHolder]="'選擇可聯絡時間'"></nz-datepicker>
+          <nz-rangepicker *ngIf="editStatus;else elseblock12" formControlName="contactTime" [nzPlaceholder]="['Select start date', 'Select end date']"></nz-rangepicker>
+          <div *ngIf="editStatus;else elseblock12">
+            <nz-timepicker [nzFormat]="'HH:mm'" formControlName="contactStartTime" [nzPlaceHolder]="'請選擇可聯絡時間'"></nz-timepicker>
+            <nz-timepicker [nzFormat]="'HH:mm'" formControlName="contactEndTime" [nzPlaceHolder]="'請選擇可聯絡時間'"></nz-timepicker>
+          </div>
           <ng-template #elseblock12>
-            <span>{{basicInfoForm.get('contactTime').value}}</span>
+            <span>{{basicInfoForm.get('contactStartTime').value}}</span>
+            <span> - </span>
+            <span>{{basicInfoForm.get('contactEndTime').value}}</span>
           </ng-template>
         </div>
       </div>
-      <div nz-form-item nz-row>
+      <div nz-form-item nz-row [nzType]="'flex'" [nzAlign]="'middle'" >
         <div nz-form-label nz-col [nzSm]="6" [nzXs]="24">
-          <label for="livingPoing" nz-form-item-required>
+          <label for="livingPoing">
             <span>居住地點</span>
           </label>
         </div>
@@ -208,9 +213,9 @@
           </ng-template>
         </div>
       </div>
-      <div nz-form-item nz-row>
+      <div nz-form-item nz-row [nzType]="'flex'" [nzAlign]="'middle'" >
         <div nz-form-label nz-col [nzSm]="6" [nzXs]="24">
-          <label for="mailAddress" nz-form-item-required>
+          <label for="mailAddress">
             <span>郵寄地址</span>
           </label>
         </div>
@@ -221,9 +226,9 @@
           </ng-template>
         </div>
       </div>
-      <div nz-form-item nz-row>
+      <div nz-form-item nz-row [nzType]="'flex'" [nzAlign]="'middle'" >
         <div nz-form-label nz-col [nzSm]="6" [nzXs]="24">
-          <label for="owner" nz-form-item-required>
+          <label for="owner">
             <span>戶口持有人名稱</span>
           </label>
         </div>
@@ -236,4 +241,368 @@
       </div>
     </div>
   </form>
+</div> -->
+
+<div class="client-basic">
+  <div class="form">
+    <div class="left">
+      <div nz-form-item nz-row [nzType]="'flex'" [nzAlign]="'middle'" >
+        <div nz-form-label nz-col [nzSm]="6" [nzXs]="24">
+          <label for="clientNo">
+            <span>客戶編號</span>
+          </label>
+        </div>
+        <div nz-form-control nz-col [nzSm]="14" [nzXs]="24">
+          <span>{{clientInfo.clientNo}}</span>
+        </div>
+      </div>
+      <div nz-form-item nz-row [nzType]="'flex'" [nzAlign]="'middle'" >
+        <div nz-form-label nz-col [nzSm]="6" [nzXs]="24">
+          <label for="name">
+            <span>姓名</span>
+          </label>
+        </div>
+        <div nz-form-control nz-col [nzSm]="14" [nzXs]="24">
+          <nz-input *ngIf="editStatus;else elseblock2" [nzSize]="'large'" [(ngModel)]="clientInfo.name"></nz-input>
+          <ng-template #elseblock2>
+            <span>{{clientInfo.name}}</span>
+          </ng-template>
+        </div>
+      </div>
+      <div nz-form-item nz-row [nzType]="'flex'" [nzAlign]="'middle'" >
+        <div nz-form-label nz-col [nzSm]="6" [nzXs]="24">
+          <label for="familyPhone">
+            <span>
+              身份證ID
+            </span>
+          </label>
+        </div>
+        <div nz-form-control nz-col [nzSm]="14" [nzXs]="24">
+          <nz-input *ngIf="editStatus;else elseblock3" [nzSize]="'large'" [(ngModel)]="clientInfo.idNo"></nz-input>
+          <ng-template #elseblock3>
+            <span>{{clientInfo.idNo}}</span>
+          </ng-template>
+        </div>
+      </div>
+      <div nz-form-item nz-row [nzType]="'flex'" [nzAlign]="'middle'" >
+        <div nz-form-label nz-col [nzSm]="6" [nzXs]="24">
+          <label for="fax">
+            <span>
+              身份證中文名
+            </span>
+          </label>
+        </div>
+        <div nz-form-control nz-col [nzSm]="14" [nzXs]="24">
+          <nz-input *ngIf="editStatus;else elseblock4" [nzSize]="'large'" [(ngModel)]="clientInfo.idName"></nz-input>
+          <ng-template #elseblock4>
+            <span>{{clientInfo.idName}}</span>
+          </ng-template>
+        </div>
+      </div>
+      <div nz-form-item nz-row [nzType]="'flex'" [nzAlign]="'middle'" >
+        <div nz-form-label nz-col [nzSm]="6" [nzXs]="24">
+          <label for="livingArea">
+            <span>
+              註冊日期
+            </span>
+          </label>
+        </div>
+        <div nz-form-control nz-col [nzSm]="14" [nzXs]="24">
+          <!-- <nz-input *ngIf="editStatus;else elseblock5" [nzSize]="'large'" [(ngModel)]="clientInfo.registDate" ></nz-input> -->
+          <!-- <ng-template #elseblock5> -->
+            <span>{{clientInfo.registDate}}</span>
+          <!-- </ng-template> -->
+        </div>
+      </div>
+      <div nz-form-item nz-row [nzType]="'flex'" [nzAlign]="'middle'" >
+        <div nz-form-label nz-col [nzSm]="6" [nzXs]="24">
+          <label for="address">
+            <span>
+              跟進員工
+            </span>
+          </label>
+        </div>
+        <div nz-form-control nz-col [nzSm]="14" [nzXs]="24">
+          <nz-input *ngIf="editStatus;else elseblock6" [nzSize]="'large'" [(ngModel)]="clientInfo.follower" ></nz-input>
+          <ng-template #elseblock6>
+            <span>{{clientInfo.follower}}</span>
+          </ng-template>
+        </div>
+      </div>
+      <div nz-form-item nz-row [nzType]="'flex'" [nzAlign]="'middle'" >
+        <div nz-form-label nz-col [nzSm]="6" [nzXs]="24">
+          <label for="bank">
+            <span>
+              家庭電話
+            </span>
+          </label>
+        </div>
+        <div nz-form-control nz-col [nzSm]="14" [nzXs]="24">
+          <nz-input *ngIf="editStatus;else elseblock7" [nzSize]="'large'" [(ngModel)]="clientInfo.phone" ></nz-input>
+          <ng-template #elseblock7>
+            <span>{{clientInfo.phone}}</span>
+          </ng-template>
+        </div>
+      </div>
+      <div nz-form-item nz-row [nzType]="'flex'" [nzAlign]="'middle'" >
+        <div nz-form-label nz-col [nzSm]="6" [nzXs]="24">
+          <label for="bankAccount">
+            <span>
+              傳真電話
+            </span>
+          </label>
+        </div>
+        <div nz-form-control nz-col [nzSm]="14" [nzXs]="24">
+          <nz-input *ngIf="editStatus;else elseblock8" [nzSize]="'large'" [(ngModel)]="clientInfo.fax" ></nz-input>
+          <ng-template #elseblock8>
+            <span>{{clientInfo.fax}}</span>
+          </ng-template>
+        </div>
+      </div>
+      <div nz-form-item nz-row [nzType]="'flex'" [nzAlign]="'middle'" >
+        <div nz-form-label nz-col [nzSm]="6" [nzXs]="24">
+          <label for="bankAccount">
+            <span>
+              居住地區
+            </span>
+          </label>
+        </div>
+        <div nz-form-control nz-col [nzSm]="14" [nzXs]="24">
+          <!-- <nz-input *ngIf="editStatus;else elseblock18" [nzSize]="'large'" [(ngModel)]="clientInfo.livingArea"></nz-input> -->
+          <nz-cascader 
+           *ngIf="editStatus;else elseblock18" 
+          [nzExpandTrigger]="'hover'" 
+          [nzOptions]="livingArea" 
+          [nzAllowClear]="false" 
+          [(ngModel)]="clientInfo.livingArea">
+          </nz-cascader>
+          <ng-template #elseblock18>
+            <span>{{clientInfo.livingArea}}</span>
+          </ng-template>
+        </div>
+      </div>
+      <div nz-form-item nz-row [nzType]="'flex'" [nzAlign]="'middle'" >
+        <div nz-form-label nz-col [nzSm]="6" [nzXs]="24">
+          <label for="bankAccount">
+            <span>
+              郵寄地址
+            </span>
+          </label>
+        </div>
+        <div nz-form-control nz-col [nzSm]="14" [nzXs]="24">
+          <nz-input *ngIf="editStatus;else elseblock19" [nzSize]="'large'" [(ngModel)]="clientInfo.mailAddress"></nz-input>
+          <ng-template #elseblock19>
+            <span>{{clientInfo.mailAddress}}</span>
+          </ng-template>
+        </div>
+      </div>
+      <div nz-form-item nz-row [nzType]="'flex'" [nzAlign]="'middle'" >
+        <div nz-form-label nz-col [nzSm]="6" [nzXs]="24">
+          <label for="bankAccount">
+            <span>
+              宗教信仰
+            </span>
+          </label>
+        </div>
+        <div nz-form-control nz-col [nzSm]="14" [nzXs]="24">
+          <!-- <nz-input *ngIf="editStatus;else elseblock20" [nzSize]="'large'" [(ngModel)]="clientInfo.belief"></nz-input> -->
+          <nz-select *ngIf="editStatus;else elseblock20" style="width: 100%;" [(ngModel)]="clientInfo.belief" [nzPlaceHolder]="'选择宗教信仰'">
+            <nz-option *ngFor="let option of beliefOptions" [nzLabel]="option.label" [nzValue]="option.value" [nzDisabled]="option.disabled">
+            </nz-option>
+          </nz-select>
+          <ng-template #elseblock20>
+            <span>{{clientInfo.belief}}</span>
+          </ng-template>
+        </div>
+      </div>
+    </div>
+    <div class="right">
+      <div nz-form-item nz-row [nzType]="'flex'" [nzAlign]="'middle'" >
+        <div nz-form-label nz-col [nzSm]="6" [nzXs]="24">
+          <label for="email">
+            <span>性別</span>
+          </label>
+        </div>
+        <div nz-form-control nz-col [nzSm]="14" [nzXs]="24">
+          <!-- <nz-input *ngIf="editStatus;else elseblock9" [nzSize]="'large'" [(ngModel)]="clientInfo.sex" ></nz-input> -->
+          <nz-select *ngIf="editStatus;else elseblock9" style="width: 100%;" [(ngModel)]="clientInfo.sex" [nzPlaceHolder]="'選擇性別'">
+            <nz-option *ngFor="let option of sexOptions" [nzLabel]="option.label" [nzValue]="option.value" [nzDisabled]="option.disabled">
+            </nz-option>
+          </nz-select>
+          <ng-template #elseblock9>
+            <span>{{clientInfo.sex}}</span>
+          </ng-template>
+        </div>
+      </div>
+      <div nz-form-item nz-row [nzType]="'flex'" [nzAlign]="'middle'" >
+        <div nz-form-label nz-col [nzSm]="6" [nzXs]="24">
+          <label for="mobilePhone">
+            <span>國籍</span>
+          </label>
+        </div>
+        <div nz-form-control nz-col [nzSm]="14" [nzXs]="24">
+          <nz-input *ngIf="editStatus;else elseblock10" [nzSize]="'large'" [(ngModel)]="clientInfo.nationality" ></nz-input>
+          <ng-template #elseblock10>
+            <span>{{clientInfo.nationality}}</span>
+          </ng-template>
+        </div>
+      </div>
+      <div nz-form-item nz-row [nzType]="'flex'" [nzAlign]="'middle'" >
+        <div nz-form-label nz-col [nzSm]="6" [nzXs]="24">
+          <label for="otherPhone">
+            <span>Email地址：</span>
+          </label>
+        </div>
+        <div nz-form-control nz-col [nzSm]="14" [nzXs]="24">
+          <nz-input *ngIf="editStatus;else elseblock11" [nzSize]="'large'" [(ngModel)]="clientInfo.email" ></nz-input>
+          <ng-template #elseblock11>
+            <span>{{clientInfo.email}}</span>
+          </ng-template>
+        </div>
+      </div>
+      <div nz-form-item nz-row [nzType]="'flex'" [nzAlign]="'middle'" >
+        <div nz-form-label nz-col [nzSm]="6" [nzXs]="24">
+          <label for="contactTime">
+            <span>身份證英文姓名：</span>
+          </label>
+        </div>
+        <div nz-form-control nz-col [nzSm]="14" [nzXs]="24">
+          <nz-input *ngIf="editStatus;else elseblock12" [nzSize]="'large'" [(ngModel)]="clientInfo.idEnName"></nz-input>
+          <ng-template #elseblock12>
+            <span>{{clientInfo.idEnName}}</span>
+          </ng-template>
+        </div>
+      </div>
+      <div nz-form-item nz-row [nzType]="'flex'" [nzAlign]="'middle'" >
+        <div nz-form-label nz-col [nzSm]="6" [nzXs]="24">
+          <label for="livingPoing">
+            <span>出生年月</span>
+          </label>
+        </div>
+        <div nz-form-control nz-col [nzSm]="14" [nzXs]="24">
+          <!-- <nz-input *ngIf="editStatus;else elseblock13" [nzSize]="'large'" [(ngModel)]="clientInfo.birth" ></nz-input> -->
+          <nz-datepicker 
+           *ngIf="editStatus;else elseblock13" 
+          [(ngModel)]="clientInfo.birth" 
+          [nzMode]="'month'" 
+          [nzFormat]="'YYYY-MM'" 
+          [nzPlaceHolder]="'選擇出生年月'"></nz-datepicker>
+          <ng-template #elseblock13>
+            <span>{{clientInfo.birth}}</span>
+          </ng-template>
+        </div>
+      </div>
+      <div nz-form-item nz-row [nzType]="'flex'" [nzAlign]="'middle'" >
+        <div nz-form-label nz-col [nzSm]="6" [nzXs]="24">
+          <label for="mailAddress">
+            <span>主要語言</span>
+          </label>
+        </div>
+        <div nz-form-control nz-col [nzSm]="14" [nzXs]="24">
+          <!-- <nz-input *ngIf="editStatus;else elseblock14" [nzSize]="'large'" [(ngModel)]="clientInfo.language" ></nz-input> -->
+          <nz-select *ngIf="editStatus;else elseblock14" style="width: 100%;" [(ngModel)]="clientInfo.language" [nzPlaceHolder]="'選擇主要語言'">
+            <nz-option *ngFor="let option of languageOptions" [nzLabel]="option.label" [nzValue]="option.value" [nzDisabled]="option.disabled">
+            </nz-option>
+          </nz-select>
+          <ng-template #elseblock14>
+            <span>{{clientInfo.language}}</span>
+          </ng-template>
+        </div>
+      </div>
+      <div nz-form-item nz-row [nzType]="'flex'" [nzAlign]="'middle'" >
+        <div nz-form-label nz-col [nzSm]="6" [nzXs]="24">
+          <label for="owner">
+            <span>客戶狀態</span>
+          </label>
+        </div>
+        <div nz-form-control nz-col [nzSm]="14" [nzXs]="24">
+          <!-- <nz-input *ngIf="editStatus;else elseblock15" [nzSize]="'large'" [(ngModel)]="clientInfo.status" ></nz-input> -->
+          <nz-select *ngIf="editStatus;else elseblock15" style="width: 100%;" [(ngModel)]="clientInfo.status" [nzPlaceHolder]="'選擇客戶狀態'">
+            <nz-option *ngFor="let option of statusOptions" [nzLabel]="option.label" [nzValue]="option.value" [nzDisabled]="option.disabled">
+            </nz-option>
+          </nz-select>
+          <ng-template #elseblock15>
+            <span>{{clientInfo.status}}</span>
+          </ng-template>
+        </div>
+      </div>
+      <div nz-form-item nz-row [nzType]="'flex'" [nzAlign]="'middle'" >
+        <div nz-form-label nz-col [nzSm]="6" [nzXs]="24">
+          <label for="owner">
+            <span>手提電話</span>
+          </label>
+        </div>
+        <div nz-form-control nz-col [nzSm]="14" [nzXs]="24">
+          <nz-input *ngIf="editStatus;else elseblock16" [nzSize]="'large'" [(ngModel)]="clientInfo.mobilePhone"></nz-input>
+          <ng-template #elseblock16>
+            <nz-tooltip [nzPlacement]="'right'">
+              <span nz-tooltip>{{clientInfo.mobilePhone}}</span>
+              <ng-template #nzTemplate>
+                <div class="messages-amount">
+                  <p>
+                    <i class="anticon anticon-message"></i>
+                    <span>本月發送SMS數量：{{msgPhone.smslocal}}</span>
+                  </p>
+                  <p>
+                    <i class="anticon anticon-message"></i>
+                    <span>發送SMS總數量：{{msgPhone.sms}}</span>
+                  </p>
+                </div>
+                <div class="phone-change-history">
+                  <p>
+                    <i class="anticon anticon-phone"></i>
+                    <span>更換手機記錄：</span>
+                  </p>
+                  <p *ngFor="let history of msgPhone.phone">
+                    {{history.date}}更換號碼為
+                    <a>{{history.history}}</a>
+                  </p>
+                </div>
+              </ng-template>
+            </nz-tooltip>
+          </ng-template>
+        </div>
+      </div>
+      <div nz-form-item nz-row [nzType]="'flex'" [nzAlign]="'middle'" >
+        <div nz-form-label nz-col [nzSm]="6" [nzXs]="24">
+          <label for="owner">
+            <span>其他電話</span>
+          </label>
+        </div>
+        <div nz-form-control nz-col [nzSm]="14" [nzXs]="24">
+          <nz-input *ngIf="editStatus;else elseblock17" [nzSize]="'large'" [(ngModel)]="clientInfo.otherPhone"></nz-input>
+          <ng-template #elseblock17>
+            <span>{{clientInfo.otherPhone}}</span>
+          </ng-template>
+        </div>
+      </div>
+      <div nz-form-item nz-row [nzType]="'flex'" [nzAlign]="'middle'" >
+        <div nz-form-label nz-col [nzSm]="6" [nzXs]="24">
+          <label for="owner">
+            <span>可聯絡時間</span>
+          </label>
+        </div>
+        <div nz-form-control nz-col [nzSm]="14" [nzXs]="24">
+          <!-- <nz-input *ngIf="editStatus;else elseblock177" [nzSize]="'large'" [(ngModel)]="clientInfo.contactTime"></nz-input> -->
+          <!-- <nz-input *ngIf="editStatus;else elseblock12" [nzSize]="'large'" formControlName="contactTime"></nz-input> -->
+          <!-- <div *ngIf="editStatus;else elseblock177">
+            <nz-timepicker [nzFormat]="'HH:mm'" [(ngModel)]="contactStartTime" [nzDisabledSeconds]="getStartTime" [nzPlaceHolder]="'請選擇可聯絡時間'"></nz-timepicker>
+            <nz-timepicker [nzFormat]="'HH:mm'" [(ngModel)]="contactEndTime" [nzDisabledSeconds]="getEndTime" [nzPlaceHolder]="'請選擇可聯絡時間'"></nz-timepicker>
+          </div>
+          <ng-template #elseblock177>
+            <span>{{clientInfo.contactStartTime}}</span>
+            <span> - </span>
+            <span>{{clientInfo.contactEndTime}}</span>
+          </ng-template> -->
+          <nz-select *ngIf="editStatus;else elseblock177" style="width: 100%;" [(ngModel)]="clientInfo.contactTime" [nzPlaceHolder]="'選擇客戶狀態'">
+            <nz-option *ngFor="let option of contactOptions" [nzLabel]="option.label" [nzValue]="option.value" [nzDisabled]="option.disabled">
+            </nz-option>
+          </nz-select>
+          <ng-template #elseblock177>
+            <span>{{clientInfo.contactTime}}</span>
+          </ng-template>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
