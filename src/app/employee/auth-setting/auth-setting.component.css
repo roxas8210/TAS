@@ -111,33 +111,33 @@
   color: #2399ed;
 }
 .page-setting .page-body .page-main .page-main-container .access_auth {
-  width: 100%;
+  width: 120px;
   height: auto;
   overflow: hidden;
   margin: 0 auto;
-  text-align: center;
+  text-align: left;
 }
 .page-setting .page-body .page-main .page-main-container .access_auth p {
   font-size: 14px;
   line-height: 42px;
 }
 .page-setting .page-body .page-main .page-main-container .query_auth {
-  width: 100px;
+  width: 120px;
   height: auto;
   overflow: hidden;
   margin: 0 auto;
-  text-align: center;
+  text-align: left;
 }
 .page-setting .page-body .page-main .page-main-container .query_auth p {
   font-size: 14px;
   line-height: 42px;
 }
 .page-setting .page-body .page-main .page-main-container .operate_auth {
-  width: 100px;
+  width: 120px;
   height: auto;
   overflow: hidden;
   margin: 0 auto;
-  text-align: center;
+  text-align: left;
 }
 .page-setting .page-body .page-main .page-main-container .operate_auth p {
   font-size: 14px;

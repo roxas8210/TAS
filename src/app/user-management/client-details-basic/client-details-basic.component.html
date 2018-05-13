@@ -536,7 +536,7 @@
           <nz-input *ngIf="editStatus;else elseblock16" [nzSize]="'large'" [(ngModel)]="clientInfo.mobilePhone"></nz-input>
           <ng-template #elseblock16>
             <nz-tooltip [nzPlacement]="'right'">
-              <span nz-tooltip>{{clientInfo.mobilePhone}}</span>
+              <span nz-tooltip><a href="{{clientInfo.mobilePhone}}">{{clientInfo.mobilePhone}}</a></span>
               <ng-template #nzTemplate>
                 <div class="messages-amount">
                   <p>

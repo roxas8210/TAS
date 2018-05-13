@@ -43,7 +43,7 @@
         <nz-collapseset [nzBordered]="false" [nzAccordion]="true">
           <nz-collapse *ngFor="let list of pageMenu" [nzTitle]="list.name" [nzActive]="list.active">
             <ul *ngFor="let listChildren of list.children">
-              <li [id]="'pageId' + listChildren.id" (click)="selectPage(listChildren.id, listChildren.name)" class="noChild">{{listChildren.name}}</li>
+              <li [id]="'pageId' + listChildren.id" (click)="selectPage(listChildren.id, listChildren.name, list.id)" class="noChild">{{listChildren.name}}</li>
             </ul>
           </nz-collapse>
         </nz-collapseset>
@@ -58,46 +58,28 @@
           <p *ngIf="selectedEmployee">已選擇員工：{{selectedEmployee}}</p>
           <p *ngIf="selectedPage">已選擇頁面：{{selectedPage}}</p>
         </div>
-        <form [formGroup]="authForm">
+        <!-- <form [formGroup]="authForm"> -->
           <div class="access_auth">
             <p>訪問權限</p>
-            <label style="width: 100%;" nz-checkbox formControllName="access">
+            <label style="float: left;width: 100%;" nz-checkbox [(ngModel)]="authAccess">
               <span>訪問</span>
             </label>
           </div>
           <div class="query_auth" *ngIf="authQueryList?.length > 0">
             <p>查詢權限</p>
-            <nz-radio-group formControllName="auth_rang">
-              <!-- <label nz-radio [nzValue]="'company'">
-                <span style="line-height: 32px;">全司</span>
-              </label>
-              <label nz-radio [nzValue]="'group'">
-                <span style="line-height: 32px;">小組</span>
-              </label>
-              <label nz-radio [nzValue]="'personal'">
-                <span style="line-height: 32px;">個人</span>
-              </label> -->
-              <label *ngFor="let query of authQueryList" nz-radio [nzValue]="query.value">
+            <nz-radio-group >
+              <label style="float: left;" *ngFor="let query of authQueryList" nz-radio [nzValue]="query.value">
                 <span style="line-height: 32px;">{{query.name}}</span>
               </label>
             </nz-radio-group>
           </div>
-          <div class="operate_auth" *ngIf="authOperateList.length > 0">
+          <div class="operate_auth" *ngIf="authOperateList?.length > 0">
             <p>操作權限</p>
-            <!-- <label style="width: 100%;" nz-checkbox formControllName="add">
-              <span>新增</span>
-            </label>
-            <label style="width: 100%;" nz-checkbox formControllName="delete">
-              <span>刪除</span>
-            </label>
-            <label style="width: 100%;" nz-checkbox formControllName="edit">
-              <span>編輯</span>
-            </label> -->
-            <label *ngFor="let operate of authOperateList" style="width: 100%;" nz-checkbox>
-              <span>{{operate}}</span>
+            <label style="float: left;" [(ngModel)]="operate.value" *ngFor="let operate of authOperateList" style="width: 100%;" nz-checkbox>
+              <span>{{operate.name}}</span>
             </label>
           </div>
-        </form>
+        <!-- </form> -->
         <button [nzType]="'primary'" nz-button nzGhost style="border-radius: 17px;height: 34px;width: 96px;margin: 0 auto;display: block;">
           <span>確認</span>
         </button>
