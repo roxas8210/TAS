@@ -2,6 +2,7 @@ import { Component, OnInit, ElementRef, Renderer2 } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { TabbarService } from '../../service/tabbar.service';
 import { Observable } from 'rxjs/observable';
+import { MenuItem } from 'primeng/api';
 
 @Component({
   selector: 'app-auth-setting',
@@ -10,193 +11,53 @@ import { Observable } from 'rxjs/observable';
 })
 export class AuthSettingComponent implements OnInit {
 
+  menuItem: MenuItem[];
+
   menu = [{
-    name: '總公司',
-    active: true,
-    children: [{
-      name: '香港',
-      active: false,
-      children: [{
-        name: '業務部',
-        active: false,
-        children: []
-        // children: [{
-        //   name: 'TEAM A',
-        //   active: false,
-        //   children: [{
-        //     name: '组长',
-        //     active: false
-        //   }, {
-        //     name: '组员',
-        //     active: false
-        //   }]
-        // }, {
-        //   name: 'TEAM B',
-        //   active: false
-        // }]
-      }, {
-        name: '技術部',
-        active: true,
-        children: [{
-          id: 0,
-          name: '主管',
-          active: false,
-          status: false,
-          children: []
+    label: '總公司',
+    items: [{
+      label: '香港',
+      items: [{
+        label: '業務部',
+        items: [{
+          label: 'TEAM A',
+          items: [{
+            label: '组长'
+          }, {
+            label: '组员'
+          }]
         }, {
-          id: 1,
-          name: '前端工程師',
-          active: false,
-          disabled: true
-        }, {
-          id: 2,
-          name: 'UI設計師',
-          active: false,
-          disabled: true
-        }, {
-          id: 3,
-          name: '開發工程師',
-          active: false,
-          disabled: true
+          label: 'TEAM B'
         }]
       }, {
-        name: '行政部',
-        active: false,
-        children: [],
-        disabled: true
+        label: '技術部',
+        items: [{
+          label: '主管'
+        }, {
+          label: '前端工程師'
+        }, {
+          label: 'UI設計師'
+        }, {
+          label: '開發工程師'
+        }]
       }, {
-        name: '售後部',
-        active: false,
-        children: [],
-        disabled: true
+        label: '行政部'
+      }, {
+        label: '售後部'
       }]
     }, {
-      name: '江門',
-      active: false,
-      children: [{
-        name: '業務部',
-        active: false,
-        children: []
+      label: '江門',
+      items: [{
+        label: '業務部',
       }, {
-        name: '技術部',
-        active: false,
-        children: []
+        label: '技術部',
       }, {
-        name: '行政部',
-        active: false,
-        children: []
+        label: '行政部',
       }, {
-        name: '售後部',
-        active: false,
-        children: []
+        label: '售後部',
       }]
     }]
   }];
-
-  // pageMenu = [{
-  //   id: '2',
-  //   name: '用戶管理',
-  //   active: false,
-  //   children: [{
-  //     id: '21',
-  //     name: '客戶列表',
-  //     active: false,
-  //     auth: {
-  //       query: [{
-  //         name: '區域查詢  ',
-  //         value: 1
-  //       }, {
-  //         name: '全地區查詢',
-  //         value: 2
-  //       }],
-  //       operate: [{
-  //         name: '新增用戶',
-  //         value: false
-  //       }]
-  //     }
-  //   }, {
-  //     id: '22',
-  //     name: '導師列表',
-  //     active: false,
-  //     auth: {
-  //       access: false,
-  //       query: [{
-  //         name: '區域查詢  ',
-  //         value: 1
-  //       }, {
-  //         name: '全地區查詢',
-  //         value: 2
-  //       }],
-  //       operate: []
-  //     }
-  //   }, {
-  //     id: '23',
-  //     name: '黑名單',
-  //     active: false
-  //   }, {
-  //     id: '211',
-  //     name: '客戶詳情',
-  //     active: false
-  //   }, {
-  //     id: '221',
-  //     name: '導師詳情',
-  //     active: false
-  //   }]
-  // }, {
-  //   id: '3',
-  //   name: '個案管理',
-  //   active: false,
-  //   children: [{
-  //     id: '31',
-  //     name: '個案跟進',
-  //     active: false
-  //   }]
-  // }, {
-  //   id: '4',
-  //   name: '行政管理',
-  //   active: false,
-  //   children: []
-  // }, {
-  //   id: '5',
-  //   name: '網站管理',
-  //   active: false,
-  //   children: []
-  // }, {
-  //   id: '6',
-  //   name: '相關報告',
-  //   active: false,
-  //   children: []
-  // }, {
-  //   id: '7',
-  //   name: '系統管理',
-  //   active: false,
-  //   children: [{
-  //     id: '71',
-  //     name: '系統設置',
-  //     active: false
-  //   }, {
-  //     id: '72',
-  //     name: '頁面設置',
-  //     active: false
-  //   }]
-  // }, {
-  //   id: '8',
-  //   name: '員工管理',
-  //   active: false,
-  //   children: [{
-  //     id: '81',
-  //     name: '部門列表',
-  //     active: false
-  //   }, {
-  //     id: '82',
-  //     name: '員工列表',
-  //     active: false
-  //   }, {
-  //     id: '83',
-  //     name: '權限設置',
-  //     active: false
-  //   }]
-  // }];
 
   pageMenu = [{
     id: '2',
@@ -573,34 +434,6 @@ export class AuthSettingComponent implements OnInit {
     }]
   }];
 
-  // queryAuth = [{
-  //   label: '全司',
-  //   value: '全司',
-  //   checked: false
-  // }, {
-  //   label: '小組',
-  //   value: '小組',
-  //   checked: false
-  // }, {
-  //   label: '個人',
-  //   value: '個人',
-  //   checked: false
-  // }];
-
-  // operateAuth = [{
-  //   label: '新增',
-  //   value: '新增',
-  //   checked: false
-  // }, {
-  //   label: '刪除',
-  //   value: '刪除',
-  //   checked: false
-  // }, {
-  //   label: '編輯',
-  //   value: '編輯',
-  //   checked: false
-  // }];
-
   clientList = {
     query: [{
       name: '區域查詢  ',
@@ -679,35 +512,6 @@ export class AuthSettingComponent implements OnInit {
       this.authOperateList = [];
     }
 
-    // selectedMenuList.auth.query;
-    // console.log(selectedMenuList);
-
-    // switch (id) {
-    //   case '21':
-    //     this.authQueryList = [...this.clientList.query];
-    //     this.authOperateList = [...this.clientList.operate];
-    //     console.log(this.authQueryList);
-    //     break;
-    //   case '22':
-    //     this.authQueryList = [...this.teacherList.query];
-    //     this.authOperateList = [];
-    //     break;
-    //   default:
-    //     this.authQueryList = [];
-    //     this.authOperateList = [];
-    //     break;
-    // }
-    // if (id === '21') {
-    //   this.authQueryList = this.clientList.query;
-    //   this.authOperateList = this.clientList.operate;
-    //   console.log(this.authQueryList);
-    // }
-    // if (id === '22') {
-    //   this.authQueryList = this.teacherList.query;
-    // } else {
-    //   this.authQueryList = [];
-    //   this.authOperateList = [];
-    // }
   }
 
   // 選擇員工職位
@@ -742,7 +546,26 @@ export class AuthSettingComponent implements OnInit {
     }
   }
 
+  // 遞歸為menu添加command屬性
+  addFunc(menu) {
+    for (const i in menu) {
+      if (menu[i]) {
+        // break;
+        menu[i].command = (event) => {
+          console.log(event);
+          this.selectedEmployee = event.item.label;
+        };
+        this.addFunc(menu[i].items);
+      }
+    }
+  }
+
   ngOnInit() {
+
+    this.addFunc(this.menu);
+    this.menuItem = this.menu;
+    console.log('测试结果', this.menuItem);
+
     this.authForm = this.fb.group({
       auth_rang: [false],
       add: [false],

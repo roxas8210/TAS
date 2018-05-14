@@ -9,21 +9,23 @@
       <div class="page-sidebar-title">
         <p>員工職位</p>
       </div>
-      <nz-collapseset [nzBordered]="false" [nzAccordion]="true">
+      <!-- <nz-collapseset [nzBordered]="false" [nzAccordion]="true">
         <nz-collapse style="border: none;" *ngFor="let list of menu" [nzTitle]="list.name" [nzActive]="list.active">
             <nz-collapseset [nzBordered]="false" [nzAccordion]="true">
               <nz-collapse *ngFor="let listChildren of list.children" [nzTitle]="listChildren.name" [nzActive]="listChildren.active">
                 <nz-collapseset [nzBordered]="false" [nzAccordion]="true">
                   <nz-collapse *ngFor="let listChildren3 of listChildren.children" [nzTitle]="listChildren3.name" [nzActive]="listChildren3.active">
                     <div *ngIf="listChildren3.children.length > 0">
-                      <nz-collapseset [nzBordered]="false" [nzAccordion]="true">
+                      <nz-collapseset [nzBordered]="false" [nzAccordion]="true"> -->
+
                         <!-- <nz-collapse *ngFor="let listChildren4 of listChildren3.children" [nzTitle]="listChildren4.name" [nzActive]="listChildren4.active"> -->
                             <!-- <nz-collapseset [nzBordered]="false" [nzAccordion]="true">
                               <nz-collapse *ngFor="let listChildren5 of listChildren4.children" [nzTitle]="listChildren5.name" [nzActive]="listChildren5.active">
                               </nz-collapse>
                             </nz-collapseset> -->
                         <!-- </nz-collapse> -->
-                        <ul *ngFor="let listChildren4 of listChildren3.children">
+
+                        <!-- <ul *ngFor="let listChildren4 of listChildren3.children">
                           <li [id]="'employeeId' + listChildren4.id" (click)="selectPeople(listChildren4.id, listChildren4.name)" class="noChild">{{listChildren4.name}}</li>
                         </ul>
                       </nz-collapseset>
@@ -33,7 +35,11 @@
               </nz-collapse>
             </nz-collapseset>
         </nz-collapse>
-      </nz-collapseset>
+      </nz-collapseset> -->
+
+      <p-panelMenu [model]="menu"></p-panelMenu>
+
+
     </div>
     <div class="page-menu">
       <div class="page-menu-title">

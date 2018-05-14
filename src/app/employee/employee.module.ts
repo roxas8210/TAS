@@ -5,13 +5,15 @@ import { DepartmentComponent } from './department/department.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { AuthSettingComponent } from './auth-setting/auth-setting.component';
+import { PanelMenuModule } from 'primeng/panelmenu';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    NgZorroAntdModule
+    NgZorroAntdModule,
+    PanelMenuModule
   ],
   declarations: [EmployeeListComponent, DepartmentComponent, AuthSettingComponent]
 })
