@@ -12,7 +12,7 @@
             </div>
             <div style="display: flex;flex-wrap: wrap;align-items: center;" nz-form-control nz-col [nzSpan]="20">
               <nz-datepicker [(ngModel)]="payment.first_class_date" [nzPlaceHolder]="'選擇首課日期'"></nz-datepicker>
-              <span>更改次數：{{changeTimes}}</span>
+              <span>更改次數：{{payment.changeTimes}}</span>
               <div class="time-rang">
                 <nz-timepicker [(ngModel)]="payment.timeRangStart"></nz-timepicker>
                 <nz-timepicker [(ngModel)]="payment.timeRangEnd"></nz-timepicker>
