@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HighestGrade } from '../../option-data/highest-grade.data';
 
 @Component({
   selector: 'app-teacher-history',
@@ -11,6 +12,9 @@ export class TeacherHistoryComponent implements OnInit {
     label: '1',
     value: '1'
   }];
+
+  // 最高可補年級
+  highestGrade = HighestGrade;
 
   professionList = [{
     id: 0,

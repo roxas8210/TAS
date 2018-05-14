@@ -8,12 +8,12 @@
             <nz-option *ngFor="let option of levelOptions" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
             </nz-option>
           </nz-select> -->
-        <div nz-form-item nz-row style="margin: 0;">
-          <div nz-form-label nz-col>
+        <div nz-form-item nz-row [nzType]="'flex'" [nzAlign]="'center'" style="margin: 0;">
+          <div nz-form-label nz-col [nzSpan]="8">
             <label>現時職業</label>
           </div>
-          <div nz-form-control nz-col>
-            <nz-input [(ngModel)]="professionList[0].value" (ngModelChange)="modelChange(professionList[0].id)" [nzPlaceHolder]="''"></nz-input>
+          <div nz-form-control nz-col [nzSpan]="14" >
+            <nz-input [(ngModel)]="professionList[0].value" (ngModelChange)="modelChange(professionList[0].id)" [nzPlaceHolder]="'輸入顯示職業'"></nz-input>
           </div>
         </div>
       </td>
@@ -23,12 +23,12 @@
             <nz-option *ngFor="let option of levelOptions" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
             </nz-option>
           </nz-select> -->
-        <div nz-form-item nz-row style="margin: 0;">
-          <div nz-form-label nz-col>
+        <div nz-form-item nz-row [nzType]="'flex'" [nzAlign]="'center'" style="margin: 0;">
+          <div nz-form-label nz-col [nzSpan]="8" >
             <label>工作經驗</label>
           </div>
-          <div nz-form-control nz-col>
-            <nz-input [(ngModel)]="professionList[1].value" (ngModelChange)="modelChange(professionList[1].id)" [nzPlaceHolder]="''"></nz-input>
+          <div nz-form-control nz-col [nzSpan]="14" >
+            <nz-input [(ngModel)]="professionList[1].value" (ngModelChange)="modelChange(professionList[1].id)" [nzPlaceHolder]="'輸入工作經驗'"></nz-input>
           </div>
         </div>
       </td>
@@ -40,11 +40,11 @@
             <nz-option *ngFor="let option of levelOptions" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
             </nz-option>
           </nz-select> -->
-        <div nz-form-item nz-row style="margin: 0;">
-          <div nz-form-label nz-col>
+        <div nz-form-item nz-row [nzType]="'flex'" [nzAlign]="'center'" style="margin: 0;">
+          <div nz-form-label nz-col [nzSpan]="8" >
             <label>過去工作資料（1）</label>
           </div>
-          <div nz-form-control nz-col>
+          <div nz-form-control nz-col [nzSpan]="14" >
             <nz-input [(ngModel)]="professionList[2].value" (ngModelChange)="modelChange(professionList[2].id)" [nzPlaceHolder]="''"></nz-input>
           </div>
         </div>
@@ -55,11 +55,11 @@
             <nz-option *ngFor="let option of levelOptions" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
             </nz-option>
           </nz-select> -->
-        <div nz-form-item nz-row style="margin: 0;">
-          <div nz-form-label nz-col>
+        <div nz-form-item nz-row [nzType]="'flex'" [nzAlign]="'center'" style="margin: 0;">
+          <div nz-form-label nz-col [nzSpan]="8" >
             <label>過去工作資料（2）</label>
           </div>
-          <div nz-form-control nz-col>
+          <div nz-form-control nz-col [nzSpan]="14" >
             <nz-input [(ngModel)]="professionList[3].value" (ngModelChange)="modelChange(professionList[3].id)" [nzPlaceHolder]="''"></nz-input>
           </div>
         </div>
@@ -72,12 +72,12 @@
             <nz-option *ngFor="let option of levelOptions" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
             </nz-option>
           </nz-select> -->
-        <div nz-form-item nz-row style="margin: 0;">
-          <div nz-form-label nz-col>
+        <div nz-form-item nz-row [nzType]="'flex'" [nzAlign]="'center'" style="margin: 0;">
+          <div nz-form-label nz-col [nzSpan]="8" >
             <label>補習經驗及年資</label>
           </div>
-          <div nz-form-control nz-col>
-            <nz-input [(ngModel)]="professionList[4].value" (ngModelChange)="modelChange(professionList[4].id)" [nzPlaceHolder]="''"></nz-input>
+          <div nz-form-control nz-col [nzSpan]="14" >
+            <nz-input [(ngModel)]="professionList[4].value" (ngModelChange)="modelChange(professionList[4].id)" [nzPlaceHolder]="'輸入補習經驗及年資'"></nz-input>
           </div>
         </div>
       </td>
@@ -87,12 +87,17 @@
             <nz-option *ngFor="let option of levelOptions" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
             </nz-option>
           </nz-select> -->
-        <div nz-form-item nz-row style="margin: 0;">
-          <div nz-form-label nz-col>
+        <div nz-form-item nz-row [nzType]="'flex'" [nzAlign]="'center'" style="margin: 0;">
+          <div nz-form-label nz-col [nzSpan]="8" >
             <label>最高可補年級</label>
           </div>
-          <div nz-form-control nz-col>
-            <nz-input [(ngModel)]="professionList[5].value" (ngModelChange)="modelChange(professionList[5].id)" [nzPlaceHolder]="''"></nz-input>
+          <div nz-form-control nz-col [nzSpan]="14" >
+            <!-- <nz-input [(ngModel)]="professionList[5].value" (ngModelChange)="modelChange(professionList[5].id)" [nzPlaceHolder]="''"></nz-input> -->
+            <nz-select style="width: 100%;" [(ngModel)]="professionList[5].value" (ngModelChange)="modelChange(professionList[5].id)"
+              [nzPlaceHolder]="'選擇最高可補年級'" nzAllowClear>
+              <nz-option *ngFor="let option of highestGrade" [nzLabel]="option.label" [nzValue]="option.value" [nzDisabled]="option.disabled">
+              </nz-option>
+            </nz-select>
           </div>
         </div>
       </td>
@@ -104,12 +109,12 @@
             <nz-option *ngFor="let option of levelOptions" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
             </nz-option>
           </nz-select> -->
-        <div nz-form-item nz-row style="margin: 0;">
-          <div nz-form-label nz-col>
+        <div nz-form-item nz-row [nzType]="'flex'" [nzAlign]="'center'" style="margin: 0;">
+          <div nz-form-label nz-col [nzSpan]="8" >
             <label>教育機構經驗</label>
           </div>
-          <div nz-form-control nz-col>
-            <nz-input [(ngModel)]="professionList[6].value" (ngModelChange)="modelChange(professionList[6].id)" [nzPlaceHolder]="''"></nz-input>
+          <div nz-form-control nz-col [nzSpan]="14" >
+            <nz-input [(ngModel)]="professionList[6].value" (ngModelChange)="modelChange(professionList[6].id)" [nzPlaceHolder]="'輸入教育機構經驗'"></nz-input>
           </div>
         </div>
       </td>

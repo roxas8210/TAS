@@ -1,0 +1,16 @@
+.pay-record-container {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+.pay-record-container .add-remove {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+.pay-record-container .add-remove button {
+  display: block;
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}

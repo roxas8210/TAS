@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 // import { PostToTagsService } from '../../service/post-to-tags.service';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { TeacherEducationLevel } from '../../option-data/teacher-education-level.data';
 
 @Component({
   selector: 'app-teacher-education-middle',
@@ -8,6 +9,9 @@ import { FormBuilder, FormGroup } from '@angular/forms';
   styleUrls: ['./teacher-education-middle.component.less']
 })
 export class TeacherEducationMiddleComponent implements OnInit {
+
+  // 科目等級
+  teacherEducationLevel = TeacherEducationLevel;
 
   middleForm: FormGroup;
 

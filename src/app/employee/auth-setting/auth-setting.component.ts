@@ -14,46 +14,65 @@ export class AuthSettingComponent implements OnInit {
   menuItem: MenuItem[];
 
   menu = [{
+    id: '0',
     label: '總公司',
     items: [{
+      id: '1',
       label: '香港',
       items: [{
+        id: '11',
         label: '業務部',
         items: [{
+          id: '111',
           label: 'TEAM A',
           items: [{
+            id: '1111',
             label: '组长'
           }, {
+            id: '1112',
             label: '组员'
           }]
         }, {
+          id: '112',
           label: 'TEAM B'
         }]
       }, {
+        id: '12',
         label: '技術部',
         items: [{
+          id: '121',
           label: '主管'
         }, {
+          id: '122',
           label: '前端工程師'
         }, {
+          id: '123',
           label: 'UI設計師'
         }, {
+          id: '124',
           label: '開發工程師'
         }]
       }, {
+        id: '13',
         label: '行政部'
       }, {
+        id: '14',
         label: '售後部'
       }]
     }, {
+      id: '2',
       label: '江門',
       items: [{
+        id: '21',
         label: '業務部',
       }, {
+        id: '22',
         label: '技術部',
       }, {
+        id: '23',
         label: '行政部',
       }, {
+        id: '24',
         label: '售後部',
       }]
     }]
@@ -554,8 +573,31 @@ export class AuthSettingComponent implements OnInit {
         menu[i].command = (event) => {
           console.log(event);
           this.selectedEmployee = event.item.label;
+          // if (event.item.id)
+          // this.selectedEmployeeId = event.item.id;
+          this.changeSelectedColor(this.menuItem, event.item.id);
         };
         this.addFunc(menu[i].items);
+      }
+    }
+  }
+
+  changeSelectedColor(menu, id) {
+    for (const i in menu) {
+      if (menu[i].id === id) {
+        // menu[i].style = {
+        //   'color': 'red'
+        // };
+        menu[i].styleClass = 'active-panelMenu';
+        console.log('red');
+        break;
+      } else {
+        // menu[i].style = {
+        //   'color': 'black'
+        // };
+        menu[i].styleClass = '';
+        console.log('no red');
+        this.changeSelectedColor(menu[i].items, id);
       }
     }
   }

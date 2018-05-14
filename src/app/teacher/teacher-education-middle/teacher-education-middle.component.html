@@ -7,18 +7,18 @@
         </td>
         <td nz-td>
           <span>中國語文</span>
-          <nz-select style="width: 120px;" formControlName="chinese" [nzPlaceHolder]="'choose option'" nzAllowClear>
-            <nz-option *ngFor="let option of levelOptions" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
+          <nz-select style="width: 120px;" formControlName="chinese" [nzPlaceHolder]="'選擇科目成績'" nzAllowClear>
+            <nz-option *ngFor="let option of teacherEducationLevel" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
             </nz-option>
           </nz-select>
           <span>英國語文</span>
-          <nz-select style="width: 120px;" formControlName="english" [nzPlaceHolder]="'choose option'" nzAllowClear>
-            <nz-option *ngFor="let option of levelOptions" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
+          <nz-select style="width: 120px;" formControlName="english" [nzPlaceHolder]="'選擇科目成績'" nzAllowClear>
+            <nz-option *ngFor="let option of teacherEducationLevel" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
             </nz-option>
           </nz-select>
           <span>數學</span>
-          <nz-select style="width: 120px;" formControlName="math" [nzPlaceHolder]="'choose option'" nzAllowClear>
-            <nz-option *ngFor="let option of levelOptions" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
+          <nz-select style="width: 120px;" formControlName="math" [nzPlaceHolder]="'選擇科目成績'" nzAllowClear>
+            <nz-option *ngFor="let option of teacherEducationLevel" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
             </nz-option>
           </nz-select>
         </td>
@@ -30,43 +30,43 @@
         <td nz-td>
           <div class="item-select">
             <span>中國文學</span>
-            <nz-select style="width: 120px;" formControlName="chineseLiterature" [nzPlaceHolder]="'choose option'" nzAllowClear>
-              <nz-option *ngFor="let option of levelOptions" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
+            <nz-select style="width: 120px;" formControlName="chineseLiterature" [nzPlaceHolder]="'選擇科目成績'" nzAllowClear>
+              <nz-option *ngFor="let option of teacherEducationLevel" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
               </nz-option>
             </nz-select>
           </div>
           <div class="item-select">
             <span>英國文學</span>
-            <nz-select style="width: 120px;" formControlName="englishLiterature" [nzPlaceHolder]="'choose option'" nzAllowClear>
-              <nz-option *ngFor="let option of levelOptions" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
+            <nz-select style="width: 120px;" formControlName="englishLiterature" [nzPlaceHolder]="'選擇科目成績'" nzAllowClear>
+              <nz-option *ngFor="let option of teacherEducationLevel" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
               </nz-option>
             </nz-select>
           </div>
           <div class="item-select">
             <span>世界歷史</span>
-            <nz-select style="width: 120px;" formControlName="worldHistory" [nzPlaceHolder]="'choose option'" nzAllowClear>
-              <nz-option *ngFor="let option of levelOptions" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
+            <nz-select style="width: 120px;" formControlName="worldHistory" [nzPlaceHolder]="'選擇科目成績'" nzAllowClear>
+              <nz-option *ngFor="let option of teacherEducationLevel" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
               </nz-option>
             </nz-select>
           </div>
           <div class="item-select">
             <span>中國歷史</span>
-            <nz-select style="width: 120px;" formControlName="chineseHistory" [nzPlaceHolder]="'choose option'" nzAllowClear>
-              <nz-option *ngFor="let option of levelOptions" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
+            <nz-select style="width: 120px;" formControlName="chineseHistory" [nzPlaceHolder]="'選擇科目成績'" nzAllowClear>
+              <nz-option *ngFor="let option of teacherEducationLevel" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
               </nz-option>
             </nz-select>
           </div>
           <div class="item-select">
             <span>地理</span>
-            <nz-select style="width: 120px;" formControlName="geography" [nzPlaceHolder]="'choose option'" nzAllowClear>
-              <nz-option *ngFor="let option of levelOptions" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
+            <nz-select style="width: 120px;" formControlName="geography" [nzPlaceHolder]="'選擇科目成績'" nzAllowClear>
+              <nz-option *ngFor="let option of teacherEducationLevel" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
               </nz-option>
             </nz-select>
           </div>
           <div class="item-select">
             <span>音樂</span>
-            <nz-select style="width: 120px;" formControlName="music" [nzPlaceHolder]="'choose option'" nzAllowClear>
-              <nz-option *ngFor="let option of levelOptions" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
+            <nz-select style="width: 120px;" formControlName="music" [nzPlaceHolder]="'選擇科目成績'" nzAllowClear>
+              <nz-option *ngFor="let option of teacherEducationLevel" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
               </nz-option>
             </nz-select>
           </div>
@@ -79,29 +79,29 @@
         <td nz-td>
           <div class="item-select">
             <span>化學</span>
-            <nz-select style="width: 120px;" formControlName="chemistry" [nzPlaceHolder]="'choose option'" nzAllowClear>
-              <nz-option *ngFor="let option of levelOptions" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
+            <nz-select style="width: 120px;" formControlName="chemistry" [nzPlaceHolder]="'選擇科目成績'" nzAllowClear>
+              <nz-option *ngFor="let option of teacherEducationLevel" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
               </nz-option>
             </nz-select>
           </div>
           <div class="item-select">
             <span>生物</span>
-            <nz-select style="width: 120px;" formControlName="biology" [nzPlaceHolder]="'choose option'" nzAllowClear>
-              <nz-option *ngFor="let option of levelOptions" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
+            <nz-select style="width: 120px;" formControlName="biology" [nzPlaceHolder]="'選擇科目成績'" nzAllowClear>
+              <nz-option *ngFor="let option of teacherEducationLevel" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
               </nz-option>
             </nz-select>
           </div>
           <div class="item-select">
             <span>物理</span>
-            <nz-select style="width: 120px;" formControlName="physics" [nzPlaceHolder]="'choose option'" nzAllowClear>
-              <nz-option *ngFor="let option of levelOptions" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
+            <nz-select style="width: 120px;" formControlName="physics" [nzPlaceHolder]="'選擇科目成績'" nzAllowClear>
+              <nz-option *ngFor="let option of teacherEducationLevel" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
               </nz-option>
             </nz-select>
           </div>
           <div class="item-select">
             <span>附加數學</span>
-            <nz-select style="width: 120px;" formControlName="mathPlus" [nzPlaceHolder]="'choose option'" nzAllowClear>
-              <nz-option *ngFor="let option of levelOptions" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
+            <nz-select style="width: 120px;" formControlName="mathPlus" [nzPlaceHolder]="'選擇科目成績'" nzAllowClear>
+              <nz-option *ngFor="let option of teacherEducationLevel" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
               </nz-option>
             </nz-select>
           </div>
@@ -114,36 +114,36 @@
         <td nz-td>
           <div class="item-select">
             <span>商業學</span>
-            <nz-select style="width: 120px;" formControlName="bussniss" [nzPlaceHolder]="'choose option'" nzAllowClear>
-              <nz-option *ngFor="let option of levelOptions" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
+            <nz-select style="width: 120px;" formControlName="bussniss" [nzPlaceHolder]="'選擇科目成績'" nzAllowClear>
+              <nz-option *ngFor="let option of teacherEducationLevel" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
               </nz-option>
             </nz-select>
           </div>
           <div class="item-select">
             <span>會計學</span>
-            <nz-select style="width: 120px;" formControlName="account" [nzPlaceHolder]="'choose option'" nzAllowClear>
-              <nz-option *ngFor="let option of levelOptions" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
+            <nz-select style="width: 120px;" formControlName="account" [nzPlaceHolder]="'選擇科目成績'" nzAllowClear>
+              <nz-option *ngFor="let option of teacherEducationLevel" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
               </nz-option>
             </nz-select>
           </div>
           <div class="item-select">
             <span>經濟</span>
-            <nz-select style="width: 120px;" formControlName="economic" [nzPlaceHolder]="'choose option'" nzAllowClear>
-              <nz-option *ngFor="let option of levelOptions" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
+            <nz-select style="width: 120px;" formControlName="economic" [nzPlaceHolder]="'選擇科目成績'" nzAllowClear>
+              <nz-option *ngFor="let option of teacherEducationLevel" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
               </nz-option>
             </nz-select>
           </div>
           <div class="item-select">
             <span>電腦</span>
-            <nz-select style="width: 120px;" formControlName="computer" [nzPlaceHolder]="'choose option'" nzAllowClear>
-              <nz-option *ngFor="let option of levelOptions" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
+            <nz-select style="width: 120px;" formControlName="computer" [nzPlaceHolder]="'選擇科目成績'" nzAllowClear>
+              <nz-option *ngFor="let option of teacherEducationLevel" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
               </nz-option>
             </nz-select>
           </div>
           <div class="item-select">
             <span>打字</span>
-            <nz-select style="width: 120px;" formControlName="press" [nzPlaceHolder]="'choose option'" nzAllowClear>
-              <nz-option *ngFor="let option of levelOptions" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
+            <nz-select style="width: 120px;" formControlName="press" [nzPlaceHolder]="'選擇科目成績'" nzAllowClear>
+              <nz-option *ngFor="let option of teacherEducationLevel" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
               </nz-option>
             </nz-select>
           </div>
@@ -161,17 +161,17 @@
         </td>
         <td nz-td>
           <span>中國語文</span>
-          <nz-select style="width: 120px;" [(ngModel)]="test" [nzPlaceHolder]="'choose option'" nzAllowClear>
+          <nz-select style="width: 120px;" [(ngModel)]="test" [nzPlaceHolder]="'選擇科目成績'" nzAllowClear>
             <nz-option *ngFor="let option of levelOptions" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
             </nz-option>
           </nz-select>
           <span>英國語文</span>
-          <nz-select style="width: 120px;" [(ngModel)]="test1" [nzPlaceHolder]="'choose option'" nzAllowClear>
+          <nz-select style="width: 120px;" [(ngModel)]="test1" [nzPlaceHolder]="'選擇科目成績'" nzAllowClear>
             <nz-option *ngFor="let option of levelOptions" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
             </nz-option>
           </nz-select>
           <span>數學</span>
-          <nz-select style="width: 120px;" [(ngModel)]="test2" [nzPlaceHolder]="'choose option'" nzAllowClear>
+          <nz-select style="width: 120px;" [(ngModel)]="test2" [nzPlaceHolder]="'選擇科目成績'" nzAllowClear>
             <nz-option *ngFor="let option of levelOptions" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
             </nz-option>
           </nz-select>
@@ -184,42 +184,42 @@
         <td nz-td>
           <div class="item-select">
             <span>中國文學</span>
-            <nz-select style="width: 120px;" [(ngModel)]="test3" [nzPlaceHolder]="'choose option'" nzAllowClear>
+            <nz-select style="width: 120px;" [(ngModel)]="test3" [nzPlaceHolder]="'選擇科目成績'" nzAllowClear>
               <nz-option *ngFor="let option of levelOptions" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
               </nz-option>
             </nz-select>
           </div>
           <div class="item-select">
             <span>英國文學</span>
-            <nz-select style="width: 120px;" [(ngModel)]="test4" [nzPlaceHolder]="'choose option'" nzAllowClear>
+            <nz-select style="width: 120px;" [(ngModel)]="test4" [nzPlaceHolder]="'選擇科目成績'" nzAllowClear>
               <nz-option *ngFor="let option of levelOptions" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
               </nz-option>
             </nz-select>
           </div>
           <div class="item-select">
             <span>世界歷史</span>
-            <nz-select style="width: 120px;" [(ngModel)]="test5" [nzPlaceHolder]="'choose option'" nzAllowClear>
+            <nz-select style="width: 120px;" [(ngModel)]="test5" [nzPlaceHolder]="'選擇科目成績'" nzAllowClear>
               <nz-option *ngFor="let option of levelOptions" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
               </nz-option>
             </nz-select>
           </div>
           <div class="item-select">
             <span>中國歷史</span>
-            <nz-select style="width: 120px;" [(ngModel)]="test6" [nzPlaceHolder]="'choose option'" nzAllowClear>
+            <nz-select style="width: 120px;" [(ngModel)]="test6" [nzPlaceHolder]="'選擇科目成績'" nzAllowClear>
               <nz-option *ngFor="let option of levelOptions" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
               </nz-option>
             </nz-select>
           </div>
           <div class="item-select">
             <span>地理</span>
-            <nz-select style="width: 120px;" [(ngModel)]="test7" [nzPlaceHolder]="'choose option'" nzAllowClear>
+            <nz-select style="width: 120px;" [(ngModel)]="test7" [nzPlaceHolder]="'選擇科目成績'" nzAllowClear>
               <nz-option *ngFor="let option of levelOptions" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
               </nz-option>
             </nz-select>
           </div>
           <div class="item-select">
             <span>音樂</span>
-            <nz-select style="width: 120px;" [(ngModel)]="test8" [nzPlaceHolder]="'choose option'" nzAllowClear>
+            <nz-select style="width: 120px;" [(ngModel)]="test8" [nzPlaceHolder]="'選擇科目成績'" nzAllowClear>
               <nz-option *ngFor="let option of levelOptions" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
               </nz-option>
             </nz-select>
@@ -233,28 +233,28 @@
         <td nz-td>
           <div class="item-select">
             <span>化學</span>
-            <nz-select style="width: 120px;" [(ngModel)]="test9" [nzPlaceHolder]="'choose option'" nzAllowClear>
+            <nz-select style="width: 120px;" [(ngModel)]="test9" [nzPlaceHolder]="'選擇科目成績'" nzAllowClear>
               <nz-option *ngFor="let option of levelOptions" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
               </nz-option>
             </nz-select>
           </div>
           <div class="item-select">
             <span>生物</span>
-            <nz-select style="width: 120px;" [(ngModel)]="test10" [nzPlaceHolder]="'choose option'" nzAllowClear>
+            <nz-select style="width: 120px;" [(ngModel)]="test10" [nzPlaceHolder]="'選擇科目成績'" nzAllowClear>
               <nz-option *ngFor="let option of levelOptions" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
               </nz-option>
             </nz-select>
           </div>
           <div class="item-select">
             <span>物理</span>
-            <nz-select style="width: 120px;" [(ngModel)]="test11" [nzPlaceHolder]="'choose option'" nzAllowClear>
+            <nz-select style="width: 120px;" [(ngModel)]="test11" [nzPlaceHolder]="'選擇科目成績'" nzAllowClear>
               <nz-option *ngFor="let option of levelOptions" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
               </nz-option>
             </nz-select>
           </div>
           <div class="item-select">
             <span>附加數學</span>
-            <nz-select style="width: 120px;" [(ngModel)]="test12" [nzPlaceHolder]="'choose option'" nzAllowClear>
+            <nz-select style="width: 120px;" [(ngModel)]="test12" [nzPlaceHolder]="'選擇科目成績'" nzAllowClear>
               <nz-option *ngFor="let option of levelOptions" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
               </nz-option>
             </nz-select>
@@ -268,35 +268,35 @@
         <td nz-td>
           <div class="item-select">
             <span>商業學</span>
-            <nz-select style="width: 120px;" [(ngModel)]="test13" [nzPlaceHolder]="'choose option'" nzAllowClear>
+            <nz-select style="width: 120px;" [(ngModel)]="test13" [nzPlaceHolder]="'選擇科目成績'" nzAllowClear>
               <nz-option *ngFor="let option of levelOptions" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
               </nz-option>
             </nz-select>
           </div>
           <div class="item-select">
             <span>會計學</span>
-            <nz-select style="width: 120px;" [(ngModel)]="test14" [nzPlaceHolder]="'choose option'" nzAllowClear>
+            <nz-select style="width: 120px;" [(ngModel)]="test14" [nzPlaceHolder]="'選擇科目成績'" nzAllowClear>
               <nz-option *ngFor="let option of levelOptions" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
               </nz-option>
             </nz-select>
           </div>
           <div class="item-select">
             <span>經濟</span>
-            <nz-select style="width: 120px;" [(ngModel)]="test15" [nzPlaceHolder]="'choose option'" nzAllowClear>
+            <nz-select style="width: 120px;" [(ngModel)]="test15" [nzPlaceHolder]="'選擇科目成績'" nzAllowClear>
               <nz-option *ngFor="let option of levelOptions" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
               </nz-option>
             </nz-select>
           </div>
           <div class="item-select">
             <span>電腦</span>
-            <nz-select style="width: 120px;" [(ngModel)]="test16" [nzPlaceHolder]="'choose option'" nzAllowClear>
+            <nz-select style="width: 120px;" [(ngModel)]="test16" [nzPlaceHolder]="'選擇科目成績'" nzAllowClear>
               <nz-option *ngFor="let option of levelOptions" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
               </nz-option>
             </nz-select>
           </div>
           <div class="item-select">
             <span>打字</span>
-            <nz-select style="width: 120px;" [(ngModel)]="test17" [nzPlaceHolder]="'choose option'" nzAllowClear>
+            <nz-select style="width: 120px;" [(ngModel)]="test17" [nzPlaceHolder]="'選擇科目成績'" nzAllowClear>
               <nz-option *ngFor="let option of levelOptions" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
               </nz-option>
             </nz-select>
@@ -307,14 +307,14 @@
 <!-- <tr nz-tbody-tr>
         <td nz-td class="itemz">
           <span>其他會考科目成績</span>
-          <nz-select style="width: 220px;" [(ngModel)]="test" [nzPlaceHolder]="'choose option'" nzAllowClear>
+          <nz-select style="width: 220px;" [(ngModel)]="test" [nzPlaceHolder]="'選擇科目成績'" nzAllowClear>
             <nz-option *ngFor="let option of levelOptions" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
             </nz-option>
           </nz-select>
         </td>
         <td nz-td class="itemz">
           <span>其他高考/高補程度會考科目成績</span>
-          <nz-select style="width: 220px;" [(ngModel)]="test" [nzPlaceHolder]="'choose option'" nzAllowClear>
+          <nz-select style="width: 220px;" [(ngModel)]="test" [nzPlaceHolder]="'選擇科目成績'" nzAllowClear>
             <nz-option *ngFor="let option of levelOptions" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
             </nz-option>
           </nz-select>
@@ -323,14 +323,14 @@
       <tr nz-tbody-tr>
         <td nz-td class="itemz">
           <span>最高教育程度</span>
-          <nz-select style="width: 220px;" [(ngModel)]="test" [nzPlaceHolder]="'choose option'" nzAllowClear>
+          <nz-select style="width: 220px;" [(ngModel)]="test" [nzPlaceHolder]="'選擇科目成績'" nzAllowClear>
             <nz-option *ngFor="let option of levelOptions" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
             </nz-option>
           </nz-select>
         </td>
         <td nz-td class="itemz">
           <span>就讀小學</span>
-          <nz-select style="width: 220px;" [(ngModel)]="test" [nzPlaceHolder]="'choose option'" nzAllowClear>
+          <nz-select style="width: 220px;" [(ngModel)]="test" [nzPlaceHolder]="'選擇科目成績'" nzAllowClear>
             <nz-option *ngFor="let option of levelOptions" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
             </nz-option>
           </nz-select>
@@ -339,14 +339,14 @@
       <tr nz-tbody-tr>
         <td nz-td class="itemz">
           <span>就讀中學</span>
-          <nz-select style="width: 220px;" [(ngModel)]="test" [nzPlaceHolder]="'choose option'" nzAllowClear>
+          <nz-select style="width: 220px;" [(ngModel)]="test" [nzPlaceHolder]="'選擇科目成績'" nzAllowClear>
             <nz-option *ngFor="let option of levelOptions" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
             </nz-option>
           </nz-select>
         </td>
         <td nz-td class="itemz">
           <span>中學主要教學語言</span>
-          <nz-select style="width: 220px;" [(ngModel)]="test" [nzPlaceHolder]="'choose option'" nzAllowClear>
+          <nz-select style="width: 220px;" [(ngModel)]="test" [nzPlaceHolder]="'選擇科目成績'" nzAllowClear>
             <nz-option *ngFor="let option of levelOptions" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
             </nz-option>
           </nz-select>
@@ -355,14 +355,14 @@
       <tr nz-tbody-tr>
         <td nz-td class="itemz">
           <span>就讀大學</span>
-          <nz-select style="width: 220px;" [(ngModel)]="test" [nzPlaceHolder]="'choose option'" nzAllowClear>
+          <nz-select style="width: 220px;" [(ngModel)]="test" [nzPlaceHolder]="'選擇科目成績'" nzAllowClear>
             <nz-option *ngFor="let option of levelOptions" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
             </nz-option>
           </nz-select>
         </td>
         <td nz-td class="itemz">
           <span>其他大學</span>
-          <nz-select style="width: 220px;" [(ngModel)]="test" [nzPlaceHolder]="'choose option'" nzAllowClear>
+          <nz-select style="width: 220px;" [(ngModel)]="test" [nzPlaceHolder]="'選擇科目成績'" nzAllowClear>
             <nz-option *ngFor="let option of levelOptions" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
             </nz-option>
           </nz-select>
@@ -371,14 +371,14 @@
       <tr nz-tbody-tr>
         <td nz-td class="itemz">
           <span>高中修讀科目類別</span>
-          <nz-select style="width: 220px;" [(ngModel)]="test" [nzPlaceHolder]="'choose option'" nzAllowClear>
+          <nz-select style="width: 220px;" [(ngModel)]="test" [nzPlaceHolder]="'選擇科目成績'" nzAllowClear>
             <nz-option *ngFor="let option of levelOptions" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
             </nz-option>
           </nz-select>
         </td>
         <td nz-td class="itemz">
           <span>大學主修科目</span>
-          <nz-select style="width: 220px;" [(ngModel)]="test" [nzPlaceHolder]="'choose option'" nzAllowClear>
+          <nz-select style="width: 220px;" [(ngModel)]="test" [nzPlaceHolder]="'選擇科目成績'" nzAllowClear>
             <nz-option *ngFor="let option of levelOptions" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
             </nz-option>
           </nz-select>
@@ -387,14 +387,14 @@
       <tr nz-tbody-tr>
         <td nz-td class="itemz">
           <span>其他修讀課程</span>
-          <nz-select style="width: 220px;" [(ngModel)]="test" [nzPlaceHolder]="'choose option'" nzAllowClear>
+          <nz-select style="width: 220px;" [(ngModel)]="test" [nzPlaceHolder]="'選擇科目成績'" nzAllowClear>
             <nz-option *ngFor="let option of levelOptions" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
             </nz-option>
           </nz-select>
         </td>
         <td nz-td class="itemz">
           <span>其他專業認可課程</span>
-          <nz-select style="width: 220px;" [(ngModel)]="test" [nzPlaceHolder]="'choose option'" nzAllowClear>
+          <nz-select style="width: 220px;" [(ngModel)]="test" [nzPlaceHolder]="'選擇科目成績'" nzAllowClear>
             <nz-option *ngFor="let option of levelOptions" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
             </nz-option>
           </nz-select>
@@ -403,14 +403,14 @@
       <tr nz-tbody-tr>
         <td nz-td class="itemz">
           <span>現時就讀年級</span>
-          <nz-select style="width: 220px;" [(ngModel)]="test" [nzPlaceHolder]="'choose option'" nzAllowClear>
+          <nz-select style="width: 220px;" [(ngModel)]="test" [nzPlaceHolder]="'選擇科目成績'" nzAllowClear>
             <nz-option *ngFor="let option of levelOptions" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
             </nz-option>
           </nz-select>
         </td>
         <td nz-td class="itemz">
           <span>香港中學會考分數（六科成績總分）</span>
-          <nz-select style="width: 220px;" [(ngModel)]="test" [nzPlaceHolder]="'choose option'" nzAllowClear>
+          <nz-select style="width: 220px;" [(ngModel)]="test" [nzPlaceHolder]="'選擇科目成績'" nzAllowClear>
             <nz-option *ngFor="let option of levelOptions" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
             </nz-option>
           </nz-select>
@@ -419,7 +419,7 @@
       <tr nz-tbody-tr>
         <td nz-td class="itemz">
           <span>香港中學會考主要應考語言</span>
-          <nz-select style="width: 220px;" [(ngModel)]="test" [nzPlaceHolder]="'choose option'" nzAllowClear>
+          <nz-select style="width: 220px;" [(ngModel)]="test" [nzPlaceHolder]="'選擇科目成績'" nzAllowClear>
             <nz-option *ngFor="let option of levelOptions" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
             </nz-option>
           </nz-select>

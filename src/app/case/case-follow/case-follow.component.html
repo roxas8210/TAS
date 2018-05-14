@@ -32,7 +32,7 @@
         <form [formGroup]="searchForm">
           <div class="search-case-status">
             篩選：
-            <nz-select style="width: 120px;" formControllName="type" [nzPlaceHolder]="'類別'" nzAllowClear>
+            <nz-select style="width: 60px;" formControllName="type" [nzPlaceHolder]="'類別'" nzAllowClear>
               <nz-option *ngFor="let option of typeOptions" [nzLabel]="option.label" [nzValue]="option.value">
               </nz-option>
             </nz-select>

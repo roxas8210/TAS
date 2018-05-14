@@ -1,0 +1,147 @@
+<div class="pay-details">
+  <div class="pay-details-title">
+    <p>付款表狀態：{{paymentStatus}}</p>
+  </div>
+  <nz-table #nzTable nzBordered [nzCustomNoResult]="true" >
+    <tbody nz-tbody>
+      <tr nz-tbody-tr>
+        <td nz-td rowspan="2">
+          <div nz-form-item nz-row [nzType]="'flex'" [nzAlign]="'center'" style="margin: 0;">
+            <div nz-form-label nz-col [nzSpan]="4" style="align-items: center;display: flex;">
+              <label>首課日期</label>
+            </div>
+            <div style="display: flex;flex-wrap: wrap;align-items: center;" nz-form-control nz-col [nzSpan]="20">
+              <nz-datepicker [(ngModel)]="payment.first_class_date" [nzPlaceHolder]="'選擇首課日期'"></nz-datepicker>
+              <span>更改次數：{{changeTimes}}</span>
+              <div class="time-rang">
+                <nz-timepicker [(ngModel)]="payment.timeRangStart"></nz-timepicker>
+                <nz-timepicker [(ngModel)]="payment.timeRangEnd"></nz-timepicker>
+              </div>
+            </div>
+          </div>
+        </td>
+        <td nz-td>
+          <div nz-form-item nz-row [nzType]="'flex'" [nzAlign]="'center'" style="margin: 0;">
+            <div nz-form-label nz-col [nzSpan]="8" style="align-items: center;display: flex;">
+              <label>6%</label>
+            </div>
+            <div nz-form-control nz-col [nzSpan]="14">
+              <nz-radio-group [(ngModel)]="payment.six_percent">
+                <label nz-radio [nzValue]="'yes'">
+                  <span>Yes</span>
+                </label>
+                <label nz-radio [nzValue]="'no'">
+                  <span>No</span>
+                </label>
+              </nz-radio-group>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr nz-tbody-tr>
+        <td nz-td>
+          <div nz-form-item nz-row [nzType]="'flex'" [nzAlign]="'center'" style="margin: 0;">
+            <div nz-form-label nz-col [nzSpan]="8" style="align-items: center;display: flex;">
+              <label>應付日期</label>
+            </div>
+            <div nz-form-control nz-col [nzSpan]="14">
+              <nz-datepicker style="width: 100%;" [(ngModel)]="payment.payable_date" [nzPlaceHolder]="'選擇應付日期'"></nz-datepicker>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr nz-tbody-tr>
+        <td nz-td>
+          <div nz-form-item nz-row [nzType]="'flex'" [nzAlign]="'center'" style="margin: 0;">
+            <div nz-form-label nz-col [nzSpan]="4" style="align-items: center;display: flex;">
+              <label>上課時數</label>
+            </div>
+            <div nz-form-control nz-col [nzSpan]="20">
+              <nz-input [(ngModel)]="payment.classTimeNum" [nzPlaceHolder]="'輸入上課時數'"></nz-input>
+            </div>
+          </div>
+        </td>
+        <td nz-td>
+          <div nz-form-item nz-row [nzType]="'flex'" [nzAlign]="'center'" style="margin: 0;">
+            <div nz-form-label nz-col [nzSpan]="4" style="align-items: center;display: flex;">
+              <label>預收學費</label>
+            </div>
+            <div nz-form-control nz-col [nzSpan]="20">
+              <nz-input [(ngModel)]="payment.receivable_tuition" [nzPlaceHolder]="'輸入預收學費'"></nz-input>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr nz-tbody-tr>
+        <td nz-td>
+          <div nz-form-item nz-row [nzType]="'flex'" [nzAlign]="'center'" style="margin: 0;">
+            <div nz-form-label nz-col [nzSpan]="4" style="align-items: center;display: flex;">
+              <label>實收學費$</label>
+            </div>
+            <div nz-form-control nz-col [nzSpan]="20">
+              <nz-input [(ngModel)]="payment.receipts_tuition" [nzPlaceHolder]="'輸入實收學費'"></nz-input>
+            </div>
+          </div>
+        </td>
+        <td nz-td>
+          <div nz-form-item nz-row [nzType]="'flex'" [nzAlign]="'center'" style="margin: 0;">
+            <div nz-form-label nz-col [nzSpan]="4" style="align-items: center;display: flex;">
+              <label>預付佣金</label>
+            </div>
+            <div nz-form-control nz-col [nzSpan]="20">
+              <nz-input [(ngModel)]="payment.payed_commission" [nzPlaceHolder]="'輸入預付佣金'"></nz-input>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr nz-tbody-tr>
+        <td nz-td>
+          <div nz-form-item nz-row [nzType]="'flex'" [nzAlign]="'center'" style="margin: 0;">
+            <div nz-form-label nz-col [nzSpan]="4" style="align-items: center;display: flex;">
+              <label>實收佣金$</label>
+            </div>
+            <div nz-form-control nz-col [nzSpan]="20">
+              <nz-input [(ngModel)]="payment.receipts_commission" [nzPlaceHolder]="'輸入實收學費'"></nz-input>
+            </div>
+          </div>
+        </td>
+        <td nz-td>
+          <div nz-form-item nz-row [nzType]="'flex'" [nzAlign]="'center'" style="margin: 0;">
+            <div nz-form-label nz-col [nzSpan]="8" style="align-items: center;display: flex;">
+              <label>已通知家長入數日期</label>
+            </div>
+            <div nz-form-control nz-col [nzSpan]="16">
+              <nz-datepicker style="width: 100%;" [(ngModel)]="payment.notice_parent_date" [nzPlaceHolder]="'選擇已通知家長入數日期'"></nz-datepicker>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr nz-tbody-tr>
+        <td nz-td>
+          <div nz-form-item nz-row [nzType]="'flex'" [nzAlign]="'center'" style="margin: 0;">
+            <div nz-form-label nz-col [nzSpan]="6" style="align-items: center;display: flex;">
+              <label>入數日期/時間</label>
+            </div>
+            <div nz-form-control nz-col [nzSpan]="18">
+              <nz-datepicker [(ngModel)]="payment.editdate" [nzPlaceHolder]="'選擇入數日期'"></nz-datepicker>
+              <nz-timepicker [(ngModel)]="payment.editTime" [nzFormat]="'HH:mm'" ></nz-timepicker>
+            </div>
+          </div>
+        </td>
+        <td nz-td>
+          <div nz-form-item nz-row [nzType]="'flex'" [nzAlign]="'center'" style="margin: 0;">
+            <div nz-form-label nz-col [nzSpan]="8" style="align-items: center;display: flex;">
+              <label>入數銀行/方式</label>
+            </div>
+            <div nz-form-control nz-col [nzSpan]="16">
+              <!-- <nz-select [nzPlaceHolder]="''" style="width: 120px">
+                <nz-option *ngFor="let option of classLong" [nzLabel]="option.label" [nzValue]="option.value">
+                </nz-option>
+              </nz-select> -->
+            </div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </nz-table>
+</div>

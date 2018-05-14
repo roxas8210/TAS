@@ -29,3 +29,34 @@ html, body {
     border-bottom: none !important;
     padding: 0 !important;
 }
+
+.ui-state-active {
+    border-color: #D5D5D5 !important;
+}
+
+a.ui-panelmenu-header-link {
+    background-color: white !important;
+    color: rgba(0, 0, 0, 0.65) !important;
+}
+
+span.ui-menuitem-text {
+    color: rgba(0, 0, 0, 0.65) !important;
+}
+
+a.ui-menuitem-link:hover {
+    /* background-color: white !important; */
+}
+
+a.ui-menuitem-link:hover .ui-menuitem-text {
+    color: #2399ed !important;
+}
+
+.active-panelMenu {
+    /* background-color: red !important; */
+    background-color: white;
+    color: #2399ed;
+}
+
+.active-panelMenu span.ui-menuitem-text {
+    /* color: #2399ed !important; */
+}

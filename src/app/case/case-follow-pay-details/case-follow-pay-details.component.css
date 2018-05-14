@@ -1,0 +1,22 @@
+.pay-details .pay-details-title {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  background-color: #2399ed;
+  text-align: center;
+}
+.pay-details .pay-details-title p {
+  font-size: 14px;
+  color: white;
+  line-height: 42px;
+}
+.pay-details nz-table td {
+  padding: 4px 10px !important;
+}
+.pay-details nz-table span {
+  font-size: 14px;
+  line-height: 42px;
+}
+.pay-details nz-table .time-rang {
+  margin-top: 4px;
+}

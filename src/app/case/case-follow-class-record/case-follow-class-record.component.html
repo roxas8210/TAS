@@ -1,0 +1,68 @@
+<div class="class-record">
+  <div class="class-record-table">
+    <nz-table #nzTable [nzDataSource]="classRecordList" [nzTotal]="classRecordList.length" [nzIsPagination]="true">
+      <thead nz-thead>
+        <tr>
+          <th nz-th [nzWidth]="'100px'" style="text-align: center;background-color: white;border-bottom: 1px solid rgba(0, 0, 0, 0.15);">
+            <span>節數</span>
+          </th>
+          <th nz-th [nzWidth]="'100px'" style="text-align: center;background-color: white;border-bottom: 1px solid rgba(0, 0, 0, 0.15);">
+            <span>上課日期</span>
+          </th>
+          <th nz-th [nzWidth]="'100px'" style="text-align: center;background-color: white;border-bottom: 1px solid rgba(0, 0, 0, 0.15);">
+            <span>狀態</span>
+          </th>
+          <th nz-th [nzWidth]="'100px'" style="text-align: center;background-color: white;border-bottom: 1px solid rgba(0, 0, 0, 0.15);">
+            <span>時長</span>
+          </th>
+          <th nz-th [nzWidth]="'100px'" style="text-align: center;background-color: white;border-bottom: 1px solid rgba(0, 0, 0, 0.15);">
+            <span>收費</span>
+          </th>
+          <th nz-th [nzWidth]="'100px'" style="text-align: center;background-color: white;border-bottom: 1px solid rgba(0, 0, 0, 0.15);">
+            <span>忽略課前凍結</span>
+          </th>
+          <th nz-th [nzWidth]="'100px'" style="text-align: center;background-color: white;border-bottom: 1px solid rgba(0, 0, 0, 0.15);">
+            <span>取消課程</span>
+          </th>
+        </tr>
+      </thead>
+      <tbody nz-tbody>
+        <tr nz-tbody-tr *ngFor="let data of nzTable.data" style="cursor: pointer;">
+          <td nz-td style="padding: 4px 0 !important;text-align: center;">{{data.classNum}}</td>
+          <td nz-td style="padding: 4px 0 !important;text-align: center;">{{data.classDate}}</td>
+          <td nz-td style="padding: 4px 0 !important;text-align: center;">{{data.status}}</td>
+          <td nz-td style="padding: 4px 0 !important;text-align: center;">{{data.duration}}</td>
+          <td nz-td style="padding: 4px 0 !important;text-align: center;">{{data.charge}}</td>
+          <td nz-td nzCheckbox style="padding: 4px 0 !important;">
+            <!-- <label style="width: 100%;display: flex;align-items: center;justify-content: center;" nz-checkbox [(ngModel)]="data.ignore_freeze" (ngModelChange)="test()">
+            </label> -->
+            <a *ngIf="!data.ignore_freeze;else elseFreeze" (click)="ignoreFreeze(data.id)" >忽略課程凍結</a>
+            <ng-template #elseFreeze>
+              <span>已忽略</span>
+            </ng-template>
+          </td>
+          <td nz-td nzCheckbox style="padding: 4px 0 !important;">
+            <!-- <label style="width: 100%;display: flex;align-items: center;justify-content: center;" nz-checkbox [(ngModel)]="data.cancel_class">
+            </label> -->
+            <a *ngIf="!data.cancel_class;else elseCancel" (click)="cancelClass(data.id)">取消課程</a>
+            <ng-template #elseCancel>
+              <span>已取消</span>
+            </ng-template>
+          </td>
+        </tr>
+      </tbody>
+    </nz-table>
+    <div class="class-info">
+      <p>已上堂數：<span>{{classNum}}</span></p>
+      <button [nzSize]="'small'" [nzType]="'primary'" nz-button nzGhost >提交</button>
+    </div>
+  </div>
+  <div class="class-record-add">
+    <nz-datepicker [(ngModel)]="add_class_date" [nzPlaceHolder]="'選擇上課日期'"></nz-datepicker>
+    <nz-select [nzPlaceHolder]="'請選擇時長'" style="width: 120px">
+      <nz-option *ngFor="let option of classLong" [nzLabel]="option.label" [nzValue]="option.value">
+      </nz-option>
+    </nz-select>
+    <button [nzSize]="'small'" [nzType]="'primary'" nz-button nzGhost>添加課時</button>
+  </div>
+</div>

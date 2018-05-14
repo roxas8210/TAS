@@ -184,7 +184,7 @@
                 </nz-option>
               </nz-select> -->
               <nz-select style="width: 220px;" [(ngModel)]="historyList[12].value" (ngModelChange)="modelChange(historyList[12].id)" [nzPlaceHolder]="'選擇現時就讀年級'">
-                <nz-option *ngFor="let option of levelOptions" [nzLabel]="option.label" [nzValue]="option.value" [nzDisabled]="option.disabled">
+                <nz-option *ngFor="let option of nowGrade" [nzLabel]="option.label" [nzValue]="option.value" [nzDisabled]="option.disabled">
                 </nz-option>
               </nz-select>
             </div>

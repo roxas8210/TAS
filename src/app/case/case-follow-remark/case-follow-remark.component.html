@@ -1,3 +1,57 @@
-<p>
-  case-follow-remark works!
-</p>
+<div class="remark-container">
+  <div class="remark-edit">
+    <div class="remark-row1">
+      <p>備註：</p>
+      <nz-input [nzSize]="'large'" [nzPlaceHolder]="'請填寫備註'" style="width: 40%;flex-grow: 1;"></nz-input>
+      <p>轉寄給</p>
+      <nz-select [nzPlaceHolder]="'請選擇'" style="width: 20%;" [nzSize]="'large'">
+        <nz-option *ngFor="let option of employeeOptions" [nzLabel]="option.label" [nzValue]="option.value">
+        </nz-option>
+      </nz-select>
+      <button [nzType]="'primary'" nz-button nzGhost>確認</button>
+    </div>
+    <div class="remark-row2">
+        <p>提醒：</p>
+        <label style="width: 5%;display: flex;align-items: center;" nz-checkbox [(ngModel)]="checkRemind">
+        </label>
+        <p>日期：</p>
+        <nz-datepicker [(ngModel)]="remindDate" [nzPlaceHolder]="'選擇日期'"></nz-datepicker>
+        <nz-timepicker [(ngModel)]="remindTime"></nz-timepicker>
+    </div>
+  </div>
+  <div class="remark-table">
+    <nz-table #nzTable [nzDataSource]="remarkList" [nzTotal]="remarkList.length" [nzIsPagination]="false">
+      <thead nz-thead>
+        <tr>
+          <th nz-th nzCheckbox style="padding: 4px 0 !important;background-color: white;border-bottom: 1px solid rgba(0, 0, 0, 0.15);">
+            <label style="width: 100%;display: flex;align-items: center;justify-content: center;" nz-checkbox [(ngModel)]="selectAll" [nzIndeterminate]="selectAll">
+            </label>
+          </th>
+          <th nz-th style="text-align: center;background-color: white;border-bottom: 1px solid rgba(0, 0, 0, 0.15);">
+            <span>備註時間</span>
+          </th>
+          <th nz-th style="text-align: center;background-color: white;border-bottom: 1px solid rgba(0, 0, 0, 0.15);">
+            <span>操作人</span>
+          </th>
+          <th nz-th style="text-align: center;background-color: white;border-bottom: 1px solid rgba(0, 0, 0, 0.15);">
+            <span>備註信息</span>
+          </th>
+        </tr>
+      </thead>
+      <tbody nz-tbody>
+        <tr nz-tbody-tr *ngFor="let data of nzTable.data" style="cursor: pointer;">
+          <td nz-td nzCheckbox style="padding: 4px 0 !important;">
+            <label style="width: 100%;display: flex;align-items: center;justify-content: center;" nz-checkbox [(ngModel)]="data.checked">
+            </label>
+          </td>
+          <td nz-td style="padding: 4px 0 !important;text-align: center;color: red;">{{data.remark_time}}</td>
+          <td nz-td style="padding: 4px 0 !important;text-align: center;">{{data.operator}}</td>
+          <td nz-td style="padding: 4px 0 !important;text-align: center;">{{data.remark_content}}</td>
+        </tr>
+      </tbody>
+    </nz-table>
+  </div>
+  <div class="delete">
+    <button nz-button nzGhost [nzType]="'primary'">刪除所選記錄</button>
+  </div>
+</div>

@@ -1,4 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { HighestEducation } from '../../option-data/highest-education.data';
+import { language } from '../../option-data/language.data';
+import { College } from '../../option-data/college.data';
+import { HighSchoolSubjects } from '../../option-data/highschool-subjects.data';
+import { MiddleSchoolExamLanguage } from '../../option-data/middle-school-exam-language.data';
+import { GradeYear } from '../../option-data/grade-year.data';
 
 @Component({
   selector: 'app-teacher-education-history',
@@ -6,6 +12,24 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./teacher-education-history.component.less']
 })
 export class TeacherEducationHistoryComponent implements OnInit {
+
+  // 最高教育程度
+  highestEducation = HighestEducation;
+
+  // 主要教學語言
+  languageOptions = language;
+
+  // 就讀大學
+  collegeOptions = College;
+
+  // 高中修讀科目
+  highSchoolSubjectOptions = HighSchoolSubjects;
+
+  // 香港中學會考主要應考語言
+  examLanguageOptions = MiddleSchoolExamLanguage;
+
+  // 現時年級
+  nowGrade = GradeYear;
 
   levelOptions = [{
     label: '一级',

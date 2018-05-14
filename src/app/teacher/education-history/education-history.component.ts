@@ -6,6 +6,7 @@ import { language } from '../../option-data/language.data';
 import { College } from '../../option-data/college.data';
 import { HighSchoolSubjects } from '../../option-data/highschool-subjects.data';
 import { MiddleSchoolExamLanguage } from '../../option-data/middle-school-exam-language.data';
+import { GradeYear } from '../../option-data/grade-year.data';
 
 @Component({
   selector: 'app-education-history',
@@ -28,6 +29,9 @@ export class EducationHistoryComponent implements OnInit {
 
   // 香港中學會考主要應考語言
   examLanguageOptions = MiddleSchoolExamLanguage;
+
+  // 現時年級
+  nowGrade = GradeYear;
 
   levelOptions = [{
     label: '一级',
