@@ -4,24 +4,24 @@
       <tr nz-tbody-tr>
         <td nz-td style="padding: 0;">
           <div nz-row style="display: flex;align-items: center;">
-            <div nz-col [nzSpan]="8" class="field">
+            <div nz-col [nzSm]="12" [nzLg]="12" class="field">
               <span>導師HKTA ID</span>
             </div>
-            <div nz-col [nzSpan]="16" class="field-content">
-              <span *ngIf="!editStatus">{{basicInfo.id}}</span>
-              <nz-select *ngIf="editStatus" style="width: 100%;padding-right: 10px;" [(ngModel)]="basicInfo.id" [nzPlaceHolder]="'選擇地址'">
+            <div nz-col [nzSm]="12" [nzLg]="12" class="field-content">
+              <span>{{basicInfo.id}}</span>
+              <!-- <nz-select *ngIf="editStatus" style="width: 100%;padding-right: 10px;" [(ngModel)]="basicInfo.id" [nzPlaceHolder]="'選擇地址'">
                 <nz-option *ngFor="let option of idOptions" [nzLabel]="option.label" [nzValue]="option.value" [nzDisabled]="option.disabled">
                 </nz-option>
-              </nz-select>
+              </nz-select> -->
             </div>
           </div>
         </td>
         <td nz-td style="padding: 0;">
           <div nz-row style="display: flex;align-items: center;">
-            <div nz-col [nzSpan]="10" class="field">
+            <div nz-col [nzSm]="12" [nzLg]="12" class="field">
               <span>導師狀況</span>
             </div>
-            <div nz-col [nzSpan]="14" class="field-content">
+            <div nz-col [nzSm]="12" [nzLg]="12" class="field-content">
               <span>{{basicInfo.status}}</span>
             </div>
           </div>
@@ -30,24 +30,25 @@
       <tr nz-tbody-tr>
         <td nz-td style="padding: 0;">
           <div nz-row style="display: flex;align-items: center;">
-            <div nz-col [nzSpan]="10" class="field">
+            <div nz-col [nzSm]="12" [nzLg]="12" class="field">
               <span>會員導師登入名稱</span>
             </div>
-            <div nz-col [nzSpan]="14" class="field-content">
+            <div nz-col [nzSm]="12" [nzLg]="12" class="field-content">
               <span *ngIf="!editStatus">{{basicInfo.nickName}}</span>
-              <nz-select *ngIf="editStatus" style="width: 100%;padding-right: 10px;" [(ngModel)]="basicInfo.nickName" [nzPlaceHolder]="'選擇地址'">
+              <!-- <nz-select *ngIf="editStatus" style="width: 100%;padding-right: 10px;" [(ngModel)]="basicInfo.nickName" [nzPlaceHolder]="'選擇地址'">
                 <nz-option *ngFor="let option of idOptions" [nzLabel]="option.label" [nzValue]="option.value" [nzDisabled]="option.disabled">
                 </nz-option>
-              </nz-select>
+              </nz-select> -->
+              <nz-input *ngIf="editStatus" style="width: 100%;padding-right: 10px;" [(ngModel)]="basicInfo.nickName" [nzPlaceHolder]="'輸入會員導師登入名稱'"></nz-input>
             </div>
           </div>
         </td>
         <td nz-td style="padding: 0;">
           <div nz-row style="display: flex;align-items: center;">
-            <div nz-col [nzSpan]="10" class="field">
+            <div nz-col [nzSm]="12" [nzLg]="12" class="field">
               <span>登記時間</span>
             </div>
-            <div nz-col [nzSpan]="14" class="field-content">
+            <div nz-col [nzSm]="12" [nzLg]="12" class="field-content">
               <span>{{basicInfo.loginTime}}</span>
             </div>
           </div>
@@ -56,24 +57,25 @@
       <tr nz-tbody-tr>
         <td nz-td style="padding: 0;">
           <div nz-row style="display: flex;align-items: center;">
-            <div nz-col [nzSpan]="8" class="field">
+            <div nz-col [nzSm]="12" [nzLg]="12" class="field">
               <span>暱稱或英文名</span>
             </div>
-            <div nz-col [nzSpan]="16" class="field-content">
+            <div nz-col [nzSm]="12" [nzLg]="12" class="field-content">
               <span *ngIf="!editStatus">{{basicInfo.enName}}</span>
-              <nz-select *ngIf="editStatus" style="width: 100%;padding-right: 10px;" [(ngModel)]="basicInfo.enName" [nzPlaceHolder]="'選擇地址'">
+              <!-- <nz-select *ngIf="editStatus" style="width: 100%;padding-right: 10px;" [(ngModel)]="basicInfo.enName" [nzPlaceHolder]="'選擇地址'">
                 <nz-option *ngFor="let option of idOptions" [nzLabel]="option.label" [nzValue]="option.value" [nzDisabled]="option.disabled">
                 </nz-option>
-              </nz-select>
+              </nz-select> -->
+              <nz-input *ngIf="editStatus" style="width: 100%;padding-right: 10px;" [(ngModel)]="basicInfo.enName" [nzPlaceHolder]="'輸入暱稱或英文名'"></nz-input>
             </div>
           </div>
         </td>
         <td nz-td style="padding: 0;">
           <div nz-row style="display: flex;align-items: center;">
-            <div nz-col [nzSpan]="10" class="field">
+            <div nz-col [nzSm]="12" [nzLg]="12" class="field">
               <span>最後修改時間</span>
             </div>
-            <div nz-col [nzSpan]="14" class="field-content">
+            <div nz-col [nzSm]="12" [nzLg]="12" class="field-content">
               <span>{{basicInfo.lastTimeLogin}}</span>
             </div>
           </div>
@@ -82,10 +84,10 @@
       <tr nz-tbody-tr>
         <td nz-td style="padding: 0;">
           <div nz-row style="display: flex;align-items: center;">
-            <div nz-col [nzSpan]="8" class="field">
+            <div nz-col [nzSpan]="12" class="field">
               <span>黑名單原因</span>
             </div>
-            <div nz-col [nzSpan]="16" class="field-content">
+            <div nz-col [nzSpan]="12" class="field-content">
               <span *ngIf="!editStatus">{{basicInfo.blackListReason}}</span>
               <nz-input *ngIf="editStatus" style="width: 100%;padding-right: 10px;" [(ngModel)]="basicInfo.blackListReason" [nzPlaceHolder]="'輸入黑名單原因'"></nz-input>
             </div>
@@ -93,10 +95,10 @@
         </td>
         <td nz-td style="padding: 0;">
           <div nz-row style="display: flex;align-items: center;">
-            <div nz-col [nzSpan]="10" class="field">
+            <div nz-col [nzSpan]="12" class="field">
               <span>個案資料</span>
             </div>
-            <div nz-col [nzSpan]="14" class="field-content">
+            <div nz-col [nzSpan]="12" class="field-content">
               <nz-popover [nzTitle]="'個案匯總'" [nzPlacement]="'right'" >
                 <span nz-popover>共有個案：{{basicInfo.caseNum}}</span>
                 <ng-template #nzTemplate>

@@ -9,6 +9,9 @@
           <span>扣費類型</span>
         </th>
         <th nz-th style="text-align: center;background-color: white;border-bottom: 1px solid rgba(0, 0, 0, 0.15);">
+          <span>扣費狀態</span>
+        </th>
+        <th nz-th style="text-align: center;background-color: white;border-bottom: 1px solid rgba(0, 0, 0, 0.15);">
           <span>扣費金額</span>
         </th>
         <th nz-th style="text-align: center;background-color: white;border-bottom: 1px solid rgba(0, 0, 0, 0.15);">
@@ -23,6 +26,7 @@
       <tr nz-tbody-tr *ngFor="let data of nzTable.data" style="cursor: pointer;">
         <td nz-td style="padding: 4px 0 !important;text-align: center;">{{data.payDate}}</td>
         <td nz-td style="padding: 4px 0 !important;text-align: center;">{{data.payType}}</td>
+        <td nz-td style="padding: 4px 0 !important;text-align: center;">{{data.payStatus}}</td>
         <td nz-td style="padding: 4px 0 !important;text-align: center;color: red;">{{data.paySum}}</td>
         <td nz-td style="padding: 4px 0 !important;text-align: center;">{{data.payAccount}}</td>
         <td nz-td style="padding: 4px 0 !important;text-align: center;">{{data.brokerage}}</td>
@@ -30,6 +34,95 @@
     </tbody>
   </nz-table>
   <div class="add-remove">
-    <button nz-button nzGhost [nzType]="'primary'" >添加收費/退款</button>
+    <button (click)="openModel()" nz-button nzGhost [nzType]="'primary'" >添加收費/退款</button>
   </div>
+  <nz-modal [nzVisible]="isVisible" [nzTitle]="'添加收费/退款'" [nzContent]="modalContent" (nzOnCancel)="cancelAdd()"
+    (nzOnOk)="addPayment()">
+    <ng-template #modalContent>
+      <form nz-form [formGroup]="addPaymentForm">
+        <div nz-form-item nz-row >
+          <div nz-form-label nz-col [nzSpan]="5">
+            <label for="notice_pay_date">通知收費日期</label>
+          </div>
+          <div nz-form-control nz-col [nzSpan]="19" >
+            <nz-datepicker formControlName="notice_pay_date" [nzPlaceHolder]="'選擇通知收費日期'"></nz-datepicker>
+          </div>
+        </div>
+        <div nz-form-item nz-row >
+          <div nz-form-label nz-col [nzSpan]="5">
+            <label for="charge_date">扣費日期</label>
+          </div>
+          <div nz-form-control nz-col [nzSpan]="19" >
+            <nz-datepicker formControlName="charge_date" [nzPlaceHolder]="'選擇扣費日期'"></nz-datepicker>
+          </div>
+        </div>
+        <div nz-form-item nz-row >
+          <div nz-form-label nz-col [nzSpan]="5">
+            <label for="type">類型</label>
+          </div>
+          <div nz-form-control nz-col [nzSpan]="19" >
+            <nz-select style="width: 100px;" formControlName="type" [nzPlaceHolder]="'選擇類型'" nzAllowClear>
+              <nz-option *ngFor="let option of options" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
+              </nz-option>
+            </nz-select>
+          </div>
+        </div>
+        <div nz-form-item nz-row >
+          <div nz-form-label nz-col [nzSpan]="5">
+            <label for="charge_time">收費時長</label>
+          </div>
+          <div nz-form-control nz-col [nzSpan]="19" >
+            <nz-input formControlName="charge_time" [nzPlaceHolder]="'輸入收費時長'" >
+              <ng-template #addOnAfter>小時</ng-template>
+            </nz-input>
+          </div>
+        </div>
+        <div nz-form-item nz-row >
+          <div nz-form-label nz-col [nzSpan]="5">
+            <label for="charge_class_num">收費堂數</label>
+          </div>
+          <div nz-form-control nz-col [nzSpan]="19" >
+            <nz-input formControlName="charge_class_num" [nzPlaceHolder]="'輸入收費堂數'">
+            </nz-input>
+          </div>
+        </div>
+        <div nz-form-item nz-row >
+          <div nz-form-label nz-col [nzSpan]="5">
+            <label for="protocol_class_num">協議課時費</label>
+          </div>
+          <div nz-form-control nz-col [nzSpan]="19" >
+            <nz-input formControlName="protocol_class_num" [nzPlaceHolder]="'輸入協議課時費'">
+            </nz-input>
+          </div>
+        </div>
+        <div nz-form-item nz-row >
+          <div nz-form-label nz-col [nzSpan]="5">
+            <label for="recieved_money">實收金額</label>
+          </div>
+          <div nz-form-control nz-col [nzSpan]="19" >
+            <nz-input formControlName="recieved_money" [nzPlaceHolder]="'輸入實收金額'">
+            </nz-input>
+          </div>
+        </div>
+        <div nz-form-item nz-row >
+          <div nz-form-label nz-col [nzSpan]="5">
+            <label for="commission_change">佣金變化</label>
+          </div>
+          <div nz-form-control nz-col [nzSpan]="19" >
+            <nz-input formControlName="commission_change" [nzPlaceHolder]="'輸入佣金變化'">
+            </nz-input>
+          </div>
+        </div>
+        <div nz-form-item nz-row >
+          <div nz-form-label nz-col [nzSpan]="5">
+            <label for="remark">備註</label>
+          </div>
+          <div nz-form-control nz-col [nzSpan]="19" >
+            <nz-input nzType="textarea" formControlName="remark" [nzPlaceHolder]="'輸入備註'">
+            </nz-input>
+          </div>
+        </div>
+      </form>
+    </ng-template>
+  </nz-modal>
 </div>

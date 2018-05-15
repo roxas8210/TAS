@@ -11,7 +11,7 @@ export class CaseFollowRemarkComponent implements OnInit {
 
   remindDate = '2018-05-14';
 
-  remindTime = '12:25';
+  remindTime = new Date();
 
   selectAll = false;
 
@@ -43,6 +43,12 @@ export class CaseFollowRemarkComponent implements OnInit {
   }];
 
   constructor() { }
+
+  selectAllCheckbox() {
+    this.remarkList.map((element, index) => {
+      element.checked = this.selectAll;
+    });
+  }
 
   ngOnInit() {
   }

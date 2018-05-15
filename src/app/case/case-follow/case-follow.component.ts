@@ -3,6 +3,7 @@ import { TabbarService } from '../../service/tabbar.service';
 import { district } from '../../option-data/district.data';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import { HK2 } from '../../option-data/hongkong2.data';
 
 @Component({
   selector: 'app-case-follow',
@@ -11,9 +12,13 @@ import { Router } from '@angular/router';
 })
 export class CaseFollowComponent implements OnInit {
 
+  // 地區選擇（香港、江門）
   districtSelectedOption;
 
   districtOptions = district;
+
+  // 地區選項，快速搜索欄
+  areaOptions = HK2;
 
   currentPage = 1;
 
@@ -173,7 +178,7 @@ export class CaseFollowComponent implements OnInit {
 
   ngOnInit() {
     const page = {
-      'id': 31,
+      'id': 35,
       'title': '個案跟進',
       'url': '/index/case/follow',
       'activeStatus': true

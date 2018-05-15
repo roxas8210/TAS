@@ -1,0 +1,17 @@
+.district {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.district p {
+  font-size: 14px;
+  line-height: 42px;
+  flex-shrink: 0;
+}
+.case-add-container {
+  background-color: white;
+  padding: 0 20px;
+  box-sizing: border-box;
+  box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.15);
+}

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-teacher-info',
@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./teacher-info.component.less']
 })
 export class TeacherInfoComponent implements OnInit {
+
+  @Input() editStatus;
 
   levelOptions = [{
     label: '一级',

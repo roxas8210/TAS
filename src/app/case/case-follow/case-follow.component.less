@@ -48,12 +48,21 @@
             .search-row2 {
                 width: 100%;
                 display: flex;
-                justify-content: space-between;
+                justify-content: flex-start;
                 margin-top: 10px;
                 align-items: center;
+                p {
+                    font-size: 14px;
+                    line-height: 42px;
+                    flex-shrink: 0;
+                }
+                nz-input {
+                    margin-right: 10px;
+                }
                 form {
                     display: flex;
                     align-items: center;
+                    margin-right: 10px;
                     .search-case-status {
                         font-size: 14px;
                     }

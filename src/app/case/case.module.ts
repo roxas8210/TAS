@@ -13,6 +13,9 @@ import { CaseFollowPayRecordComponent } from './case-follow-pay-record/case-foll
 import { CaseFollowClassRecordComponent } from './case-follow-class-record/case-follow-class-record.component';
 import { NzModalService } from 'ng-zorro-antd';
 import { CaseFollowPayDetailsComponent } from './case-follow-pay-details/case-follow-pay-details.component';
+import { CaseAddComponent } from './case-add/case-add.component';
+import { CaseAddClientComponent } from './case-add-client/case-add-client.component';
+import { CaseSelectClientComponent } from './case-select-client/case-select-client.component';
 
 @NgModule({
   imports: [
@@ -31,7 +34,10 @@ import { CaseFollowPayDetailsComponent } from './case-follow-pay-details/case-fo
     CaseFollowRemarkComponent,
     CaseFollowPayRecordComponent,
     CaseFollowClassRecordComponent,
-    CaseFollowPayDetailsComponent
+    CaseFollowPayDetailsComponent,
+    CaseAddComponent,
+    CaseAddClientComponent,
+    CaseSelectClientComponent
   ],
   providers: [NzModalService]
 })

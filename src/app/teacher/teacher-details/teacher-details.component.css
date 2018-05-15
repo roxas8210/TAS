@@ -40,6 +40,7 @@
   overflow: auto;
   padding: 0 20px !important;
   box-sizing: border-box;
+  margin-bottom: 10px;
 }
 .client-details .fns {
   flex-shrink: 0;

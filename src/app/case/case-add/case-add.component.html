@@ -1,0 +1,20 @@
+<div class="district">
+  <p>地區選擇：</p>
+  <nz-select style="width: 120px;" [(ngModel)]="selectedDistrict" [nzPlaceHolder]="'選擇區域'">
+    <nz-option *ngFor="let option of districtOptions" [nzLabel]="option.label" [nzValue]="option.value" [nzDisabled]="option.disabled">
+    </nz-option>
+  </nz-select>
+</div>
+<div class="case-add-container">
+  <nz-tabset [(nzSelectedIndex)]="selectedIndex" >
+    <nz-tab *ngFor="let tab of addTabs">
+      <ng-template #nzTabHeading>
+        {{tab.name}}
+      </ng-template>
+      <div class="switch-container">
+        <app-case-add-client [ngStyle]="{'display': selectedIndex === 0? 'block': 'none'}"></app-case-add-client>
+        <app-case-select-client [ngStyle]="{'display': selectedIndex === 1? 'block': 'none'}"></app-case-select-client>
+      </div>
+    </nz-tab>
+  </nz-tabset>
+</div>

@@ -19,6 +19,7 @@ import { DepartmentComponent } from '../employee/department/department.component
 import { CaseFollowComponent } from '../case/case-follow/case-follow.component';
 import { AuthSettingComponent } from '../employee/auth-setting/auth-setting.component';
 import { CaseFollowDetailsComponent } from '../case/case-follow-details/case-follow-details.component';
+import { CaseAddComponent } from '../case/case-add/case-add.component';
 
 /* index模塊路由
 *  /index/system/setting為“系統設置”路由
@@ -75,6 +76,9 @@ const routes: Routes = [{
     }, {
         path: 'case/follow',
         component: CaseFollowComponent
+    }, {
+        path: 'case/add',
+        component: CaseAddComponent
     }, {
         path: 'employee/department',
         component: DepartmentComponent

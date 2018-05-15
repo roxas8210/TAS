@@ -41,3 +41,73 @@
 .ant-table-tbody > tr > td {
     padding: 0 !important;
 }
+
+.selected-info {
+    width: 400px;
+    height: auto;
+    overflow: hidden;
+    border: 1px solid #b3b3b3;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    .selected-head {
+        width: 100%;
+        height: auto;
+        overflow: hidden;
+        text-align: center;
+        border-bottom: 1px solid #e1e1e1;
+        p {
+            font-size: 14px;
+            line-height: 42px;
+        }
+    }
+    .selected-body {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        .body-item {
+            width: 50%;
+            box-sizing: border-box;
+            border-bottom: 1px solid #e1e1e1;
+            text-align: left;
+            padding-left: 10px;
+            p {
+                font-size: 14px;
+                line-height: 42px;
+            }
+        }
+        .body-left {
+            border-right: 1px solid #e1e1e1;
+        }
+        .body-bottom {
+            width: 100%;
+            height: auto;
+            overflow: hidden;
+            text-align: left;
+            padding-left: 10px;
+            box-sizing: border-box;
+            border-bottom: 1px solid #e1e1e1;
+            p {
+                font-size: 14px;
+                line-height: 41px;
+            }
+        }
+        .class-info {
+            width: 100%;
+            height: auto;
+            overflow: hidden;
+            padding-left: 10px;
+            box-sizing: border-box;
+            .first-class {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                p {
+                    font-size: 14px;
+                    line-height: 42px;
+                    flex-shrink: 0;
+                }
+            }
+        }
+    }
+}

@@ -20,8 +20,6 @@ export class CaseFollowDetailsComponent implements OnInit {
   }, {
     name: '導師選擇'
   }, {
-    name: '付款詳情'
-  }, {
     name: '付款相關記錄'
   }, {
     name: '補習備註'

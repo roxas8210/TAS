@@ -7,6 +7,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SelectTeacherComponent implements OnInit {
 
+  // 是否已選擇導師
+  selected = false;
+
+  // 已選擇導師的信息
+  selected_teacher = {
+    id: '987654321',
+    sex: '女',
+    name: '李小姐',
+    phone: '12354567',
+    language: '中文（廣東話）',
+    livingArea: '銅鑼灣',
+    highestEdu: '碩士',
+    livingPoint: '豪園',
+    job: '在職教師',
+    introduce: '大家好，我是張家輝。'
+  };
+
+  // 選擇首堂時間
+  first_class = {
+    date: '2018-05-15',
+    time: new Date()
+  };
+
   currentPage = 1;
 
   // 導師自薦列表
@@ -16,10 +39,13 @@ export class SelectTeacherComponent implements OnInit {
     highestEdu: '碩士',
     job: '在職教師',
     phone: '12345678',
-    message: '無',
-    remark: '選我選我',
-    existCase: 'A123456',
-    oldCase: 'A2123456',
+    existCase: [{
+      name: 'A2123456',
+    }, {
+      name: 'A2123457',
+    }, {
+      name: 'A2123458',
+    }],
     registDate: '2018/05/09',
     checked: false
   }, {
@@ -28,10 +54,13 @@ export class SelectTeacherComponent implements OnInit {
     highestEdu: '碩士',
     job: '在職教師',
     phone: '12345678',
-    message: '無',
-    remark: '選我選我',
-    existCase: 'A123456',
-    oldCase: 'A2123456',
+    existCase: [{
+      name: 'A2123456',
+    }, {
+      name: 'A2123457',
+    }, {
+      name: 'A2123458',
+    }],
     registDate: '2018/05/09',
     checked: false
   }, {
@@ -40,10 +69,13 @@ export class SelectTeacherComponent implements OnInit {
     highestEdu: '碩士',
     job: '在職教師',
     phone: '12345678',
-    message: '無',
-    remark: '選我選我',
-    existCase: 'A123456',
-    oldCase: 'A2123456',
+    existCase: [{
+      name: 'A2123456',
+    }, {
+      name: 'A2123457',
+    }, {
+      name: 'A2123458',
+    }],
     registDate: '2018/05/09',
     checked: false
   }, {
@@ -52,10 +84,13 @@ export class SelectTeacherComponent implements OnInit {
     highestEdu: '碩士',
     job: '在職教師',
     phone: '12345678',
-    message: '無',
-    remark: '選我選我',
-    existCase: 'A123456',
-    oldCase: 'A2123456',
+    existCase: [{
+      name: 'A2123456',
+    }, {
+      name: 'A2123457',
+    }, {
+      name: 'A2123458',
+    }],
     registDate: '2018/05/09',
     checked: false
   }, {
@@ -64,10 +99,13 @@ export class SelectTeacherComponent implements OnInit {
     highestEdu: '碩士',
     job: '在職教師',
     phone: '12345678',
-    message: '無',
-    remark: '選我選我',
-    existCase: 'A123456',
-    oldCase: 'A2123456',
+    existCase: [{
+      name: 'A2123456',
+    }, {
+      name: 'A2123457',
+    }, {
+      name: 'A2123458',
+    }],
     registDate: '2018/05/09',
     checked: false
   }, {
@@ -76,10 +114,13 @@ export class SelectTeacherComponent implements OnInit {
     highestEdu: '碩士',
     job: '在職教師',
     phone: '12345678',
-    message: '無',
-    remark: '選我選我',
-    existCase: 'A123456',
-    oldCase: 'A2123456',
+    existCase: [{
+      name: 'A2123456',
+    }, {
+      name: 'A2123457',
+    }, {
+      name: 'A2123458',
+    }],
     registDate: '2018/05/09',
     checked: false
   }, {
@@ -88,10 +129,13 @@ export class SelectTeacherComponent implements OnInit {
     highestEdu: '碩士',
     job: '在職教師',
     phone: '12345678',
-    message: '無',
-    remark: '選我選我',
-    existCase: 'A123456',
-    oldCase: 'A2123456',
+    existCase: [{
+      name: 'A2123456',
+    }, {
+      name: 'A2123457',
+    }, {
+      name: 'A2123458',
+    }],
     registDate: '2018/05/09',
     checked: false
   }, {
@@ -100,10 +144,13 @@ export class SelectTeacherComponent implements OnInit {
     highestEdu: '碩士',
     job: '在職教師',
     phone: '12345678',
-    message: '無',
-    remark: '選我選我',
-    existCase: 'A123456',
-    oldCase: 'A2123456',
+    existCase: [{
+      name: 'A2123456',
+    }, {
+      name: 'A2123457',
+    }, {
+      name: 'A2123458',
+    }],
     registDate: '2018/05/09',
     checked: false
   }, {
@@ -112,10 +159,13 @@ export class SelectTeacherComponent implements OnInit {
     highestEdu: '碩士',
     job: '在職教師',
     phone: '12345678',
-    message: '無',
-    remark: '選我選我',
-    existCase: 'A123456',
-    oldCase: 'A2123456',
+    existCase: [{
+      name: 'A2123456',
+    }, {
+      name: 'A2123457',
+    }, {
+      name: 'A2123458',
+    }],
     registDate: '2018/05/09',
     checked: false
   }];
@@ -127,10 +177,13 @@ export class SelectTeacherComponent implements OnInit {
     highestEdu: '碩士',
     job: '在職教師',
     phone: '12345678',
-    message: '無',
-    remark: '選我選我',
-    existCase: 'A123456',
-    oldCase: 'A2123456',
+    existCase: [{
+      name: 'A2123456',
+    }, {
+      name: 'A2123457',
+    }, {
+      name: 'A2123458',
+    }],
     registDate: '2018/05/09',
     checked: false
   }, {
@@ -139,10 +192,13 @@ export class SelectTeacherComponent implements OnInit {
     highestEdu: '碩士',
     job: '在職教師',
     phone: '12345678',
-    message: '無',
-    remark: '選我選我',
-    existCase: 'A123456',
-    oldCase: 'A2123456',
+    existCase: [{
+      name: 'A2123456',
+    }, {
+      name: 'A2123457',
+    }, {
+      name: 'A2123458',
+    }],
     registDate: '2018/05/09',
     checked: false
   }, {
@@ -151,10 +207,13 @@ export class SelectTeacherComponent implements OnInit {
     highestEdu: '碩士',
     job: '在職教師',
     phone: '12345678',
-    message: '無',
-    remark: '選我選我',
-    existCase: 'A123456',
-    oldCase: 'A2123456',
+    existCase: [{
+      name: 'A2123456',
+    }, {
+      name: 'A2123457',
+    }, {
+      name: 'A2123458',
+    }],
     registDate: '2018/05/09',
     checked: false
   }, {
@@ -163,10 +222,13 @@ export class SelectTeacherComponent implements OnInit {
     highestEdu: '碩士',
     job: '在職教師',
     phone: '12345678',
-    message: '無',
-    remark: '選我選我',
-    existCase: 'A123456',
-    oldCase: 'A2123456',
+    existCase: [{
+      name: 'A2123456',
+    }, {
+      name: 'A2123457',
+    }, {
+      name: 'A2123458',
+    }],
     registDate: '2018/05/09',
     checked: false
   }, {
@@ -175,10 +237,13 @@ export class SelectTeacherComponent implements OnInit {
     highestEdu: '碩士',
     job: '在職教師',
     phone: '12345678',
-    message: '無',
-    remark: '選我選我',
-    existCase: 'A123456',
-    oldCase: 'A2123456',
+    existCase: [{
+      name: 'A2123456',
+    }, {
+      name: 'A2123457',
+    }, {
+      name: 'A2123458',
+    }],
     registDate: '2018/05/09',
     checked: false
   }, {
@@ -187,10 +252,13 @@ export class SelectTeacherComponent implements OnInit {
     highestEdu: '碩士',
     job: '在職教師',
     phone: '12345678',
-    message: '無',
-    remark: '選我選我',
-    existCase: 'A123456',
-    oldCase: 'A2123456',
+    existCase: [{
+      name: 'A2123456',
+    }, {
+      name: 'A2123457',
+    }, {
+      name: 'A2123458',
+    }],
     registDate: '2018/05/09',
     checked: false
   }, {
@@ -199,10 +267,13 @@ export class SelectTeacherComponent implements OnInit {
     highestEdu: '碩士',
     job: '在職教師',
     phone: '12345678',
-    message: '無',
-    remark: '選我選我',
-    existCase: 'A123456',
-    oldCase: 'A2123456',
+    existCase: [{
+      name: 'A2123456',
+    }, {
+      name: 'A2123457',
+    }, {
+      name: 'A2123458',
+    }],
     registDate: '2018/05/09',
     checked: false
   }, {
@@ -211,10 +282,13 @@ export class SelectTeacherComponent implements OnInit {
     highestEdu: '碩士',
     job: '在職教師',
     phone: '12345678',
-    message: '無',
-    remark: '選我選我',
-    existCase: 'A123456',
-    oldCase: 'A2123456',
+    existCase: [{
+      name: 'A2123456',
+    }, {
+      name: 'A2123457',
+    }, {
+      name: 'A2123458',
+    }],
     registDate: '2018/05/09',
     checked: false
   }, {
@@ -223,10 +297,13 @@ export class SelectTeacherComponent implements OnInit {
     highestEdu: '碩士',
     job: '在職教師',
     phone: '12345678',
-    message: '無',
-    remark: '選我選我',
-    existCase: 'A123456',
-    oldCase: 'A2123456',
+    existCase: [{
+      name: 'A2123456',
+    }, {
+      name: 'A2123457',
+    }, {
+      name: 'A2123458',
+    }],
     registDate: '2018/05/09',
     checked: false
   }];
@@ -254,6 +331,11 @@ export class SelectTeacherComponent implements OnInit {
     });
     this.shortListData.push(...systemSelected);
     console.log(this.shortListData);
+  }
+
+  // 點擊選擇導師
+  goSelecte() {
+    this.selected = true;
   }
 
   ngOnInit() {

@@ -25,33 +25,40 @@
           <div><span>有待導師確認</span></div>
         </div>
         <div class="quick-search">
-          <nz-input [nzType]="'search'" [nzPlaceHolder]="'請輸入客戶編號、姓名、手提電話等進行搜索'" [(ngModel)]="quickSearch" style="width: 300px;" (nzOnSearch)="onSearch($event)"></nz-input>
+          <!-- <nz-input [nzType]="'search'" [nzPlaceHolder]="'請輸入客戶編號、姓名、手提電話等進行搜索'" [(ngModel)]="quickSearch" style="width: 300px;" (nzOnSearch)="onSearch($event)"></nz-input> -->
         </div>
       </div>
       <div class="search-row2">
+        <p>篩選：</p>
+        <nz-input [nzType]="'search'" [nzPlaceHolder]="'請輸入客戶編號、姓名、手提電話等進行搜索'" [(ngModel)]="quickSearch" style="width: 300px;" (nzOnSearch)="onSearch($event)"></nz-input>
         <form [formGroup]="searchForm">
-          <div class="search-case-status">
-            篩選：
-            <nz-select style="width: 60px;" formControllName="type" [nzPlaceHolder]="'類別'" nzAllowClear>
+          <div class="search-case-status" style="display: flex;align-items: center;" >
+            <!-- <nz-select style="width: 60px;" formControllName="type" [nzPlaceHolder]="'類別'" nzAllowClear>
               <nz-option *ngFor="let option of typeOptions" [nzLabel]="option.label" [nzValue]="option.value">
               </nz-option>
             </nz-select>
             <nz-select style="width: 120px;" formControllName="status" [nzPlaceHolder]="'計劃'" nzAllowClear>
               <nz-option *ngFor="let option of typeOptions" [nzLabel]="option.label" [nzValue]="option.value">
               </nz-option>
-            </nz-select>
-            <nz-select style="width: 220px;" formControllName="area" [nzMode]="'multiple'" [nzPlaceHolder]="'地區'">
-              <nz-option *ngFor="let option of typeOptions" [nzLabel]="option.label" [nzValue]="option.value">
-              </nz-option>
-            </nz-select>
-            <nz-select style="width: 120px;" formControllName="sex" [nzPlaceHolder]="'導師性別'" nzAllowClear>
-              <nz-option *ngFor="let option of typeOptions" [nzLabel]="option.label" [nzValue]="option.value">
-              </nz-option>
-            </nz-select>
-            <nz-select style="width: 120px;" formControllName="price" [nzPlaceHolder]="'學費（每小時）'" nzAllowClear>
-              <nz-option *ngFor="let option of typeOptions" [nzLabel]="option.label" [nzValue]="option.value">
-              </nz-option>
-            </nz-select>
+            </nz-select> -->
+            <div style="display: flex;align-items: center;margin-right: 8px;" >
+              <nz-select style="width: 120px;" formControllName="area" [nzMode]="'multiple'" [nzPlaceHolder]="'地區'">
+                <nz-option *ngFor="let option of areaOptions" [nzLabel]="option.label" [nzValue]="option.value">
+                </nz-option>
+              </nz-select>
+            </div>
+            <div style="display: flex;align-items: center;margin-right: 8px;">
+              <nz-select style="width: 120px;" formControllName="sex" [nzPlaceHolder]="'導師性別'" nzAllowClear>
+                <nz-option *ngFor="let option of typeOptions" [nzLabel]="option.label" [nzValue]="option.value">
+                </nz-option>
+              </nz-select>
+            </div>
+            <div style="display: flex;align-items: center;margin-right: 8px;">
+              <nz-select style="width: 120px;" formControllName="price" [nzPlaceHolder]="'學費（每小時）'" nzAllowClear>
+                <nz-option *ngFor="let option of typeOptions" [nzLabel]="option.label" [nzValue]="option.value">
+                </nz-option>
+              </nz-select>
+            </div>
           </div>
         </form>
         <button type="submit" nzGhost nz-button [nzType]="'primary'">篩選</button>
@@ -63,12 +70,12 @@
           <th nz-th style="text-align: center;background-color: white;border-bottom: 1px solid rgba(0, 0, 0, 0.15);" [nzWidth]="'70px'">
             <span>個案編號</span>
           </th>
-          <th nz-th style="text-align: center;background-color: white;border-bottom: 1px solid rgba(0, 0, 0, 0.15);" [nzWidth]="'70px'">
+          <!-- <th nz-th style="text-align: center;background-color: white;border-bottom: 1px solid rgba(0, 0, 0, 0.15);" [nzWidth]="'70px'">
             <span>最新狀態</span>
           </th>
           <th nz-th style="text-align: center;background-color: white;border-bottom: 1px solid rgba(0, 0, 0, 0.15);" [nzWidth]="'50px'">
             <span>類別</span>
-          </th>
+          </th> -->
           <th nz-th style="text-align: center;background-color: white;border-bottom: 1px solid rgba(0, 0, 0, 0.15);" [nzWidth]="'40px'">
             <span>地區</span>
           </th>
@@ -120,7 +127,7 @@
               </ng-template>
             </nz-popover>
           </td>
-          <td nz-td style="padding: 8px 0;text-align: center;">
+          <!-- <td nz-td style="padding: 8px 0;text-align: center;">
             <nz-popover [nzTitle]="data.no">
               <div style="padding: 8px 0;" nz-popover>{{data.caseStatus}}</div>
               <ng-template #nzTemplate>
@@ -147,7 +154,7 @@
                 </div>
               </ng-template>
             </nz-popover>
-          </td>
+          </td> -->
           <td nz-td style="padding: 8px 0;text-align: center;">
             <nz-popover [nzTitle]="data.no">
               <div style="padding: 8px 0;" nz-popover>{{data.area}}</div>

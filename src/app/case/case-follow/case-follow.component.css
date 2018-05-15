@@ -51,13 +51,22 @@
 .case-list .list-container .search-container .search-row2 {
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   margin-top: 10px;
   align-items: center;
+}
+.case-list .list-container .search-container .search-row2 p {
+  font-size: 14px;
+  line-height: 42px;
+  flex-shrink: 0;
+}
+.case-list .list-container .search-container .search-row2 nz-input {
+  margin-right: 10px;
 }
 .case-list .list-container .search-container .search-row2 form {
   display: flex;
   align-items: center;
+  margin-right: 10px;
 }
 .case-list .list-container .search-container .search-row2 form .search-case-status {
   font-size: 14px;

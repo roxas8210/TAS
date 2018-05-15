@@ -16,14 +16,13 @@
   display: flex;
   align-items: center;
   border-bottom: 1px solid #e1e1e1;
+  padding-right: 10px;
+  box-sizing: border-box;
 }
 .remark-container .remark-edit .remark-row1 p {
   font-size: 14px;
   line-height: 42px;
   flex-shrink: 0;
-  margin: 10px;
-}
-.remark-container .remark-edit .remark-row1 button {
   margin: 10px;
 }
 .remark-container .remark-edit .remark-row2 {
@@ -40,6 +39,9 @@
 .remark-container .remark-edit .remark-row2 nz-datepicker {
   margin-right: 10px;
 }
+.remark-container .remark-edit .remark-row2 button {
+  margin: 10px;
+}
 .remark-container .remark-table {
   width: 100%;
   height: auto;
@@ -51,6 +53,7 @@
   width: 100%;
   height: auto;
   overflow: hidden;
+  margin-top: 20px;
 }
 .remark-container .delete button {
   display: block;

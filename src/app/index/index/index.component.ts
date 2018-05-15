@@ -37,7 +37,7 @@ export class IndexComponent implements OnInit {
     'subMenu': [{
       'title': '新增個案',
       'icon': 'calendar',
-      'url': '/index/case/follow'
+      'url': '/index/case/add'
     }, {
       'title': '快速搜索個案',
       'icon': 'calendar',

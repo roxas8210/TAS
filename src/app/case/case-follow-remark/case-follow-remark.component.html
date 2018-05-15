@@ -8,7 +8,6 @@
         <nz-option *ngFor="let option of employeeOptions" [nzLabel]="option.label" [nzValue]="option.value">
         </nz-option>
       </nz-select>
-      <button [nzType]="'primary'" nz-button nzGhost>確認</button>
     </div>
     <div class="remark-row2">
         <p>提醒：</p>
@@ -17,6 +16,7 @@
         <p>日期：</p>
         <nz-datepicker [(ngModel)]="remindDate" [nzPlaceHolder]="'選擇日期'"></nz-datepicker>
         <nz-timepicker [(ngModel)]="remindTime"></nz-timepicker>
+        <button [nzType]="'primary'" nz-button nzGhost>確認</button>
     </div>
   </div>
   <div class="remark-table">
@@ -24,16 +24,16 @@
       <thead nz-thead>
         <tr>
           <th nz-th nzCheckbox style="padding: 4px 0 !important;background-color: white;border-bottom: 1px solid rgba(0, 0, 0, 0.15);">
-            <label style="width: 100%;display: flex;align-items: center;justify-content: center;" nz-checkbox [(ngModel)]="selectAll" [nzIndeterminate]="selectAll">
+            <label style="width: 100%;display: flex;align-items: center;justify-content: center;" nz-checkbox [(ngModel)]="selectAll" (ngModelChange)="selectAllCheckbox()" [nzIndeterminate]="selectAll">
             </label>
           </th>
-          <th nz-th style="text-align: center;background-color: white;border-bottom: 1px solid rgba(0, 0, 0, 0.15);">
+          <th nz-th style="text-align: center;background-color: white;border-bottom: 1px solid rgba(0, 0, 0, 0.15);" [nzWidth]="'150px'">
             <span>備註時間</span>
           </th>
-          <th nz-th style="text-align: center;background-color: white;border-bottom: 1px solid rgba(0, 0, 0, 0.15);">
+          <th nz-th style="text-align: center;background-color: white;border-bottom: 1px solid rgba(0, 0, 0, 0.15);" [nzWidth]="'100px'">
             <span>操作人</span>
           </th>
-          <th nz-th style="text-align: center;background-color: white;border-bottom: 1px solid rgba(0, 0, 0, 0.15);">
+          <th nz-th style="text-align: center;background-color: white;border-bottom: 1px solid rgba(0, 0, 0, 0.15);" [nzWidth]="'300px'">
             <span>備註信息</span>
           </th>
         </tr>

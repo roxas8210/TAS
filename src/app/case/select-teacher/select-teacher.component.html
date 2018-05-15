@@ -1,4 +1,4 @@
-<div class="select-teacher-container">
+<div class="select-teacher-container" *ngIf="!selected;else selectedBlock">
   <div class="self-introduce">
     <div class="self-introduce-title">
       <p>導師自薦</p>
@@ -29,18 +29,18 @@
               <th nz-th style="text-align: center;background-color: white;border-bottom: 1px solid rgba(0, 0, 0, 0.15);" [nzWidth]="'60px'">
                 <span>手提電話</span>
               </th>
-              <th nz-th style="text-align: center;background-color: white;border-bottom: 1px solid rgba(0, 0, 0, 0.15);" [nzWidth]="'60px'">
+              <!-- <th nz-th style="text-align: center;background-color: white;border-bottom: 1px solid rgba(0, 0, 0, 0.15);" [nzWidth]="'60px'">
                 <span>是否留言</span>
-              </th>
-              <th nz-th style="text-align: center;background-color: white;border-bottom: 1px solid rgba(0, 0, 0, 0.15);" [nzWidth]="'100px'">
+              </th> -->
+              <!-- <th nz-th style="text-align: center;background-color: white;border-bottom: 1px solid rgba(0, 0, 0, 0.15);" [nzWidth]="'100px'">
                 <span>備註</span>
-              </th>
+              </th> -->
               <th nz-th style="text-align: center;background-color: white;border-bottom: 1px solid rgba(0, 0, 0, 0.15);" [nzWidth]="'100px'">
                 <span>已有其他個案</span>
               </th>
-              <th nz-th style="text-align: center;background-color: white;border-bottom: 1px solid rgba(0, 0, 0, 0.15);" [nzWidth]="'60px'">
+              <!-- <th nz-th style="text-align: center;background-color: white;border-bottom: 1px solid rgba(0, 0, 0, 0.15);" [nzWidth]="'60px'">
                 <span>舊有個案</span>
-              </th>
+              </th> -->
               <th nz-th style="text-align: center;background-color: white;border-bottom: 1px solid rgba(0, 0, 0, 0.15);" [nzWidth]="'60px'">
                 <span>登記日期</span>
               </th>
@@ -55,11 +55,22 @@
             <td nz-td style="padding: 4px 0 !important;text-align: center;" width="30px">{{data.sex}}</td>
             <td nz-td style="padding: 4px 0 !important;text-align: center;" width="60px">{{data.highestEdu}}</td>
             <td nz-td style="padding: 4px 0 !important;text-align: center;" width="60px">{{data.job}}</td>
-            <td nz-td style="padding: 4px 0 !important;text-align: center;" width="60px">{{data.phone}}</td>
-            <td nz-td style="padding: 4px 0 !important;text-align: center;" width="60px">{{data.message}}</td>
-            <td nz-td style="padding: 4px 0 !important;text-align: center;" width="100px">{{data.remark}}</td>
-            <td nz-td style="padding: 4px 0 !important;text-align: center;" width="100px">{{data.existCase}}</td>
-            <td nz-td style="padding: 4px 0 !important;text-align: center;" width="60px">{{data.oldCase}}</td>
+            <td nz-td style="padding: 4px 0 !important;text-align: center;" width="60px"><a [href]="data.phone">call</a></td>
+            <!-- <td nz-td style="padding: 4px 0 !important;text-align: center;" width="60px">{{data.message}}</td> -->
+            <!-- <td nz-td style="padding: 4px 0 !important;text-align: center;" width="100px">{{data.remark}}</td> -->
+            <td nz-td style="padding: 4px 0 !important;text-align: center;" width="100px">
+              <nz-popover [nzTitle]="'已有個案'">
+                <span nz-popover>{{data.existCase.length}}</span>
+                <ng-template #nzTemplate>
+                  <div>
+                    <p *ngFor="let case of data.existCase">
+                      <a>{{case.name}}</a>
+                    </p>
+                  </div>
+                </ng-template>
+              </nz-popover>
+            </td>
+            <!-- <td nz-td style="padding: 4px 0 !important;text-align: center;" width="60px">{{data.oldCase}}</td> -->
             <td nz-td style="padding: 4px 0 !important;text-align: center;" width="60px">{{data.registDate}}</td>
             <td nz-td nzCheckbox style="padding: 4px 0 !important;display: flex;justify-content: center;" width="60px">
               <label nz-checkbox [(ngModel)]="data.checked" style="display: flex;align-items: center;">
@@ -98,18 +109,18 @@
               <th nz-th style="text-align: center;background-color: white;border-bottom: 1px solid rgba(0, 0, 0, 0.15);" [nzWidth]="'60px'">
                 <span>手提電話</span>
               </th>
-              <th nz-th style="text-align: center;background-color: white;border-bottom: 1px solid rgba(0, 0, 0, 0.15);" [nzWidth]="'60px'">
+              <!-- <th nz-th style="text-align: center;background-color: white;border-bottom: 1px solid rgba(0, 0, 0, 0.15);" [nzWidth]="'60px'">
                 <span>是否留言</span>
               </th>
               <th nz-th style="text-align: center;background-color: white;border-bottom: 1px solid rgba(0, 0, 0, 0.15);" [nzWidth]="'100px'">
                 <span>備註</span>
-              </th>
+              </th> -->
               <th nz-th style="text-align: center;background-color: white;border-bottom: 1px solid rgba(0, 0, 0, 0.15);" [nzWidth]="'100px'">
                 <span>已有其他個案</span>
               </th>
-              <th nz-th style="text-align: center;background-color: white;border-bottom: 1px solid rgba(0, 0, 0, 0.15);" [nzWidth]="'60px'">
+              <!-- <th nz-th style="text-align: center;background-color: white;border-bottom: 1px solid rgba(0, 0, 0, 0.15);" [nzWidth]="'60px'">
                 <span>舊有個案</span>
-              </th>
+              </th> -->
               <th nz-th style="text-align: center;background-color: white;border-bottom: 1px solid rgba(0, 0, 0, 0.15);" [nzWidth]="'60px'">
                 <span>登記日期</span>
               </th>
@@ -124,11 +135,22 @@
             <td nz-td style="padding: 4px 0 !important;text-align: center;" width="30px">{{data.sex}}</td>
             <td nz-td style="padding: 4px 0 !important;text-align: center;" width="60px">{{data.highestEdu}}</td>
             <td nz-td style="padding: 4px 0 !important;text-align: center;" width="60px">{{data.job}}</td>
-            <td nz-td style="padding: 4px 0 !important;text-align: center;" width="60px">{{data.phone}}</td>
-            <td nz-td style="padding: 4px 0 !important;text-align: center;" width="60px">{{data.message}}</td>
-            <td nz-td style="padding: 4px 0 !important;text-align: center;" width="100px">{{data.remark}}</td>
-            <td nz-td style="padding: 4px 0 !important;text-align: center;" width="100px">{{data.existCase}}</td>
-            <td nz-td style="padding: 4px 0 !important;text-align: center;" width="60px">{{data.oldCase}}</td>
+            <td nz-td style="padding: 4px 0 !important;text-align: center;" width="60px"><a [href]="data.phone">call</a></td>
+            <!-- <td nz-td style="padding: 4px 0 !important;text-align: center;" width="60px">{{data.message}}</td> -->
+            <!-- <td nz-td style="padding: 4px 0 !important;text-align: center;" width="100px">{{data.remark}}</td> -->
+            <td nz-td style="padding: 4px 0 !important;text-align: center;" width="100px">
+              <nz-popover [nzTitle]="'已有個案'">
+                <span nz-popover>{{data.existCase.length}}</span>
+                <ng-template #nzTemplate>
+                  <div>
+                    <p *ngFor="let case of data.existCase">
+                      <a>{{case.name}}</a>
+                    </p>
+                  </div>
+                </ng-template>
+              </nz-popover>
+            </td>
+            <!-- <td nz-td style="padding: 4px 0 !important;text-align: center;" width="60px">{{data.oldCase}}</td> -->
             <td nz-td style="padding: 4px 0 !important;text-align: center;" width="60px">{{data.registDate}}</td>
             <td nz-td nzCheckbox style="padding: 4px 0 !important;display: flex;justify-content: center;" width="60px">
               <label nz-checkbox [(ngModel)]="data.checked" style="display: flex;align-items: center;">
@@ -167,18 +189,18 @@
               <th nz-th style="text-align: center;background-color: white;border-bottom: 1px solid rgba(0, 0, 0, 0.15);" [nzWidth]="'60px'">
                 <span>手提電話</span>
               </th>
-              <th nz-th style="text-align: center;background-color: white;border-bottom: 1px solid rgba(0, 0, 0, 0.15);" [nzWidth]="'60px'">
+              <!-- <th nz-th style="text-align: center;background-color: white;border-bottom: 1px solid rgba(0, 0, 0, 0.15);" [nzWidth]="'60px'">
                 <span>是否留言</span>
               </th>
               <th nz-th style="text-align: center;background-color: white;border-bottom: 1px solid rgba(0, 0, 0, 0.15);" [nzWidth]="'100px'">
                 <span>備註</span>
-              </th>
+              </th> -->
               <th nz-th style="text-align: center;background-color: white;border-bottom: 1px solid rgba(0, 0, 0, 0.15);" [nzWidth]="'100px'">
                 <span>已有其他個案</span>
               </th>
-              <th nz-th style="text-align: center;background-color: white;border-bottom: 1px solid rgba(0, 0, 0, 0.15);" [nzWidth]="'60px'">
+              <!-- <th nz-th style="text-align: center;background-color: white;border-bottom: 1px solid rgba(0, 0, 0, 0.15);" [nzWidth]="'60px'">
                 <span>舊有個案</span>
-              </th>
+              </th> -->
               <th nz-th style="text-align: center;background-color: white;border-bottom: 1px solid rgba(0, 0, 0, 0.15);" [nzWidth]="'60px'">
                 <span>登記日期</span>
               </th>
@@ -193,11 +215,22 @@
             <td nz-td style="padding: 4px 0 !important;text-align: center;" width="30px">{{data.sex}}</td>
             <td nz-td style="padding: 4px 0 !important;text-align: center;" width="60px">{{data.highestEdu}}</td>
             <td nz-td style="padding: 4px 0 !important;text-align: center;" width="60px">{{data.job}}</td>
-            <td nz-td style="padding: 4px 0 !important;text-align: center;" width="60px">{{data.phone}}</td>
-            <td nz-td style="padding: 4px 0 !important;text-align: center;" width="60px">{{data.message}}</td>
-            <td nz-td style="padding: 4px 0 !important;text-align: center;" width="100px">{{data.remark}}</td>
-            <td nz-td style="padding: 4px 0 !important;text-align: center;" width="100px">{{data.existCase}}</td>
-            <td nz-td style="padding: 4px 0 !important;text-align: center;" width="60px">{{data.oldCase}}</td>
+            <td nz-td style="padding: 4px 0 !important;text-align: center;" width="60px"><a [href]="data.phone" >call</a></td>
+            <!-- <td nz-td style="padding: 4px 0 !important;text-align: center;" width="60px">{{data.message}}</td> -->
+            <!-- <td nz-td style="padding: 4px 0 !important;text-align: center;" width="100px">{{data.remark}}</td> -->
+            <td nz-td style="padding: 4px 0 !important;text-align: center;" width="100px">
+              <nz-popover [nzTitle]="'已有個案'">
+                <span nz-popover>{{data.existCase.length}}</span>
+                <ng-template #nzTemplate>
+                  <div>
+                    <p *ngFor="let case of data.existCase">
+                      <a>{{case.name}}</a>
+                    </p>
+                  </div>
+                </ng-template>
+              </nz-popover>
+            </td>
+            <!-- <td nz-td style="padding: 4px 0 !important;text-align: center;" width="60px">{{data.oldCase}}</td> -->
             <td nz-td style="padding: 4px 0 !important;text-align: center;" width="60px">{{data.registDate}}</td>
             <td nz-td nzCheckbox style="padding: 4px 0 !important;display: flex;justify-content: center;" width="60px">
               <label nz-checkbox [(ngModel)]="data.checked" style="display: flex;align-items: center;">
@@ -207,8 +240,51 @@
         </tbody>
       </nz-table>
       <div class="self-introduce-shortList">
-        <button nz-button nzGhost [nzType]="'primary'">選擇導師</button>
+        <button (click)="goSelecte()" nz-button nzGhost [nzType]="'primary'">選擇導師</button>
       </div>
     </div>
   </div>
 </div>
+<ng-template #selectedBlock>
+  <div class="selected-info">
+    <div class="selected-head">
+      <p>{{selected_teacher.name}}</p>
+    </div>
+    <div class="selected-body">
+      <div class="body-left body-item">
+        <p>身份證ID：{{selected_teacher.id}}</p>
+      </div>
+      <div class="body-item">
+        <p>性別：{{selected_teacher.sex}}</p>
+      </div>
+      <div class="body-left body-item">
+        <p>手提電話：{{selected_teacher.phone}}</p>
+      </div>
+      <div class="body-item">
+        <p>教學語言：{{selected_teacher.language}}</p>
+      </div>
+      <div class="body-left body-item">
+        <p>居住地區:{{selected_teacher.livingArea}}</p>
+      </div>
+      <div class="body-item">
+        <p>最高學歷：{{selected_teacher.highestEdu}}</p>
+      </div>
+      <div class="body-left body-item">
+        <p>居住地點:{{selected_teacher.livingPoint}}</p>
+      </div>
+      <div class="body-item">
+        <p>現時職業：{{selected_teacher.job}}</p>
+      </div>
+      <div class="body-bottom">
+        <p>導師簡介：{{selected_teacher.introduce}}</p>
+      </div>
+      <div class="class-info">
+        <div class="first-class">
+          <p>首堂時間：</p>
+          <nz-datepicker style="flex-grow: 1;margin-right: 4px;" [(ngModel)]="first_class.date" [nzPlaceHolder]="'選擇日期'"></nz-datepicker>
+          <nz-timepicker style="flex-grow: 1;" [(ngModel)]="first_class.time" [nzFormat]="'HH:mm'" ></nz-timepicker>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-template>

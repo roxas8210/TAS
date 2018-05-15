@@ -1,0 +1,179 @@
+<form nz-form [formGroup]="addClientForm" >
+  <nz-table style="border: none;" [nzCustomNoResult]="true" >
+    <tr>
+      <td nz-td>
+        <div nz-row nz-form-item >
+          <div nz-col nz-form-label [nzSpan]="8">
+            <label for="name">姓名</label>
+          </div>
+          <div nz-col nz-form-control [nzSpan]="16" >
+            <nz-input formControlName="name" [nzPlaceHolder]="'請輸入客戶姓名'"></nz-input>
+          </div>
+        </div>
+      </td>
+      <td nz-td>
+        <div nz-row nz-form-item>
+          <div nz-col nz-form-label [nzSpan]="8">
+            <label for="email">Email地址</label>
+          </div>
+          <div nz-col nz-form-control [nzSpan]="16">
+            <nz-input formControlName="email" [nzPlaceHolder]="'請輸入Email地址'"></nz-input>
+          </div>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td nz-td>
+        <div nz-row nz-form-item>
+          <div nz-col nz-form-label [nzSpan]="8">
+            <label for="idNo">身份證ID</label>
+          </div>
+          <div nz-col nz-form-control [nzSpan]="16">
+            <nz-input formControlName="idNo" [nzPlaceHolder]="'請輸入身份證ID'"></nz-input>
+          </div>
+        </div>
+      </td>
+      <td nz-td>
+        <div nz-row nz-form-item>
+          <div nz-col nz-form-label [nzSpan]="8">
+            <label for="sex">性別</label>
+          </div>
+          <div nz-col nz-form-control [nzSpan]="16">
+            <nz-select style="width: 100%;" formControlName="sex" [nzPlaceHolder]="'請選擇性別'" nzAllowClear>
+              <nz-option *ngFor="let option of sexOptions" [nzLabel]="option.label" [nzValue]="option.value">
+              </nz-option>
+            </nz-select>
+          </div>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td nz-td>
+        <div nz-row nz-form-item>
+          <div nz-col nz-form-label [nzSpan]="8">
+            <label for="idName">身份證中文姓名</label>
+          </div>
+          <div nz-col nz-form-control [nzSpan]="16">
+            <nz-input formControlName="idName" [nzPlaceHolder]="'請輸入身份證中文姓名'"></nz-input>
+          </div>
+        </div>
+      </td>
+      <td nz-td>
+        <div nz-row nz-form-item>
+          <div nz-col nz-form-label [nzSpan]="8">
+            <label for="idEnName">身份證英文姓名</label>
+          </div>
+          <div nz-col nz-form-control [nzSpan]="16">
+            <nz-input formControlName="idEnName" [nzPlaceHolder]="'請輸入身份證英文姓名'"></nz-input>
+          </div>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td nz-td>
+        <div nz-row nz-form-item>
+          <div nz-col nz-form-label [nzSpan]="8">
+            <label for="phone">家庭電話</label>
+          </div>
+          <div nz-col nz-form-control [nzSpan]="16">
+            <nz-input formControlName="phone" [nzPlaceHolder]="'請輸入家庭電話'"></nz-input>
+          </div>
+        </div>
+      </td>
+      <td nz-td>
+        <div nz-row nz-form-item>
+          <div nz-col nz-form-label [nzSpan]="8">
+            <label for="telephone">手提電話</label>
+          </div>
+          <div nz-col nz-form-control [nzSpan]="16">
+            <nz-input formControlName="telephone" [nzPlaceHolder]="'請輸入手提電話'"></nz-input>
+          </div>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td nz-td>
+        <div nz-row nz-form-item>
+          <div nz-col nz-form-label [nzSpan]="8">
+            <label for="fax">傳真電話</label>
+          </div>
+          <div nz-col nz-form-control [nzSpan]="16">
+            <nz-input formControlName="fax" [nzPlaceHolder]="'請輸入傳真電話'"></nz-input>
+          </div>
+        </div>
+      </td>
+      <td nz-td>
+        <div nz-row nz-form-item>
+          <div nz-col nz-form-label [nzSpan]="8">
+            <label for="otherPhone">其他電話</label>
+          </div>
+          <div nz-col nz-form-control [nzSpan]="16">
+            <nz-input formControlName="otherPhone" [nzPlaceHolder]="'請輸入其他電話'"></nz-input>
+          </div>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td nz-td>
+        <div nz-row nz-form-item>
+          <div nz-col nz-form-label [nzSpan]="8">
+            <label for="livingArea">居住地區</label>
+          </div>
+          <div nz-col nz-form-control [nzSpan]="16">
+            <nz-select style="width: 100%;" formControlName="livingArea" [nzPlaceHolder]="'請選擇居住地區'" nzAllowClear>
+              <nz-option *ngFor="let option of livingAreaOptions" [nzLabel]="option.label" [nzValue]="option.value">
+              </nz-option>
+            </nz-select>
+          </div>
+        </div>
+      </td>
+      <td nz-td>
+        <div nz-row nz-form-item>
+          <div nz-col nz-form-label [nzSpan]="8">
+            <label for="birth">出生年月</label>
+          </div>
+          <div nz-col nz-form-control [nzSpan]="16">
+            <nz-datepicker formControlName="birth" [nzPlaceHolder]="'請選擇出生年月'"></nz-datepicker>
+          </div>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td nz-td>
+        <div nz-row nz-form-item>
+          <div nz-col nz-form-label [nzSpan]="8">
+            <label for="language">主要語言</label>
+          </div>
+          <div nz-col nz-form-control [nzSpan]="16">
+            <nz-select style="width: 100%;" formControlName="language" [nzPlaceHolder]="'請選擇居住地區'" nzAllowClear>
+              <nz-option *ngFor="let option of languageOptions" [nzLabel]="option.label" [nzValue]="option.value">
+              </nz-option>
+            </nz-select>
+          </div>
+        </div>
+      </td>
+      <td nz-td>
+        <div nz-row nz-form-item>
+          <div nz-col nz-form-label [nzSpan]="8">
+            <label for="mailAddress">郵寄地址</label>
+          </div>
+          <div nz-col nz-form-control [nzSpan]="16">
+            <nz-input formControlName="mailAddress" [nzPlaceHolder]="'請輸入郵寄地址'"></nz-input>
+          </div>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td nz-td>
+        <div nz-row nz-form-item>
+          <div nz-col nz-form-label [nzSpan]="8">
+            <label for="belief">宗教信仰</label>
+          </div>
+          <div nz-col nz-form-control [nzSpan]="16">
+            <nz-input formControlName="belief" [nzPlaceHolder]="'請輸入宗教信仰'"></nz-input>
+          </div>
+        </div>
+      </td>
+    </tr>
+  </nz-table>
+</form>

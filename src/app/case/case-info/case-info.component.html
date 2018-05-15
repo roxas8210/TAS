@@ -465,6 +465,30 @@
   </div>
   <div class="submit">
     <button style="border-radius: 14px;margin-right: 10px;" nz-button nzGhost [nzType]="'primary'">更新個案</button>
+    <button (click)="finishCase()" style="border-radius: 14px;margin-right: 10px;" nz-button nzGhost [nzType]="'primary'">個案完結</button>
+    <nz-modal [nzTitle]="'個案完結'" [nzVisible]="isVisible" [nzContent]="modalContent" (nzOnCancel)="cancelModal()"
+      (nzOnOk)="commitModal()">
+      <ng-template #modalContent>
+        <form nz-form>
+          <div nz-row style="margin-bottom: 20px;">
+            <div nz-col [nzSpan]="8" >
+              <label nz-form-item-required>個案情況：</label>
+            </div>
+            <div nz-col [nzSpan]="16" >
+              <nz-input name="case_info" [(ngModel)]="finishForm.case_info" [nzPlaceHolder]="'請輸入個案情況'" ></nz-input>
+            </div>
+          </div>
+          <div nz-row>
+            <div nz-col [nzSpan]="8" >
+              <label>備註：</label>
+            </div>
+            <div nz-col [nzSpan]="16" >
+              <nz-input name="case_remark" nzType="textarea" [(ngModel)]="finishForm.case_mark" [nzPlaceHolder]="'請輸入個案備註'"></nz-input>
+            </div>
+          </div>
+        </form>
+      </ng-template>
+    </nz-modal>
   </div>
   <div class="description">
     <p>個案流程：

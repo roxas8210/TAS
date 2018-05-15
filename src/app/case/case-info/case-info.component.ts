@@ -93,15 +93,40 @@ export class CaseInfoComponent implements OnInit {
   // 協助處理
   assistant;
 
+  // 控制模態框
+  isVisible = false;
+
+  finishForm = {
+    case_info: '',
+    case_remark: ''
+  };
+
   constructor() { }
 
+  // 編輯修改
   changeStatus() {
     this.editStatus = true;
     // this.editStatus = !this.editStatus;
   }
 
+  // 完成修改
   finishChange() {
     this.editStatus = false;
+  }
+
+  // 點擊個案完結按鈕
+  finishCase() {
+    this.isVisible = true;
+  }
+
+  // 點擊個案完結彈出框取消按鈕
+  cancelModal() {
+    this.isVisible = false;
+  }
+
+  // 點擊個案完結彈出框完成按鈕
+  commitModal() {
+    this.isVisible = false;
   }
 
   ngOnInit() {
