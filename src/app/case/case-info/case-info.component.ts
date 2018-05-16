@@ -25,6 +25,27 @@ export class CaseInfoComponent implements OnInit {
     value: '導師爽約'
   }];
 
+  // 個案情況選項
+  caseStatusOptions = [{
+    label: '正常',
+    value: '正常'
+  }, {
+    label: '不實客',
+    value: '不實客'
+  }, {
+    label: '重複個案',
+    value: '重複個案'
+  }, {
+    label: '客戶要求更換導師',
+    value: '客戶要求更換導師'
+  }, {
+    label: '導師提出取消課程',
+    value: '導師提出取消課程'
+  }, {
+    label: '其他',
+    value: '其他'
+  }];
+
   caseInfo = {
     address: '沙田大圍',
     livingAddress: '沙田大圍',

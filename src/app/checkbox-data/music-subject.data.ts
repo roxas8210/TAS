@@ -1,0 +1,93 @@
+export const MusicSubject = [{
+    label: '樂理',
+    value: '樂理',
+    checked: false,
+}, {
+    label: '大提琴',
+    value: '大提琴',
+    checked: false
+}, {
+    label: '中提琴',
+    value: '中提琴',
+    checked: false
+}, {
+    label: '小提琴',
+    value: '小提琴',
+    checked: false
+}, {
+    label: '大號',
+    value: '大號',
+    checked: false
+}, {
+    label: '小號',
+    value: '小號',
+    checked: false
+}, {
+    label: '口琴',
+    value: '口琴',
+    checked: false
+}, {
+    label: '木笛',
+    value: '木笛',
+    checked: false
+}, {
+    label: '長笛',
+    value: '長笛',
+    checked: false
+}, {
+    label: '牧童笛',
+    value: '牧童笛',
+    checked: false
+}, {
+    label: '單黃管',
+    value: '單黃管',
+    checked: false
+}, {
+    label: '色士風',
+    value: '色士風',
+    checked: false
+}, {
+    label: '二胡',
+    value: '二胡',
+    checked: false
+}, {
+    label: '古箏',
+    value: '古箏',
+    checked: false
+}, {
+    label: '琵琶',
+    value: '琵琶',
+    checked: false
+}, {
+    label: '揚琴',
+    value: '揚琴',
+    checked: false
+}, {
+    label: '柳琴',
+    value: '柳琴',
+    checked: false
+}, {
+    label: '結他',
+    value: '結他',
+    checked: false
+}, {
+    label: '木結他',
+    value: '木結他',
+    checked: false
+}, {
+    label: '電結他',
+    value: '電結他',
+    checked: false
+}, {
+    label: '電子琴',
+    value: '電子琴',
+    checked: false
+}, {
+    label: '鋼琴',
+    value: '鋼琴',
+    checked: false
+}, {
+    label: '聲樂',
+    value: '聲樂',
+    checked: false
+}];

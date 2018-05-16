@@ -14,11 +14,17 @@ export class CaseFollowPayRecordComponent implements OnInit {
 
   // 扣費類型選項（待定）
   options = [{
-    label: '凍結',
-    value: '凍結'
+    label: '課款',
+    value: '課款'
   }, {
-    label: '正常',
-    value: '正常'
+    label: '罰款',
+    value: '罰款'
+  }, {
+    label: '退款',
+    value: '退款'
+  }, {
+    label: '其他',
+    value: '其他'
   }];
 
   payRecordList = [{

@@ -1,0 +1,9 @@
+.select-client .select-client-search {
+  width: 300px;
+}
+.select-client .client-list .commit-select-client {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}

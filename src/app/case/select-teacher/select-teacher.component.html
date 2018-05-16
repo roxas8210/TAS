@@ -281,8 +281,10 @@
       <div class="class-info">
         <div class="first-class">
           <p>首堂時間：</p>
-          <nz-datepicker style="flex-grow: 1;margin-right: 4px;" [(ngModel)]="first_class.date" [nzPlaceHolder]="'選擇日期'"></nz-datepicker>
-          <nz-timepicker style="flex-grow: 1;" [(ngModel)]="first_class.time" [nzFormat]="'HH:mm'" ></nz-timepicker>
+          <nz-datepicker style="flex-grow: 1;margin-right: 4px;" [(ngModel)]="first_class.date" (ngModelChange)="timeChangeStatus()" [nzPlaceHolder]="'選擇日期'"></nz-datepicker>
+          <nz-timepicker style="flex-grow: 1;" [(ngModel)]="first_class.time" (ngModelChange)="timeChangeStatus()" [nzFormat]="'HH:mm'" ></nz-timepicker>
+          <button *ngIf="timeChange" nz-button nzGhost [nzType]="'primary'" style="margin-right: 4px;margin-left: 4px;" >確認</button>
+          <button *ngIf="!timeChange" nz-button nzGhost [nzType]="'primary'" style="margin-right: 4px;margin-left: 4px;" disabled>確認</button>
         </div>
       </div>
     </div>

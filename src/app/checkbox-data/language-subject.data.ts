@@ -1,0 +1,53 @@
+export const LanguageSubject = [{
+    label: '普通話',
+    value: '普通話',
+    checked: false,
+}, {
+    label: '廣東話',
+    value: '廣東話',
+    checked: false
+}, {
+    label: '英文拼音',
+    value: '英文拼音',
+    checked: false
+}, {
+    label: '英語會話',
+    value: '英語會話',
+    checked: false
+}, {
+    label: 'TOEFL',
+    value: 'TOEFL',
+    checked: false
+}, {
+    label: 'GCE',
+    value: 'GCE',
+    checked: false
+}, {
+    label: 'IELTS',
+    value: 'IELTS',
+    checked: false
+}, {
+    label: '日語',
+    value: '日語',
+    checked: false
+}, {
+    label: '韓語',
+    value: '韓語',
+    checked: false
+}, {
+    label: '法語',
+    value: '法語',
+    checked: false
+}, {
+    label: '意大利語',
+    value: '意大利語',
+    checked: false
+}, {
+    label: '德語',
+    value: '德語',
+    checked: false
+}, {
+    label: '西班牙語',
+    value: '西班牙語',
+    checked: false
+}];

@@ -11,7 +11,80 @@
 }
 .case-add-container {
     background-color: white;
-    padding: 0 20px;
+    padding: 0 20px 20px 20px;
     box-sizing: border-box;
     box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.15);
+    .case-info {
+        border-top: 1px solid #2399ed;
+        margin-top: 20px;
+        padding-top: 20px;
+        tr {
+            box-sizing: border-box;
+        }
+        td {
+            div {
+                margin-bottom: 0;
+            }
+        }
+    }
+    .case-subject {
+        width: 100%;
+        display: flex;
+        align-items: stretch;
+        border: 1px solid #d3d3d3;
+        margin-top: 20px;
+        .subject-title {
+            display: flex;
+            align-items: center;
+            padding: 0 10px;
+            box-sizing: border-box;
+            flex-shrink: 0;
+            border-right: 1px solid #d3d3d3;
+            span {
+                font-size: 14px;
+                line-height: 24px;
+            }
+        }
+        .subject-container {
+            padding: 10px 10px;
+            box-sizing: border-box;
+            flex-grow: 1;
+            .subject-switch {
+                width: 100%;
+                height: auto;
+                overflow: hidden;
+                .remediation {
+                    width: 100%;
+                    height: auto;
+                    overflow: hidden;
+                    .subject-level {
+                        width: 100%;
+                        display: flex;
+                        align-items: center;
+                        margin-bottom: 10px;
+                        p {
+                            font-size: 12px;
+                            line-height: 24px;
+                            flex-shrink: 0;
+                        }
+                    }
+                    .subjects {
+                        width: 100%;
+                        height: auto;
+                        overflow: hidden;
+
+                    }
+                }
+            }
+        }
+    }
+    .submit-button {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+        button {
+            border-radius: 14px;
+        }
+    }
 }

@@ -11,7 +11,77 @@
 }
 .case-add-container {
   background-color: white;
-  padding: 0 20px;
+  padding: 0 20px 20px 20px;
   box-sizing: border-box;
   box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.15);
+}
+.case-add-container .case-info {
+  border-top: 1px solid #2399ed;
+  margin-top: 20px;
+  padding-top: 20px;
+}
+.case-add-container .case-info tr {
+  box-sizing: border-box;
+}
+.case-add-container .case-info td div {
+  margin-bottom: 0;
+}
+.case-add-container .case-subject {
+  width: 100%;
+  display: flex;
+  align-items: stretch;
+  border: 1px solid #d3d3d3;
+  margin-top: 20px;
+}
+.case-add-container .case-subject .subject-title {
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  border-right: 1px solid #d3d3d3;
+}
+.case-add-container .case-subject .subject-title span {
+  font-size: 14px;
+  line-height: 24px;
+}
+.case-add-container .case-subject .subject-container {
+  padding: 10px 10px;
+  box-sizing: border-box;
+  flex-grow: 1;
+}
+.case-add-container .case-subject .subject-container .subject-switch {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+.case-add-container .case-subject .subject-container .subject-switch .remediation {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+.case-add-container .case-subject .subject-container .subject-switch .remediation .subject-level {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.case-add-container .case-subject .subject-container .subject-switch .remediation .subject-level p {
+  font-size: 12px;
+  line-height: 24px;
+  flex-shrink: 0;
+}
+.case-add-container .case-subject .subject-container .subject-switch .remediation .subjects {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+.case-add-container .submit-button {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+.case-add-container .submit-button button {
+  border-radius: 14px;
 }

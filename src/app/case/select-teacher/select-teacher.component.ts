@@ -30,6 +30,9 @@ export class SelectTeacherComponent implements OnInit {
     time: new Date()
   };
 
+  // 首堂時間是否更改
+  timeChange = false;
+
   currentPage = 1;
 
   // 導師自薦列表
@@ -336,6 +339,11 @@ export class SelectTeacherComponent implements OnInit {
   // 點擊選擇導師
   goSelecte() {
     this.selected = true;
+  }
+
+  // 修改首堂日期后執行
+  timeChangeStatus() {
+    this.timeChange = true;
   }
 
   ngOnInit() {

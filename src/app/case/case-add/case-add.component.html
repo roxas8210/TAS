@@ -17,4 +17,284 @@
       </div>
     </nz-tab>
   </nz-tabset>
+  <div class="case-info">
+    <form nz-form [formGroup]="caseInfoForm">
+      <nz-table [nzCustomNoResult]="true">
+        <tr nz-tr style="border-bottom: 1px solid #d3d3d3;">
+          <td nz-td>
+            <div nz-row nz-form-item>
+              <div nz-col nz-form-label [nzSpan]="8" nzRequired>
+                <label for="teach_language">補習教學語言</label>
+              </div>
+              <div nz-col nz-form-control [nzSpan]="16">
+                <nz-input formControlName="teach_language" [nzPlaceHolder]="'請輸入補習教學語言'"></nz-input>
+              </div>
+            </div>
+          </td>
+          <td nz-td>
+            <div nz-row nz-form-item>
+              <div nz-col nz-form-label [nzSpan]="8">
+                <label for="client_rela_with_student">客戶與學生關係</label>
+              </div>
+              <div nz-col nz-form-control [nzSpan]="16">
+                <nz-input formControlName="client_rela_with_student" [nzPlaceHolder]="'請選擇客戶與學生關係'"></nz-input>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td nz-td>
+            <div nz-row nz-form-item>
+              <div nz-col nz-form-label [nzSpan]="8">
+                <label for="student_name">學生姓名</label>
+              </div>
+              <div nz-col nz-form-control [nzSpan]="16">
+                <nz-input formControlName="student_name" [nzPlaceHolder]="'請輸入學生姓名'"></nz-input>
+              </div>
+            </div>
+          </td>
+          <td nz-td>
+            <div nz-row nz-form-item>
+              <div nz-col nz-form-label [nzSpan]="8">
+                <label for="student_sex">學生性別</label>
+              </div>
+              <div nz-col nz-form-control [nzSpan]="16">
+                <nz-select style="width: 100%;" formControlName="student_sex" [nzPlaceHolder]="'請選擇學生性別'" nzAllowClear>
+                  <nz-option *ngFor="let option of sexOptions" [nzLabel]="option.label" [nzValue]="option.value">
+                  </nz-option>
+                </nz-select>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td nz-td>
+            <div nz-row nz-form-item>
+              <div nz-col nz-form-label [nzSpan]="8">
+                <label for="student_phone">學生電話</label>
+              </div>
+              <div nz-col nz-form-control [nzSpan]="16">
+                <nz-input formControlName="student_phone" [nzPlaceHolder]="'請輸入學生電話'"></nz-input>
+              </div>
+            </div>
+          </td>
+          <td nz-td>
+            <div nz-row nz-form-item>
+              <div nz-col nz-form-label [nzSpan]="8">
+                <label for="student_school">學生學校</label>
+              </div>
+              <div nz-col nz-form-control [nzSpan]="16">
+                <nz-input formControlName="student_school" [nzPlaceHolder]="'請輸入學生學校'"></nz-input>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td nz-td>
+            <div nz-row nz-form-item>
+              <div nz-col nz-form-label [nzSpan]="8">
+                <label for="teach_language_in_school">學生教授語言</label>
+              </div>
+              <div nz-col nz-form-control [nzSpan]="16">
+                <nz-input formControlName="teach_language_in_school" [nzPlaceHolder]="'請輸入學生教授語言'"></nz-input>
+              </div>
+            </div>
+          </td>
+          <td nz-td>
+            <div nz-row nz-form-item>
+              <div nz-col nz-form-label [nzSpan]="8">
+                <label for="study_times_per_week">要求上課周次</label>
+              </div>
+              <div nz-col nz-form-control [nzSpan]="16">
+                <nz-input formControlName="study_times_per_week" [nzPlaceHolder]="'請輸入要求上課周次'"></nz-input>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td nz-td>
+            <div nz-row nz-form-item>
+              <div nz-col nz-form-label [nzSpan]="8">
+                <label for="per_time">每次時間</label>
+              </div>
+              <div nz-col nz-form-control [nzSpan]="16">
+                <nz-input formControlName="per_time" [nzPlaceHolder]="'請輸入每次時間'"></nz-input>
+              </div>
+            </div>
+          </td>
+          <td nz-td>
+            <div nz-row nz-form-item>
+              <div nz-col nz-form-label [nzSpan]="8">
+                <label for="study_time">上課時間</label>
+              </div>
+              <div nz-col nz-form-control [nzSpan]="16">
+                <nz-input formControlName="study_time" [nzPlaceHolder]="'請輸入上課時間'"></nz-input>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td nz-td>
+            <div nz-row nz-form-item>
+              <div nz-col nz-form-label [nzSpan]="8">
+                <label for="student_tuition">學生學費</label>
+              </div>
+              <div nz-col nz-form-control [nzSpan]="16">
+                <nz-select style="width: 100%;" formControlName="student_tuition" [nzPlaceHolder]="'請選擇學生學費'" nzAllowClear>
+                  <nz-option *ngFor="let option of livingAreaOptions" [nzLabel]="option.label" [nzValue]="option.value">
+                  </nz-option>
+                </nz-select>
+              </div>
+            </div>
+          </td>
+          <td nz-td>
+            <div nz-row nz-form-item>
+              <div nz-col nz-form-label [nzSpan]="8">
+                <label for="lowest_education">要求導師最低學歷</label>
+              </div>
+              <div nz-col nz-form-control [nzSpan]="16">
+                <nz-datepicker formControlName="lowest_education" [nzPlaceHolder]="'請選擇要求導師最低學歷'"></nz-datepicker>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td nz-td>
+            <div nz-row nz-form-item>
+              <div nz-col nz-form-label [nzSpan]="8">
+                <label for="teacher_sex">導師性別</label>
+              </div>
+              <div nz-col nz-form-control [nzSpan]="16">
+                <nz-select style="width: 100%;" formControlName="teacher_sex" [nzPlaceHolder]="'請選擇導師性別'" nzAllowClear>
+                  <nz-option *ngFor="let option of languageOptions" [nzLabel]="option.label" [nzValue]="option.value">
+                  </nz-option>
+                </nz-select>
+              </div>
+            </div>
+          </td>
+          <td nz-td>
+            <div nz-row nz-form-item>
+              <div nz-col nz-form-label [nzSpan]="8">
+                <label for="agreement_lessons">協議堂數</label>
+              </div>
+              <div nz-col nz-form-control [nzSpan]="16">
+                <nz-input formControlName="agreement_lessons" [nzPlaceHolder]="'請輸入協議堂數'"></nz-input>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td nz-td>
+            <div nz-row nz-form-item>
+              <div nz-col nz-form-label [nzSpan]="8">
+                <label for="study_area">補習地區</label>
+              </div>
+              <div nz-col nz-form-control [nzSpan]="16">
+                <nz-input formControlName="study_area" [nzPlaceHolder]="'請輸入補習地區'"></nz-input>
+              </div>
+            </div>
+          </td>
+          <td nz-td>
+            <div nz-row nz-form-item>
+              <div nz-col nz-form-label [nzSpan]="8">
+                <label for="study_address">補習地址</label>
+              </div>
+              <div nz-col nz-form-control [nzSpan]="16">
+                <nz-input formControlName="study_address" [nzPlaceHolder]="'請輸入補習地址'"></nz-input>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td nz-td>
+            <div nz-row nz-form-item>
+              <div nz-col nz-form-label [nzSpan]="8">
+                <label for="other_info">其他資料</label>
+              </div>
+              <div nz-col nz-form-control [nzSpan]="16">
+                <nz-input formControlName="other_info" [nzPlaceHolder]="'請輸入其他資料'"></nz-input>
+              </div>
+            </div>
+          </td>
+          <td nz-td>
+            <div nz-row nz-form-item>
+              <div nz-col nz-form-label [nzSpan]="8">
+                <label for="how_konw_our_company">如何得知本公司</label>
+              </div>
+              <div nz-col nz-form-control [nzSpan]="16">
+                <nz-input formControlName="how_konw_our_company" [nzPlaceHolder]="'請輸入如何得知本公司'"></nz-input>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </nz-table>
+    </form>
+  </div>
+  <div class="case-subject">
+    <div class="subject-title">
+      <span>科目/項目</span>
+    </div>
+    <div class="subject-container">
+      <nz-tabset [(nzSelectedIndex)]="subjectSelectedIndex" [nzTabPosition]="'top'" [nzType]="'card'">
+        <nz-tab *ngFor="let tab of subjectTabs">
+          <ng-template #nzTabHeading>
+            {{tab.name}}
+          </ng-template>
+        </nz-tab>
+      </nz-tabset>
+      <div class="subject-switch">
+        <div class="remediation" [ngStyle]="{'display': subjectSelectedIndex === 0? 'block': 'none'}">
+          <div class="subject-level">
+            <p>級別：</p>
+            <nz-select style="width: 120px;" [(ngModel)]="selectedDistrict" [nzPlaceHolder]="'選擇級別'">
+              <nz-option *ngFor="let option of options" [nzLabel]="option.label" [nzValue]="option.value" [nzDisabled]="option.disabled">
+              </nz-option>
+            </nz-select>
+          </div>
+          <div class="subjects">
+            <nz-checkbox-group [(ngModel)]="remediationSubjects"></nz-checkbox-group>
+          </div>
+        </div>
+        <div class="remediation" [ngStyle]="{'display': subjectSelectedIndex === 1? 'block': 'none'}">
+          <div class="subject-level">
+            <p>級別：</p>
+            <nz-select style="width: 120px;" [(ngModel)]="selectedDistrict" [nzPlaceHolder]="'選擇級別'">
+              <nz-option *ngFor="let option of options" [nzLabel]="option.label" [nzValue]="option.value" [nzDisabled]="option.disabled">
+              </nz-option>
+            </nz-select>
+          </div>
+          <div class="subjects">
+            <nz-checkbox-group [(ngModel)]="musicSubjects"></nz-checkbox-group>
+          </div>
+        </div>
+        <div class="remediation" [ngStyle]="{'display': subjectSelectedIndex === 2? 'block': 'none'}">
+          <div class="subject-level">
+            <p>級別：</p>
+            <nz-select style="width: 120px;" [(ngModel)]="selectedDistrict" [nzPlaceHolder]="'選擇級別'">
+              <nz-option *ngFor="let option of options" [nzLabel]="option.label" [nzValue]="option.value" [nzDisabled]="option.disabled">
+              </nz-option>
+            </nz-select>
+          </div>
+          <div class="subjects">
+            <nz-checkbox-group [(ngModel)]="languageSubjects"></nz-checkbox-group>
+          </div>
+        </div>
+        <div class="remediation" [ngStyle]="{'display': subjectSelectedIndex === 3? 'block': 'none'}">
+          <div class="subject-level">
+            <p>級別：</p>
+            <nz-select style="width: 120px;" [(ngModel)]="selectedDistrict" [nzPlaceHolder]="'選擇級別'">
+              <nz-option *ngFor="let option of options" [nzLabel]="option.label" [nzValue]="option.value" [nzDisabled]="option.disabled">
+              </nz-option>
+            </nz-select>
+          </div>
+          <div class="subjects">
+            <nz-checkbox-group [(ngModel)]="otherSubjects"></nz-checkbox-group>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="submit-button">
+    <button nz-button nzGhost [nzType]="'primary'" >確認新增補習個案</button>
+  </div>
 </div>

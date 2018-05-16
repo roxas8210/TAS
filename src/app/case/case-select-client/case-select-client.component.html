@@ -3,6 +3,44 @@
     <nz-input [nzType]="'search'" [nzPlaceHolder]="'請輸入客戶編號、姓名、手提電話進行搜索'" [(ngModel)]="quickSearch" style="width: 100%;" (nzOnSearch)="onSearch()"></nz-input>
   </div>
   <div class="client-list">
-    
+    <nz-table #nzTable [nzDataSource]="parentList" [nzTotal]="parentList.length" [nzIsPagination]="true">
+      <thead nz-thead>
+        <tr>
+          <th style="background-color: white;"></th>
+          <th nz-th style="text-align: center;background-color: white;border-bottom: 1px solid rgba(0, 0, 0, 0.15);">
+            <span>家長編號</span>
+          </th>
+          <th nz-th style="text-align: center;background-color: white;border-bottom: 1px solid rgba(0, 0, 0, 0.15);">
+            <span>姓名</span>
+          </th>
+          <th nz-th style="text-align: center;background-color: white;border-bottom: 1px solid rgba(0, 0, 0, 0.15);">
+            <span>手提電話</span>
+          </th>
+          <th nz-th style="text-align: center;background-color: white;border-bottom: 1px solid rgba(0, 0, 0, 0.15);">
+            <span>可聯絡時段</span>
+          </th>
+          <th nz-th style="text-align: center;background-color: white;border-bottom: 1px solid rgba(0, 0, 0, 0.15);">
+            <span>居住地區</span>
+          </th>
+          <th nz-th style="text-align: center;background-color: white;border-bottom: 1px solid rgba(0, 0, 0, 0.15);">
+            <span>最後個案</span>
+          </th>
+        </tr>
+      </thead>
+      <tbody nz-tbody>
+        <tr nz-tbody-tr *ngFor="let data of nzTable.data" style="cursor: pointer;">
+          <label style="width: 100%;display: flex;align-items: center;justify-content: center;" nz-checkbox [(ngModel)]="data.selected" (ngModelChange)="selectClient(data.id)"></label>
+          <td nz-td style="padding: 8px 0 !important;text-align: center;">{{data.parentNo}}</td>
+          <td nz-td style="padding: 8px 0 !important;text-align: center;">{{data.name}}</td>
+          <td nz-td style="padding: 8px 0 !important;text-align: center;">{{data.phone}}</td>
+          <td nz-td style="padding: 8px 0 !important;text-align: center;">{{data.contactTime}}</td>
+          <td nz-td style="padding: 8px 0 !important;text-align: center;">{{data.livingArea}}</td>
+          <td nz-td style="padding: 8px 0 !important;text-align: center;">{{data.latestCase}}</td>
+        </tr>
+      </tbody>
+    </nz-table>
+    <div class="commit-select-client">
+      <button nz-button nzGhost [nzType]="'primary'" >確認</button>
+    </div>
   </div>
 </div>
